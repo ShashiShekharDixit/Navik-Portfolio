@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free HR Tools - Salary, Tax & Payroll Calculators | navik</title>
+  <meta name="description" content="Free HR tools including salary calculator, income tax calculator, gratuity calculator, leave tracker, and EPF calculator for Indian employees and employers." />
+  <meta name="keywords" content="salary calculator, income tax calculator, gratuity calculator, leave tracker, EPF calculator, HR tools, payroll calculator" />
+  <link rel="canonical" href="https://navikops.com/hr-tools" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
+  <link rel="stylesheet" href="./hr-tools.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free HR Tools & Calculators | navik" />
+  <meta property="og:description" content="Calculate salary, income tax, gratuity, manage leaves, and compute EPF with free online HR tools from navik." />
+  <meta property="og:url" content="https://navikops.com/hr-tools" />
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="announcement-banner">
+  <div class="announcement-content">
+    <span class="announcement-icon">🎙️</span>
+    <span class="announcement-text">Want to share your workforce insights? Join us as a podcast guest!</span>
+    <a href="mailto:kartikey.mishra@wfmexperts.com?subject=Podcast%20Guest%20Inquiry&body=Hello,%0AI%20would%20like%20to%20discuss%20podcast%20opportunities%20with%20navik." class="announcement-cta">Write to us →</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link-main">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+          </div>
+        </li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link-main">Resources</a>
+          <div class="nav-dropdown-menu">
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="hr-tools.html" style="color: #2563eb; font-weight: 600;">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link-main">Company</a>
+          <div class="nav-dropdown-menu">
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#demo" class="btn-nav-cta">Book Demo</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="tools-hero">
+  <div class="tools-hero-content">
+    <h1>Free HR & Payroll Calculators</h1>
+    <p>Calculate salaries, taxes, gratuity, manage leaves, and compute EPF instantly. All tools are free and built for Indian businesses.</p>
+  </div>
+</section>
+
+<!-- TOOLS SECTION -->
+<section class="tools-section">
+  <div class="tools-container">
+    <div class="tools-grid">
+
+      <!-- TOOL 1: SALARY CALCULATOR -->
+      <div class="tool-card" id="salaryCard">
+        <div class="tool-header">
+          <div class="tool-icon">💰</div>
+          <h2>Salary Calculator</h2>
+          <p>Calculate take-home salary and gross pay</p>
+        </div>
+        <div class="tool-content">
+          <form id="salaryForm" class="tool-form">
+            <div class="form-group">
+              <label>Basic Salary (₹)</label>
+              <input type="number" id="basicSalary" placeholder="30000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>House Rent Allowance - HRA (₹)</label>
+              <input type="number" id="hra" placeholder="6000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Dearness Allowance - DA (₹)</label>
+              <input type="number" id="da" placeholder="2000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Other Allowances (₹)</label>
+              <input type="number" id="otherAllowance" placeholder="0" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Deductions (₹)</label>
+              <input type="number" id="deductions" placeholder="0" min="0" step="100">
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateSalary()">Calculate</button>
+          </form>
+          <div id="salaryResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Gross Salary</span>
+              <strong>₹<span id="grossSalary">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Deductions</span>
+              <strong>₹<span id="totalDeductions">0</span></strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Net Salary (Take Home)</span>
+              <strong>₹<span id="netSalary">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Monthly CTC</span>
+              <strong>₹<span id="monthlyCTC">0</span></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 2: INCOME TAX CALCULATOR -->
+      <div class="tool-card" id="taxCard">
+        <div class="tool-header">
+          <div class="tool-icon">📊</div>
+          <h2>Income Tax Calculator</h2>
+          <p>Calculate income tax for FY 2024-25</p>
+        </div>
+        <div class="tool-content">
+          <form id="taxForm" class="tool-form">
+            <div class="form-group">
+              <label>Annual Income (₹)</label>
+              <input type="number" id="annualIncome" placeholder="500000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Tax Regime</label>
+              <select id="taxRegime">
+                <option value="old">Old Tax Regime</option>
+                <option value="new">New Tax Regime (FY 2024-25)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Standard Deduction (₹)</label>
+              <input type="number" id="stdDeduction" placeholder="75000" min="0" step="100" value="75000">
+            </div>
+            <div class="form-group">
+              <label>Other Deductions (₹)</label>
+              <input type="number" id="otherDeductions" placeholder="0" min="0" step="100">
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateTax()">Calculate Tax</button>
+          </form>
+          <div id="taxResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Gross Income</span>
+              <strong>₹<span id="taxGrossIncome">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Total Deductions</span>
+              <strong>₹<span id="taxTotalDed">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Taxable Income</span>
+              <strong>₹<span id="taxableIncome">0</span></strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Income Tax Payable</span>
+              <strong>₹<span id="incomeTaxPayable">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Cess (4%)</span>
+              <strong>₹<span id="cess">0</span></strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Total Tax + Cess</span>
+              <strong>₹<span id="totalTax">0</span></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 3: GRATUITY CALCULATOR -->
+      <div class="tool-card" id="gratuityCard">
+        <div class="tool-header">
+          <div class="tool-icon">🎁</div>
+          <h2>Gratuity Calculator</h2>
+          <p>Calculate employee gratuity benefits</p>
+        </div>
+        <div class="tool-content">
+          <form id="gratuityForm" class="tool-form">
+            <div class="form-group">
+              <label>Last Drawn Salary (₹)</label>
+              <input type="number" id="lastSalary" placeholder="50000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Years of Service</label>
+              <input type="number" id="yearsOfService" placeholder="5" min="0" step="0.5">
+            </div>
+            <div class="form-group">
+              <label>Gratuity Type</label>
+              <select id="gratuityType">
+                <option value="normal">Normal (Resignation/Retirement)</option>
+                <option value="death">Death During Service</option>
+                <option value="disability">Disability</option>
+              </select>
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateGratuity()">Calculate Gratuity</button>
+          </form>
+          <div id="gratuityResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Formula Applied</span>
+              <strong><span id="gratuityFormula">15 days × Last Salary × Years</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Calculation Basis</span>
+              <strong>₹<span id="calcBasis">0</span></strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Gratuity Amount</span>
+              <strong>₹<span id="gratuityAmount">0</span></strong>
+            </div>
+            <div class="result-note">
+              <p>Note: Maximum gratuity limit is ₹20 lakhs (updated 2021)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 4: LEAVE TRACKER -->
+      <div class="tool-card" id="leaveCard">
+        <div class="tool-header">
+          <div class="tool-icon">📅</div>
+          <h2>Leave Tracker</h2>
+          <p>Track and calculate remaining leaves</p>
+        </div>
+        <div class="tool-content">
+          <form id="leaveForm" class="tool-form">
+            <div class="form-group">
+              <label>Allocated Leaves per Year</label>
+              <input type="number" id="allocatedLeaves" placeholder="20" min="0" step="1">
+            </div>
+            <div class="form-group">
+              <label>Leaves Taken This Year</label>
+              <input type="number" id="leavesTaken" placeholder="5" min="0" step="1">
+            </div>
+            <div class="form-group">
+              <label>Previous Year Carryover (₹)</label>
+              <input type="number" id="carryover" placeholder="0" min="0" step="1">
+            </div>
+            <div class="form-group">
+              <label>Max Carryover Allowed</label>
+              <input type="number" id="maxCarryover" placeholder="10" min="0" step="1">
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateLeaves()">Calculate Leaves</button>
+          </form>
+          <div id="leaveResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Total Available Leaves</span>
+              <strong><span id="totalAvailable">0</span> days</strong>
+            </div>
+            <div class="result-item">
+              <span>Leaves Taken</span>
+              <strong><span id="displayLeavesTaken">0</span> days</strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Remaining Leaves</span>
+              <strong><span id="remainingLeaves">0</span> days</strong>
+            </div>
+            <div class="result-item">
+              <span>Eligible Carryover</span>
+              <strong><span id="eligibleCarryover">0</span> days</strong>
+            </div>
+            <div class="result-item">
+              <span>Forfeited Leaves</span>
+              <strong><span id="forfeitedLeaves">0</span> days</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 5: EPF CALCULATOR -->
+      <div class="tool-card" id="epfCard">
+        <div class="tool-header">
+          <div class="tool-icon">🏦</div>
+          <h2>EPF Calculator</h2>
+          <p>Calculate Employee Provident Fund (EPF)</p>
+        </div>
+        <div class="tool-content">
+          <form id="epfForm" class="tool-form">
+            <div class="form-group">
+              <label>Monthly Salary (₹)</label>
+              <input type="number" id="monthlySalaryEPF" placeholder="50000" min="0" step="100">
+            </div>
+            <div class="form-group">
+              <label>Years of Service</label>
+              <input type="number" id="yearsEPF" placeholder="5" min="0" step="0.5">
+            </div>
+            <div class="form-group">
+              <label>Employee Contribution Rate (%)</label>
+              <input type="number" id="empContribution" placeholder="12" min="0" max="100" step="0.1" value="12">
+            </div>
+            <div class="form-group">
+              <label>Employer Contribution Rate (%)</label>
+              <input type="number" id="empCountribution" placeholder="12" min="0" max="100" step="0.1" value="12">
+            </div>
+            <div class="form-group">
+              <label>Interest Rate (%) per Annum</label>
+              <input type="number" id="interestRate" placeholder="8.5" min="0" max="15" step="0.1" value="8.5">
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateEPF()">Calculate EPF</button>
+          </form>
+          <div id="epfResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Employee Contribution (Monthly)</span>
+              <strong>₹<span id="empMonthlyContrib">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Employer Contribution (Monthly)</span>
+              <strong>₹<span id="empCountMonthlyContrib">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Total Monthly Contribution</span>
+              <strong>₹<span id="totalMonthlyContrib">0</span></strong>
+            </div>
+            <div class="result-item">
+              <span>Annual Contribution</span>
+              <strong>₹<span id="annualContrib">0</span></strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Estimated Maturity Amount</span>
+              <strong>₹<span id="maturityAmount">0</span></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAVIK ADVERTISEMENT SECTION -->
+    <div class="tools-ad-section">
+      <div class="ad-container">
+        <h3>Automate All HR Calculations with navik</h3>
+        <p>Stop manual calculations. Automate salary processing, tax compliance, leave management, and payroll with navik's intelligent HRMS platform.</p>
+        <div class="ad-features">
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Automated Salary Processing</span>
+          </div>
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Real-time Tax Compliance</span>
+          </div>
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Leave Management System</span>
+          </div>
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Gratuity & EPF Tracking</span>
+          </div>
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Instant Reports & Analytics</span>
+          </div>
+          <div class="ad-feature">
+            <span class="ad-feature-icon">✓</span>
+            <span>Multi-company Support</span>
+          </div>
+        </div>
+        <div class="ad-ctas">
+          <a href="index.html#demo" class="ad-btn-primary">Book Free Demo</a>
+          <a href="index.html" class="ad-btn-secondary">View All Features</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo footer-logo">
+          <img src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png" alt="Navik" class="footer-logo-img">
+          <span class="nav-logo-text">
+            <span class="nav-logo-animated">HR</span>
+            <span class="nav-logo-animated">WFM</span>
+            <span class="nav-logo-animated">Payroll</span>
+          </span>
+        </a>
+        <p>The complete HR, Workforce Management & Payroll platform for modern businesses.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="hr-system.html">HR System</a>
+        <a href="workforce-management.html">Workforce Management</a>
+        <a href="payroll-system.html">Payroll System</a>
+        <a href="attendance.html">Attendance</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="blog.html">Blogs</a>
+        <a href="templates.html">Templates</a>
+        <a href="hr-tools.html">HR Tools</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:contact@navik.com">contact@navik.com</a>
+        <a href="tel:+919196000515">+91-9196000515</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 navik. All rights reserved. Made with 💙 in India</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./main.js" defer></script>
+<script src="./hr-tools.js" defer></script>
+
+</body>
+</html>
+

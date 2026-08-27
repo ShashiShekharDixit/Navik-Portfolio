@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Stories - Test Page</title>
+  <link rel="stylesheet" href="./Styles.css">
+  <style>
+    body { margin: 0; padding: 20px; background: #f8faff; }
+    .test-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 12px rgba(15,31,75,.06);
+    }
+    .test-header h1 { margin: 0 0 10px; color: #0f1f4b; }
+    .test-header p { margin: 0; color: #64748b; }
+    .status { 
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .status.success { background: #f0fdf4; color: #10b981; }
+    .status.loading { background: #eff6ff; color: #3b82f6; }
+  </style>
+</head>
+<body>
+
+<div class="test-header">
+  <h1>🧪 Customer Stories Test Page</h1>
+  <p>Testing all card types and functionality</p>
+  <div class="status loading" id="status">Loading cards...</div>
+</div>
+
+<!-- Customer Stories Section -->
+<section class="media-showcase" id="media">
+  <div class="container">
+    <div class="media-header">
+      <span class="media-eyebrow">Customer Stories</span>
+      <h2 class="media-h2">Real Results from Real Companies</h2>
+      <p class="media-lead">Discover how companies transform their workforce management with navik.</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="media-tabs">
+      <button class="media-tab active" data-category="all">All</button>
+      <button class="media-tab" data-category="demos">Product Demos</button>
+      <button class="media-tab" data-category="clients">Client Stories</button>
+      <button class="media-tab" data-category="podcasts">Podcasts</button>
+    </div>
+
+    <div class="media-grid" id="mediaGrid">
+      <!-- Loading skeletons -->
+      <div class="media-skeleton"></div>
+      <div class="media-skeleton"></div>
+      <div class="media-skeleton"></div>
+    </div>
+
+    <div class="media-footer" id="mediaFooter" style="display:none">
+      <button class="btn-ghost-dark" id="viewAllStoriesBtn">
+        View All Stories
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script src="./main.js"></script>
+<script>
+  // Update status after cards load
+  setTimeout(() => {
+    const status = document.getElementById('status');
+    const grid = document.getElementById('mediaGrid');
+    const cardCount = grid.querySelectorAll('.media-item').length;
+    
+    if (cardCount > 0) {
+      status.className = 'status success';
+      status.textContent = `✅ ${cardCount} cards loaded successfully!`;
+    } else {
+      status.className = 'status';
+      status.style.background = '#fef2f2';
+      status.style.color = '#ef4444';
+      status.textContent = '⚠️ No cards loaded - check console';
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

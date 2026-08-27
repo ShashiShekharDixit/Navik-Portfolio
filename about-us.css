@@ -1,0 +1,258 @@
+/* About Us Page Enhancements */
+
+/* Decorative Animated Shapes */
+@keyframes orbitSpin {
+  0% { transform: rotate(0deg) translateX(60px) rotate(-0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+@keyframes pulseGrow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Enhanced Team Cards with Decorative Elements */
+.team-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-card:hover::after {
+  opacity: 1;
+}
+
+/* Team Info Decoration */
+.team-info::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-info::after {
+  opacity: 1;
+}
+
+/* Decorative circles pattern */
+.deco-circle {
+  position: absolute;
+  border: 2px solid rgba(79, 142, 247, 0.15);
+  border-radius: 50%;
+  animation: pulseGrow 3s ease-in-out infinite;
+}
+
+.deco-circle-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.deco-circle-md {
+  width: 80px;
+  height: 80px;
+}
+
+.deco-circle-lg {
+  width: 120px;
+  height: 120px;
+}
+
+/* Stagger animations for moment cards */
+.moment-card {
+  animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.moment-card:nth-child(1) { animation-delay: 0s; }
+.moment-card:nth-child(2) { animation-delay: 0.1s; }
+.moment-card:nth-child(3) { animation-delay: 0.2s; }
+.moment-card:nth-child(4) { animation-delay: 0.3s; }
+.moment-card:nth-child(5) { animation-delay: 0.4s; }
+.moment-card:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Geometric corner decorations */
+.corner-deco {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(79, 142, 247, 0.1);
+  pointer-events: none;
+}
+
+.corner-deco-top-left {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-deco-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Enhanced Graphics */
+.graphic-element {
+  position: absolute;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.graphic-dots {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  border-radius: 50%;
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+.dot:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Overlay gradient effects */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(79, 142, 247, 0.02) 50%, transparent 100%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Animated border */
+.animated-border {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--accent), #ec4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.animated-border:hover::before {
+  opacity: 1;
+}
+
+/* Section reveal animations */
+.reveal-section {
+  opacity: 0;
+  animation: revealFadeIn 1s ease-out forwards;
+}
+
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .moment-card {
+    padding: 32px 24px;
+  }
+
+  .moment-visual {
+    width: 80px;
+    height: 80px;
+  }
+
+  .deco-circle-lg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ── ANIMATED NAVBAR LOGO ── */
+.nav-logo-text {
+  display: inline-block !important;
+  min-width: 120px !important;
+  height: auto !important;
+  overflow: visible !important;
+  vertical-align: middle !important;
+}
+
+.nav-logo-animated {
+  display: none !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: -.05em !important;
+  color: #0a1628 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  animation: none !important;
+}
+
+.nav-logo-animated.active {
+  display: inline-block !important;
+  animation: navLogoFadeInUp 0.5s ease !important;
+}
+
+@keyframes navLogoFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

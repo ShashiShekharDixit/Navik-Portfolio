@@ -1,0 +1,239 @@
+# ============================================================================
+# navik HRMS - Apache .htaccess Configuration  
+# SEO-Friendly Clean URLs (Remove .html extensions)
+# Domain: https://navikops.com
+# Generated: July 9, 2026
+# ============================================================================
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ═══════════════════════════════════════════════════════════
+  # PHASE 1: Don't rewrite real files and directories
+  # ═══════════════════════════════════════════════════════════
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # ═══════════════════════════════════════════════════════════
+  # PHASE 2: 301 REDIRECT OLD .html URLs TO CLEAN URLS
+  # (Redirect from old URLs to new clean URLs for SEO & backward compatibility)
+  # ═══════════════════════════════════════════════════════════
+  
+  # Redirect .html extensions to clean URLs (301 permanent redirect)
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+  
+  # Redirect index.html to root
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # ═══════════════════════════════════════════════════════════
+  # PHASE 3: SERVE CLEAN URLS BY REWRITING TO .html FILES
+  # (Internal rewrite - user still sees clean URL)
+  # ═══════════════════════════════════════════════════════════
+  
+  # Home page - serve index.html for root requests
+  RewriteRule ^/?$ index.html [L]
+  
+  # All other clean URLs - append .html internally
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
+
+</IfModule>
+
+# ============================================================================
+# Security Headers & Best Practices
+# ============================================================================
+
+# Prevent directory listing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Set Security Headers
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ============================================================================
+# Compression (Gzip)
+# ============================================================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+</IfModule>
+
+# ============================================================================
+# Cache Control
+# ============================================================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access 1 hour"
+  ExpiresByType text/css "access 30 days"
+  ExpiresByType application/javascript "access 30 days"
+  ExpiresByType image/jpeg "access 60 days"
+  ExpiresByType image/png "access 60 days"
+  ExpiresByType image/gif "access 60 days"
+  ExpiresByType image/webp "access 60 days"
+  ExpiresByType font/ttf "access 90 days"
+  ExpiresByType font/woff "access 90 days"
+  ExpiresByType font/woff2 "access 90 days"
+  ExpiresDefault "access 7 days"
+</IfModule>
+
+# ============================================================================
+# ETag & Vary Headers
+# ============================================================================
+
+<IfModule mod_headers.c>
+  Header append Vary: Accept-Encoding
+</IfModule>
+
+# ============================================================================
+# Prevent Access to Sensitive Files
+# ============================================================================
+
+<FilesMatch "^\.">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(md|json|config)$">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+# ============================================================================
+# Force HTTPS (Uncomment if SSL is configured)
+# ============================================================================
+
+# <IfModule mod_rewrite.c>
+#   RewriteCond %{HTTPS} off
+#   RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ============================================================================
+# End of .htaccess Configuration
+# ============================================================================
+
+# ============================================================================
+# Security Headers
+# ============================================================================
+
+# Prevent directory listing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Set Security Headers
+<IfModule mod_headers.c>
+  # X-Frame-Options: Prevent clickjacking
+  Header set X-Frame-Options "SAMEORIGIN"
+  
+  # X-Content-Type-Options: Prevent MIME sniffing
+  Header set X-Content-Type-Options "nosniff"
+  
+  # X-XSS-Protection: Enable XSS protection in older browsers
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Referrer-Policy: Strict referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions-Policy: Restrict powerful features
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ============================================================================
+# Compression (Gzip)
+# ============================================================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  
+  # Exclude compressed images
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+</IfModule>
+
+# ============================================================================
+# Cache Control
+# ============================================================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # HTML: Don't cache (revalidate every request)
+  ExpiresByType text/html "access 1 hour"
+  
+  # CSS & JavaScript: Cache for 30 days
+  ExpiresByType text/css "access 30 days"
+  ExpiresByType application/javascript "access 30 days"
+  ExpiresByType text/javascript "access 30 days"
+  
+  # Images: Cache for 60 days
+  ExpiresByType image/jpeg "access 60 days"
+  ExpiresByType image/png "access 60 days"
+  ExpiresByType image/gif "access 60 days"
+  ExpiresByType image/webp "access 60 days"
+  ExpiresByType image/svg+xml "access 60 days"
+  
+  # Fonts: Cache for 90 days
+  ExpiresByType font/ttf "access 90 days"
+  ExpiresByType font/otf "access 90 days"
+  ExpiresByType font/woff "access 90 days"
+  ExpiresByType font/woff2 "access 90 days"
+  ExpiresByType application/font-woff "access 90 days"
+  
+  # Default: Cache for 7 days
+  ExpiresDefault "access 7 days"
+</IfModule>
+
+# ============================================================================
+# ETag & Vary Headers
+# ============================================================================
+
+<IfModule mod_headers.c>
+  Header append Vary: Accept-Encoding
+</IfModule>
+
+# ============================================================================
+# Prevent Access to Sensitive Files
+# ============================================================================
+
+<FilesMatch "^\.">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(md|json|config)$">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+# ============================================================================
+# Force HTTPS (Uncomment if SSL is configured)
+# ============================================================================
+
+# <IfModule mod_rewrite.c>
+#   RewriteCond %{HTTPS} off
+#   RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ============================================================================
+# Custom Error Pages (Optional)
+# ============================================================================
+
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# ============================================================================
+# End of .htaccess Configuration
+# ============================================================================

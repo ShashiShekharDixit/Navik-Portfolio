@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — navik Workforce Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./dashboard.css" />
+  <style>
+    /* ── Attendance Today Card ── */
+    .widget-attendance-today {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e8edf5;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(15, 31, 75, .06)
+    }
+
+    .widget-attendance-today .widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px
+    }
+
+    .widget-attendance-today .widget-header h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f1f4b;
+      margin: 0
+    }
+
+    .date-display-right {
+      font-size: 13px;
+      color: #94a3b8
+    }
+
+    .attendance-today-body {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 0 8px 20px
+    }
+
+    .att-donut-wrap {
+      display: flex;
+      align-items: center;
+      gap: 28px
+    }
+
+    .att-donut {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0
+    }
+
+    .att-donut-svg {
+      width: 120px;
+      height: 120px;
+      transform: rotate(-90deg) scaleX(-1)
+    }
+
+    .att-donut-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center
+    }
+
+    .att-pct {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f1f4b;
+      line-height: 1
+    }
+
+    .att-pct-label {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px
+    }
+
+    .att-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .att-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #475569
+    }
+
+    .att-legend-item strong {
+      color: #0f1f4b
+    }
+
+    .att-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .att-dot-blue {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6)
+    }
+
+    .att-dot-red {
+      background: #ef4444
+    }
+
+    .att-dot-amber {
+      background: #f59e0b
+    }
+
+    /* Punch tabs */
+    .punch-tabs {
+      display: flex;
+      border-top: 1px solid #f1f5f9;
+      margin: 0 -20px -20px;
+      border-radius: 0 0 14px 14px;
+      overflow: hidden
+    }
+
+    .punch-tab {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      transition: all .2s;
+      border-right: 1px solid #f1f5f9;
+      background: #fafbff
+    }
+
+    .punch-tab:last-child {
+      border-right: none
+    }
+
+    .punch-tab:hover {
+      background: #eff6ff;
+      color: #3b82f6
+    }
+
+    .punch-tab-active {
+      background: #eff6ff;
+      color: #3b82f6
+    }
+
+    .punch-icon {
+      font-size: 20px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">n</div>
+      <span>navik</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+        </svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24m15.66-4.24l-4.24-4.24m-4.24-4.24l-4.24-4.24" />
+        </svg>
+        <span>My Timesheet</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <span>My Info</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+        <span>Employees</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+        <span>Attendance</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg>
+        <span>HR</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg>
+        <span>Reports</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>App Setup</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" y1="21" x2="4" y2="14" />
+          <line x1="4" y1="10" x2="4" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12" y2="3" />
+          <line x1="20" y1="21" x2="20" y2="16" />
+          <line x1="20" y1="12" x2="20" y2="3" />
+        </svg>
+        <span>Core Setup</span>
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3h7v7H3z" />
+          <path d="M14 3h7v7h-7z" />
+          <path d="M14 14h7v7h-7z" />
+          <path d="M3 14h7v7H3z" />
+        </svg>
+        <span>Analytics</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+      <div class="header-left">
+        <h1>Dashboard</h1>
+        <span class="welcome-text">Welcome, <strong>Riya Shukla!</strong></span>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4m0-4h.01" />
+          </svg>
+        </button>
+        <button class="icon-btn notification-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+          </svg>
+          <span class="notification-badge">12</span>
+        </button>
+        <div class="user-profile">
+          <span class="user-name">Riya Shukla</span>
+          <div class="user-avatar">RS</div>
+        </div>
+        <button class="icon-btn add-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD GRID -->
+    <div class="dashboard-grid">
+
+      <!-- ATTENDANCE TODAY CARD -->
+      <div class="widget widget-attendance-today">
+        <div class="widget-header">
+          <h3>Attendance — Today</h3>
+          <span class="date-display-right">Thu, 30 Apr 2026</span>
+        </div>
+        <div class="attendance-today-body">
+          <!-- Donut + Legend -->
+          <div class="att-donut-wrap">
+            <div class="att-donut">
+              <svg viewBox="0 0 120 120" class="att-donut-svg">
+                <!-- Track -->
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="14" />
+                <!-- Present (87.4%) -->
+                <circle cx="60" cy="60" r="48" fill="none" stroke="url(#attGrad)" stroke-width="14"
+                  stroke-dasharray="263 301" stroke-dashoffset="75" stroke-linecap="round" />
+                <!-- Absent (8.1%) -->
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#ef4444" stroke-width="14" stroke-dasharray="24 301"
+                  stroke-dashoffset="-188" stroke-linecap="round" />
+                <!-- Late (4.5%) -->
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#f59e0b" stroke-width="14" stroke-dasharray="14 301"
+                  stroke-dashoffset="-212" stroke-linecap="round" />
+                <defs>
+                  <linearGradient id="attGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#1e3a8a" />
+                    <stop offset="100%" stop-color="#3b82f6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="att-donut-center">
+                <span class="att-pct">87.4%</span>
+                <span class="att-pct-label">Present</span>
+              </div>
+            </div>
+            <div class="att-legend">
+              <div class="att-legend-item">
+                <span class="att-dot att-dot-blue"></span>
+                <span>Present: <strong>1,091</strong></span>
+              </div>
+              <div class="att-legend-item">
+                <span class="att-dot att-dot-red"></span>
+                <span>Absent: <strong>98</strong></span>
+              </div>
+              <div class="att-legend-item">
+                <span class="att-dot att-dot-amber"></span>
+                <span>Late: <strong>59</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Punch Type Tabs -->
+        <div class="punch-tabs">
+          <div class="punch-tab punch-tab-active">
+            <span class="punch-icon">🏠</span>
+            <span>WFH Punch</span>
+          </div>
+          <div class="punch-tab">
+            <span class="punch-icon">🏢</span>
+            <span>On-Premise</span>
+          </div>
+          <div class="punch-tab">
+            <span class="punch-icon">🌐</span>
+            <span>Web Punch</span>
+          </div>
+          <div class="punch-tab">
+            <span class="punch-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                <circle cx="12" cy="9" r="2.5" />
+                <ellipse cx="12" cy="20" rx="5" ry="1.5" fill="none" stroke="#64748b" stroke-width="1.2"
+                  opacity="0.4" />
+              </svg>
+            </span>
+            <span>Geo-Fenced</span>
+          </div>
+          <div class="punch-tab">
+            <span class="punch-icon">⚡</span>
+            <span>Auto Punch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ON PREMISE WIDGET -->
+      <div class="widget widget-premise">
+        <div class="widget-header">
+          <h3>On Premise (Today)</h3>
+        </div>
+        <div class="premise-content">
+          <div class="premise-stats">
+            <div class="stat-item">
+              <span class="stat-label">Planned (All Shifts)</span>
+              <span class="stat-value">8</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Actual (On Premise)</span>
+              <span class="stat-value">4</span>
+            </div>
+          </div>
+          <div class="premise-bars">
+            <div class="bar-row">
+              <span class="bar-label">58% On Premise</span>
+              <div class="bar-track">
+                <div class="bar-fill bar-blue" style="width: 58%"></div>
+                <span class="bar-count">3</span>
+              </div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Gap: 4</span>
+              <div class="bar-track">
+                <div class="bar-fill bar-gray" style="width: 42%"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">58%</span>
+              <div class="bar-track">
+                <div class="bar-fill bar-green" style="width: 25%"></div>
+                <span class="bar-count">1</span>
+              </div>
+            </div>
+          </div>
+          <div class="premise-legend">
+            <span><span class="legend-dot legend-blue"></span> Planned</span>
+            <span><span class="legend-dot legend-green"></span> Actual (On Premise)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPLOYEE DISTRIBUTION -->
+      <div class="widget widget-distribution">
+        <div class="widget-header">
+          <h3>Employee Distribution by Department</h3>
+        </div>
+        <div class="distribution-content">
+          <div class="donut-chart">
+            <svg viewBox="0 0 200 200" class="donut-svg">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#e2e8f0" stroke-width="35" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#3b82f6" stroke-width="35" stroke-dasharray="110 440"
+                stroke-dashoffset="0" transform="rotate(-90 100 100)" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#60a5fa" stroke-width="35" stroke-dasharray="110 440"
+                stroke-dashoffset="-110" transform="rotate(-90 100 100)" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#93c5fd" stroke-width="35" stroke-dasharray="110 440"
+                stroke-dashoffset="-220" transform="rotate(-90 100 100)" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#dbeafe" stroke-width="35" stroke-dasharray="110 440"
+                stroke-dashoffset="-330" transform="rotate(-90 100 100)" />
+            </svg>
+          </div>
+          <div class="distribution-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #3b82f6"></span>
+              <span>Consulting</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #60a5fa"></span>
+              <span>Development...</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background: #93c5fd"></span>
+              <span>Management...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM REQUESTS -->
+      <div class="widget widget-requests">
+        <div class="widget-header">
+          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg> Team Requests</h3>
+          <div class="widget-actions">
+            <span class="date-display">📅 04 Apr 2026</span>
+            <button class="btn-primary btn-sm">Today</button>
+          </div>
+        </div>
+        <div class="requests-content">
+          <div class="section-title">LEAVE AT A GLANCE</div>
+          <div class="leave-today">
+            <div class="leave-icon">📅</div>
+            <div class="leave-info">
+              <span class="leave-label">On Leave Today</span>
+              <span class="leave-count">1</span>
+            </div>
+          </div>
+          <div class="leave-stats">
+            <div class="leave-stat">
+              <span class="stat-count">1</span>
+              <span class="stat-label">14 Days<br />upcoming</span>
+            </div>
+            <div class="leave-stat">
+              <span class="stat-count">1</span>
+              <span class="stat-label">30 Days<br />upcoming</span>
+            </div>
+          </div>
+          <div class="section-title">EXCEPTIONS NEEDING ACTION <span class="badge-count">1 OPEN</span></div>
+          <div class="exception-list">
+            <div class="exception-item">
+              <span class="exception-dot exception-red"></span>
+              <span>Late In</span>
+              <span class="exception-count">1</span>
+            </div>
+            <div class="exception-item">
+              <span class="exception-dot exception-orange"></span>
+              <span>Early Out</span>
+              <span class="exception-count">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEAVE CALENDAR -->
+      <div class="widget widget-calendar">
+        <div class="widget-header">
+          <h3>Team/Workforce Leave Calendar</h3>
+          <div class="widget-actions">
+            <button class="btn-primary btn-sm">Add</button>
+            <button class="btn-ghost btn-sm">2025</button>
+          </div>
+        </div>
+        <div class="calendar-content">
+          <div class="calendar-stat">
+            <span class="stat-count">1</span>
+            <span class="stat-label">On leave today</span>
+          </div>
+          <div class="calendar-placeholder">
+            <span class="placeholder-text">Today</span>
+            <span class="placeholder-subtext">Tap to view employees</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE STATUS -->
+      <div class="widget widget-attendance">
+        <div class="widget-header">
+          <h3>Today's Attendance Status</h3>
+          <div class="widget-actions">
+            <button class="icon-btn">◀</button>
+            <span class="date-display">📅 04 Apr 2026</span>
+            <button class="icon-btn">▶</button>
+            <button class="btn-primary btn-sm">Today</button>
+          </div>
+        </div>
+        <div class="attendance-content">
+          <div class="attendance-bars">
+            <div class="att-bar-group">
+              <div class="att-bar att-green" style="height: 70%"></div>
+              <span class="att-label">8hr</span>
+            </div>
+            <div class="att-bar-group">
+              <div class="att-bar att-red" style="height: 40%"></div>
+              <span class="att-label">3hr</span>
+            </div>
+            <div class="att-bar-group">
+              <div class="att-bar att-orange" style="height: 95%"></div>
+              <span class="att-label">2hr</span>
+            </div>
+            <div class="att-bar-group">
+              <div class="att-bar att-blue" style="height: 55%"></div>
+              <span class="att-label">1hr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMESHEET -->
+      <div class="widget widget-timesheet">
+        <div class="widget-header">
+          <h3>Attendance & Timesheet</h3>
+          <a href="#" class="link-view">View Full</a>
+        </div>
+        <div class="timesheet-content">
+          <div class="progress-section">
+            <span class="progress-label">Weekly Progress</span>
+            <span class="progress-percent">0%</span>
+          </div>
+          <div class="alert-box">
+            <span class="alert-title">Anomaly Detected</span>
+            <span class="alert-text">Missed punch-in on 4 Apr 2026</span>
+            <button class="btn-alert">Correct Now</button>
+          </div>
+          <div class="timesheet-days">
+            <div class="day-item">1hr</div>
+            <div class="day-item">0.98hr</div>
+            <div class="day-item">0.84hr</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

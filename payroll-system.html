@@ -1,0 +1,3421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Payroll System - Automated Salary Processing | navik</title>
+
+  <meta
+    name="description"
+    content="Complete payroll management software with automated salary processing, tax compliance, digital payslips, salary disbursement, and payroll analytics."
+  />
+
+  <meta
+    name="keywords"
+    content="Payroll System, Payroll Software, Salary Processing, Payroll Management, Tax Compliance, Payslip, Salary Automation, Payroll Analytics"
+  />
+
+  <meta name="author" content="navik" />
+  <meta name="theme-color" content="#071535" />
+
+  <link
+    rel="canonical"
+    href="https://navikops.com/product/payroll-system"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="Payroll System - Automated Salary Processing | navik"
+  />
+  <meta
+    property="og:description"
+    content="Automate salary processing, payroll calculations, compliance, payslips, and salary disbursement with Navik Payroll System."
+  />
+  <meta
+    property="og:url"
+    content="https://navikops.com/product/payroll-system"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Existing global styles -->
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
+  <link rel="stylesheet" href="./product-pages.css" />
+  <link rel="stylesheet" href="./demo-form-modal.css" />
+
+  <style>
+
+    /* =========================================================
+       PAYROLL SYSTEM — PREMIUM REDESIGN
+    ========================================================= */
+
+    :root {
+      --pay-navy: #071535;
+      --pay-navy-2: #0d214b;
+      --pay-blue: #2563eb;
+      --pay-blue-light: #4f8ef7;
+      --pay-cyan: #38bdf8;
+      --pay-green: #10b981;
+      --pay-text: #0b1220;
+      --pay-muted: #64748b;
+      --pay-border: #e5eaf2;
+      --pay-soft: #f5f8ff;
+      --pay-white: #ffffff;
+      --pay-shadow: 0 25px 70px rgba(7,21,53,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #fff;
+      color: var(--pay-text);
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      z-index: 99999;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .payroll-hero-new {
+      position: relative;
+      min-height: 850px;
+      padding: 150px 6% 100px;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(37,99,235,.14),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(56,189,248,.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          180deg,
+          #f8fbff 0%,
+          #ffffff 72%
+        );
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .payroll-hero-new::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      right: -280px;
+      top: -300px;
+      border-radius: 50%;
+      border: 1px solid rgba(37,99,235,.08);
+      box-shadow:
+        0 0 0 80px rgba(37,99,235,.025),
+        0 0 0 160px rgba(37,99,235,.018);
+      pointer-events: none;
+    }
+
+    .payroll-hero-grid {
+      position: relative;
+      z-index: 2;
+      max-width: 1450px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    /* LEFT SIDE */
+
+    .payroll-hero-copy {
+      max-width: 650px;
+    }
+
+    .payroll-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(37,99,235,.15);
+      background: rgba(255,255,255,.82);
+      border-radius: 999px;
+      color: #2456bd;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 30px rgba(37,99,235,.07);
+      margin-bottom: 24px;
+    }
+
+    .payroll-eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 5px rgba(16,185,129,.12);
+      animation: payrollPulse 2s infinite;
+    }
+
+    @keyframes payrollPulse {
+      0%,100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(.72);
+        opacity: .55;
+      }
+    }
+
+    .payroll-hero-title {
+      margin: 0;
+      font-size: clamp(50px, 6vw, 86px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      color: #071535;
+    }
+
+    .payroll-hero-title span {
+      display: block;
+      background: linear-gradient(
+        100deg,
+        #2563eb,
+        #4f8ef7,
+        #38bdf8
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .payroll-hero-description {
+      max-width: 600px;
+      margin: 27px 0 34px;
+      color: #52627a;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .payroll-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .payroll-btn {
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .3s ease;
+    }
+
+    .payroll-btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg,#2563eb,#174fc9);
+      box-shadow: 0 15px 30px rgba(37,99,235,.23);
+    }
+
+    .payroll-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(37,99,235,.3);
+    }
+
+    .payroll-btn-secondary {
+      color: #17233c;
+      background: #fff;
+      border: 1px solid #dce3ef;
+    }
+
+    .payroll-btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: #b8c8e3;
+      box-shadow: 0 12px 30px rgba(15,31,75,.08);
+    }
+
+    .payroll-trust-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+      color: #69768a;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .payroll-trust-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .payroll-trust-row strong {
+      color: #10b981;
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       CSS PAYROLL COMMAND CENTER
+    ========================================================= */
+
+    .payroll-visual {
+      position: relative;
+      min-height: 590px;
+      perspective: 1200px;
+    }
+
+    .payroll-dashboard {
+      position: absolute;
+      width: min(690px,100%);
+      right: 0;
+      top: 25px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(213,222,238,.9);
+      border-radius: 25px;
+      padding: 17px;
+      box-shadow:
+        0 35px 90px rgba(7,21,53,.15),
+        0 8px 25px rgba(37,99,235,.06);
+      transform: rotateY(-7deg) rotateX(2deg);
+      animation: dashboardFloat 7s ease-in-out infinite;
+      backdrop-filter: blur(16px);
+    }
+
+    @keyframes dashboardFloat {
+      0%,100% {
+        transform: rotateY(-7deg) rotateX(2deg) translateY(0);
+      }
+      50% {
+        transform: rotateY(-5deg) rotateX(2deg) translateY(-9px);
+      }
+    }
+
+    .dashboard-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 5px 15px;
+    }
+
+    .dashboard-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dashboard-brand-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 15px;
+      font-weight: 900;
+      background: linear-gradient(135deg,#2563eb,#38bdf8);
+      box-shadow: 0 8px 18px rgba(37,99,235,.2);
+    }
+
+    .dashboard-brand-text strong {
+      display: block;
+      color: #10203e;
+      font-size: 13px;
+    }
+
+    .dashboard-brand-text span {
+      color: #8994a8;
+      font-size: 10px;
+    }
+
+    .dashboard-month {
+      padding: 8px 11px;
+      border: 1px solid #e6ebf3;
+      border-radius: 9px;
+      color: #526078;
+      font-size: 10px;
+      font-weight: 700;
+      background: #fbfcff;
+    }
+
+    .dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .dashboard-stat {
+      padding: 15px;
+      border: 1px solid #e7ebf2;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .dashboard-stat-label {
+      color: #8994a8;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .dashboard-stat-value {
+      margin-top: 7px;
+      color: #10203e;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .dashboard-stat-change {
+      margin-top: 5px;
+      color: #10b981;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .dashboard-main {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+    }
+
+    .salary-panel,
+    .payroll-status-panel {
+      border: 1px solid #e7ebf2;
+      border-radius: 15px;
+      background: #fff;
+      padding: 16px;
+    }
+
+    .panel-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 13px;
+    }
+
+    .panel-heading strong {
+      font-size: 11px;
+      color: #16233e;
+    }
+
+    .panel-heading span {
+      font-size: 9px;
+      color: #2563eb;
+      font-weight: 800;
+    }
+
+    .salary-chart {
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 9px;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 29px,
+          #edf1f7 30px
+        );
+    }
+
+    .salary-chart svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: #2563eb;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: chartDraw 3s ease forwards;
+    }
+
+    @keyframes chartDraw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .employee-mini-list {
+      margin-top: 13px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .employee-mini {
+      display: grid;
+      grid-template-columns: 27px 1fr auto;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 9px;
+      background: #f8faff;
+    }
+
+    .employee-avatar {
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #2563eb;
+      background: #eaf1ff;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .employee-mini-name strong {
+      display: block;
+      font-size: 9px;
+      color: #26344c;
+    }
+
+    .employee-mini-name span {
+      font-size: 8px;
+      color: #8b96a8;
+    }
+
+    .employee-amount {
+      font-size: 9px;
+      color: #1a2943;
+      font-weight: 800;
+    }
+
+    .status-ring {
+      width: 135px;
+      height: 135px;
+      margin: 15px auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background: conic-gradient(
+        #2563eb 0 82%,
+        #e9eef7 82% 100%
+      );
+    }
+
+    .status-ring::before {
+      content: "";
+      position: absolute;
+      width: 103px;
+      height: 103px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .status-ring-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .status-ring-content strong {
+      display: block;
+      color: #10203e;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .status-ring-content span {
+      color: #8994a8;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .status-items {
+      display: grid;
+      gap: 7px;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #66748a;
+    }
+
+    .status-item strong {
+      color: #172640;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* FLOATING CARDS */
+
+    .floating-pay-card {
+      position: absolute;
+      z-index: 5;
+      left: -20px;
+      bottom: 70px;
+      width: 220px;
+      padding: 17px;
+      border-radius: 17px;
+      background: rgba(255,255,255,.96);
+      border: 1px solid #e2e8f2;
+      box-shadow: 0 25px 55px rgba(7,21,53,.15);
+      animation: cardFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes cardFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .floating-card-label {
+      color: #8b96a8;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .floating-card-value {
+      margin: 6px 0;
+      color: #071535;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .floating-card-progress {
+      height: 6px;
+      border-radius: 99px;
+      overflow: hidden;
+      background: #edf1f7;
+    }
+
+    .floating-card-progress span {
+      display: block;
+      width: 82%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg,#2563eb,#38bdf8);
+    }
+
+    .floating-card-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      color: #8b96a8;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .floating-approved {
+      position: absolute;
+      right: -18px;
+      bottom: 30px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 13px;
+      background: #fff;
+      border: 1px solid #e1e8f1;
+      box-shadow: 0 20px 45px rgba(7,21,53,.12);
+      animation: approvedFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes approvedFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    .approved-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      color: #059669;
+      background: #e9fbf4;
+      font-weight: 900;
+    }
+
+    .floating-approved strong {
+      display: block;
+      font-size: 10px;
+      color: #18263f;
+    }
+
+    .floating-approved span {
+      font-size: 8px;
+      color: #8994a8;
+    }
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .payroll-trust-strip {
+      position: relative;
+      z-index: 5;
+      padding: 20px 6%;
+      background: #071535;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .payroll-trust-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .trust-label {
+      color: rgba(255,255,255,.58);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .trust-items {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .trust-items span {
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       INTRO SECTION
+    ========================================================= */
+
+    .payroll-intro {
+      padding: 120px 6%;
+      background: #fff;
+    }
+
+    .payroll-intro-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #071535;
+      font-size: clamp(34px,4vw,55px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .section-description {
+      margin-top: 20px;
+      color: #637188;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .intro-points {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+    }
+
+    .intro-point {
+      padding: 20px;
+      border: 1px solid #e7ebf2;
+      border-radius: 16px;
+      background: #fff;
+      transition: .3s ease;
+    }
+
+    .intro-point:hover {
+      transform: translateY(-5px);
+      border-color: #c9d7ef;
+      box-shadow: 0 18px 40px rgba(15,31,75,.07);
+    }
+
+    .intro-point-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 13px;
+      border-radius: 10px;
+      background: #edf4ff;
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .intro-point h3 {
+      margin: 0 0 7px;
+      font-size: 14px;
+      color: #14213b;
+    }
+
+    .intro-point p {
+      margin: 0;
+      color: #7a8799;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FEATURES
+    ========================================================= */
+
+    .payroll-features {
+      padding: 110px 6%;
+      background: #f7f9fd;
+    }
+
+    .payroll-section-header {
+      max-width: 720px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .payroll-section-header .section-description {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .payroll-features-grid {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .payroll-feature-card {
+      position: relative;
+      padding: 28px;
+      min-height: 245px;
+      border: 1px solid #e3e8f0;
+      border-radius: 20px;
+      background: #fff;
+      overflow: hidden;
+      transition: .35s ease;
+    }
+
+    .payroll-feature-card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      right: -55px;
+      bottom: -55px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.06);
+      transition: .35s ease;
+    }
+
+    .payroll-feature-card:hover {
+      transform: translateY(-8px);
+      border-color: #c7d6ef;
+      box-shadow: 0 25px 55px rgba(7,21,53,.08);
+    }
+
+    .payroll-feature-card:hover::after {
+      transform: scale(1.7);
+    }
+
+    .feature-number {
+      position: absolute;
+      right: 22px;
+      top: 20px;
+      color: #e8edf5;
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .feature-symbol {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 13px;
+      color: #2563eb;
+      background: #edf4ff;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .payroll-feature-card h3 {
+      margin: 0 0 10px;
+      color: #14213b;
+      font-size: 16px;
+    }
+
+    .payroll-feature-card p {
+      margin: 0;
+      color: #728096;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       PAYROLL FLOW
+    ========================================================= */
+
+    .payroll-flow {
+      padding: 120px 6%;
+      background: #fff;
+    }
+
+    .flow-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .flow-header {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .flow-header .section-title {
+      max-width: 650px;
+    }
+
+    .flow-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .flow-line::before {
+      content: "";
+      position: absolute;
+      top: 27px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        #2563eb,
+        #8db8ff,
+        #dce7f9
+      );
+    }
+
+    .flow-step {
+      position: relative;
+      z-index: 2;
+    }
+
+    .flow-step-number {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 23px;
+      border-radius: 16px;
+      background: #071535;
+      color: #fff;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 25px rgba(7,21,53,.14);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .flow-step:nth-child(2) .flow-step-number,
+    .flow-step:nth-child(3) .flow-step-number,
+    .flow-step:nth-child(4) .flow-step-number {
+      background: #2563eb;
+    }
+
+    .flow-step h3 {
+      margin: 0 0 9px;
+      color: #16243d;
+      font-size: 15px;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: #7a879a;
+      font-size: 11px;
+      line-height: 1.7;
+      max-width: 220px;
+    }
+
+    /* =========================================================
+       ANALYTICS SECTION
+    ========================================================= */
+
+    .payroll-analytics {
+      padding: 110px 6%;
+      background: linear-gradient(180deg,#071535,#0b1e43);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .analytics-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .analytics-copy .section-title {
+      color: #fff;
+    }
+
+    .analytics-copy .section-description {
+      color: rgba(255,255,255,.68);
+    }
+
+    .analytics-points {
+      margin-top: 30px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .analytics-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.83);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .analytics-check {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #7dd3fc;
+      background: rgba(56,189,248,.12);
+    }
+
+    .analytics-dashboard {
+      position: relative;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 22px;
+      background: rgba(255,255,255,.055);
+      box-shadow: 0 30px 80px rgba(0,0,0,.2);
+      backdrop-filter: blur(14px);
+    }
+
+    .analytics-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .analytics-head strong {
+      font-size: 13px;
+    }
+
+    .analytics-head span {
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.65);
+      font-size: 9px;
+    }
+
+    .analytics-bars {
+      height: 230px;
+      display: flex;
+      align-items: end;
+      gap: 13px;
+      padding: 20px 10px 0;
+      border-radius: 13px;
+      background:
+        repeating-linear-gradient(
+          to top,
+          rgba(255,255,255,.05) 0,
+          rgba(255,255,255,.05) 1px,
+          transparent 1px,
+          transparent 46px
+        );
+    }
+
+    .analytics-bar {
+      flex: 1;
+      min-width: 12px;
+      border-radius: 7px 7px 2px 2px;
+      background: linear-gradient(
+        180deg,
+        #38bdf8,
+        #2563eb
+      );
+      transform-origin: bottom;
+      animation: barRise 1.2s ease backwards;
+    }
+
+    .analytics-bar:nth-child(1) { height: 38%; animation-delay: .05s; }
+    .analytics-bar:nth-child(2) { height: 52%; animation-delay: .1s; }
+    .analytics-bar:nth-child(3) { height: 46%; animation-delay: .15s; }
+    .analytics-bar:nth-child(4) { height: 68%; animation-delay: .2s; }
+    .analytics-bar:nth-child(5) { height: 60%; animation-delay: .25s; }
+    .analytics-bar:nth-child(6) { height: 77%; animation-delay: .3s; }
+    .analytics-bar:nth-child(7) { height: 72%; animation-delay: .35s; }
+    .analytics-bar:nth-child(8) { height: 90%; animation-delay: .4s; }
+
+    @keyframes barRise {
+      from {
+        transform: scaleY(0);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    .analytics-bottom {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .analytics-mini {
+      padding: 13px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .analytics-mini span {
+      display: block;
+      color: rgba(255,255,255,.5);
+      font-size: 8px;
+      text-transform: uppercase;
+    }
+
+    .analytics-mini strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 16px;
+    }
+
+    /* =========================================================
+       BENEFITS
+    ========================================================= */
+
+    .payroll-benefits {
+      padding: 110px 6%;
+      background: #f7f9fd;
+    }
+
+    .benefits-wrap {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .benefits-title {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .benefits-grid-new {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .benefit-new {
+      padding: 27px 22px;
+      border: 1px solid #e2e7ef;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .benefit-new-number {
+      color: #2563eb;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .benefit-new h3 {
+      margin: 9px 0 7px;
+      color: #182640;
+      font-size: 13px;
+    }
+
+    .benefit-new p {
+      margin: 0;
+      color: #8290a3;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       SECURITY
+    ========================================================= */
+
+    .payroll-security {
+      padding: 110px 6%;
+      background: #fff;
+    }
+
+    .security-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .security-card {
+      position: relative;
+      min-height: 350px;
+      padding: 35px;
+      overflow: hidden;
+      border-radius: 25px;
+      background:
+        radial-gradient(
+          circle at 70% 30%,
+          rgba(56,189,248,.18),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #071535,
+          #0c2859
+        );
+      box-shadow: 0 25px 70px rgba(7,21,53,.18);
+    }
+
+    .security-shield {
+      width: 85px;
+      height: 85px;
+      margin-bottom: 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 25px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      color: #7dd3fc;
+      font-size: 38px;
+    }
+
+    .security-card h3 {
+      color: #fff;
+      font-size: 23px;
+      margin: 0 0 10px;
+    }
+
+    .security-card p {
+      max-width: 390px;
+      margin: 0;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .security-orbit {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .security-orbit::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      top: 40px;
+      left: 35px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 20px #38bdf8;
+    }
+
+    .security-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .security-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #526179;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .security-item span {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: #edf4ff;
+      color: #2563eb;
+    }
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .payroll-final-cta {
+      position: relative;
+      padding: 120px 6%;
+      background:
+        radial-gradient(
+          circle at 50% 0,
+          rgba(79,142,247,.22),
+          transparent 40%
+        ),
+        #071535;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .payroll-final-cta::before,
+    .payroll-final-cta::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .payroll-final-cta::before {
+      left: -100px;
+      top: -100px;
+    }
+
+    .payroll-final-cta::after {
+      right: -100px;
+      bottom: -100px;
+    }
+
+    .cta-inner-new {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .cta-inner-new .section-eyebrow {
+      color: #7dd3fc;
+    }
+
+    .cta-inner-new h2 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(38px,5vw,65px);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+      font-weight: 900;
+    }
+
+    .cta-inner-new p {
+      max-width: 620px;
+      margin: 22px auto 32px;
+      color: rgba(255,255,255,.68);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .cta-actions-new {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .payroll-reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .payroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .payroll-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .payroll-hero-copy {
+        max-width: 800px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .payroll-hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .payroll-hero-actions,
+      .payroll-trust-row {
+        justify-content: center;
+      }
+
+      .payroll-visual {
+        max-width: 760px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .payroll-dashboard {
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      @keyframes dashboardFloat {
+        0%,100% {
+          transform: translateX(50%) translateY(0);
+        }
+        50% {
+          transform: translateX(50%) translateY(-9px);
+        }
+      }
+
+      .payroll-intro-inner,
+      .analytics-grid,
+      .security-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .payroll-features-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .benefits-grid-new {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .payroll-hero-new {
+        padding: 125px 20px 70px;
+        min-height: auto;
+      }
+
+      .payroll-hero-title {
+        font-size: clamp(44px,12vw,64px);
+      }
+
+      .payroll-hero-description {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .payroll-visual {
+        min-height: 500px;
+      }
+
+      .payroll-dashboard {
+        width: 100%;
+        top: 10px;
+        padding: 10px;
+        border-radius: 18px;
+        transform: translateX(50%) scale(.9);
+      }
+
+      @keyframes dashboardFloat {
+        0%,100% {
+          transform: translateX(50%) scale(.9) translateY(0);
+        }
+        50% {
+          transform: translateX(50%) scale(.9) translateY(-7px);
+        }
+      }
+
+      .dashboard-stats {
+        gap: 6px;
+      }
+
+      .dashboard-stat {
+        padding: 10px;
+      }
+
+      .dashboard-stat-value {
+        font-size: 16px;
+      }
+
+      .dashboard-main {
+        grid-template-columns: 1fr;
+      }
+
+      .payroll-trust-strip {
+        padding: 17px 20px;
+      }
+
+      .payroll-trust-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .trust-items {
+        justify-content: flex-start;
+      }
+
+      .payroll-intro,
+      .payroll-features,
+      .payroll-flow,
+      .payroll-analytics,
+      .payroll-benefits,
+      .payroll-security,
+      .payroll-final-cta {
+        padding: 80px 20px;
+      }
+
+      .intro-points {
+        grid-template-columns: 1fr;
+      }
+
+      .payroll-features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-line {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .flow-line::before {
+        top: 0;
+        bottom: 0;
+        left: 27px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+
+      .flow-step {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        column-gap: 18px;
+      }
+
+      .flow-step-number {
+        grid-row: span 2;
+        margin: 0;
+      }
+
+      .flow-step p {
+        max-width: none;
+      }
+
+      .benefits-grid-new {
+        grid-template-columns: 1fr;
+      }
+
+      .analytics-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .security-card {
+        min-height: 320px;
+      }
+
+      .floating-pay-card {
+        left: -4px;
+        bottom: 40px;
+        transform: scale(.85);
+        transform-origin: left bottom;
+      }
+
+      .floating-approved {
+        right: -3px;
+        bottom: 15px;
+        transform: scale(.85);
+        transform-origin: right bottom;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .payroll-hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .payroll-btn {
+        width: 100%;
+      }
+
+      .payroll-trust-row {
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      .payroll-dashboard {
+        transform: translateX(50%) scale(.76);
+        transform-origin: top center;
+      }
+
+      @keyframes dashboardFloat {
+        0%,100% {
+          transform: translateX(50%) scale(.76) translateY(0);
+        }
+        50% {
+          transform: translateX(50%) scale(.76) translateY(-6px);
+        }
+      }
+
+      .payroll-visual {
+        min-height: 430px;
+      }
+
+      .floating-pay-card {
+        width: 190px;
+      }
+
+      .floating-approved {
+        padding: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .payroll-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo">
+
+      <img
+        src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+        alt="Navik"
+        class="nav-logo-img"
+      />
+
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+
+    </a>
+
+    <div class="nav-right">
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Products
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+            <a href="employee-self-service.html">Employee Self Service</a>
+            <a href="complience-managemant.html">Compliance Management</a>
+            <a href="reports-analytics.html">Reports & Analytics</a>
+
+          </div>
+
+        </li>
+
+        <li>
+          <a href="index.html#pricing">Pricing</a>
+        </li>
+
+        <li class="nav-dropdown" id="navDropIndustries">
+
+          <a
+            href="javascript:void(0)"
+            class="nav-link-main"
+          >
+            <span>Industries</span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="Retails.html">Retails</a>
+            <a href="Logistics.html">Logistics</a>
+            <a href="Construction.html">Constructions</a>
+            <a href="Sales.html">Sales Team</a>
+            <a href="Manufacturing.html">Manufacturing</a>
+            <a href="Health-Care.html">Health Care</a>
+
+          </div>
+
+        </li>
+
+        <li>
+          <a href="Customers.html">Customers</a>
+        </li>
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Resources
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="tools-hub.html">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+
+            <a
+              href="https://www.youtube.com/@NavikHR"
+              target="_blank"
+              rel="noopener"
+            >
+              Podcasts
+            </a>
+
+          </div>
+
+        </li>
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Company
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="about-us.html">About Us</a>
+            <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+      <div class="nav-actions">
+
+        <a href="#demo" class="btn-nav-cta">
+          Book Demo
+        </a>
+
+      </div>
+
+    </div>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================================================
+     NEW PAYROLL HERO
+========================================================= -->
+
+<section class="payroll-hero-new">
+
+  <div class="payroll-hero-grid">
+
+    <div class="payroll-hero-copy payroll-reveal">
+
+      <div class="payroll-eyebrow">
+        <span class="payroll-eyebrow-dot"></span>
+        Accurate &amp; Compliant Payroll
+      </div>
+
+      <h1 class="payroll-hero-title">
+        Payroll that
+        <span>runs itself.</span>
+      </h1>
+
+      <p class="payroll-hero-description">
+        Automate salary calculations, deductions, payslips,
+        tax compliance, and payroll processing with Navik.
+        Manage the complete payroll cycle from one intelligent
+        command center.
+      </p>
+
+      <div class="payroll-hero-actions">
+
+        <a
+          href="#demo"
+          class="payroll-btn payroll-btn-primary"
+        >
+          Book a Demo
+          <span>→</span>
+        </a>
+
+        <a
+          href="#features"
+          class="payroll-btn payroll-btn-secondary"
+        >
+          Explore Payroll
+          <span>↓</span>
+        </a>
+
+      </div>
+
+      <div class="payroll-trust-row">
+
+        <span>
+          <strong>✓</strong>
+          Automated calculations
+        </span>
+
+        <span>
+          <strong>✓</strong>
+          Compliance-ready
+        </span>
+
+        <span>
+          <strong>✓</strong>
+          Digital payslips
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- CSS VISUAL -->
+    <div class="payroll-visual payroll-reveal">
+
+      <div class="payroll-dashboard">
+
+        <div class="dashboard-topbar">
+
+          <div class="dashboard-brand">
+
+            <div class="dashboard-brand-icon">
+              N
+            </div>
+
+            <div class="dashboard-brand-text">
+              <strong>Payroll Command Center</strong>
+              <span>Monthly payroll overview</span>
+            </div>
+
+          </div>
+
+          <div class="dashboard-month">
+            AUG 2026 ▾
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-stats">
+
+          <div class="dashboard-stat">
+
+            <div class="dashboard-stat-label">
+              Gross Payroll
+            </div>
+
+            <div class="dashboard-stat-value">
+              ₹48.6L
+            </div>
+
+            <div class="dashboard-stat-change">
+              ↑ 4.8% this month
+            </div>
+
+          </div>
+
+          <div class="dashboard-stat">
+
+            <div class="dashboard-stat-label">
+              Employees
+            </div>
+
+            <div class="dashboard-stat-value">
+              1,248
+            </div>
+
+            <div class="dashboard-stat-change">
+              ↑ 32 new
+            </div>
+
+          </div>
+
+          <div class="dashboard-stat">
+
+            <div class="dashboard-stat-label">
+              Net Pay
+            </div>
+
+            <div class="dashboard-stat-value">
+              ₹41.2L
+            </div>
+
+            <div class="dashboard-stat-change">
+              Ready
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-main">
+
+          <div class="salary-panel">
+
+            <div class="panel-heading">
+              <strong>Payroll Expense</strong>
+              <span>VIEW REPORT</span>
+            </div>
+
+            <div class="salary-chart">
+
+              <svg
+                viewBox="0 0 500 120"
+                preserveAspectRatio="none"
+              >
+
+                <path
+                  class="chart-line"
+                  d="
+                    M0,95
+                    C30,90 40,80 65,84
+                    C90,88 100,65 125,70
+                    C150,75 160,55 185,61
+                    C210,68 225,45 250,51
+                    C275,57 285,38 310,44
+                    C335,50 350,31 375,37
+                    C400,43 425,22 450,29
+                    C470,34 485,17 500,20
+                  "
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div class="employee-mini-list">
+
+              <div class="employee-mini">
+
+                <div class="employee-avatar">
+                  AS
+                </div>
+
+                <div class="employee-mini-name">
+                  <strong>Arjun Sharma</strong>
+                  <span>Engineering</span>
+                </div>
+
+                <div class="employee-amount">
+                  ₹82,400
+                </div>
+
+              </div>
+
+              <div class="employee-mini">
+
+                <div class="employee-avatar">
+                  PK
+                </div>
+
+                <div class="employee-mini-name">
+                  <strong>Priya Kapoor</strong>
+                  <span>Operations</span>
+                </div>
+
+                <div class="employee-amount">
+                  ₹71,200
+                </div>
+
+              </div>
+
+              <div class="employee-mini">
+
+                <div class="employee-avatar">
+                  RK
+                </div>
+
+                <div class="employee-mini-name">
+                  <strong>Rahul Kumar</strong>
+                  <span>Sales</span>
+                </div>
+
+                <div class="employee-amount">
+                  ₹64,850
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="payroll-status-panel">
+
+            <div class="panel-heading">
+              <strong>Payroll Status</strong>
+              <span>LIVE</span>
+            </div>
+
+            <div class="status-ring">
+
+              <div class="status-ring-content">
+                <strong>82%</strong>
+                <span>PROCESSED</span>
+              </div>
+
+            </div>
+
+            <div class="status-items">
+
+              <div class="status-item">
+                <span>
+                  <i class="status-dot"></i>
+                  Calculated
+                </span>
+                <strong>1,024</strong>
+              </div>
+
+              <div class="status-item">
+                <span>
+                  <i class="status-dot"></i>
+                  Approved
+                </span>
+                <strong>892</strong>
+              </div>
+
+              <div class="status-item">
+                <span>
+                  <i class="status-dot"></i>
+                  Pending
+                </span>
+                <strong>132</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="floating-pay-card">
+
+        <div class="floating-card-label">
+          Payroll completion
+        </div>
+
+        <div class="floating-card-value">
+          82%
+        </div>
+
+        <div class="floating-card-progress">
+          <span></span>
+        </div>
+
+        <div class="floating-card-footer">
+          <span>1,024 processed</span>
+          <span>1,248 total</span>
+        </div>
+
+      </div>
+
+
+      <div class="floating-approved">
+
+        <div class="approved-icon">
+          ✓
+        </div>
+
+        <div>
+          <strong>Payroll approved</strong>
+          <span>Ready for disbursement</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRUST STRIP
+========================================================= -->
+
+<section class="payroll-trust-strip">
+
+  <div class="payroll-trust-inner">
+
+    <div class="trust-label">
+      One platform. Complete payroll.
+    </div>
+
+    <div class="trust-items">
+      <span>Salary Processing</span>
+      <span>Tax &amp; Statutory</span>
+      <span>Payslips</span>
+      <span>Disbursement</span>
+      <span>Payroll Analytics</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="payroll-intro">
+
+  <div class="payroll-intro-inner">
+
+    <div class="payroll-reveal">
+
+      <span class="section-eyebrow">
+        Payroll Control Center
+      </span>
+
+      <h2 class="section-title">
+        Stop managing payroll through spreadsheets.
+      </h2>
+
+      <p class="section-description">
+        Bring employee data, compensation, attendance,
+        deductions, statutory calculations, approvals,
+        payslips, and payroll reporting into one connected
+        workflow.
+      </p>
+
+    </div>
+
+
+    <div class="intro-points payroll-reveal">
+
+      <div class="intro-point">
+
+        <div class="intro-point-icon">
+          ₹
+        </div>
+
+        <h3>
+          Salary Automation
+        </h3>
+
+        <p>
+          Process salaries using configurable earnings,
+          deductions, overtime, and attendance data.
+        </p>
+
+      </div>
+
+
+      <div class="intro-point">
+
+        <div class="intro-point-icon">
+          ✓
+        </div>
+
+        <h3>
+          Compliance
+        </h3>
+
+        <p>
+          Keep payroll calculations aligned with applicable
+          statutory requirements.
+        </p>
+
+      </div>
+
+
+      <div class="intro-point">
+
+        <div class="intro-point-icon">
+          ↓
+        </div>
+
+        <h3>
+          Faster Processing
+        </h3>
+
+        <p>
+          Reduce repetitive payroll operations with
+          centralized automation.
+        </p>
+
+      </div>
+
+
+      <div class="intro-point">
+
+        <div class="intro-point-icon">
+          ↗
+        </div>
+
+        <h3>
+          Better Visibility
+        </h3>
+
+        <p>
+          Track payroll costs, employee compensation,
+          deductions, and trends in real time.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section
+  class="payroll-features"
+  id="features"
+>
+
+  <div class="payroll-section-header payroll-reveal">
+
+    <span class="section-eyebrow">
+      Payroll Engine
+    </span>
+
+    <h2 class="section-title">
+      Everything payroll teams need.
+    </h2>
+
+    <p class="section-description">
+      From salary calculation to final disbursement,
+      Navik connects every stage of payroll into one
+      streamlined workflow.
+    </p>
+
+  </div>
+
+
+  <div class="payroll-features-grid">
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">01</span>
+
+      <div class="feature-symbol">
+        ₹
+      </div>
+
+      <h3>
+        Automated Salary Processing
+      </h3>
+
+      <p>
+        Calculate employee salaries using configurable
+        compensation structures, allowances, deductions,
+        overtime, attendance, and variable pay.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">02</span>
+
+      <div class="feature-symbol">
+        ▤
+      </div>
+
+      <h3>
+        Digital Payslips
+      </h3>
+
+      <p>
+        Generate professional digital payslips with
+        complete earnings, deductions, tax, and net-pay
+        breakdowns.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">03</span>
+
+      <div class="feature-symbol">
+        ✓
+      </div>
+
+      <h3>
+        Tax &amp; Statutory Compliance
+      </h3>
+
+      <p>
+        Simplify payroll compliance with automated
+        calculations for income tax, PF, ESI, and other
+        applicable deductions.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">04</span>
+
+      <div class="feature-symbol">
+        ↗
+      </div>
+
+      <h3>
+        Salary Disbursement
+      </h3>
+
+      <p>
+        Streamline salary payments with bulk bank transfers,
+        payment files, transaction tracking, and payroll
+        reconciliation workflows.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">05</span>
+
+      <div class="feature-symbol">
+        ◫
+      </div>
+
+      <h3>
+        Payroll Analytics
+      </h3>
+
+      <p>
+        Monitor salary expenses, department costs,
+        compensation trends, payroll changes, and
+        workforce spending.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-feature-card payroll-reveal">
+
+      <span class="feature-number">06</span>
+
+      <div class="feature-symbol">
+        ≡
+      </div>
+
+      <h3>
+        Statutory Reports
+      </h3>
+
+      <p>
+        Generate payroll and compliance documentation
+        required by finance teams, audits, and internal
+        reporting workflows.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAYROLL FLOW
+========================================================= -->
+
+<section class="payroll-flow">
+
+  <div class="flow-container">
+
+    <div class="flow-header payroll-reveal">
+
+      <span class="section-eyebrow">
+        Payroll Workflow
+      </span>
+
+      <h2 class="section-title">
+        From employee data to salary day.
+      </h2>
+
+      <p class="section-description">
+        A connected payroll process eliminates unnecessary
+        manual handoffs and gives payroll teams visibility
+        at every stage.
+      </p>
+
+    </div>
+
+
+    <div class="flow-line">
+
+      <div class="flow-step payroll-reveal">
+
+        <div class="flow-step-number">
+          01
+        </div>
+
+        <div>
+          <h3>
+            Employee Data
+          </h3>
+
+          <p>
+            Employee records, salary structures,
+            bank details, departments, and compensation.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="flow-step payroll-reveal">
+
+        <div class="flow-step-number">
+          02
+        </div>
+
+        <div>
+          <h3>
+            Payroll Rules
+          </h3>
+
+          <p>
+            Configure allowances, deductions,
+            attendance rules, taxes, and policies.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="flow-step payroll-reveal">
+
+        <div class="flow-step-number">
+          03
+        </div>
+
+        <div>
+          <h3>
+            Payroll Processing
+          </h3>
+
+          <p>
+            Calculate gross salary, deductions,
+            taxes, and final net pay automatically.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="flow-step payroll-reveal">
+
+        <div class="flow-step-number">
+          04
+        </div>
+
+        <div>
+          <h3>
+            Approve &amp; Pay
+          </h3>
+
+          <p>
+            Approve payroll, generate payslips,
+            disburse salaries, and generate reports.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ANALYTICS
+========================================================= -->
+
+<section class="payroll-analytics">
+
+  <div class="analytics-grid">
+
+    <div class="analytics-copy payroll-reveal">
+
+      <span class="section-eyebrow">
+        Payroll Intelligence
+      </span>
+
+      <h2 class="section-title">
+        See where your payroll is going.
+      </h2>
+
+      <p class="section-description">
+        Turn payroll data into useful operational insight.
+        Track salary expenses, department costs,
+        compensation changes, and workforce spending
+        without waiting for manual reports.
+      </p>
+
+      <div class="analytics-points">
+
+        <div class="analytics-point">
+          <span class="analytics-check">✓</span>
+          Department-wise payroll analysis
+        </div>
+
+        <div class="analytics-point">
+          <span class="analytics-check">✓</span>
+          Compensation trend monitoring
+        </div>
+
+        <div class="analytics-point">
+          <span class="analytics-check">✓</span>
+          Payroll variance visibility
+        </div>
+
+        <div class="analytics-point">
+          <span class="analytics-check">✓</span>
+          Real-time workforce cost insights
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="analytics-dashboard payroll-reveal">
+
+      <div class="analytics-head">
+
+        <strong>
+          Workforce Payroll Analysis
+        </strong>
+
+        <span>
+          LAST 8 MONTHS
+        </span>
+
+      </div>
+
+
+      <div class="analytics-bars">
+
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+        <div class="analytics-bar"></div>
+
+      </div>
+
+
+      <div class="analytics-bottom">
+
+        <div class="analytics-mini">
+          <span>Payroll</span>
+          <strong>₹48.6L</strong>
+        </div>
+
+        <div class="analytics-mini">
+          <span>Avg. Salary</span>
+          <strong>₹39K</strong>
+        </div>
+
+        <div class="analytics-mini">
+          <span>Growth</span>
+          <strong>+8.4%</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BENEFITS
+========================================================= -->
+
+<section class="payroll-benefits">
+
+  <div class="benefits-wrap">
+
+    <div class="benefits-title payroll-reveal">
+
+      <span class="section-eyebrow">
+        Business Impact
+      </span>
+
+      <h2 class="section-title">
+        Less payroll administration. More control.
+      </h2>
+
+    </div>
+
+
+    <div class="benefits-grid-new">
+
+      <div class="benefit-new payroll-reveal">
+
+        <div class="benefit-new-number">
+          80%
+        </div>
+
+        <h3>
+          Less Processing Time
+        </h3>
+
+        <p>
+          Reduce repetitive payroll operations and
+          accelerate monthly processing.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-new payroll-reveal">
+
+        <div class="benefit-new-number">
+          99%
+        </div>
+
+        <h3>
+          Calculation Accuracy
+        </h3>
+
+        <p>
+          Reduce spreadsheet errors through
+          standardized payroll calculations.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-new payroll-reveal">
+
+        <div class="benefit-new-number">
+          90%
+        </div>
+
+        <h3>
+          Less Manual Work
+        </h3>
+
+        <p>
+          Automate repetitive tasks across the
+          payroll lifecycle.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-new payroll-reveal">
+
+        <div class="benefit-new-number">
+          24/7
+        </div>
+
+        <h3>
+          Employee Access
+        </h3>
+
+        <p>
+          Give employees access to payslips and
+          payroll records whenever needed.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SECURITY
+========================================================= -->
+
+<section class="payroll-security">
+
+  <div class="security-container">
+
+    <div class="security-card payroll-reveal">
+
+      <div class="security-orbit"></div>
+
+      <div class="security-shield">
+        ✓
+      </div>
+
+      <h3>
+        Payroll data stays controlled.
+      </h3>
+
+      <p>
+        Keep sensitive compensation and payroll
+        information inside a centralized system with
+        structured access and approval workflows.
+      </p>
+
+    </div>
+
+
+    <div class="payroll-reveal">
+
+      <span class="section-eyebrow">
+        Built for Control
+      </span>
+
+      <h2 class="section-title">
+        Give payroll teams confidence at every step.
+      </h2>
+
+      <p class="section-description">
+        From payroll preparation to final approval,
+        every stage can be organized into a transparent,
+        controlled process.
+      </p>
+
+      <div class="security-list">
+
+        <div class="security-item">
+          <span>✓</span>
+          Centralized payroll records
+        </div>
+
+        <div class="security-item">
+          <span>✓</span>
+          Configurable approval workflows
+        </div>
+
+        <div class="security-item">
+          <span>✓</span>
+          Payroll history and reporting
+        </div>
+
+        <div class="security-item">
+          <span>✓</span>
+          Controlled employee access
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section
+  class="payroll-final-cta"
+  id="demo"
+>
+
+  <div class="cta-inner-new payroll-reveal">
+
+    <span class="section-eyebrow">
+      Ready to modernize payroll?
+    </span>
+
+    <h2>
+      Make salary day the easiest day of the month.
+    </h2>
+
+    <p>
+      Replace manual payroll operations with a centralized
+      platform designed for accurate salary processing,
+      compliance, reporting, and employee transparency.
+    </p>
+
+    <div class="cta-actions-new">
+
+      <a
+        href="#demo"
+        class="payroll-btn payroll-btn-primary"
+      >
+        Book Your Demo →
+      </a>
+
+      <a
+        href="index.html"
+        class="payroll-btn payroll-btn-secondary"
+      >
+        Back to Home
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="nav-logo footer-logo"
+        >
+
+          <img
+            src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+            alt="Navik"
+            class="footer-logo-img"
+          />
+
+          <span class="nav-logo-text">
+
+            <span class="nav-logo-animated">
+              HR
+            </span>
+
+            <span class="nav-logo-animated">
+              WFM
+            </span>
+
+            <span class="nav-logo-animated">
+              Payroll
+            </span>
+
+          </span>
+
+        </a>
+
+        <p>
+          The complete HR, Workforce Management &amp;
+          Payroll platform for modern businesses.
+        </p>
+
+        <div class="app-download-buttons">
+
+          <a
+            href="#"
+            class="app-store-btn"
+            aria-label="Download on App Store"
+          >
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+
+            <div class="app-btn-text">
+              <span class="app-btn-label">
+                Download on the
+              </span>
+
+              <span class="app-btn-store">
+                App Store
+              </span>
+            </div>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="google-play-btn"
+            aria-label="Get it on Google Play"
+          >
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+
+            <div class="app-btn-text">
+              <span class="app-btn-label">
+                GET IT ON
+              </span>
+
+              <span class="app-btn-store">
+                Google Play
+              </span>
+            </div>
+
+          </a>
+
+        </div>
+
+
+        <div class="footer-socials">
+
+          <a
+            href="https://www.instagram.com/navik.ops?igsh=MXdicHJlNDV4eHF1MQ=="
+            aria-label="Instagram"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+              />
+
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+
+              <line
+                x1="17.5"
+                y1="6.5"
+                x2="17.51"
+                y2="6.5"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="Facebook"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="https://www.youtube.com/@NavikHR"
+            aria-label="YouTube"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+
+              <rect
+                x="2"
+                y="9"
+                width="4"
+                height="12"
+              />
+
+              <circle
+                cx="4"
+                cy="4"
+                r="2"
+              />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>Product</h5>
+
+        <a href="hr-system.html">HR System</a>
+        <a href="workforce-management.html">Workforce Management</a>
+        <a href="payroll-system.html">Payroll System</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="contract-workforce.html">Contract Workforce Management</a>
+        <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+        <a href="employee-self-service.html">Employee Self Service</a>
+        <a href="complience-managemant.html">Compliance Management</a>
+        <a href="reports-analytics.html">Reports &amp; Analytics</a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>Company</h5>
+
+        <a href="about-us.html">About Us</a>
+        <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+        <a href="blog.html">Blogs</a>
+        <a href="#">Press</a>
+        <a href="Customers.html">Customers</a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>Resources</h5>
+
+        <a href="blog.html">Blogs</a>
+        <a href="templates.html">Templates</a>
+        <a href="Case-Studies.html">Case Studies</a>
+        <a href="tools-hub.html">HR Tools</a>
+        <a href="#">Help Center</a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>Contact</h5>
+
+        <a href="mailto:contact@navik.com">
+          contact@navik.com
+        </a>
+
+        <a href="tel:+919196000515">
+          +91-9196000515
+        </a>
+
+        <span>
+          Kanpur, India
+        </span>
+
+        <a
+          href="#demo"
+          style="
+            margin-top:12px;
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            background:linear-gradient(
+              135deg,
+              var(--navy-mid),
+              var(--blue)
+            );
+            color:#fff;
+            padding:10px 16px;
+            border-radius:9px;
+            font-size:13px;
+            font-weight:700;
+            text-decoration:none;
+          "
+        >
+          Book a Demo →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 navik. All rights reserved.
+        Made with ❤ in India
+      </span>
+
+      <div class="footer-legal">
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Terms of Service
+        </a>
+
+        <a href="#">
+          Security
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="./demo-form-modal.js" defer></script>
+<script src="./main.js" defer></script>
+
+<script>
+
+  /* =========================================================
+     SCROLL PROGRESS
+  ========================================================= */
+
+  window.addEventListener("scroll", function () {
+
+    const progress =
+      document.getElementById("scroll-progress");
+
+    const scrollTop =
+      window.scrollY;
+
+    const height =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    const percentage =
+      height > 0
+        ? (scrollTop / height) * 100
+        : 0;
+
+    progress.style.width =
+      percentage + "%";
+
+  });
+
+
+  /* =========================================================
+     REVEAL ANIMATIONS
+  ========================================================= */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+      const items =
+        document.querySelectorAll(
+          ".payroll-reveal"
+        );
+
+      if (
+        !("IntersectionObserver" in window)
+      ) {
+
+        items.forEach(
+          item =>
+            item.classList.add("visible")
+        );
+
+        return;
+
+      }
+
+      const observer =
+        new IntersectionObserver(
+          function (entries) {
+
+            entries.forEach(
+              function (entry) {
+
+                if (
+                  entry.isIntersecting
+                ) {
+
+                  entry.target.classList.add(
+                    "visible"
+                  );
+
+                  observer.unobserve(
+                    entry.target
+                  );
+
+                }
+
+              }
+            );
+
+          },
+          {
+            threshold: .12,
+            rootMargin: "0px 0px -50px 0px"
+          }
+        );
+
+      items.forEach(
+        item =>
+          observer.observe(item)
+      );
+
+    }
+  );
+
+</script>
+
+</body>
+</html>

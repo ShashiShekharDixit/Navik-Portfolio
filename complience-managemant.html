@@ -1,0 +1,5870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Compliance Management System | navik</title>
+
+  <meta
+    name="description"
+    content="Ensure regulatory compliance with navik's Compliance Management system. Track policies, certifications, audit trails, compliance requirements and regulatory obligations."
+  />
+
+  <meta
+    name="keywords"
+    content="Compliance Management, Regulatory Compliance, Policy Management, Compliance Tracking, Audit Trail, Labor Law Compliance"
+  />
+
+  <meta name="author" content="navik" />
+  <meta name="theme-color" content="#0f1f4b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Compliance Management System | navik" />
+  <meta
+    property="og:description"
+    content="Ensure regulatory compliance with navik's comprehensive Compliance Management system."
+  />
+  <meta
+    property="og:url"
+    content="https://navikops.com/product/compliance-management"
+  />
+
+  <link
+    rel="canonical"
+    href="https://navikops.com/product/compliance-management"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --navy: #07132f;
+      --navy-deep: #040b1c;
+      --navy-mid: #0f1f4b;
+      --blue: #2563eb;
+      --blue-light: #4f8ef7;
+      --blue-soft: #eff6ff;
+      --cyan: #38bdf8;
+      --green: #10b981;
+      --green-soft: #ecfdf5;
+      --orange: #f59e0b;
+      --red: #ef4444;
+
+      --white: #ffffff;
+      --black: #080f1e;
+
+      --text: #172033;
+      --text-soft: #64748b;
+      --text-light: #94a3b8;
+
+      --border: #e2e8f0;
+      --border-light: #edf2f7;
+
+      --section: #f8fafc;
+
+      --shadow-sm:
+        0 4px 16px rgba(15, 31, 75, 0.06);
+
+      --shadow-md:
+        0 15px 40px rgba(15, 31, 75, 0.09);
+
+      --shadow-lg:
+        0 30px 80px rgba(15, 31, 75, 0.13);
+
+      --ease:
+        cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: rgba(37, 99, 235, 0.18);
+      color: var(--navy);
+    }
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--cyan)
+      );
+      z-index: 99999;
+      transition: width 0.08s linear;
+    }
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 82px;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+
+      z-index: 5000;
+
+      transition:
+        height 0.45s var(--ease),
+        box-shadow 0.45s var(--ease),
+        background 0.45s var(--ease);
+    }
+
+    .navbar.scrolled {
+      height: 68px;
+
+      background: rgba(255, 255, 255, 0.97);
+
+      box-shadow:
+        0 10px 35px rgba(15, 31, 75, 0.08);
+    }
+
+    .nav-inner {
+      width: min(1380px, calc(100% - 56px));
+      height: 100%;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    /* =========================================================
+       LOGO
+    ========================================================= */
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      flex-shrink: 0;
+
+      height: 100%;
+    }
+
+    .nav-logo-img {
+      width: 43px;
+      height: 43px;
+
+      object-fit: contain;
+
+      transition:
+        width 0.4s var(--ease),
+        height 0.4s var(--ease),
+        transform 0.4s var(--ease);
+    }
+
+    .navbar.scrolled .nav-logo-img {
+      width: 37px;
+      height: 37px;
+    }
+
+    .nav-logo:hover .nav-logo-img {
+      transform: rotate(-4deg) scale(1.05);
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+
+      height: 24px;
+
+      overflow: hidden;
+
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+
+      color: var(--navy);
+
+      line-height: 24px;
+    }
+
+    .nav-logo-animated {
+      display: block;
+
+      animation:
+        logoWords 9s infinite;
+
+      transform: translateY(0);
+    }
+
+    .nav-logo-animated:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .nav-logo-animated:nth-child(3) {
+      animation-delay: 6s;
+    }
+
+    @keyframes logoWords {
+      0%,
+      27% {
+        transform: translateY(0);
+      }
+
+      33%,
+      60% {
+        transform: translateY(-24px);
+      }
+
+      66%,
+      93% {
+        transform: translateY(-48px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       NAV RIGHT
+    ========================================================= */
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      min-width: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+
+      gap: 4px;
+    }
+
+    .nav-links > li {
+      position: relative;
+    }
+
+    .nav-links > li > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      padding: 9px 11px;
+
+      color: #334155;
+
+      font-size: 13px;
+      font-weight: 650;
+
+      border-radius: 8px;
+
+      white-space: nowrap;
+
+      transition:
+        color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .nav-links > li > a:hover {
+      color: var(--blue);
+      background: #f5f8ff;
+    }
+
+    .nav-dropdown-chevron {
+      transition: transform 0.3s ease;
+    }
+
+    .nav-dropdown:hover
+    .nav-dropdown-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* =========================================================
+       DROPDOWN
+    ========================================================= */
+
+    .nav-dropdown-menu {
+      position: absolute;
+
+      top: calc(100% + 12px);
+      left: 50%;
+
+      width: 270px;
+
+      transform:
+        translateX(-50%)
+        translateY(8px);
+
+      padding: 9px;
+
+      background: rgba(255, 255, 255, 0.98);
+
+      border:
+        1px solid
+        rgba(226, 232, 240, 0.9);
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 25px 70px rgba(15, 31, 75, 0.15);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s var(--ease);
+    }
+
+    .nav-dropdown-menu::before {
+      content: "";
+
+      position: absolute;
+
+      top: -6px;
+      left: 50%;
+
+      width: 12px;
+      height: 12px;
+
+      transform: translateX(-50%) rotate(45deg);
+
+      background: white;
+
+      border-left: 1px solid #e2e8f0;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+
+      padding: 10px 12px;
+
+      border-radius: 9px;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      color: #475569;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .nav-dropdown-menu a:hover {
+      color: var(--blue);
+      background: #eff6ff;
+      transform: translateX(3px);
+    }
+
+    /* =========================================================
+       NAV CTA
+    ========================================================= */
+
+    .nav-actions {
+      flex-shrink: 0;
+    }
+
+    .btn-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 11px 19px;
+
+      border-radius: 9px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #1745b5
+        );
+
+      color: white;
+
+      font-size: 13px;
+      font-weight: 750;
+
+      box-shadow:
+        0 8px 22px rgba(37, 99, 235, 0.24);
+
+      transition:
+        transform 0.25s var(--ease),
+        box-shadow 0.25s ease;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 13px 30px rgba(37, 99, 235, 0.34);
+    }
+
+    /* =========================================================
+       HAMBURGER
+    ========================================================= */
+
+    .hamburger {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: white;
+
+      cursor: pointer;
+
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 19px;
+      height: 2px;
+
+      background: var(--navy);
+
+      border-radius: 5px;
+
+      transition: 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .compliance-hero {
+      position: relative;
+
+      min-height: 790px;
+
+      padding:
+        155px
+        28px
+        105px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 35%,
+          rgba(37, 99, 235, 0.17),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 18% 15%,
+          rgba(56, 189, 248, 0.08),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #f8fbff 0%,
+          #ffffff 55%,
+          #f3f7ff 100%
+        );
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.45;
+
+      background-image:
+        linear-gradient(
+          rgba(37, 99, 235, 0.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(37, 99, 235, 0.045) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
+    }
+
+    .hero-glow {
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -180px;
+      top: 80px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.16),
+          transparent 68%
+        );
+
+      filter: blur(10px);
+
+      animation:
+        heroGlow 7s ease-in-out infinite;
+    }
+
+    @keyframes heroGlow {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .hero-container {
+      position: relative;
+
+      z-index: 2;
+
+      width: min(1280px, 100%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(480px, 1.05fr);
+
+      align-items: center;
+
+      gap: 70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 13px;
+
+      margin-bottom: 22px;
+
+      border:
+        1px solid
+        rgba(37, 99, 235, 0.15);
+
+      border-radius: 100px;
+
+      background:
+        rgba(239, 246, 255, 0.8);
+
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 750;
+
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 0 5px
+        rgba(16, 185, 129, 0.12);
+
+      animation:
+        pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 4px rgba(16, 185, 129, 0.1);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 8px rgba(16, 185, 129, 0.03);
+      }
+    }
+
+    .hero-title {
+      max-width: 700px;
+
+      font-size:
+        clamp(
+          48px,
+          5.3vw,
+          78px
+        );
+
+      line-height: 0.99;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 900;
+
+      color: var(--navy);
+
+      margin-bottom: 25px;
+    }
+
+    .hero-title span {
+      background:
+        linear-gradient(
+          110deg,
+          #2563eb,
+          #4f8ef7,
+          #0ea5e9
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: #64748b;
+
+      font-size:
+        clamp(16px, 1.45vw, 19px);
+
+      line-height: 1.75;
+
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-bottom: 35px;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      min-height: 50px;
+
+      padding: 0 20px;
+
+      border-radius: 10px;
+
+      font-size: 14px;
+      font-weight: 750;
+
+      transition:
+        transform 0.25s var(--ease),
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .hero-btn-primary {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #1745b5
+        );
+
+      box-shadow:
+        0 13px 30px rgba(37, 99, 235, 0.23);
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 20px 38px rgba(37, 99, 235, 0.31);
+    }
+
+    .hero-btn-secondary {
+      color: var(--navy);
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0 5px 16px rgba(15, 31, 75, 0.05);
+    }
+
+    .hero-btn-secondary:hover {
+      transform: translateY(-3px);
+
+      border-color: #bfdbfe;
+
+      box-shadow:
+        0 13px 25px rgba(15, 31, 75, 0.08);
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      color: #64748b;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .trust-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 22px;
+      height: 22px;
+
+      border-radius: 50%;
+
+      background: var(--green-soft);
+
+      color: var(--green);
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
+
+    .hero-visual {
+      position: relative;
+
+      min-height: 500px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dashboard-shell {
+      position: relative;
+
+      width: 100%;
+      max-width: 590px;
+
+      padding: 13px;
+
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(240, 246, 255, 0.88)
+        );
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+      box-shadow:
+        0 40px 90px rgba(15, 31, 75, 0.17),
+        0 10px 35px rgba(37, 99, 235, 0.08);
+
+      transform:
+        perspective(1300px)
+        rotateY(-5deg)
+        rotateX(2deg);
+
+      transition:
+        transform 0.7s var(--ease);
+    }
+
+    .dashboard-shell:hover {
+      transform:
+        perspective(1300px)
+        rotateY(0deg)
+        rotateX(0deg)
+        translateY(-5px);
+    }
+
+    .dashboard {
+      overflow: hidden;
+
+      border-radius: 15px;
+
+      background: #f8fafc;
+
+      border: 1px solid #e2e8f0;
+    }
+
+    .dashboard-topbar {
+      height: 52px;
+
+      padding: 0 17px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: white;
+
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .dashboard-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      color: var(--navy);
+    }
+
+    .dashboard-brand-icon {
+      width: 25px;
+      height: 25px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 7px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #38bdf8
+        );
+
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .dashboard-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      color: var(--green);
+    }
+
+    .dashboard-status-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+    }
+
+    .dashboard-body {
+      display: grid;
+
+      grid-template-columns: 125px 1fr;
+
+      min-height: 345px;
+    }
+
+    .dashboard-sidebar {
+      padding: 14px 9px;
+
+      background: #f1f5f9;
+
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .side-label {
+      padding: 5px 8px;
+
+      margin-bottom: 5px;
+
+      font-size: 8px;
+      font-weight: 800;
+
+      color: #94a3b8;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+    }
+
+    .side-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px;
+
+      margin-bottom: 3px;
+
+      border-radius: 7px;
+
+      color: #64748b;
+
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+    .side-item.active {
+      color: var(--blue);
+
+      background: #dbeafe;
+    }
+
+    .side-icon {
+      width: 15px;
+      text-align: center;
+    }
+
+    .dashboard-main {
+      padding: 18px;
+
+      background: #f8fafc;
+    }
+
+    .dashboard-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 16px;
+    }
+
+    .dashboard-heading h3 {
+      color: var(--navy);
+
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .dashboard-date {
+      padding: 5px 8px;
+
+      border-radius: 6px;
+
+      background: white;
+
+      border: 1px solid #e2e8f0;
+
+      color: #64748b;
+
+      font-size: 8px;
+      font-weight: 650;
+    }
+
+    .metric-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 9px;
+
+      margin-bottom: 12px;
+    }
+
+    .metric {
+      padding: 11px;
+
+      border-radius: 9px;
+
+      background: white;
+
+      border: 1px solid #e2e8f0;
+
+      box-shadow:
+        0 4px 12px rgba(15, 31, 75, 0.035);
+    }
+
+    .metric-label {
+      color: #94a3b8;
+
+      font-size: 7px;
+      font-weight: 750;
+
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin-top: 4px;
+
+      color: var(--navy);
+
+      font-size: 18px;
+      font-weight: 900;
+
+      letter-spacing: -0.04em;
+    }
+
+    .metric.green .metric-value {
+      color: var(--green);
+    }
+
+    .metric.orange .metric-value {
+      color: var(--orange);
+    }
+
+    .metric.blue .metric-value {
+      color: var(--blue);
+    }
+
+    .compliance-panel {
+      padding: 13px;
+
+      background: white;
+
+      border:
+        1px solid
+        #e2e8f0;
+
+      border-radius: 10px;
+
+      margin-bottom: 11px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 11px;
+    }
+
+    .panel-head strong {
+      color: var(--navy);
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .panel-head span {
+      color: var(--blue);
+
+      font-size: 8px;
+      font-weight: 750;
+    }
+
+    .progress-item {
+      margin-bottom: 10px;
+    }
+
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 4px;
+
+      color: #64748b;
+
+      font-size: 8px;
+      font-weight: 650;
+    }
+
+    .progress-row strong {
+      color: var(--navy);
+    }
+
+    .progress-bar {
+      height: 5px;
+
+      overflow: hidden;
+
+      border-radius: 100px;
+
+      background: #e2e8f0;
+    }
+
+    .progress-fill {
+      height: 100%;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          90deg,
+          #2563eb,
+          #38bdf8
+        );
+    }
+
+    .progress-fill.green {
+      background:
+        linear-gradient(
+          90deg,
+          #10b981,
+          #34d399
+        );
+    }
+
+    .progress-fill.orange {
+      background:
+        linear-gradient(
+          90deg,
+          #f59e0b,
+          #fbbf24
+        );
+    }
+
+    .audit-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px;
+
+      background: #f8fafc;
+
+      border-radius: 7px;
+    }
+
+    .audit-icon {
+      width: 25px;
+      height: 25px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 7px;
+
+      background: #dcfce7;
+
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .audit-text {
+      flex: 1;
+    }
+
+    .audit-text strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 8px;
+      font-weight: 750;
+    }
+
+    .audit-text span {
+      color: #94a3b8;
+
+      font-size: 7px;
+    }
+
+    .audit-check {
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    /* Floating cards */
+
+    .floating-card {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 11px 13px;
+
+      border:
+        1px solid
+        rgba(226, 232, 240, 0.9);
+
+      border-radius: 11px;
+
+      background:
+        rgba(255, 255, 255, 0.94);
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 18px 45px rgba(15, 31, 75, 0.12);
+
+      z-index: 5;
+
+      animation:
+        floatCard 5s ease-in-out infinite;
+    }
+
+    .floating-card.one {
+      left: -35px;
+      top: 65px;
+    }
+
+    .floating-card.two {
+      right: -25px;
+      bottom: 70px;
+
+      animation-delay: -2s;
+    }
+
+    .floating-icon {
+      width: 31px;
+      height: 31px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .floating-card.one .floating-icon {
+      color: var(--green);
+      background: #dcfce7;
+    }
+
+    .floating-card.two .floating-icon {
+      color: var(--blue);
+      background: #dbeafe;
+    }
+
+    .floating-text strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .floating-text span {
+      display: block;
+
+      color: #94a3b8;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    @keyframes floatCard {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    /* =========================================================
+       SECTION COMMON
+    ========================================================= */
+
+    .section {
+      padding: 105px 28px;
+    }
+
+    .section-container {
+      width: min(1200px, 100%);
+      margin: auto;
+    }
+
+    .section-header {
+      max-width: 730px;
+
+      margin: 0 auto 55px;
+
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+
+      padding: 7px 12px;
+
+      margin-bottom: 15px;
+
+      border-radius: 100px;
+
+      background: #eff6ff;
+
+      color: var(--blue);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      color: var(--navy);
+
+      font-size:
+        clamp(32px, 4vw, 48px);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 900;
+
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: #64748b;
+
+      font-size: 16px;
+
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       OVERVIEW
+    ========================================================= */
+
+    .overview-section {
+      background: white;
+    }
+
+    .overview-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.9fr
+        1.1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .overview-copy h2 {
+      color: var(--navy);
+
+      font-size:
+        clamp(32px, 4vw, 46px);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+
+      margin-bottom: 22px;
+
+      font-weight: 900;
+    }
+
+    .overview-copy p {
+      color: #64748b;
+
+      font-size: 16px;
+
+      line-height: 1.85;
+
+      margin-bottom: 18px;
+    }
+
+    .overview-checks {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+    .overview-check {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      color: #334155;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .check-circle {
+      flex-shrink: 0;
+
+      width: 23px;
+      height: 23px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #dcfce7;
+
+      color: var(--green);
+
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .overview-visual {
+      position: relative;
+
+      min-height: 410px;
+
+      padding: 30px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f8fbff,
+          #eef5ff
+        );
+
+      border:
+        1px solid
+        #dbeafe;
+
+      overflow: hidden;
+    }
+
+    .overview-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -90px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(37, 99, 235, 0.09);
+    }
+
+    .control-card {
+      position: relative;
+
+      z-index: 2;
+
+      padding: 20px;
+
+      background: white;
+
+      border: 1px solid #e2e8f0;
+
+      border-radius: 15px;
+
+      box-shadow: var(--shadow-md);
+
+      margin-bottom: 13px;
+    }
+
+    .control-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 17px;
+    }
+
+    .control-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-icon {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: #eff6ff;
+
+      color: var(--blue);
+
+      font-size: 17px;
+    }
+
+    .control-title strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .control-title span {
+      color: #94a3b8;
+
+      font-size: 10px;
+    }
+
+    .status-pill {
+      padding: 5px 8px;
+
+      border-radius: 100px;
+
+      background: #dcfce7;
+
+      color: #15803d;
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .control-lines {
+      display: grid;
+
+      gap: 9px;
+    }
+
+    .control-line {
+      height: 8px;
+
+      border-radius: 100px;
+
+      background: #f1f5f9;
+    }
+
+    .control-line:nth-child(1) {
+      width: 92%;
+    }
+
+    .control-line:nth-child(2) {
+      width: 75%;
+    }
+
+    .control-line:nth-child(3) {
+      width: 84%;
+    }
+
+    .control-stat-row {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 10px;
+    }
+
+    .mini-stat {
+      padding: 13px;
+
+      background: white;
+
+      border: 1px solid #e2e8f0;
+
+      border-radius: 12px;
+
+      text-align: center;
+    }
+
+    .mini-stat strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .mini-stat span {
+      color: #94a3b8;
+
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+    /* =========================================================
+       FEATURES
+    ========================================================= */
+
+    .features-section {
+      background: var(--section);
+    }
+
+    .features-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 17px;
+    }
+
+    .feature-card {
+      position: relative;
+
+      padding: 28px 24px;
+
+      min-height: 245px;
+
+      background: white;
+
+      border:
+        1px solid
+        #e5eaf2;
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 5px 20px rgba(15, 31, 75, 0.035);
+
+      overflow: hidden;
+
+      transition:
+        transform 0.35s var(--ease),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .feature-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      right: -50px;
+      bottom: -55px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(37, 99, 235, 0.05);
+
+      transition:
+        transform 0.4s var(--ease);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-7px);
+
+      border-color: #bfdbfe;
+
+      box-shadow:
+        0 20px 45px rgba(15, 31, 75, 0.09);
+    }
+
+    .feature-card:hover::after {
+      transform: scale(1.5);
+    }
+
+    .feature-icon {
+      width: 47px;
+      height: 47px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 20px;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff,
+          #dbeafe
+        );
+
+      color: var(--blue);
+
+      font-size: 21px;
+
+      transition:
+        transform 0.35s var(--ease);
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    .feature-title {
+      color: var(--navy);
+
+      font-size: 17px;
+      font-weight: 800;
+
+      margin-bottom: 9px;
+
+      letter-spacing: -0.02em;
+    }
+
+    .feature-description {
+      color: #64748b;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       COMPLIANCE WORKFLOW
+    ========================================================= */
+
+    .workflow-section {
+      background: white;
+    }
+
+    .workflow {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 0;
+    }
+
+    .workflow::before {
+      content: "";
+
+      position: absolute;
+
+      top: 31px;
+      left: 12%;
+      right: 12%;
+
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #dbeafe,
+          #93c5fd,
+          #dbeafe
+        );
+
+      z-index: 0;
+    }
+
+    .workflow-step {
+      position: relative;
+
+      z-index: 1;
+
+      text-align: center;
+
+      padding: 0 18px;
+    }
+
+    .workflow-number {
+      width: 63px;
+      height: 63px;
+
+      display: grid;
+      place-items: center;
+
+      margin: 0 auto 22px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #1745b5
+        );
+
+      color: white;
+
+      border:
+        6px solid
+        white;
+
+      box-shadow:
+        0 8px 24px rgba(37, 99, 235, 0.22);
+
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .workflow-step h3 {
+      color: var(--navy);
+
+      font-size: 16px;
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .workflow-step p {
+      color: #64748b;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       BENEFITS DARK
+    ========================================================= */
+
+    .benefits-section {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        110px
+        28px;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(37, 99, 235, 0.28),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #07132f,
+          #0d1f4a
+        );
+
+      color: white;
+    }
+
+    .benefits-section::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: 0.12;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.2) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.2) 1px,
+          transparent 1px
+        );
+
+      background-size: 60px 60px;
+    }
+
+    .benefits-container {
+      position: relative;
+
+      z-index: 2;
+
+      width: min(1180px, 100%);
+
+      margin: auto;
+    }
+
+    .benefits-header {
+      max-width: 700px;
+
+      margin: 0 auto 55px;
+
+      text-align: center;
+    }
+
+    .benefits-header .section-eyebrow {
+      background: rgba(79, 142, 247, 0.16);
+
+      color: #8db9ff;
+    }
+
+    .benefits-header .section-title {
+      color: white;
+    }
+
+    .benefits-header .section-subtitle {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .benefits-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 13px;
+    }
+
+    .benefit-card {
+      position: relative;
+
+      padding: 30px 20px;
+
+      min-height: 180px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+      border-radius: 16px;
+
+      background:
+        rgba(255,255,255,0.055);
+
+      backdrop-filter: blur(10px);
+
+      transition:
+        transform 0.35s var(--ease),
+        background 0.35s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-7px);
+
+      background:
+        rgba(255,255,255,0.09);
+    }
+
+    .benefit-number {
+      margin-bottom: 7px;
+
+      color: white;
+
+      font-size: 42px;
+      font-weight: 900;
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .benefit-label {
+      color: #7eb3ff;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+
+      margin-bottom: 7px;
+    }
+
+    .benefit-title {
+      color: rgba(255,255,255,0.78);
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       REGULATORY EXCELLENCE
+    ========================================================= */
+
+    .regulatory-section {
+      background: #f8fafc;
+    }
+
+    .regulatory-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .regulatory-copy h2 {
+      color: var(--navy);
+
+      font-size:
+        clamp(32px, 4vw, 46px);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+
+      margin-bottom: 19px;
+
+      font-weight: 900;
+    }
+
+    .regulatory-copy p {
+      color: #64748b;
+
+      font-size: 15px;
+
+      line-height: 1.85;
+
+      margin-bottom: 25px;
+    }
+
+    .regulatory-points {
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .regulatory-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 13px 15px;
+
+      background: white;
+
+      border:
+        1px solid
+        #e2e8f0;
+
+      border-radius: 11px;
+    }
+
+    .regulatory-point-icon {
+      width: 31px;
+      height: 31px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 8px;
+
+      background: #eff6ff;
+
+      color: var(--blue);
+
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .regulatory-point span {
+      color: #334155;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .regulatory-dashboard {
+      position: relative;
+
+      padding: 20px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0b1b42,
+          #10285c
+        );
+
+      box-shadow:
+        0 30px 70px rgba(15,31,75,0.18);
+    }
+
+    .reg-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 18px;
+    }
+
+    .reg-head strong {
+      color: white;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .reg-head span {
+      padding: 5px 8px;
+
+      border-radius: 100px;
+
+      background: rgba(16,185,129,0.14);
+
+      color: #6ee7b7;
+
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .reg-list {
+      display: grid;
+
+      gap: 9px;
+    }
+
+    .reg-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 11px;
+
+      background:
+        rgba(255,255,255,0.055);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+      border-radius: 9px;
+    }
+
+    .reg-item-icon {
+      width: 29px;
+      height: 29px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 8px;
+
+      background:
+        rgba(37,99,235,0.22);
+
+      color: #93c5fd;
+
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .reg-item-text {
+      flex: 1;
+    }
+
+    .reg-item-text strong {
+      display: block;
+
+      color: white;
+
+      font-size: 9px;
+      font-weight: 750;
+    }
+
+    .reg-item-text span {
+      color: rgba(255,255,255,0.45);
+
+      font-size: 7px;
+    }
+
+    .reg-item-status {
+      color: #6ee7b7;
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       AUDIT SECTION
+    ========================================================= */
+
+    .audit-section {
+      background: white;
+    }
+
+    .audit-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 17px;
+    }
+
+    .audit-card {
+      padding: 28px;
+
+      border:
+        1px solid
+        #e2e8f0;
+
+      border-radius: 15px;
+
+      background: white;
+
+      box-shadow:
+        0 6px 22px rgba(15,31,75,0.04);
+    }
+
+    .audit-card-icon {
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 17px;
+
+      border-radius: 11px;
+
+      background: #eff6ff;
+
+      color: var(--blue);
+
+      font-size: 18px;
+    }
+
+    .audit-card h3 {
+      color: var(--navy);
+
+      font-size: 16px;
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .audit-card p {
+      color: #64748b;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta-section {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff,
+          #ffffff
+        );
+    }
+
+    .cta-container {
+      position: relative;
+
+      width: min(1050px, 100%);
+
+      margin: auto;
+
+      padding:
+        70px
+        50px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        #dbeafe;
+
+      border-radius: 25px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(37,99,235,0.11),
+          transparent 45%
+        ),
+        white;
+
+      box-shadow:
+        0 25px 70px rgba(15,31,75,0.08);
+
+      overflow: hidden;
+    }
+
+    .cta-container::before,
+    .cta-container::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(37,99,235,0.055);
+    }
+
+    .cta-container::before {
+      left: -90px;
+      bottom: -90px;
+    }
+
+    .cta-container::after {
+      right: -90px;
+      top: -90px;
+    }
+
+    .cta-container > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      color: var(--navy);
+
+      font-size:
+        clamp(31px, 4vw, 48px);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.045em;
+
+      font-weight: 900;
+
+      margin-bottom: 15px;
+    }
+
+    .cta-subtitle {
+      max-width: 700px;
+
+      margin: 0 auto 27px;
+
+      color: #64748b;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 11px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      padding:
+        75px
+        28px
+        25px;
+
+      background:
+        #06112c;
+
+      color: white;
+    }
+
+    .footer-container {
+      width: min(1380px, 100%);
+
+      margin: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.5fr
+        1fr
+        0.8fr
+        0.9fr
+        1fr;
+
+      gap: 45px;
+
+      padding-bottom: 55px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,0.09);
+    }
+
+    .footer-brand {
+      max-width: 330px;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+
+      margin-bottom: 17px;
+    }
+
+    .footer-logo-img {
+      width: 46px;
+      height: 46px;
+
+      object-fit: contain;
+    }
+
+    .footer-brand .nav-logo-text {
+      color: white;
+    }
+
+    .footer-brand > p {
+      color:
+        rgba(255,255,255,0.52);
+
+      font-size: 12px;
+
+      line-height: 1.75;
+
+      margin-bottom: 22px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .footer-col h5 {
+      margin-bottom: 7px;
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.07em;
+    }
+
+    .footer-col a,
+    .footer-col span {
+      color:
+        rgba(255,255,255,0.52);
+
+      font-size: 11px;
+      font-weight: 550;
+
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: white;
+
+      transform: translateX(3px);
+    }
+
+    .app-download-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 21px;
+    }
+
+    .app-store-btn,
+    .google-play-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 10px;
+
+      min-width: 125px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+      border-radius: 8px;
+
+      color: white;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .app-store-btn:hover,
+    .google-play-btn:hover {
+      background:
+        rgba(255,255,255,0.08);
+
+      transform: translateY(-2px);
+    }
+
+    .app-btn-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-btn-label {
+      color:
+        rgba(255,255,255,0.45);
+
+      font-size: 7px;
+      line-height: 1;
+    }
+
+    .app-btn-store {
+      color: white;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      line-height: 1.3;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icon {
+      width: 33px;
+      height: 33px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      color:
+        rgba(255,255,255,0.62);
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .social-icon:hover {
+      color: white;
+
+      background:
+        rgba(37,99,235,0.55);
+
+      transform: translateY(-3px);
+    }
+
+    .footer-demo {
+      display: inline-flex;
+
+      align-items: center;
+
+      margin-top: 7px;
+
+      padding: 9px 13px;
+
+      border-radius: 8px;
+
+      color: white !important;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #1745b5
+        );
+
+      font-size: 11px !important;
+      font-weight: 750 !important;
+
+      transform: none !important;
+    }
+
+    .footer-demo:hover {
+      color: white !important;
+
+      transform: translateY(-2px) !important;
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 23px;
+
+      color:
+        rgba(255,255,255,0.38);
+
+      font-size: 10px;
+    }
+
+    .footer-legal {
+      display: flex;
+
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      color:
+        rgba(255,255,255,0.42);
+
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: white;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(25px);
+
+      transition:
+        opacity 0.8s var(--ease),
+        transform 0.8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1180px) {
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links > li > a {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        font-size: 12px;
+      }
+
+      .nav-right {
+        gap: 15px;
+      }
+
+      .hero-container {
+        grid-template-columns:
+          1fr
+          0.9fr;
+
+        gap: 35px;
+      }
+
+      .features-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1.4fr
+          1fr
+          1fr;
+
+        row-gap: 40px;
+      }
+    }
+
+    @media (max-width: 991px) {
+
+      .navbar {
+        height: 72px;
+      }
+
+      .nav-right {
+        position: fixed;
+
+        top: 72px;
+        left: 18px;
+        right: 18px;
+
+        display: none;
+
+        padding: 14px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        background:
+          rgba(255,255,255,0.98);
+
+        border:
+          1px solid
+          #e2e8f0;
+
+        border-radius: 15px;
+
+        box-shadow:
+          0 25px 70px
+          rgba(15,31,75,0.14);
+      }
+
+      .nav-right.open {
+        display: flex;
+      }
+
+      .nav-links {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 2px;
+      }
+
+      .nav-links > li > a {
+        width: 100%;
+
+        padding: 12px;
+
+        justify-content: space-between;
+
+        font-size: 13px;
+      }
+
+      .nav-dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        transform: none !important;
+
+        padding: 3px 0 5px;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        box-shadow: none;
+
+        border: 0;
+
+        background: #f8fafc;
+
+        border-radius: 9px;
+      }
+
+      .nav-dropdown:hover .nav-dropdown-menu {
+        display: none;
+      }
+
+      .nav-dropdown.mobile-open .nav-dropdown-menu {
+        display: block;
+      }
+
+      .nav-dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-dropdown-menu a {
+        padding: 9px 15px;
+
+        font-size: 12px;
+      }
+
+      .nav-actions {
+        padding-top: 7px;
+      }
+
+      .btn-nav-cta {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-description {
+        max-width: 720px;
+      }
+
+      .hero-trust {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 650px;
+
+        width: 100%;
+
+        margin: auto;
+      }
+
+      .overview-grid,
+      .regulatory-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .overview-copy {
+        text-align: center;
+      }
+
+      .overview-checks {
+        text-align: left;
+      }
+
+      .workflow {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        row-gap: 45px;
+      }
+
+      .workflow::before {
+        display: none;
+      }
+
+      .benefits-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .audit-grid {
+        grid-template-columns:
+          1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .nav-inner {
+        width: min(
+          100% - 30px,
+          1380px
+        );
+      }
+
+      .nav-logo-text {
+        display: none;
+      }
+
+      .compliance-hero {
+        min-height: auto;
+
+        padding:
+          130px
+          18px
+          70px;
+      }
+
+      .hero-title {
+        font-size:
+          clamp(40px, 11vw, 58px);
+      }
+
+      .hero-description {
+        font-size: 15px;
+
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        width: 100%;
+
+        flex-direction: column;
+
+        max-width: 330px;
+      }
+
+      .hero-btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .dashboard-shell {
+        padding: 7px;
+
+        transform: none;
+      }
+
+      .dashboard-shell:hover {
+        transform: translateY(-3px);
+      }
+
+      .dashboard-body {
+        grid-template-columns: 75px 1fr;
+
+        min-height: 275px;
+      }
+
+      .dashboard-sidebar {
+        padding: 10px 6px;
+      }
+
+      .side-item {
+        font-size: 7px;
+
+        padding: 7px 5px;
+      }
+
+      .side-icon {
+        font-size: 8px;
+      }
+
+      .dashboard-main {
+        padding: 11px;
+      }
+
+      .dashboard-heading h3 {
+        font-size: 12px;
+      }
+
+      .dashboard-date {
+        font-size: 6px;
+      }
+
+      .metric-grid {
+        gap: 5px;
+      }
+
+      .metric {
+        padding: 7px;
+      }
+
+      .metric-value {
+        font-size: 13px;
+      }
+
+      .metric-label {
+        font-size: 5px;
+      }
+
+      .compliance-panel {
+        padding: 8px;
+      }
+
+      .panel-head strong {
+        font-size: 8px;
+      }
+
+      .progress-row {
+        font-size: 6px;
+      }
+
+      .floating-card {
+        padding: 8px 9px;
+      }
+
+      .floating-card.one {
+        left: -7px;
+        top: 30px;
+      }
+
+      .floating-card.two {
+        right: -7px;
+        bottom: 25px;
+      }
+
+      .floating-icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      .floating-text strong {
+        font-size: 8px;
+      }
+
+      .floating-text span {
+        font-size: 6px;
+      }
+
+      .section {
+        padding:
+          75px
+          18px;
+      }
+
+      .section-header {
+        margin-bottom: 38px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .section-subtitle {
+        font-size: 14px;
+      }
+
+      .overview-grid {
+        gap: 35px;
+      }
+
+      .overview-copy h2,
+      .regulatory-copy h2 {
+        font-size: 32px;
+      }
+
+      .overview-copy {
+        text-align: left;
+      }
+
+      .overview-checks {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-visual {
+        min-height: 360px;
+
+        padding: 17px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .workflow {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+      }
+
+      .benefits-section {
+        padding:
+          75px
+          18px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 9px;
+      }
+
+      .benefit-card {
+        min-height: 145px;
+
+        padding: 23px 12px;
+      }
+
+      .benefit-number {
+        font-size: 32px;
+      }
+
+      .benefit-label {
+        font-size: 8px;
+      }
+
+      .benefit-title {
+        font-size: 10px;
+      }
+
+      .regulatory-dashboard {
+        padding: 12px;
+      }
+
+      .cta-section {
+        padding:
+          65px
+          18px;
+      }
+
+      .cta-container {
+        padding:
+          45px
+          20px;
+      }
+
+      .cta-title {
+        font-size: 31px;
+      }
+
+      .cta-subtitle {
+        font-size: 13px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+
+        max-width: 320px;
+
+        margin: auto;
+      }
+
+      .cta-buttons .hero-btn {
+        width: 100%;
+      }
+
+      .footer {
+        padding:
+          60px
+          18px
+          22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 25px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+
+        max-width: none;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        font-size: 9px;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .hero-title {
+        font-size: 39px;
+      }
+
+      .dashboard-body {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-sidebar {
+        display: none;
+      }
+
+      .hero-visual {
+        min-height: 330px;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     SCROLL PROGRESS
+========================================================= -->
+
+<div id="scroll-progress"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo">
+
+      <img
+        src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+        alt="Navik"
+        class="nav-logo-img"
+      />
+
+      <span class="nav-logo-text">
+
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+
+      </span>
+
+    </a>
+
+
+    <div class="nav-right" id="navRight">
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="/">Home</a>
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a
+            href="#"
+            class="nav-link-main"
+          >
+            Products
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="hr-system.html">
+              HR System
+            </a>
+
+            <a href="workforce-management.html">
+              Workforce Management
+            </a>
+
+            <a href="payroll-system.html">
+              Payroll System
+            </a>
+
+            <a href="attendance.html">
+              Attendance
+            </a>
+
+            <a href="contract-workforce.html">
+              Contract Workforce Management
+            </a>
+
+            <a href="field-workforce-tracking.html">
+              Field Workforce Tracking
+            </a>
+
+            <a href="employee-self-service.html">
+              Employee Self Service
+            </a>
+
+            <a href="complience-managemant.html">
+              Compliance Management
+            </a>
+
+            <a href="reports-analytics.html">
+              Reports & Analytics
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li>
+          <a href="index.html#pricing">
+            Pricing
+          </a>
+        </li>
+
+
+        <li
+          class="nav-dropdown"
+          id="navDropIndustries"
+        >
+
+          <a
+            href="javascript:void(0)"
+            class="nav-link-main"
+          >
+
+            <span>
+              Industries
+            </span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+
+          <div class="nav-dropdown-menu">
+
+            <a href="Retails.html">
+              Retails
+            </a>
+
+            <a href="Logistics.html">
+              Logistics
+            </a>
+
+            <a href="Construction.html">
+              Constructions
+            </a>
+
+            <a href="Sales.html">
+              Sales Team
+            </a>
+
+            <a href="Manufacturing.html">
+              Manufacturing
+            </a>
+
+            <a href="Health-Care.html">
+              Health Care
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li>
+          <a href="Customers.html">
+            Customers
+          </a>
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a
+            href="#"
+            class="nav-link-main"
+          >
+            Resources
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+
+          <div class="nav-dropdown-menu">
+
+            <a href="blog.html">
+              Blogs
+            </a>
+
+            <a href="templates.html">
+              Templates
+            </a>
+
+            <a href="tools-hub.html">
+              HR Tools
+            </a>
+
+            <a href="Case-Studies.html">
+              Case Studies
+            </a>
+
+            <a
+              href="https://www.youtube.com/@NavikHR"
+              target="_blank"
+              rel="noopener"
+            >
+              Podcasts
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a
+            href="#"
+            class="nav-link-main"
+          >
+            Company
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+
+          <div class="nav-dropdown-menu">
+
+            <a href="about-us.html">
+              About Us
+            </a>
+
+            <a href="mailto:riya.shukla@wfmexperts.com">
+              Careers
+            </a>
+
+            <a href="contact-us.html">
+              Contact Us
+            </a>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+
+      <div class="nav-actions">
+
+        <a
+          href="#demo"
+          class="btn-nav-cta"
+        >
+          Book Demo
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="compliance-hero">
+
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-glow"></div>
+
+
+  <div class="hero-container">
+
+    <div class="hero-content reveal">
+
+      <div class="hero-badge">
+
+        <span class="hero-badge-dot"></span>
+
+        Compliance Intelligence
+
+      </div>
+
+
+      <h1 class="hero-title">
+
+        Stay Compliant.
+        <br />
+
+        <span>Stay Ahead.</span>
+
+      </h1>
+
+
+      <p class="hero-description">
+
+        Comprehensive compliance management to ensure adherence
+        to regulatory requirements, labor laws, policies,
+        certifications and organizational obligations — all
+        from one centralized platform.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#demo"
+          class="hero-btn hero-btn-primary"
+        >
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect
+              x="3"
+              y="4"
+              width="18"
+              height="18"
+              rx="2"
+            />
+            <line
+              x1="16"
+              y1="2"
+              x2="16"
+              y2="6"
+            />
+            <line
+              x1="8"
+              y1="2"
+              x2="8"
+              y2="6"
+            />
+            <line
+              x1="3"
+              y1="10"
+              x2="21"
+              y2="10"
+            />
+          </svg>
+
+          Book a Demo
+
+        </a>
+
+
+        <a
+          href="index.html"
+          class="hero-btn hero-btn-secondary"
+        >
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M19 12H5"/>
+            <path d="M12 19l-7-7 7-7"/>
+          </svg>
+
+          Back to Home
+
+        </a>
+
+      </div>
+
+
+      <div class="hero-trust">
+
+        <span class="trust-check">
+          ✓
+        </span>
+
+        Centralized policies, records, alerts & audit trails
+
+      </div>
+
+    </div>
+
+
+    <!-- HERO DASHBOARD -->
+
+    <div class="hero-visual reveal">
+
+      <div class="floating-card one">
+
+        <div class="floating-icon">
+          ✓
+        </div>
+
+        <div class="floating-text">
+
+          <strong>
+            Compliance Verified
+          </strong>
+
+          <span>
+            Policy requirements met
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="dashboard-shell">
+
+        <div class="dashboard">
+
+          <div class="dashboard-topbar">
+
+            <div class="dashboard-brand">
+
+              <span class="dashboard-brand-icon">
+                N
+              </span>
+
+              Compliance Center
+
+            </div>
+
+
+            <div class="dashboard-status">
+
+              <span class="dashboard-status-dot"></span>
+
+              System Healthy
+
+            </div>
+
+          </div>
+
+
+          <div class="dashboard-body">
+
+            <aside class="dashboard-sidebar">
+
+              <div class="side-label">
+                Workspace
+              </div>
+
+              <div class="side-item active">
+                <span class="side-icon">▦</span>
+                Overview
+              </div>
+
+              <div class="side-item">
+                <span class="side-icon">✓</span>
+                Policies
+              </div>
+
+              <div class="side-item">
+                <span class="side-icon">◫</span>
+                Certifications
+              </div>
+
+              <div class="side-item">
+                <span class="side-icon">◷</span>
+                Calendar
+              </div>
+
+              <div class="side-item">
+                <span class="side-icon">◉</span>
+                Audits
+              </div>
+
+              <div class="side-item">
+                <span class="side-icon">▤</span>
+                Reports
+              </div>
+
+            </aside>
+
+
+            <main class="dashboard-main">
+
+              <div class="dashboard-heading">
+
+                <h3>
+                  Compliance Overview
+                </h3>
+
+                <span class="dashboard-date">
+                  AUG 2026
+                </span>
+
+              </div>
+
+
+              <div class="metric-grid">
+
+                <div class="metric green">
+
+                  <div class="metric-label">
+                    Compliant
+                  </div>
+
+                  <div class="metric-value">
+                    96%
+                  </div>
+
+                </div>
+
+
+                <div class="metric blue">
+
+                  <div class="metric-label">
+                    Policies
+                  </div>
+
+                  <div class="metric-value">
+                    48
+                  </div>
+
+                </div>
+
+
+                <div class="metric orange">
+
+                  <div class="metric-label">
+                    Due Soon
+                  </div>
+
+                  <div class="metric-value">
+                    04
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="compliance-panel">
+
+                <div class="panel-head">
+
+                  <strong>
+                    Regulatory Compliance
+                  </strong>
+
+                  <span>
+                    View details →
+                  </span>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                  <div class="progress-row">
+
+                    <span>
+                      Policy Compliance
+                    </span>
+
+                    <strong>
+                      98%
+                    </strong>
+
+                  </div>
+
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill green"
+                      style="width:98%"
+                    ></div>
+                  </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                  <div class="progress-row">
+
+                    <span>
+                      Certification Status
+                    </span>
+
+                    <strong>
+                      94%
+                    </strong>
+
+                  </div>
+
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width:94%"
+                    ></div>
+                  </div>
+
+                </div>
+
+
+                <div class="progress-item">
+
+                  <div class="progress-row">
+
+                    <span>
+                      Audit Readiness
+                    </span>
+
+                    <strong>
+                      91%
+                    </strong>
+
+                  </div>
+
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill orange"
+                      style="width:91%"
+                    ></div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="audit-row">
+
+                <div class="audit-icon">
+                  ✓
+                </div>
+
+                <div class="audit-text">
+
+                  <strong>
+                    Latest compliance audit completed
+                  </strong>
+
+                  <span>
+                    Evidence & documentation verified
+                  </span>
+
+                </div>
+
+                <div class="audit-check">
+                  ●
+                </div>
+
+              </div>
+
+            </main>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="floating-card two">
+
+        <div class="floating-icon">
+          ◷
+        </div>
+
+        <div class="floating-text">
+
+          <strong>
+            Automated Alerts
+          </strong>
+
+          <span>
+            4 obligations due soon
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     OVERVIEW
+========================================================= -->
+
+<section class="section overview-section">
+
+  <div class="section-container">
+
+    <div class="overview-grid">
+
+      <div class="overview-copy reveal">
+
+        <span class="section-eyebrow">
+          Compliance Control
+        </span>
+
+        <h2>
+          One place to manage
+          every compliance obligation.
+        </h2>
+
+        <p>
+          Manage all compliance requirements with automated
+          tracking and full audit trails. Keep policies,
+          certifications, documentation and regulatory
+          activities organized without relying on disconnected
+          spreadsheets or manual follow-ups.
+        </p>
+
+        <p>
+          Stay compliant with evolving regulations effortlessly
+          while giving HR and compliance teams a clear view of
+          what is completed, what is due and what requires
+          attention.
+        </p>
+
+
+        <div class="overview-checks">
+
+          <div class="overview-check">
+
+            <span class="check-circle">
+              ✓
+            </span>
+
+            Centralized compliance records
+
+          </div>
+
+
+          <div class="overview-check">
+
+            <span class="check-circle">
+              ✓
+            </span>
+
+            Automated tracking
+
+          </div>
+
+
+          <div class="overview-check">
+
+            <span class="check-circle">
+              ✓
+            </span>
+
+            Complete audit trails
+
+          </div>
+
+
+          <div class="overview-check">
+
+            <span class="check-circle">
+              ✓
+            </span>
+
+            Regulatory alerts
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="overview-visual reveal">
+
+        <div class="control-card">
+
+          <div class="control-card-head">
+
+            <div class="control-title">
+
+              <div class="control-icon">
+                ✓
+              </div>
+
+              <div>
+
+                <strong>
+                  Compliance Health
+                </strong>
+
+                <span>
+                  Organization-wide status
+                </span>
+
+              </div>
+
+            </div>
+
+            <span class="status-pill">
+              Healthy
+            </span>
+
+          </div>
+
+
+          <div class="control-lines">
+
+            <div class="control-line"></div>
+            <div class="control-line"></div>
+            <div class="control-line"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="control-stat-row">
+
+          <div class="mini-stat">
+
+            <strong>
+              98%
+            </strong>
+
+            <span>
+              Policies
+            </span>
+
+          </div>
+
+
+          <div class="mini-stat">
+
+            <strong>
+              94%
+            </strong>
+
+            <span>
+              Licenses
+            </span>
+
+          </div>
+
+
+          <div class="mini-stat">
+
+            <strong>
+              91%
+            </strong>
+
+            <span>
+              Audits
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="section features-section">
+
+  <div class="section-container">
+
+    <div class="section-header reveal">
+
+      <span class="section-eyebrow">
+        Key Features
+      </span>
+
+      <h2 class="section-title">
+        Build a stronger compliance system.
+      </h2>
+
+      <p class="section-subtitle">
+        Everything you need to organize, monitor and prove
+        compliance across your organization.
+      </p>
+
+    </div>
+
+
+    <div class="features-grid">
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ◫
+        </div>
+
+        <h3 class="feature-title">
+          Policy & Procedure Management
+        </h3>
+
+        <p class="feature-description">
+          Centralize organizational policies and procedures
+          while keeping documents structured, accessible
+          and controlled.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ✓
+        </div>
+
+        <h3 class="feature-title">
+          Employee Policy Sign-off Tracking
+        </h3>
+
+        <p class="feature-description">
+          Track employee acknowledgement and sign-off against
+          important policies with clear records.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ◈
+        </div>
+
+        <h3 class="feature-title">
+          Certification & License Tracking
+        </h3>
+
+        <p class="feature-description">
+          Monitor certifications and licenses, identify upcoming
+          expirations and keep required credentials current.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ◷
+        </div>
+
+        <h3 class="feature-title">
+          Compliance Calendar & Alerts
+        </h3>
+
+        <p class="feature-description">
+          Track important deadlines and receive timely alerts
+          before compliance obligations become overdue.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ◉
+        </div>
+
+        <h3 class="feature-title">
+          Audit Trail & Document Versioning
+        </h3>
+
+        <p class="feature-description">
+          Maintain comprehensive audit trails and document
+          history so changes remain transparent and traceable.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ☑
+        </div>
+
+        <h3 class="feature-title">
+          Compliance Checklist Management
+        </h3>
+
+        <p class="feature-description">
+          Create structured checklists for recurring
+          compliance activities and monitor completion.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ▤
+        </div>
+
+        <h3 class="feature-title">
+          Reporting & Evidence Collection
+        </h3>
+
+        <p class="feature-description">
+          Generate reports and organize evidence required
+          for internal and external inspections.
+        </p>
+
+      </article>
+
+
+      <article class="feature-card reveal">
+
+        <div class="feature-icon">
+          ◎
+        </div>
+
+        <h3 class="feature-title">
+          Multi-regulatory Support
+        </h3>
+
+        <p class="feature-description">
+          Support multiple regulatory frameworks and standards
+          from a centralized compliance workspace.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section class="section workflow-section">
+
+  <div class="section-container">
+
+    <div class="section-header reveal">
+
+      <span class="section-eyebrow">
+        Compliance Workflow
+      </span>
+
+      <h2 class="section-title">
+        From requirement to evidence.
+      </h2>
+
+      <p class="section-subtitle">
+        Create a repeatable compliance process that keeps
+        responsibilities, deadlines and evidence organized.
+      </p>
+
+    </div>
+
+
+    <div class="workflow">
+
+      <div class="workflow-step reveal">
+
+        <div class="workflow-number">
+          01
+        </div>
+
+        <h3>
+          Define Requirements
+        </h3>
+
+        <p>
+          Add policies, procedures, certifications,
+          regulatory obligations and recurring requirements.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step reveal">
+
+        <div class="workflow-number">
+          02
+        </div>
+
+        <h3>
+          Assign Ownership
+        </h3>
+
+        <p>
+          Assign compliance activities to responsible
+          teams or individuals with clear accountability.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step reveal">
+
+        <div class="workflow-number">
+          03
+        </div>
+
+        <h3>
+          Monitor & Alert
+        </h3>
+
+        <p>
+          Track progress, upcoming deadlines, certifications
+          and compliance status from one dashboard.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step reveal">
+
+        <div class="workflow-number">
+          04
+        </div>
+
+        <h3>
+          Prove Compliance
+        </h3>
+
+        <p>
+          Maintain audit trails, documents and evidence
+          ready for inspections and internal reviews.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BENEFITS
+========================================================= -->
+
+<section class="benefits-section">
+
+  <div class="benefits-container">
+
+    <div class="benefits-header reveal">
+
+      <span class="section-eyebrow">
+        Business Impact
+      </span>
+
+      <h2 class="section-title">
+        Reduce risk. Improve control.
+      </h2>
+
+      <p class="section-subtitle">
+        A structured compliance system helps teams move from
+        reactive compliance work to proactive governance.
+      </p>
+
+    </div>
+
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card reveal">
+
+        <div class="benefit-number">
+          80%
+        </div>
+
+        <div class="benefit-label">
+          Risk Reduction
+        </div>
+
+        <div class="benefit-title">
+          Reduce compliance-related exposure
+        </div>
+
+      </div>
+
+
+      <div class="benefit-card reveal">
+
+        <div class="benefit-number">
+          100%
+        </div>
+
+        <div class="benefit-label">
+          Audit Visibility
+        </div>
+
+        <div class="benefit-title">
+          Maintain traceable compliance records
+        </div>
+
+      </div>
+
+
+      <div class="benefit-card reveal">
+
+        <div class="benefit-number">
+          24/7
+        </div>
+
+        <div class="benefit-label">
+          Monitoring
+        </div>
+
+        <div class="benefit-title">
+          Keep compliance information accessible
+        </div>
+
+      </div>
+
+
+      <div class="benefit-card reveal">
+
+        <div class="benefit-number">
+          1
+        </div>
+
+        <div class="benefit-label">
+          Platform
+        </div>
+
+        <div class="benefit-title">
+          One centralized compliance workspace
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     REGULATORY EXCELLENCE
+========================================================= -->
+
+<section class="section regulatory-section">
+
+  <div class="section-container">
+
+    <div class="regulatory-grid">
+
+      <div class="regulatory-copy reveal">
+
+        <span class="section-eyebrow">
+          Regulatory Excellence
+        </span>
+
+        <h2>
+          Be prepared before
+          the audit arrives.
+        </h2>
+
+        <p>
+          Supporting multiple regulatory frameworks and
+          standards, navik helps organizations maintain
+          structured compliance records and stay prepared
+          for inspections.
+        </p>
+
+        <div class="regulatory-points">
+
+          <div class="regulatory-point">
+
+            <div class="regulatory-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Track regulatory requirements and obligations
+            </span>
+
+          </div>
+
+
+          <div class="regulatory-point">
+
+            <div class="regulatory-point-icon">
+              ◫
+            </div>
+
+            <span>
+              Maintain complete policy and document history
+            </span>
+
+          </div>
+
+
+          <div class="regulatory-point">
+
+            <div class="regulatory-point-icon">
+              ◉
+            </div>
+
+            <span>
+              Keep evidence ready for inspections and audits
+            </span>
+
+          </div>
+
+
+          <div class="regulatory-point">
+
+            <div class="regulatory-point-icon">
+              ◷
+            </div>
+
+            <span>
+              Receive visibility into upcoming deadlines
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="regulatory-dashboard reveal">
+
+        <div class="reg-head">
+
+          <strong>
+            Regulatory Control Center
+          </strong>
+
+          <span>
+            ACTIVE
+          </span>
+
+        </div>
+
+
+        <div class="reg-list">
+
+          <div class="reg-item">
+
+            <div class="reg-item-icon">
+              ✓
+            </div>
+
+            <div class="reg-item-text">
+
+              <strong>
+                Policy Framework
+              </strong>
+
+              <span>
+                Last reviewed today
+              </span>
+
+            </div>
+
+            <div class="reg-item-status">
+              98%
+            </div>
+
+          </div>
+
+
+          <div class="reg-item">
+
+            <div class="reg-item-icon">
+              ◈
+            </div>
+
+            <div class="reg-item-text">
+
+              <strong>
+                Certifications
+              </strong>
+
+              <span>
+                3 renewal dates tracked
+              </span>
+
+            </div>
+
+            <div class="reg-item-status">
+              94%
+            </div>
+
+          </div>
+
+
+          <div class="reg-item">
+
+            <div class="reg-item-icon">
+              ◉
+            </div>
+
+            <div class="reg-item-text">
+
+              <strong>
+                Audit Evidence
+              </strong>
+
+              <span>
+                Documentation organized
+              </span>
+
+            </div>
+
+            <div class="reg-item-status">
+              Ready
+            </div>
+
+          </div>
+
+
+          <div class="reg-item">
+
+            <div class="reg-item-icon">
+              ◷
+            </div>
+
+            <div class="reg-item-text">
+
+              <strong>
+                Compliance Calendar
+              </strong>
+
+              <span>
+                Upcoming obligations monitored
+              </span>
+
+            </div>
+
+            <div class="reg-item-status">
+              Live
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     AUDIT & GOVERNANCE
+========================================================= -->
+
+<section class="section audit-section">
+
+  <div class="section-container">
+
+    <div class="section-header reveal">
+
+      <span class="section-eyebrow">
+        Governance
+      </span>
+
+      <h2 class="section-title">
+        Compliance that stands up to scrutiny.
+      </h2>
+
+      <p class="section-subtitle">
+        Build a reliable evidence trail and make compliance
+        activities easier to review, manage and demonstrate.
+      </p>
+
+    </div>
+
+
+    <div class="audit-grid">
+
+      <article class="audit-card reveal">
+
+        <div class="audit-card-icon">
+          ◉
+        </div>
+
+        <h3>
+          Complete Audit Trails
+        </h3>
+
+        <p>
+          Maintain a transparent history of compliance
+          activities, updates, approvals and documentation.
+        </p>
+
+      </article>
+
+
+      <article class="audit-card reveal">
+
+        <div class="audit-card-icon">
+          ▤
+        </div>
+
+        <h3>
+          Evidence Collection
+        </h3>
+
+        <p>
+          Organize supporting evidence so teams can quickly
+          provide documentation during reviews and inspections.
+        </p>
+
+      </article>
+
+
+      <article class="audit-card reveal">
+
+        <div class="audit-card-icon">
+          ✓
+        </div>
+
+        <h3>
+          Inspection Readiness
+        </h3>
+
+        <p>
+          Keep critical records organized and accessible
+          instead of scrambling for documentation at the
+          last minute.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section" id="demo">
+
+  <div class="cta-container reveal">
+
+    <span class="section-eyebrow">
+      Get Started
+    </span>
+
+    <h2 class="cta-title">
+      Ensure Compliance Effortlessly.
+    </h2>
+
+    <p class="cta-subtitle">
+      Implement comprehensive compliance management and
+      protect your organization with centralized policies,
+      automated tracking, audit trails, certifications,
+      evidence collection and regulatory visibility.
+    </p>
+
+
+    <div class="cta-buttons">
+
+      <a
+        href="mailto:contact@navik.com?subject=Compliance%20Management%20Demo"
+        class="hero-btn hero-btn-primary"
+      >
+
+        Book Your Demo
+
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 12h14"/>
+          <path d="m13 6 6 6-6 6"/>
+        </svg>
+
+      </a>
+
+
+      <a
+        href="index.html"
+        class="hero-btn hero-btn-secondary"
+      >
+        Back to Home
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="nav-logo footer-logo"
+        >
+
+          <img
+            src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+            alt="Navik"
+            class="footer-logo-img"
+          />
+
+          <span class="nav-logo-text">
+
+            <span class="nav-logo-animated">
+              HR
+            </span>
+
+            <span class="nav-logo-animated">
+              WFM
+            </span>
+
+            <span class="nav-logo-animated">
+              Payroll
+            </span>
+
+          </span>
+
+        </a>
+
+
+        <p>
+          The complete HR, Workforce Management &
+          Payroll platform for modern businesses.
+        </p>
+
+
+        <div class="app-download-buttons">
+
+          <a
+            href="#"
+            class="app-store-btn"
+            aria-label="Download on App Store"
+          >
+
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+              />
+
+            </svg>
+
+            <div class="app-btn-text">
+
+              <span class="app-btn-label">
+                Download on the
+              </span>
+
+              <span class="app-btn-store">
+                App Store
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="google-play-btn"
+            aria-label="Get it on Google Play"
+          >
+
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+
+              <path
+                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+              />
+
+            </svg>
+
+            <div class="app-btn-text">
+
+              <span class="app-btn-label">
+                GET IT ON
+              </span>
+
+              <span class="app-btn-store">
+                Google Play
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+
+        <div class="footer-socials">
+
+          <a
+            href="https://www.instagram.com/navik.ops?igsh=MXdicHJlNDV4eHF1MQ=="
+            aria-label="Instagram"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+              />
+
+              <path
+                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+              />
+
+              <line
+                x1="17.5"
+                y1="6.5"
+                x2="17.51"
+                y2="6.5"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="Facebook"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="YouTube"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+
+              <polygon
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+
+              <rect
+                x="2"
+                y="9"
+                width="4"
+                height="12"
+              />
+
+              <circle
+                cx="4"
+                cy="4"
+                r="2"
+              />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT -->
+
+      <div class="footer-col">
+
+        <h5>
+          Product
+        </h5>
+
+        <a href="hr-system.html">
+          HR System
+        </a>
+
+        <a href="workforce-management.html">
+          Workforce Management
+        </a>
+
+        <a href="payroll-system.html">
+          Payroll System
+        </a>
+
+        <a href="attendance.html">
+          Attendance
+        </a>
+
+        <a href="contract-workforce.html">
+          Contract Workforce Management
+        </a>
+
+        <a href="field-workforce-tracking.html">
+          Field Workforce Tracking
+        </a>
+
+        <a href="employee-self-service.html">
+          Employee Self Service
+        </a>
+
+        <a href="complience-managemant.html">
+          Compliance Management
+        </a>
+
+        <a href="reports-analytics.html">
+          Reports & Analytics
+        </a>
+
+      </div>
+
+
+      <!-- COMPANY -->
+
+      <div class="footer-col">
+
+        <h5>
+          Company
+        </h5>
+
+        <a href="about-us.html">
+          About Us
+        </a>
+
+        <a href="mailto:riya.shukla@wfmexperts.com">
+          Careers
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="#">
+          Press
+        </a>
+
+        <a href="Customers.html">
+          Customers
+        </a>
+
+      </div>
+
+
+      <!-- RESOURCES -->
+
+      <div class="footer-col">
+
+        <h5>
+          Resources
+        </h5>
+
+        <a href="#">
+          Help Center
+        </a>
+
+        <a href="#">
+          Documentation
+        </a>
+
+        <a href="Case-Studies.html">
+          Case Studies
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="templates.html">
+          Templates
+        </a>
+
+      </div>
+
+
+      <!-- CONTACT -->
+
+      <div class="footer-col">
+
+        <h5>
+          Contact
+        </h5>
+
+        <a href="mailto:contact@navik.com">
+          contact@navik.com
+        </a>
+
+        <a href="tel:+919196000515">
+          +91-9196000515
+        </a>
+
+        <span>
+          Kanpur, India
+        </span>
+
+        <a
+          href="#demo"
+          class="footer-demo"
+        >
+          Book a Demo →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 navik. All rights reserved.
+        Made with ❤ in India
+      </span>
+
+
+      <div class="footer-legal">
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Terms of Service
+        </a>
+
+        <a href="#">
+          Security
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+  /* =========================================================
+     NAVBAR SCROLL
+  ========================================================= */
+
+  const navbar =
+    document.getElementById("navbar");
+
+  const scrollProgress =
+    document.getElementById("scroll-progress");
+
+
+  function handleScroll() {
+
+    const scrollTop =
+      window.scrollY;
+
+    if (scrollTop > 35) {
+
+      navbar.classList.add("scrolled");
+
+    } else {
+
+      navbar.classList.remove("scrolled");
+
+    }
+
+
+    const documentHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    const progress =
+      documentHeight > 0
+        ? (scrollTop / documentHeight) * 100
+        : 0;
+
+    scrollProgress.style.width =
+      progress + "%";
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    handleScroll,
+    { passive: true }
+  );
+
+  handleScroll();
+
+
+  /* =========================================================
+     MOBILE NAVIGATION
+  ========================================================= */
+
+  const hamburger =
+    document.getElementById("hamburger");
+
+  const navRight =
+    document.getElementById("navRight");
+
+
+  hamburger.addEventListener(
+    "click",
+    function () {
+
+      const open =
+        navRight.classList.toggle("open");
+
+      hamburger.classList.toggle(
+        "active",
+        open
+      );
+
+      hamburger.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     MOBILE DROPDOWNS
+  ========================================================= */
+
+  const dropdownLinks =
+    document.querySelectorAll(
+      ".nav-dropdown > .nav-link-main"
+    );
+
+
+  dropdownLinks.forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function (event) {
+
+          if (
+            window.innerWidth <= 991
+          ) {
+
+            event.preventDefault();
+
+            const parent =
+              link.parentElement;
+
+            parent.classList.toggle(
+              "mobile-open"
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     CLOSE MOBILE NAV AFTER LINK CLICK
+  ========================================================= */
+
+  document.querySelectorAll(
+    ".nav-dropdown-menu a, .nav-links > li:not(.nav-dropdown) a"
+  ).forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function () {
+
+          if (
+            window.innerWidth <= 991
+          ) {
+
+            navRight.classList.remove(
+              "open"
+            );
+
+            hamburger.classList.remove(
+              "active"
+            );
+
+            hamburger.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".reveal"
+    );
+
+
+  const revealObserver =
+    new IntersectionObserver(
+      function (entries) {
+
+        entries.forEach(
+          function (entry) {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+
+  revealElements.forEach(
+    function (element) {
+
+      revealObserver.observe(
+        element
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     SMOOTH ANCHOR SCROLL
+  ========================================================= */
+
+  document.querySelectorAll(
+    'a[href^="#"]'
+  ).forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function (event) {
+
+          const targetId =
+            link.getAttribute("href");
+
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+            return;
+          }
+
+          const target =
+            document.querySelector(
+              targetId
+            );
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+
+          const navbarHeight =
+            navbar.offsetHeight;
+
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight -
+            15;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+          });
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     CLOSE MENU WHEN CLICKING OUTSIDE
+  ========================================================= */
+
+  document.addEventListener(
+    "click",
+    function (event) {
+
+      if (
+        window.innerWidth > 991
+      ) {
+        return;
+      }
+
+      if (
+        !navRight.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+
+        navRight.classList.remove(
+          "open"
+        );
+
+        hamburger.classList.remove(
+          "active"
+        );
+
+        hamburger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     ESCAPE KEY
+  ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        navRight.classList.remove(
+          "open"
+        );
+
+        hamburger.classList.remove(
+          "active"
+        );
+
+        hamburger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     RESET MOBILE MENU ON RESIZE
+  ========================================================= */
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      if (
+        window.innerWidth > 991
+      ) {
+
+        navRight.classList.remove(
+          "open"
+        );
+
+        hamburger.classList.remove(
+          "active"
+        );
+
+        hamburger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        document
+          .querySelectorAll(".nav-dropdown")
+          .forEach(
+            function (dropdown) {
+
+              dropdown.classList.remove(
+                "mobile-open"
+              );
+
+            }
+          );
+
+      }
+
+    }
+  );
+
+</script>
+
+</body>
+</html>

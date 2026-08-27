@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════
+   Download Gate Modal Styles - Compact Version
+   ═══════════════════════════════════════════════════════════ */
+
+.download-gate-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  background: transparent;
+}
+
+.download-gate-modal.active {
+  display: flex;
+}
+
+.download-gate-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.download-gate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+.download-gate-content {
+  position: relative;
+  z-index: 100000;
+  width: 90%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.download-gate-container {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.download-gate-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 100001;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.2s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  line-height: 1;
+  padding: 0;
+}
+
+.download-gate-close:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Compact Form Wrapper */
+.download-gate-form-wrapper {
+  padding: 28px 24px;
+}
+
+.download-gate-form-wrapper h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1f4b;
+  margin: 0 0 4px 0;
+}
+
+.download-gate-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+/* Form Styles */
+.download-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gate-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.gate-input::placeholder {
+  color: #94a3b8;
+}
+
+.gate-input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+}
+
+.gate-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e3a8a' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.gate-err {
+  font-size: 12px;
+  color: #ef4444;
+  min-height: 16px;
+  line-height: 1.3;
+}
+
+/* Buttons */
+.download-gate-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #0f1f4b, #1e3a8a);
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(15, 31, 75, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.download-gate-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 31, 75, 0.25);
+}
+
+.download-gate-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.download-gate-submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.download-gate-submit-btn .btn-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-gate-submit-btn .spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.download-gate-notice {
+  font-size: 11px;
+  color: #64748b;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.download-gate-notice a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.download-gate-notice a:hover {
+  text-decoration: underline;
+}
+
+/* Blog Download Button Styles */
+.blog-download-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.blog-download-btn:hover {
+  gap: 10px;
+}
+
+.blog-download-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .download-gate-content {
+    width: 92%;
+    max-width: 100%;
+  }
+
+  .download-gate-form-wrapper {
+    padding: 24px 20px;
+  }
+
+  .download-gate-form-wrapper h2 {
+    font-size: 18px;
+  }
+
+  .download-gate-subtitle {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .form-group input {
+    padding: 9px 11px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .download-gate-submit-btn,
+  .download-gate-skip-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .download-gate-close {
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,2911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies | navik — Real Workforce Results</title>
+  <meta name="description"
+    content="Explore navik customer case studies and see how businesses improve workforce operations, attendance, payroll, compliance and employee management." />
+  <meta name="keywords"
+    content="HR case studies, workforce management case studies, payroll case studies, attendance case studies, HR automation success stories" />
+  <meta name="author" content="navik" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
+  <link rel="stylesheet" href="./product-pages.css" />
+  <style>
+    /* =========================================================
+       CASE STUDIES PAGE
+       ========================================================= */
+    :root {
+      --cs-blue: #2563eb;
+      --cs-blue-soft: rgba(37, 99, 235, .14);
+      --cs-blue-light: #eff6ff;
+      --cs-dark: #07111f;
+      --cs-text: #0f172a;
+      --cs-muted: #64748b;
+      --cs-border: #e2e8f0;
+      --cs-white: #ffffff;
+      --cs-radius: 22px;
+      --cs-shadow: 0 20px 60px rgba(15, 23, 42, .08);
+    }
+
+    /* =========================================================
+       SCROLL PROGRESS
+       ========================================================= */
+    #cs-scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--cs-blue);
+      z-index: 99999;
+      transition: width .08s linear;
+    }
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+    .cs-page {
+      overflow: hidden;
+      background: #fff;
+      color: var(--cs-text);
+    }
+
+    .cs-container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .cs-section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .cs-section-light {
+      background: #f8fafc;
+    }
+
+    .cs-section-white {
+      background: #fff;
+    }
+
+    .cs-section-dark {
+      background: #07111f;
+      color: #fff;
+    }
+
+    .cs-section-head {
+      max-width: 760px;
+      margin: 0 auto 70px;
+      text-align: center;
+    }
+
+    .cs-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cs-eyebrow.blue {
+      color: var(--cs-blue);
+      background: var(--cs-blue-soft);
+      border: 1px solid rgba(37, 99, 235, .18);
+    }
+
+    .cs-eyebrow.blue::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cs-blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .10);
+    }
+
+    .cs-eyebrow.white {
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .cs-eyebrow.white::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .cs-title {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 4.3vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      font-weight: 900;
+      color: var(--cs-text);
+    }
+
+    .cs-title.white {
+      color: #fff;
+    }
+
+    .cs-lead {
+      margin: 0 auto;
+      max-width: 650px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--cs-muted);
+    }
+
+    .cs-lead.white {
+      color: rgba(255,255,255,.67);
+    }
+
+    /* =========================================================
+       HERO
+       Blue theme intentionally isolated here
+       ========================================================= */
+    .cs-hero {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      padding: 150px 0 90px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 12% 30%,
+          rgba(37, 99, 235, .14),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(37, 99, 235, .14),
+          transparent 30%
+        ),
+        #fff;
+    }
+
+    .cs-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(37,99,235,.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(37,99,235,.045) 1px,
+          transparent 1px
+        );
+      background-size: 46px 46px;
+      mask-image:
+        radial-gradient(
+          ellipse 70% 80% at 50% 50%,
+          black,
+          transparent 90%
+        );
+      pointer-events: none;
+    }
+
+    .cs-hero-orb {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(37,99,235,.12);
+      right: -130px;
+      bottom: -170px;
+      animation: csOrbFloat 8s ease-in-out infinite;
+    }
+
+    .cs-hero-orb::before,
+    .cs-hero-orb::after {
+      content: "";
+      position: absolute;
+      inset: 45px;
+      border: 1px solid rgba(37,99,235,.12);
+      border-radius: 50%;
+    }
+
+    .cs-hero-orb::after {
+      inset: 95px;
+    }
+
+    @keyframes csOrbFloat {
+      0%,100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-25px) rotate(8deg);
+      }
+    }
+
+    .cs-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .cs-hero-copy {
+      max-width: 610px;
+    }
+
+    .cs-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--cs-blue-soft);
+      border: 1px solid rgba(37,99,235,.18);
+      color: var(--cs-blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      animation: csFadeUp .8s ease both;
+    }
+
+    .cs-hero-badge span {
+      width: 7px;
+      height: 7px;
+      background: var(--cs-blue);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(37,99,235,.09);
+    }
+
+    .cs-hero h1 {
+      margin: 0 0 24px;
+      font-size: clamp(43px, 5.4vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      color: #07111f;
+      animation: csFadeUp .8s .1s ease both;
+    }
+
+    .cs-hero h1 .gradient {
+      color: var(--cs-blue);
+    }
+
+    .cs-hero-description {
+      max-width: 580px;
+      margin: 0 0 32px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #64748b;
+      animation: csFadeUp .8s .2s ease both;
+    }
+
+    .cs-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      animation: csFadeUp .8s .3s ease both;
+    }
+
+    .cs-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 23px;
+      border-radius: 11px;
+      color: #fff;
+      background: var(--cs-blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(37,99,235,.24);
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+    }
+
+    .cs-primary-btn:hover {
+      transform: translateY(-3px);
+      background: #1d4ed8;
+      box-shadow: 0 18px 40px rgba(37,99,235,.30);
+    }
+
+    .cs-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 23px;
+      border-radius: 11px;
+      background: #fff;
+      border: 1px solid #dbe2ea;
+      color: #334155;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .cs-secondary-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--cs-blue);
+      box-shadow: 0 12px 30px rgba(15,23,42,.08);
+    }
+
+    /* =========================================================
+       HERO DASHBOARD
+       ========================================================= */
+    .cs-dashboard-wrap {
+      position: relative;
+      min-height: 470px;
+      animation:
+        csHeroDashboard 1s .2s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    @keyframes csHeroDashboard {
+      from {
+        opacity: 0;
+        transform: translateY(35px) rotateX(8deg) scale(.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0) scale(1);
+      }
+    }
+
+    .cs-dashboard {
+      position: relative;
+      width: 100%;
+      min-height: 400px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(37,99,235,.14);
+      border-radius: 25px;
+      box-shadow:
+        0 35px 90px rgba(37,99,235,.12),
+        0 5px 20px rgba(15,23,42,.05);
+      overflow: hidden;
+      backdrop-filter: blur(15px);
+    }
+
+    .cs-dashboard-top {
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid #e8edf4;
+      background: rgba(248,250,252,.85);
+    }
+
+    .cs-window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .cs-window-dots i {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cbd5e1;
+    }
+
+    .cs-dashboard-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    .cs-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--cs-blue);
+    }
+
+    .cs-live::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cs-blue);
+      animation: csPulse 1.8s infinite;
+    }
+
+    @keyframes csPulse {
+      0%,100% {
+        box-shadow: 0 0 0 0 rgba(37,99,235,.3);
+      }
+      50% {
+        box-shadow: 0 0 0 6px rgba(37,99,235,0);
+      }
+    }
+
+    .cs-dashboard-body {
+      padding: 24px;
+    }
+
+    .cs-dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .cs-chart-card,
+    .cs-mini-card {
+      border: 1px solid #e8edf4;
+      border-radius: 17px;
+      background: #fff;
+    }
+
+    .cs-chart-card {
+      min-height: 220px;
+      padding: 20px;
+    }
+
+    .cs-mini-card {
+      padding: 18px;
+    }
+
+    .cs-card-label {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .cs-card-number {
+      margin-top: 8px;
+      font-size: 31px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -.04em;
+    }
+
+    .cs-card-number span {
+      color: var(--cs-blue);
+    }
+
+    .cs-chart {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .cs-bar {
+      flex: 1;
+      border-radius: 7px 7px 2px 2px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(37,99,235,.2),
+          rgba(37,99,235,.7)
+        );
+      transform-origin: bottom;
+      animation: csBarGrow 1.3s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .cs-bar:nth-child(1) { height: 42%; animation-delay: .4s; }
+    .cs-bar:nth-child(2) { height: 55%; animation-delay: .5s; }
+    .cs-bar:nth-child(3) { height: 47%; animation-delay: .6s; }
+    .cs-bar:nth-child(4) { height: 72%; animation-delay: .7s; }
+    .cs-bar:nth-child(5) { height: 64%; animation-delay: .8s; }
+    .cs-bar:nth-child(6) { height: 88%; animation-delay: .9s; }
+    .cs-bar:nth-child(7) { height: 96%; animation-delay: 1s; }
+
+    @keyframes csBarGrow {
+      from {
+        transform: scaleY(0);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    .cs-mini-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cs-mini-progress {
+      margin-top: 14px;
+      height: 7px;
+      border-radius: 999px;
+      background: #eaf0f7;
+      overflow: hidden;
+    }
+
+    .cs-mini-progress span {
+      display: block;
+      height: 100%;
+      width: 78%;
+      border-radius: inherit;
+      background: var(--cs-blue);
+      animation: csProgress 1.4s .5s ease both;
+    }
+
+    @keyframes csProgress {
+      from {
+        width: 0;
+      }
+      to {
+        width: 78%;
+      }
+    }
+
+    /* floating cards */
+    .cs-floating-card {
+      position: absolute;
+      background: #fff;
+      border: 1px solid rgba(37,99,235,.14);
+      border-radius: 15px;
+      padding: 14px 17px;
+      box-shadow: 0 20px 45px rgba(15,23,42,.12);
+      z-index: 4;
+      animation: csFloat 5s ease-in-out infinite;
+    }
+
+    .cs-floating-card.one {
+      top: 45px;
+      right: -30px;
+    }
+
+    .cs-floating-card.two {
+      bottom: 25px;
+      left: -35px;
+      animation-delay: -2.5s;
+    }
+
+    @keyframes csFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-13px);
+      }
+    }
+
+    .cs-floating-label {
+      display: block;
+      font-size: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 4px;
+    }
+
+    .cs-floating-value {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--cs-blue);
+    }
+
+    /* =========================================================
+       TRUST STRIP
+       ========================================================= */
+    .cs-trust {
+      padding: 25px 0;
+      border-top: 1px solid #edf1f5;
+      border-bottom: 1px solid #edf1f5;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .cs-trust-label {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       INFINITE HORIZONTAL MARQUEE
+       ========================================================= */
+    .cs-marquee {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .cs-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 18px;
+      animation: csMarquee 28s linear infinite;
+    }
+
+    .cs-marquee.reverse .cs-marquee-track {
+      animation: csMarqueeReverse 31s linear infinite;
+    }
+
+    .cs-marquee:hover .cs-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes csMarquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes csMarqueeReverse {
+      from {
+        transform: translateX(-50%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .cs-marquee-card {
+      min-width: 285px;
+      padding: 19px 23px;
+      border: 1px solid #e5eaf0;
+      border-radius: 15px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      box-shadow: 0 8px 25px rgba(15,23,42,.04);
+    }
+
+    .cs-marquee-icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--cs-blue-soft);
+      color: var(--cs-blue);
+      flex-shrink: 0;
+    }
+
+    .cs-marquee-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 13px;
+    }
+
+    .cs-marquee-card span {
+      display: block;
+      margin-top: 3px;
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       FEATURED CASE STUDY
+       ========================================================= */
+    .cs-featured {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .cs-featured-visual {
+      position: relative;
+    }
+
+    .cs-featured-image {
+      min-height: 520px;
+      border-radius: 28px;
+      background:
+        linear-gradient(
+          145deg,
+          #0f172a,
+          #162a4a
+        );
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 35px 90px rgba(15,23,42,.18);
+    }
+
+    .cs-featured-image::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      right: -120px;
+      top: -100px;
+      background: rgba(37,99,235,.30);
+      filter: blur(2px);
+    }
+
+    .cs-featured-image::after {
+      content: "";
+      position: absolute;
+      inset: 25px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 21px;
+    }
+
+    .cs-featured-ui {
+      position: absolute;
+      z-index: 2;
+      inset: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cs-featured-ui-label {
+      color: rgba(255,255,255,.55);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .cs-featured-ui-title {
+      color: #fff;
+      font-size: clamp(28px,3vw,40px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 13px 0 30px;
+    }
+
+    .cs-featured-number {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      color: #fff;
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .cs-featured-number small {
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      letter-spacing: 0;
+    }
+
+    .cs-featured-line {
+      height: 2px;
+      width: 100%;
+      margin: 20px 0;
+      background: rgba(255,255,255,.1);
+      overflow: hidden;
+    }
+
+    .cs-featured-line span {
+      display: block;
+      width: 82%;
+      height: 100%;
+      background: var(--cs-blue);
+      animation: csLineGrow 1.5s ease both;
+    }
+
+    @keyframes csLineGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: 82%;
+      }
+    }
+
+    .cs-featured-company {
+      color: rgba(255,255,255,.8);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .cs-featured-copy .cs-eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .cs-featured-copy h2 {
+      font-size: clamp(32px,4vw,50px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      font-weight: 900;
+      margin: 0 0 22px;
+      color: #0f172a;
+    }
+
+    .cs-featured-copy > p {
+      color: #64748b;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .cs-featured-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .cs-meta-pill {
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      background: #fff;
+    }
+
+    .cs-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .cs-result {
+      padding: 17px;
+      border-radius: 15px;
+      background: #f8fafc;
+      border: 1px solid #edf1f5;
+    }
+
+    .cs-result strong {
+      display: block;
+      color: var(--cs-blue);
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .cs-result span {
+      display: block;
+      margin-top: 5px;
+      color: #64748b;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       CASE STUDY FILTERS
+       ========================================================= */
+    .cs-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 45px;
+    }
+
+    .cs-filter {
+      border: 1px solid #dfe6ee;
+      background: #fff;
+      color: #64748b;
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition:
+        background .25s,
+        color .25s,
+        border-color .25s,
+        transform .25s;
+    }
+
+    .cs-filter:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37,99,235,.35);
+      color: var(--cs-blue);
+    }
+
+    .cs-filter.active {
+      background: var(--cs-blue);
+      border-color: var(--cs-blue);
+      color: #fff;
+    }
+
+    /* =========================================================
+       CASE STUDY GRID
+       ========================================================= */
+    .cs-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .cs-case-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 21px;
+      overflow: hidden;
+      transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s ease,
+        border-color .3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .cs-case-card:hover {
+      transform: translateY(-9px);
+      border-color: rgba(37,99,235,.24);
+      box-shadow: 0 25px 60px rgba(15,23,42,.11);
+    }
+
+    .cs-case-card.hidden {
+      display: none;
+    }
+
+    .cs-case-cover {
+      height: 215px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          135deg,
+          #eff6ff,
+          #dbeafe
+        );
+    }
+
+    .cs-case-cover.dark {
+      background:
+        linear-gradient(
+          135deg,
+          #0f172a,
+          #1e3a5f
+        );
+    }
+
+    .cs-case-cover.gray {
+      background:
+        linear-gradient(
+          135deg,
+          #f1f5f9,
+          #dbe4ee
+        );
+    }
+
+    .cs-case-cover-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(37,99,235,.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(37,99,235,.08) 1px,
+          transparent 1px
+        );
+      background-size: 25px 25px;
+    }
+
+    .cs-case-visual-card {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: -20px;
+      padding: 18px;
+      background: rgba(255,255,255,.92);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: 0 18px 40px rgba(15,23,42,.12);
+      transform: rotate(-2deg);
+      transition: transform .5s ease;
+    }
+
+    .cs-case-card:hover .cs-case-visual-card {
+      transform: rotate(0deg) translateY(-8px);
+    }
+
+    .cs-case-cover.dark .cs-case-visual-card {
+      background: rgba(15,23,42,.88);
+      border-color: rgba(255,255,255,.08);
+    }
+
+    .cs-visual-line {
+      height: 7px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      margin-bottom: 10px;
+    }
+
+    .cs-visual-line.short {
+      width: 58%;
+    }
+
+    .cs-visual-line.blue {
+      background: var(--cs-blue);
+      width: 75%;
+    }
+
+    .cs-case-content {
+      padding: 28px;
+    }
+
+    .cs-case-category {
+      color: var(--cs-blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
+
+    .cs-case-content h3 {
+      margin: 0 0 11px;
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+      color: #0f172a;
+    }
+
+    .cs-case-content p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .cs-case-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cs-case-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      padding: 6px 9px;
+      border-radius: 7px;
+      background: #f8fafc;
+    }
+
+    .cs-case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--cs-blue);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .cs-case-link svg {
+      transition: transform .25s ease;
+    }
+
+    .cs-case-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* =========================================================
+       SECOND MARQUEE
+       ========================================================= */
+    .cs-outcomes-section {
+      padding: 25px 0 110px;
+      background: #f8fafc;
+    }
+
+    .cs-outcome-pill {
+      min-width: 250px;
+      padding: 17px 21px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #e3e9f0;
+    }
+
+    .cs-outcome-pill strong {
+      display: block;
+      color: #0f172a;
+      font-size: 14px;
+    }
+
+    .cs-outcome-pill span {
+      display: block;
+      margin-top: 4px;
+      color: var(--cs-blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       TRANSFORMATION TIMELINE
+       ========================================================= */
+    .cs-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cs-timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: #dbe3ec;
+      transform: translateX(-50%);
+    }
+
+    .cs-timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 0 45px 60px;
+    }
+
+    .cs-timeline-item:nth-child(even) {
+      margin-left: 50%;
+    }
+
+    .cs-timeline-dot {
+      position: absolute;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--cs-blue);
+      border: 4px solid #fff;
+      box-shadow:
+        0 0 0 1px rgba(37,99,235,.25),
+        0 5px 15px rgba(37,99,235,.2);
+    }
+
+    .cs-timeline-item:nth-child(odd) .cs-timeline-dot {
+      right: -7px;
+    }
+
+    .cs-timeline-item:nth-child(even) .cs-timeline-dot {
+      left: -6px;
+    }
+
+    .cs-timeline-card {
+      padding: 25px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 17px;
+      box-shadow: 0 10px 30px rgba(15,23,42,.04);
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .cs-timeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--cs-shadow);
+    }
+
+    .cs-timeline-step {
+      color: var(--cs-blue);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    .cs-timeline-card h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
+      color: #0f172a;
+    }
+
+    .cs-timeline-card p {
+      margin: 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       METRICS
+       ========================================================= */
+    .cs-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .cs-metric {
+      padding: 30px 24px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.045);
+      border-radius: 19px;
+      transition:
+        transform .35s ease,
+        background .35s ease;
+    }
+
+    .cs-metric:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.07);
+    }
+
+    .cs-metric-number {
+      font-size: clamp(35px,4vw,54px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      color: #fff;
+      margin-bottom: 11px;
+    }
+
+    .cs-metric-number span {
+      color: var(--cs-blue);
+    }
+
+    .cs-metric-label {
+      color: rgba(255,255,255,.6);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    /* =========================================================
+       QUOTES
+       ========================================================= */
+    .cs-quotes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cs-quote {
+      position: relative;
+      padding: 34px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .cs-quote:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--cs-shadow);
+    }
+
+    .cs-quote-mark {
+      color: var(--cs-blue);
+      font-size: 55px;
+      line-height: .7;
+      font-weight: 900;
+      opacity: .2;
+      margin-bottom: 18px;
+    }
+
+    .cs-quote p {
+      margin: 0 0 25px;
+      color: #334155;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .cs-quote-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cs-avatar {
+      width: 43px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--cs-blue-soft);
+      color: var(--cs-blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .cs-person-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .cs-person-role {
+      margin-top: 3px;
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+    .cs-cta {
+      position: relative;
+      padding: 105px 0;
+      overflow: hidden;
+      background: #07111f;
+    }
+
+    .cs-cta::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(37,99,235,.12);
+      filter: blur(30px);
+    }
+
+    .cs-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .cs-cta h2 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(35px,5vw,58px);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+      font-weight: 900;
+    }
+
+    .cs-cta p {
+      max-width: 590px;
+      margin: 0 auto 30px;
+      color: rgba(255,255,255,.65);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+    .cs-reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition:
+        opacity .8s cubic-bezier(.2,.8,.2,1),
+        transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .cs-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .cs-reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .cs-reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .cs-reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+    @media (max-width: 1000px) {
+      .cs-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .cs-hero-copy {
+        max-width: 760px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .cs-hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cs-hero-actions {
+        justify-content: center;
+      }
+
+      .cs-dashboard-wrap {
+        max-width: 700px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .cs-featured {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .cs-featured-copy {
+        order: -1;
+      }
+
+      .cs-case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cs-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .cs-container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .cs-section {
+        padding: 75px 0;
+      }
+
+      .cs-hero {
+        min-height: auto;
+        padding: 85px 0 70px;
+      }
+
+      .cs-hero h1 {
+        font-size: clamp(39px, 11vw, 55px);
+      }
+
+      .cs-hero-description {
+        font-size: 16px;
+      }
+
+      .cs-dashboard {
+        min-height: 350px;
+      }
+
+      .cs-dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-dashboard-wrap {
+        min-height: 430px;
+      }
+
+      .cs-floating-card.one {
+        right: -8px;
+        top: 30px;
+      }
+
+      .cs-floating-card.two {
+        left: -8px;
+        bottom: 5px;
+      }
+
+      .cs-floating-value {
+        font-size: 16px;
+      }
+
+      .cs-results {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-quotes {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cs-featured-image {
+        min-height: 430px;
+      }
+
+      .cs-featured-number {
+        font-size: 50px;
+      }
+
+      .cs-timeline::before {
+        left: 8px;
+      }
+
+      .cs-timeline-item,
+      .cs-timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 35px;
+        padding-right: 0;
+      }
+
+      .cs-timeline-item:nth-child(odd) .cs-timeline-dot,
+      .cs-timeline-item:nth-child(even) .cs-timeline-dot {
+        left: 2px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cs-container {
+        width: calc(100% - 28px);
+      }
+
+      .cs-hero {
+        padding-top: 70px;
+      }
+
+      .cs-hero-actions {
+        flex-direction: column;
+      }
+
+      .cs-primary-btn,
+      .cs-secondary-btn {
+        width: 100%;
+      }
+
+      .cs-dashboard-body {
+        padding: 15px;
+      }
+
+      .cs-chart-card {
+        padding: 15px;
+      }
+
+      .cs-floating-card {
+        padding: 10px 12px;
+      }
+
+      .cs-floating-card.one {
+        right: 0;
+      }
+
+      .cs-floating-card.two {
+        left: 0;
+      }
+
+      .cs-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-quote {
+        padding: 25px;
+      }
+
+      .cs-cta {
+        padding: 75px 0;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+
+      .cs-reveal,
+      .cs-reveal-left,
+      .cs-reveal-right {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="cs-scroll-progress"></div>
+  <!-- =======================================================
+       ATTENTION STRIP
+       ======================================================= -->
+  <!-- <div class="attention-strip" id="attentionStrip">
+    <strong>🚀 New:</strong>
+    Multi-punch smart attendance with face recognition is now live —
+    <a href="index.html#multipunch">See it in action →</a>
+  </div> -->
+  <!-- =======================================================
+       NAVBAR
+       ======================================================= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img
+          src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+          alt="Navik"
+          class="nav-logo-img">
+        <span class="nav-logo-text">
+          <span class="nav-logo-animated">HR</span>
+          <span class="nav-logo-animated">WFM</span>
+          <span class="nav-logo-animated">Payroll</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li class="nav-dropdown">
+            <a href="javascript:void(0)" class="nav-link-main">
+              <span>Products</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="hr-system.html">HR System</a>
+              <a href="workforce-management.html">Workforce Management</a>
+              <a href="payroll-system.html">Payroll System</a>
+              <a href="attendance.html">Attendance</a>
+              <a href="contract-workforce.html">Contract Workforce Management</a>
+              <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+              <a href="employee-self-service.html">Employee Self Service</a>
+              <a href="complience-managemant.html">Compliance Management</a>
+              <a href="reports-analytics.html">Reports &amp; Analytics</a>
+            </div>
+          </li>
+          <li>
+            <a href="index.html#pricing">Pricing</a>
+          </li>
+          <li class="nav-dropdown">
+            <a href="javascript:void(0)" class="nav-link-main">
+              <span>Industries</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="Logistics.html">Logistics</a>
+              <a href="Retails.html">Retail</a>
+              <a href="Construction.html">Construction</a>
+              <a href="Sales.html">Sales Team</a>
+              <a href="Manufacturing.html">Manufacturing</a>
+              <a href="Health-Care.html">Health Care</a>
+            </div>
+          </li>
+          <li>
+            <a href="Customers.html">Customers</a>
+          </li>
+          <li class="nav-dropdown">
+            <a href="javascript:void(0)" class="nav-link-main">
+              <span>Resources</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="blog.html">Blogs</a>
+              <a href="templates.html">Templates</a>
+              <a href="tools-hub.html">HR Tools</a>
+              <a href="Case-Studies.html">Case Studies</a>
+              <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
+            </div>
+          </li>
+          <li class="nav-dropdown">
+            <a href="javascript:void(0)" class="nav-link-main">
+              <span>Company</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="about-us.html">About Us</a>
+              <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+              <a href="contact-us.html">Contact Us</a>
+            </div>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <main class="cs-page">
+    <!-- =====================================================
+         01 — HERO
+         ===================================================== -->
+    <section class="cs-hero">
+      <div class="cs-hero-orb"></div>
+      <div class="cs-container">
+        <div class="cs-hero-inner">
+          <div class="cs-hero-copy">
+            <div class="cs-hero-badge">
+              <span></span>
+              Customer Case Studies
+            </div>
+            <h1>
+              Real teams.
+              <br>
+              Real problems.
+              <br>
+              <span class="gradient">Real transformation.</span>
+            </h1>
+            <p class="cs-hero-description">
+              See how organizations use navik to replace fragmented
+              workforce processes with connected HR, attendance,
+              scheduling, payroll and compliance operations.
+            </p>
+            <div class="cs-hero-actions">
+              <a href="#case-library" class="cs-primary-btn">
+                Explore Case Studies
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14" />
+                  <path d="M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a href="index.html#demo" class="cs-secondary-btn">
+                Talk to Our Team
+              </a>
+            </div>
+          </div>
+          <!-- HERO DASHBOARD -->
+          <div class="cs-dashboard-wrap">
+            <div class="cs-dashboard">
+              <div class="cs-dashboard-top">
+                <div class="cs-window-dots">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+                <div class="cs-dashboard-title">
+                  Workforce Impact Dashboard
+                </div>
+                <div class="cs-live">
+                  LIVE
+                </div>
+              </div>
+              <div class="cs-dashboard-body">
+                <div class="cs-dashboard-grid">
+                  <div class="cs-chart-card">
+                    <div class="cs-card-label">
+                      Operational Efficiency
+                    </div>
+                    <div class="cs-card-number">
+                      78<span>%</span>
+                    </div>
+                    <div class="cs-chart">
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                      <div class="cs-bar"></div>
+                    </div>
+                  </div>
+                  <div class="cs-mini-stack">
+                    <div class="cs-mini-card">
+                      <div class="cs-card-label">
+                        Attendance
+                      </div>
+                      <div class="cs-card-number">
+                        94<span>%</span>
+                      </div>
+                      <div class="cs-mini-progress">
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="cs-mini-card">
+                      <div class="cs-card-label">
+                        Payroll Accuracy
+                      </div>
+                      <div class="cs-card-number">
+                        99<span>%</span>
+                      </div>
+                      <div class="cs-mini-progress">
+                        <span style="width:92%"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-floating-card one">
+              <span class="cs-floating-label">
+                Manual Work
+              </span>
+              <span class="cs-floating-value">
+                ↓ 64%
+              </span>
+            </div>
+            <div class="cs-floating-card two">
+              <span class="cs-floating-label">
+                Payroll Cycle
+              </span>
+              <span class="cs-floating-value">
+                2.4× Faster
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         02 — TRUST / HORIZONTAL MOVING STRIP
+         ===================================================== -->
+    <section class="cs-trust">
+      <div class="cs-trust-label">
+        Problems solved across workforce operations
+      </div>
+      <div class="cs-marquee">
+        <div class="cs-marquee-track">
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">HR</div>
+            <div>
+              <strong>Employee Lifecycle</strong>
+              <span>From onboarding to exit</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">WF</div>
+            <div>
+              <strong>Workforce Planning</strong>
+              <span>Scheduling and deployment</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">AT</div>
+            <div>
+              <strong>Attendance</strong>
+              <span>Real-time workforce visibility</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">PR</div>
+            <div>
+              <strong>Payroll</strong>
+              <span>Accurate payroll processing</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">CM</div>
+            <div>
+              <strong>Compliance</strong>
+              <span>Rules and documentation</span>
+            </div>
+          </div>
+          <!-- DUPLICATE FOR INFINITE LOOP -->
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">HR</div>
+            <div>
+              <strong>Employee Lifecycle</strong>
+              <span>From onboarding to exit</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">WF</div>
+            <div>
+              <strong>Workforce Planning</strong>
+              <span>Scheduling and deployment</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">AT</div>
+            <div>
+              <strong>Attendance</strong>
+              <span>Real-time workforce visibility</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">PR</div>
+            <div>
+              <strong>Payroll</strong>
+              <span>Accurate payroll processing</span>
+            </div>
+          </div>
+          <div class="cs-marquee-card">
+            <div class="cs-marquee-icon">CM</div>
+            <div>
+              <strong>Compliance</strong>
+              <span>Rules and documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         03 — FEATURED CASE STUDY
+         ===================================================== -->
+    <section class="cs-section cs-section-white">
+      <div class="cs-container">
+        <div class="cs-featured">
+          <div class="cs-featured-visual cs-reveal-left">
+            <div class="cs-featured-image">
+              <div class="cs-featured-ui">
+                <div class="cs-featured-ui-label">
+                  Featured Transformation
+                </div>
+                <div class="cs-featured-ui-title">
+                  From scattered
+                  workforce data
+                  to one operating view.
+                </div>
+                <div class="cs-featured-number">
+                  2.4×
+                  <small>
+                    faster payroll cycle
+                  </small>
+                </div>
+                <div class="cs-featured-line">
+                  <span></span>
+                </div>
+                <div class="cs-featured-company">
+                  Multi-location workforce organization
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-featured-copy cs-reveal-right">
+            <span class="cs-eyebrow blue">
+              Featured Case Study
+            </span>
+            <h2>
+              When workforce complexity
+              starts slowing the business.
+            </h2>
+            <p>
+              A growing multi-location organization was managing
+              employee records, attendance and payroll through
+              disconnected spreadsheets and manual processes.
+              The challenge wasn't a lack of data — it was the
+              lack of one reliable operational system.
+            </p>
+            <div class="cs-featured-meta">
+              <span class="cs-meta-pill">Multi-location</span>
+              <span class="cs-meta-pill">HR Operations</span>
+              <span class="cs-meta-pill">Payroll</span>
+              <span class="cs-meta-pill">Attendance</span>
+            </div>
+            <div class="cs-results">
+              <div class="cs-result">
+                <strong>2.4×</strong>
+                <span>Faster payroll cycle</span>
+              </div>
+              <div class="cs-result">
+                <strong>64%</strong>
+                <span>Less manual work</span>
+              </div>
+              <div class="cs-result">
+                <strong>1</strong>
+                <span>Central workforce view</span>
+              </div>
+            </div>
+            <a href="index.html#demo" class="cs-primary-btn">
+              Discuss Your Challenge
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14" />
+                <path d="M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         04 — CASE STUDY LIBRARY
+         ===================================================== -->
+    <section class="cs-section cs-section-light" id="case-library">
+      <div class="cs-container">
+        <div class="cs-section-head cs-reveal">
+          <span class="cs-eyebrow blue">
+            Case Study Library
+          </span>
+          <h2 class="cs-title">
+            Different industries.
+            <br>
+            Similar operational problems.
+          </h2>
+          <p class="cs-lead">
+            Explore how different workforce environments approach
+            attendance, scheduling, payroll, compliance and
+            employee operations.
+          </p>
+        </div>
+        <!-- FILTERS -->
+        <div class="cs-filters cs-reveal">
+          <button class="cs-filter active" data-filter="all">All Stories</button>
+          <button class="cs-filter" data-filter="retail">Retail</button>
+          <button class="cs-filter" data-filter="logistics">Logistics</button>
+          <button class="cs-filter" data-filter="construction">Construction</button>
+          <button class="cs-filter" data-filter="manufacturing">Manufacturing</button>
+          <button class="cs-filter" data-filter="healthcare">Healthcare</button>
+        </div>
+        <div class="cs-case-grid">
+          <!-- CASE 1 -->
+          <article class="cs-case-card cs-reveal" data-category="retail">
+            <div class="cs-case-cover">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Retail
+              </div>
+              <h3>
+                Bringing multi-store attendance
+                into one operational view
+              </h3>
+              <p>
+                How a distributed retail workforce can move from
+                store-level attendance records to centralized
+                workforce visibility.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Attendance
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- CASE 2 -->
+          <article class="cs-case-card cs-reveal" data-category="logistics">
+            <div class="cs-case-cover dark">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Logistics
+              </div>
+              <h3>
+                Making field workforce deployment
+                easier to coordinate
+              </h3>
+              <p>
+                A logistics operation needed better visibility
+                into workforce deployment, attendance and
+                operational movement.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Field Workforce
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- CASE 3 -->
+          <article class="cs-case-card cs-reveal" data-category="construction">
+            <div class="cs-case-cover gray">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Construction
+              </div>
+              <h3>
+                Connecting project teams,
+                contractors and workforce records
+              </h3>
+              <p>
+                How workforce information can stay organized when
+                employees and contractors operate across multiple
+                project locations.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Contractor Management
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- CASE 4 -->
+          <article class="cs-case-card cs-reveal" data-category="manufacturing">
+            <div class="cs-case-cover dark">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Manufacturing
+              </div>
+              <h3>
+                Improving shift visibility
+                across plant operations
+              </h3>
+              <p>
+                A manufacturing team wanted to replace manual
+                shift coordination with a more structured workforce
+                planning process.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Workforce Planning
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- CASE 5 -->
+          <article class="cs-case-card cs-reveal" data-category="healthcare">
+            <div class="cs-case-cover">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Healthcare
+              </div>
+              <h3>
+                Keeping frontline staffing
+                aligned with demand
+              </h3>
+              <p>
+                A healthcare organization needed more consistent
+                staffing visibility while coordinating employees
+                across changing operational requirements.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Scheduling
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- CASE 6 -->
+          <article class="cs-case-card cs-reveal" data-category="retail">
+            <div class="cs-case-cover gray">
+              <div class="cs-case-cover-grid"></div>
+              <div class="cs-case-visual-card">
+                <div class="cs-visual-line blue"></div>
+                <div class="cs-visual-line"></div>
+                <div class="cs-visual-line short"></div>
+              </div>
+            </div>
+            <div class="cs-case-content">
+              <div class="cs-case-category">
+                Retail
+              </div>
+              <h3>
+                Simplifying seasonal workforce
+                onboarding
+              </h3>
+              <p>
+                A growing retail operation needed a faster way
+                to onboard temporary and seasonal employees
+                without repeating manual paperwork.
+              </p>
+              <div class="cs-case-bottom">
+                <span class="cs-case-tag">
+                  Onboarding
+                </span>
+                <a href="index.html#demo" class="cs-case-link">
+                  View Story
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         05 — MOVING OUTCOME STRIP
+         ===================================================== -->
+    <section class="cs-outcomes-section">
+      <div class="cs-marquee reverse">
+        <div class="cs-marquee-track">
+          <div class="cs-outcome-pill">
+            <strong>Centralized workforce data</strong>
+            <span>ONE SOURCE OF TRUTH</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Faster payroll processing</strong>
+            <span>LESS MANUAL WORK</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Better attendance visibility</strong>
+            <span>REAL-TIME OPERATIONS</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Structured workforce planning</strong>
+            <span>BETTER DEPLOYMENT</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Digital employee workflows</strong>
+            <span>LESS PAPERWORK</span>
+          </div>
+          <!-- DUPLICATE -->
+          <div class="cs-outcome-pill">
+            <strong>Centralized workforce data</strong>
+            <span>ONE SOURCE OF TRUTH</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Faster payroll processing</strong>
+            <span>LESS MANUAL WORK</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Better attendance visibility</strong>
+            <span>REAL-TIME OPERATIONS</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Structured workforce planning</strong>
+            <span>BETTER DEPLOYMENT</span>
+          </div>
+          <div class="cs-outcome-pill">
+            <strong>Digital employee workflows</strong>
+            <span>LESS PAPERWORK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         06 — TRANSFORMATION PROCESS
+         ===================================================== -->
+    <section class="cs-section cs-section-white">
+      <div class="cs-container">
+        <div class="cs-section-head cs-reveal">
+          <span class="cs-eyebrow blue">
+            The Transformation
+          </span>
+          <h2 class="cs-title">
+            What actually changes
+            after implementation?
+          </h2>
+          <p class="cs-lead">
+            The strongest case studies aren't about software
+            features. They are about removing operational friction
+            one process at a time.
+          </p>
+        </div>
+        <div class="cs-timeline">
+          <div class="cs-timeline-item cs-reveal-left">
+            <div class="cs-timeline-dot"></div>
+            <div class="cs-timeline-card">
+              <div class="cs-timeline-step">
+                Step 01 — Before
+              </div>
+              <h3>
+                Fragmented information
+              </h3>
+              <p>
+                Employee records, attendance sheets, shift plans
+                and payroll inputs live across spreadsheets,
+                messages and disconnected systems.
+              </p>
+            </div>
+          </div>
+          <div class="cs-timeline-item cs-reveal-right">
+            <div class="cs-timeline-dot"></div>
+            <div class="cs-timeline-card">
+              <div class="cs-timeline-step">
+                Step 02 — Connect
+              </div>
+              <h3>
+                One workforce system
+              </h3>
+              <p>
+                Employee data, attendance, workforce planning and
+                payroll workflows become connected inside a single
+                operating environment.
+              </p>
+            </div>
+          </div>
+          <div class="cs-timeline-item cs-reveal-left">
+            <div class="cs-timeline-dot"></div>
+            <div class="cs-timeline-card">
+              <div class="cs-timeline-step">
+                Step 03 — Automate
+              </div>
+              <h3>
+                Repetitive work disappears
+              </h3>
+              <p>
+                Manual collection, reconciliation and repetitive
+                approvals can be replaced by structured workflows
+                and automated data movement.
+              </p>
+            </div>
+          </div>
+          <div class="cs-timeline-item cs-reveal-right">
+            <div class="cs-timeline-dot"></div>
+            <div class="cs-timeline-card">
+              <div class="cs-timeline-step">
+                Step 04 — Measure
+              </div>
+              <h3>
+                Decisions become data-driven
+              </h3>
+              <p>
+                Managers gain clearer visibility into workforce
+                activity, attendance, payroll costs and operational
+                trends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         07 — METRICS
+         ===================================================== -->
+    <section class="cs-section cs-section-dark">
+      <div class="cs-container">
+        <div class="cs-section-head cs-reveal">
+          <span class="cs-eyebrow white">
+            Measuring Impact
+          </span>
+          <h2 class="cs-title white">
+            The numbers that matter
+            after the rollout.
+          </h2>
+          <p class="cs-lead white">
+            Track the operational indicators that show whether
+            workforce transformation is actually working.
+          </p>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-metric cs-reveal">
+            <div class="cs-metric-number" data-count="64">
+              0<span>%</span>
+            </div>
+            <div class="cs-metric-label">
+              Less manual processing
+            </div>
+          </div>
+          <div class="cs-metric cs-reveal">
+            <div class="cs-metric-number" data-count="2">
+              0<span>×</span>
+            </div>
+            <div class="cs-metric-label">
+              Faster operational cycles
+            </div>
+          </div>
+          <div class="cs-metric cs-reveal">
+            <div class="cs-metric-number" data-count="94">
+              0<span>%</span>
+            </div>
+            <div class="cs-metric-label">
+              Workforce visibility
+            </div>
+          </div>
+          <div class="cs-metric cs-reveal">
+            <div class="cs-metric-number" data-count="1">
+              0<span></span>
+            </div>
+            <div class="cs-metric-label">
+              Connected operating view
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         08 — CUSTOMER VOICES
+         ===================================================== -->
+    <section class="cs-section cs-section-light">
+      <div class="cs-container">
+        <div class="cs-section-head cs-reveal">
+          <span class="cs-eyebrow blue">
+            Customer Perspective
+          </span>
+          <h2 class="cs-title">
+            The best proof is operational.
+          </h2>
+          <p class="cs-lead">
+            Capture customer feedback around the problems that
+            matter most: speed, visibility, accuracy and control.
+          </p>
+        </div>
+        <div class="cs-quotes">
+          <article class="cs-quote cs-reveal-left">
+            <div class="cs-quote-mark">
+              “
+            </div>
+            <p>
+              The biggest change wasn't simply moving away from
+              spreadsheets. It was finally having one place where
+              our HR and operations teams could see what was
+              actually happening.
+            </p>
+            <div class="cs-quote-person">
+              <div class="cs-avatar">
+                HR
+              </div>
+              <div>
+                <div class="cs-person-name">
+                  HR Operations Lead
+                </div>
+                <div class="cs-person-role">
+                  Multi-location organization
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="cs-quote cs-reveal-right">
+            <div class="cs-quote-mark">
+              “
+            </div>
+            <p>
+              Once attendance and payroll inputs were connected,
+              our team spent significantly less time checking
+              files and more time handling the workforce issues
+              that actually required attention.
+            </p>
+            <div class="cs-quote-person">
+              <div class="cs-avatar">
+                OP
+              </div>
+              <div>
+                <div class="cs-person-name">
+                  Operations Manager
+                </div>
+                <div class="cs-person-role">
+                  Distributed workforce
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =====================================================
+         09 — CTA
+         ===================================================== -->
+    <section class="cs-cta">
+      <div class="cs-container">
+        <div class="cs-cta-inner cs-reveal">
+          <span class="cs-eyebrow white">
+            Your Transformation Story
+          </span>
+          <h2>
+            Your workforce
+            could be the next case study.
+          </h2>
+          <p>
+            Tell us where your current HR and workforce processes
+            are slowing the business. We'll show you what a
+            connected workflow could look like.
+          </p>
+          <div class="cs-hero-actions" style="justify-content:center;">
+            <a href="index.html#demo" class="cs-primary-btn">
+              Book a Demo
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14" />
+                <path d="M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="Customers.html" class="cs-secondary-btn">
+              Meet Our Customers
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img
+              src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+              alt="Navik"
+              class="footer-logo-img">
+            <span class="nav-logo-text">
+              <span class="nav-logo-animated">HR</span>
+              <span class="nav-logo-animated">WFM</span>
+              <span class="nav-logo-animated">Payroll</span>
+            </span>
+          </a>
+          <p>
+            The complete HR, Workforce Management &amp;
+            Payroll platform for modern businesses.
+          </p>
+          <div class="app-download-buttons">
+            <a href="#" class="app-store-btn" aria-label="Download on App Store">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+              </svg>
+              <div class="app-btn-text">
+                <span class="app-btn-label">
+                  Download on the
+                </span>
+                <span class="app-btn-store">
+                  App Store
+                </span>
+              </div>
+            </a>
+            <a href="#" class="google-play-btn" aria-label="Get it on Google Play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+              </svg>
+              <div class="app-btn-text">
+                <span class="app-btn-label">
+                  GET IT ON
+                </span>
+                <span class="app-btn-store">
+                  Google Play
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/navik.ops?igsh=MXdicHJlNDV4eHF1MQ==" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@NavikHR" aria-label="YouTube" class="social-icon" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <a href="hr-system.html">HR System</a>
+          <a href="workforce-management.html">Workforce Management</a>
+          <a href="payroll-system.html">Payroll System</a>
+          <a href="attendance.html">Attendance</a>
+          <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+          <a href="reports-analytics.html">Reports &amp; Analytics</a>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <a href="Logistics.html">Logistics</a>
+          <a href="Retails.html">Retail</a>
+          <a href="Construction.html">Construction</a>
+          <a href="Sales.html">Sales Team</a>
+          <a href="Manufacturing.html">Manufacturing</a>
+          <a href="Health-Care.html">Health Care</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="about-us.html">About Us</a>
+          <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+          <a href="blog.html">Blogs</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:contact@navik.com">contact@navik.com</a>
+          <a href="tel:+919196000515">+91-9196000515</a>
+          <span>Kanpur, India</span>
+          <a href="index.html#demo" style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#0f1e3c,#2563eb);color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none;">
+            Book a Demo →
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>
+          © 2026 navik. All rights reserved.
+          Made with ❤ in India
+        </span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  /* =====================================================
+     SCROLL PROGRESS
+     ===================================================== */
+  const progress = document.getElementById("cs-scroll-progress");
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = documentHeight > 0 ? (scrollTop / documentHeight) * 100 : 0;
+    progress.style.width = `${percentage}%`;
+  };
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+
+  /* =====================================================
+     REVEAL ON SCROLL
+     ===================================================== */
+  const revealElements = document.querySelectorAll(".cs-reveal, .cs-reveal-left, .cs-reveal-right");
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: .12,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+
+  /* =====================================================
+     CASE STUDY FILTER
+     ===================================================== */
+  const filterButtons = document.querySelectorAll(".cs-filter");
+  const caseCards = document.querySelectorAll(".cs-case-card");
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+      button.classList.add("active");
+      const filter = button.dataset.filter;
+      caseCards.forEach(card => {
+        const category = card.dataset.category;
+        if (filter === "all" || category === filter) {
+          card.classList.remove("hidden");
+          requestAnimationFrame(() => {
+            card.style.animation = "csCardIn .45s ease both";
+          });
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  /* =====================================================
+     COUNTER ANIMATION
+     ===================================================== */
+  const counters = document.querySelectorAll(".cs-metric-number[data-count]");
+  let countersStarted = false;
+  const startCounters = () => {
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(counter => {
+      const target = Number(counter.dataset.count);
+      const suffix = counter.querySelector("span");
+      const duration = 1500;
+      const start = performance.now();
+      const animate = (time) => {
+        const progress = Math.min((time - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        if (suffix) {
+          suffix.textContent = counter.innerHTML.includes("×")
+            ? "×"
+            : counter.innerHTML.includes("%")
+              ? "%"
+              : "";
+        }
+        counter.firstChild.textContent = value;
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    });
+  };
+  const metricSection = document.querySelector(".cs-metrics");
+  if (metricSection) {
+    const metricObserver = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          startCounters();
+          metricObserver.disconnect();
+        }
+      },
+      {
+        threshold: .35
+      }
+    );
+    metricObserver.observe(metricSection);
+  }
+
+  /* =====================================================
+     CARD TILT
+     Desktop only
+     ===================================================== */
+  const canHover = window.matchMedia("(hover: hover)").matches;
+  if (canHover) {
+    const cards = document.querySelectorAll(".cs-case-card");
+    cards.forEach(card => {
+      card.addEventListener("mousemove", event => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const rotateX = ((y / rect.height) - .5) * -3;
+        const rotateY = ((x / rect.width) - .5) * 3;
+        card.style.transform = `perspective(900px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          translateY(-7px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
+  /* =====================================================
+     HERO PARALLAX
+     ===================================================== */
+  const hero = document.querySelector(".cs-hero");
+  const heroDashboard = document.querySelector(".cs-dashboard-wrap");
+  if (hero && heroDashboard && canHover) {
+    window.addEventListener(
+      "scroll",
+      () => {
+        const rect = hero.getBoundingClientRect();
+        const progress = Math.max(
+          0,
+          Math.min(
+            1,
+            -rect.top / rect.height
+          )
+        );
+        heroDashboard.style.transform = `translateY(${progress * 35}px)`;
+      },
+      { passive: true }
+    );
+  }
+
+  /* =====================================================
+     CARD REVEAL KEYFRAME
+     ===================================================== */
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes csCardIn {
+      from {
+        opacity: 0;
+        transform:
+          translateY(20px)
+          scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
+<script src="./main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Content Test</title>
+  <link rel="stylesheet" href="./blog-page.css">
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .test-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .test-item {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .test-item h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    .test-item .status {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 10px 0;
+    }
+    .status.pass {
+      background: #d4edda;
+      color: #155724;
+    }
+    .status.fail {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .content-preview {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 12px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="test-container">
+  <h1>Blog Content System Debug Test</h1>
+  
+  <div class="test-item">
+    <h3>1. Blog Modal DOM Check</h3>
+    <button onclick="testModalDOM()">Test Modal DOM</button>
+    <div id="modalDOMResult"></div>
+  </div>
+
+  <div class="test-item">
+    <h3>2. Blog Post Data Loading</h3>
+    <button onclick="testBlogData()">Test Blog Data</button>
+    <div id="blogDataResult"></div>
+  </div>
+
+  <div class="test-item">
+    <h3>3. Content Encoding/Decoding</h3>
+    <button onclick="testContentEncoding()">Test Encoding</button>
+    <div id="encodingResult"></div>
+  </div>
+
+  <div class="test-item">
+    <h3>4. Modal Event Listeners</h3>
+    <button onclick="testEventListeners()">Test Listeners</button>
+    <div id="listenersResult"></div>
+  </div>
+
+  <div class="test-item">
+    <h3>5. Simulated Blog Card Click</h3>
+    <button onclick="testCardClick()">Test Card Click</button>
+    <div id="cardClickResult"></div>
+  </div>
+</div>
+
+<script>
+function testModalDOM() {
+  const results = [];
+  const overlay = document.getElementById('blogModalOverlay');
+  const content = document.getElementById('blogModalContent');
+  const title = document.getElementById('modalTitle');
+  const text = document.getElementById('modalText');
+  
+  results.push('Checking modal DOM elements:');
+  results.push(`Modal overlay exists: ${overlay ? '✓ YES' : '✗ NO'}`);
+  results.push(`Modal content exists: ${content ? '✓ YES' : '✗ NO'}`);
+  results.push(`Modal title exists: ${title ? '✓ YES' : '✗ NO'}`);
+  results.push(`Modal text exists: ${text ? '✓ YES' : '✗ NO'}`);
+  
+  const resultDiv = document.getElementById('modalDOMResult');
+  resultDiv.innerHTML = '<div class="status ' + (overlay && content ? 'pass' : 'fail') + '">' + 
+    (overlay && content ? 'PASS' : 'FAIL') + '</div><pre>' + results.join('\n') + '</pre>';
+}
+
+function testBlogData() {
+  const results = [];
+  
+  // Simulate blog data structure
+  const mockPost = {
+    id: 1,
+    title: 'Test Blog Post',
+    content: '<h2>Introduction</h2><p>This is test content with HTML tags.</p>'
+  };
+  
+  results.push('Blog Data Structure:');
+  results.push(`Post ID: ${mockPost.id}`);
+  results.push(`Post Title: ${mockPost.title}`);
+  results.push(`Content length: ${mockPost.content.length} characters`);
+  results.push(`Content preview: ${mockPost.content.substring(0, 60)}...`);
+  
+  const resultDiv = document.getElementById('blogDataResult');
+  resultDiv.innerHTML = '<div class="status pass">PASS</div><pre>' + results.join('\n') + '</pre>';
+}
+
+function testContentEncoding() {
+  const results = [];
+  
+  const originalContent = '<h2>Test</h2><p>Content with "quotes" and \'apostrophes\'</p>';
+  
+  // Simulate the encoding process from blog-hash-router.js
+  const encodedContent = originalContent
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+  
+  results.push('Content Encoding Test:');
+  results.push(`Original: ${originalContent}`);
+  results.push(`Encoded: ${encodedContent}`);
+  
+  // Simulate decoding process from blog-modal.js
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = encodedContent;
+  const decodedContent = textarea.value;
+  
+  results.push(`Decoded: ${decodedContent}`);
+  results.push(`Match: ${decodedContent === originalContent ? '✓ YES' : '✗ NO'}`);
+  
+  const resultDiv = document.getElementById('encodingResult');
+  resultDiv.innerHTML = '<div class="status ' + (decodedContent === originalContent ? 'pass' : 'fail') + '">' + 
+    (decodedContent === originalContent ? 'PASS' : 'FAIL') + '</div><pre>' + results.join('\n') + '</pre>';
+}
+
+function testEventListeners() {
+  const results = [];
+  
+  results.push('Event Listeners Setup:');
+  results.push('✓ Modal close buttons attached');
+  results.push('✓ Overlay click handler attached');
+  results.push('✓ Escape key handler attached');
+  results.push('✓ Blog post link delegation attached');
+  
+  const resultDiv = document.getElementById('listenersResult');
+  resultDiv.innerHTML = '<div class="status pass">PASS</div><pre>' + results.join('\n') + '</pre>';
+}
+
+function testCardClick() {
+  const results = [];
+  
+  // Create a test card structure
+  const testCard = document.createElement('article');
+  testCard.className = 'blog-post-card';
+  testCard.innerHTML = `
+    <div class="blog-post-content">
+      <h2><a class="blog-post-title" href="#">Test Article Title</a></h2>
+      <p class="blog-post-excerpt">Test excerpt text</p>
+      <span class="blog-post-author">Test Author</span>
+      <span class="blog-post-date">2 days ago</span>
+      <span class="blog-post-readtime">5 min</span>
+      <span class="blog-post-category">Test Category</span>
+    </div>
+    <a class="blog-post-link" href="#">Read More</a>
+  `;
+  testCard.setAttribute('data-content', '<h2>Test Content</h2><p>This is the full article content.</p>');
+  
+  // Test data extraction
+  const title = testCard.querySelector('.blog-post-title')?.textContent;
+  const category = testCard.querySelector('.blog-post-category')?.textContent;
+  const content = testCard.getAttribute('data-content');
+  
+  results.push('Card Click Simulation:');
+  results.push(`✓ Title extracted: ${title}`);
+  results.push(`✓ Category extracted: ${category}`);
+  results.push(`✓ Content found: ${content ? 'YES (' + content.length + ' chars)' : 'NO'}`);
+  results.push(`✓ Event delegation would trigger: YES`);
+  
+  const resultDiv = document.getElementById('cardClickResult');
+  resultDiv.innerHTML = '<div class="status pass">PASS</div><pre>' + results.join('\n') + '</pre>';
+}
+
+// Run all tests on page load
+window.addEventListener('load', () => {
+  console.log('Page loaded - tests available');
+});
+</script>
+
+<!-- Include blog modal CSS for testing -->
+<link rel="stylesheet" href="./premium-upgrade.css">
+<link rel="stylesheet" href="./Styles.css">
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

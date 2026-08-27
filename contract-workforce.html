@@ -1,0 +1,5215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contract Workforce Management - Flexible Workforce | navik</title>
+
+  <meta
+    name="description"
+    content="Manage contract and temporary employees efficiently with navik's Contract Workforce Management System. Streamlined processes, compliance tracking, workforce visibility, and cost optimization."
+  >
+
+  <meta
+    name="keywords"
+    content="Contract Workforce, Temporary Employees, Worker Management, Contract Management, Staffing, Workforce Management, Compliance"
+  >
+
+  <meta name="author" content="navik">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contract Workforce Management | navik">
+  <meta
+    property="og:description"
+    content="Efficiently manage contract and temporary employees with streamlined processes, workforce visibility and compliance tracking."
+  >
+  <meta
+    property="og:url"
+    content="https://navikops.com/product/contract-workforce"
+  >
+
+  <link
+    rel="canonical"
+    href="https://navikops.com/product/contract-workforce"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./Styles.css?v=3.0">
+  <link rel="stylesheet" href="./premium-upgrade.css">
+  <link rel="stylesheet" href="./product-pages.css">
+  <link rel="stylesheet" href="./demo-form-modal.css">
+
+  <style>
+
+    /* =========================================================
+       CONTRACT WORKFORCE — NEW VISUAL SYSTEM
+    ========================================================= */
+
+    :root {
+      --cw-blue: #2563eb;
+      --cw-blue-dark: #1746b0;
+      --cw-blue-deep: #12337f;
+      --cw-blue-soft: #eef4ff;
+      --cw-blue-pale: #f7faff;
+
+      --cw-ink: #111827;
+      --cw-text: #253047;
+      --cw-muted: #68758a;
+      --cw-light-text: #8a96a8;
+
+      --cw-white: #ffffff;
+      --cw-bg: #ffffff;
+      --cw-bg-soft: #f7f9fc;
+      --cw-bg-blue: #f3f7ff;
+
+      --cw-border: #e4e9f1;
+      --cw-border-blue: rgba(37,99,235,.18);
+
+      --cw-green: #16a34a;
+      --cw-orange: #d97706;
+      --cw-red: #dc2626;
+
+      --cw-shadow-sm:
+        0 8px 25px rgba(16,34,72,.06);
+
+      --cw-shadow:
+        0 24px 70px rgba(16,34,72,.10);
+
+      --cw-shadow-blue:
+        0 25px 65px rgba(37,99,235,.15);
+
+      --cw-radius: 22px;
+    }
+
+
+    /* =========================================================
+       BASE
+    ========================================================= */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: var(--cw-bg);
+      color: var(--cw-text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: rgba(37,99,235,.18);
+      color: var(--cw-blue-deep);
+    }
+
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      z-index: 99999;
+      background: linear-gradient(
+        90deg,
+        #1746b0,
+        #2563eb,
+        #60a5fa
+      );
+    }
+
+
+    /* =========================================================
+       PAGE REVEAL
+    ========================================================= */
+
+    .cw-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .cw-reveal.cw-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       HERO
+       WHITE + BLUE ACCENTS
+    ========================================================= */
+
+    .cw-hero {
+      position: relative;
+      min-height: 760px;
+      padding:
+        150px
+        clamp(22px,6vw,90px)
+        80px;
+
+      background:
+        radial-gradient(
+          circle at 83% 15%,
+          rgba(37,99,235,.10),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(96,165,250,.07),
+          transparent 25%
+        ),
+        #ffffff;
+
+      overflow: hidden;
+      color: var(--cw-ink);
+    }
+
+
+    .cw-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(37,99,235,.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(37,99,235,.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 80%
+        );
+
+      pointer-events: none;
+    }
+
+
+    .cw-hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      bottom: -280px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(37,99,235,.08);
+      box-shadow:
+        0 0 0 60px rgba(37,99,235,.025),
+        0 0 0 120px rgba(37,99,235,.018);
+
+      pointer-events: none;
+    }
+
+
+    .cw-hero-container {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1380px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns:
+        minmax(0,.88fr)
+        minmax(0,1.12fr);
+
+      gap: clamp(45px,6vw,90px);
+
+      align-items: center;
+    }
+
+
+    .cw-hero-copy {
+      max-width: 650px;
+    }
+
+
+    /* =========================================================
+       HERO EYEBROW
+    ========================================================= */
+
+    .cw-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 9px 14px;
+
+      border: 1px solid rgba(37,99,235,.14);
+
+      background:
+        linear-gradient(
+          180deg,
+          #f7faff,
+          #eef4ff
+        );
+
+      border-radius: 999px;
+
+      color: var(--cw-blue-dark);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .09em;
+      text-transform: uppercase;
+
+      margin-bottom: 24px;
+    }
+
+
+    .cw-eyebrow-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--cw-blue);
+
+      box-shadow:
+        0 0 0 5px rgba(37,99,235,.10);
+
+      animation: cwPulse 2.2s ease-in-out infinite;
+    }
+
+
+    @keyframes cwPulse {
+      0%,100% {
+        box-shadow:
+          0 0 0 4px rgba(37,99,235,.08);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 8px rgba(37,99,235,.03);
+      }
+    }
+
+
+    /* =========================================================
+       HERO TITLE
+    ========================================================= */
+
+    .cw-hero-title {
+      margin: 0;
+
+      font-size:
+        clamp(46px,5.5vw,78px);
+
+      line-height: .98;
+
+      letter-spacing: -.065em;
+
+      font-weight: 900;
+
+      color: #101828;
+    }
+
+
+    .cw-hero-title span {
+      display: block;
+
+      color: var(--cw-blue);
+
+      position: relative;
+      width: fit-content;
+    }
+
+
+    .cw-hero-title span::after {
+      content: "";
+
+      position: absolute;
+
+      left: 3px;
+      right: 0;
+      bottom: -9px;
+
+      height: 5px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #2563eb,
+          #60a5fa,
+          transparent
+        );
+
+      opacity: .65;
+    }
+
+
+    .cw-hero-subtitle {
+      margin: 30px 0 0;
+
+      max-width: 650px;
+
+      color: #66748a;
+
+      font-size: 17px;
+      line-height: 1.82;
+    }
+
+
+    /* =========================================================
+       HERO BUTTONS
+    ========================================================= */
+
+    .cw-hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      margin-top: 34px;
+    }
+
+
+    .cw-hero-btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 0 22px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .cw-hero-btn.primary {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1746b0,
+          #2563eb
+        );
+
+      box-shadow:
+        0 14px 30px rgba(37,99,235,.22);
+    }
+
+
+    .cw-hero-btn.primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 20px 40px rgba(37,99,235,.30);
+    }
+
+
+    .cw-hero-btn.secondary {
+      color: var(--cw-blue-dark);
+
+      background: #fff;
+
+      border: 1px solid rgba(37,99,235,.20);
+
+      box-shadow:
+        0 7px 22px rgba(16,34,72,.05);
+    }
+
+
+    .cw-hero-btn.secondary:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(37,99,235,.38);
+
+      background:
+        #f7faff;
+
+      box-shadow:
+        0 12px 30px rgba(16,34,72,.08);
+    }
+
+
+    /* =========================================================
+       HERO DASHBOARD AREA
+    ========================================================= */
+
+    .cw-dashboard-wrap {
+      position: relative;
+
+      width: 100%;
+      max-width: 680px;
+
+      justify-self: end;
+
+      perspective: 1300px;
+    }
+
+
+    .cw-dashboard {
+      position: relative;
+
+      padding: 10px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f3f7ff
+        );
+
+      border: 1px solid
+        rgba(37,99,235,.13);
+
+      box-shadow:
+        0 30px 80px rgba(16,34,72,.13),
+        0 5px 20px rgba(37,99,235,.06);
+
+      transform:
+        perspective(1200px)
+        rotateY(-3deg)
+        rotateX(1deg);
+
+      animation:
+        cwDashboardFloat 7s ease-in-out infinite;
+    }
+
+
+    @keyframes cwDashboardFloat {
+      0%,100% {
+        transform:
+          perspective(1200px)
+          rotateY(-3deg)
+          rotateX(1deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          perspective(1200px)
+          rotateY(-1deg)
+          rotateX(0deg)
+          translateY(-7px);
+      }
+    }
+
+
+    .cw-dashboard-window {
+      overflow: hidden;
+
+      border-radius: 18px;
+
+      background: #f7f9fc;
+
+      border: 1px solid #e7ecf4;
+    }
+
+
+    /* =========================================================
+       WINDOW HEADER
+    ========================================================= */
+
+    .cw-window-bar {
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 15px;
+
+      background: #fff;
+
+      border-bottom:
+        1px solid #e8edf4;
+    }
+
+
+    .cw-window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+
+    .cw-window-dots span {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #cbd5e1;
+    }
+
+
+    .cw-window-title {
+      font-size: 10px;
+      font-weight: 800;
+
+      color: #738096;
+
+      letter-spacing: .05em;
+    }
+
+
+    .cw-window-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      color: var(--cw-green);
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+
+    .cw-window-status i {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+      box-shadow:
+        0 0 0 4px rgba(34,197,94,.10);
+    }
+
+
+    /* =========================================================
+       DASHBOARD BODY
+    ========================================================= */
+
+    .cw-dashboard-body {
+      padding: 20px;
+    }
+
+
+    .cw-dash-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 17px;
+    }
+
+
+    .cw-dash-heading h3 {
+      margin: 0;
+
+      font-size: 17px;
+      font-weight: 900;
+
+      color: #152033;
+    }
+
+
+    .cw-dash-heading span {
+      padding: 6px 9px;
+
+      border-radius: 7px;
+
+      background: #eef4ff;
+
+      color: var(--cw-blue-dark);
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       DASHBOARD STATS
+    ========================================================= */
+
+    .cw-dash-stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 9px;
+    }
+
+
+    .cw-dash-stat {
+      padding: 12px;
+
+      border:
+        1px solid #e5eaf2;
+
+      border-radius: 12px;
+
+      background: #fff;
+
+      transition: .25s ease;
+    }
+
+
+    .cw-dash-stat:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(37,99,235,.22);
+
+      box-shadow:
+        0 10px 25px rgba(16,34,72,.07);
+    }
+
+
+    .cw-dash-stat small {
+      display: block;
+
+      color: #7b8798;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+
+    .cw-dash-stat strong {
+      display: block;
+
+      margin-top: 5px;
+
+      color: #172033;
+
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+
+    .cw-dash-stat em {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--cw-green);
+
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       DASHBOARD LOWER CONTENT
+    ========================================================= */
+
+    .cw-dash-content {
+      display: grid;
+
+      grid-template-columns:
+        1.3fr .7fr;
+
+      gap: 11px;
+
+      margin-top: 11px;
+    }
+
+
+    .cw-panel {
+      padding: 14px;
+
+      background: #fff;
+
+      border:
+        1px solid #e5eaf2;
+
+      border-radius: 14px;
+    }
+
+
+    .cw-panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 12px;
+    }
+
+
+    .cw-panel-title strong {
+      font-size: 10px;
+      font-weight: 900;
+
+      color: #182235;
+    }
+
+
+    .cw-panel-title span {
+      color: var(--cw-blue);
+
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       WORKERS
+    ========================================================= */
+
+    .cw-worker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 8px 0;
+
+      border-bottom:
+        1px solid #eff2f6;
+    }
+
+
+    .cw-worker:last-child {
+      border-bottom: 0;
+    }
+
+
+    .cw-worker-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+    .cw-avatar {
+      width: 27px;
+      height: 27px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 8px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eaf2ff,
+          #dce9ff
+        );
+
+      color: var(--cw-blue-dark);
+
+      font-size: 8px;
+      font-weight: 900;
+    }
+
+
+    .cw-worker-name {
+      color: #263246;
+
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+
+    .cw-worker-role {
+      display: block;
+
+      margin-top: 2px;
+
+      color: #99a3b2;
+
+      font-size: 6.5px;
+    }
+
+
+    .cw-status {
+      padding: 4px 7px;
+
+      border-radius: 6px;
+
+      font-size: 6.5px;
+      font-weight: 800;
+    }
+
+
+    .cw-status.active {
+      color: #15803d;
+      background: #dcfce7;
+    }
+
+
+    .cw-status.pending {
+      color: #a16207;
+      background: #fef3c7;
+    }
+
+
+    /* =========================================================
+       COMPLIANCE RING
+    ========================================================= */
+
+    .cw-compliance-score {
+      height: 120px;
+
+      display: grid;
+      place-items: center;
+    }
+
+
+    .cw-ring {
+      width: 91px;
+      height: 91px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        conic-gradient(
+          #2563eb 0 94%,
+          #e7edf7 94% 100%
+        );
+
+      position: relative;
+    }
+
+
+    .cw-ring::before {
+      content: "";
+
+      position: absolute;
+
+      width: 69px;
+      height: 69px;
+
+      border-radius: 50%;
+
+      background: #fff;
+    }
+
+
+    .cw-ring::after {
+      content: "94%";
+
+      position: relative;
+      z-index: 2;
+
+      font-size: 16px;
+      font-weight: 900;
+
+      color: #172033;
+    }
+
+
+    .cw-compliance-label {
+      text-align: center;
+
+      color: #718096;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       FLOATING HERO CARDS
+    ========================================================= */
+
+    .cw-floating-card {
+      position: absolute;
+      z-index: 5;
+
+      min-width: 150px;
+
+      padding: 13px 15px;
+
+      background: #fff;
+
+      border:
+        1px solid rgba(37,99,235,.13);
+
+      border-radius: 13px;
+
+      box-shadow:
+        0 18px 45px rgba(16,34,72,.14);
+    }
+
+
+    .cw-floating-card.top {
+      top: -27px;
+      right: -25px;
+
+      animation:
+        cwFloat 5s ease-in-out infinite;
+    }
+
+
+    .cw-floating-card.bottom {
+      left: -25px;
+      bottom: -26px;
+
+      animation:
+        cwFloat 5.5s ease-in-out infinite reverse;
+    }
+
+
+    @keyframes cwFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+
+    .cw-float-label {
+      color: #7b8798;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+
+    .cw-float-value {
+      margin-top: 3px;
+
+      color: #152033;
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+
+    .cw-float-success {
+      margin-top: 2px;
+
+      color: var(--cw-green);
+
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .cw-trust-strip {
+      position: relative;
+
+      background: #fff;
+
+      border-top:
+        1px solid #edf0f5;
+
+      border-bottom:
+        1px solid #edf0f5;
+
+      padding: 19px 6%;
+    }
+
+
+    .cw-trust-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 15px;
+    }
+
+
+    .cw-trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      color: #5e6b7e;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+
+    .cw-trust-icon {
+      width: 31px;
+      height: 31px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: #f0f5ff;
+
+      color: var(--cw-blue);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       COMMON SECTIONS
+    ========================================================= */
+
+    .cw-section {
+      position: relative;
+
+      padding:
+        clamp(80px,9vw,115px)
+        6%;
+    }
+
+
+    .cw-section.soft {
+      background:
+        linear-gradient(
+          180deg,
+          #f8faff 0%,
+          #f4f7fc 100%
+        );
+
+      border-top:
+        1px solid #eef2f7;
+
+      border-bottom:
+        1px solid #eef2f7;
+    }
+
+
+    .cw-container {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+
+    .cw-section-head {
+      max-width: 760px;
+
+      margin:
+        0 auto
+        58px;
+
+      text-align: center;
+    }
+
+
+    .cw-section-label {
+      display: inline-flex;
+      align-items: center;
+
+      margin-bottom: 14px;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      background: #edf4ff;
+
+      color: var(--cw-blue-dark);
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: .09em;
+
+      text-transform: uppercase;
+    }
+
+
+    .cw-section-head h2 {
+      margin: 0;
+
+      color: #152033;
+
+      font-size:
+        clamp(34px,4vw,53px);
+
+      line-height: 1.06;
+
+      letter-spacing: -.05em;
+
+      font-weight: 900;
+    }
+
+
+    .cw-section-head p {
+      margin:
+        17px
+        auto
+        0;
+
+      color: #69778b;
+
+      line-height: 1.78;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       PROBLEM SECTION
+    ========================================================= */
+
+    .cw-problem-grid {
+      display: grid;
+
+      grid-template-columns:
+        .82fr
+        1.18fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    .cw-problem-copy h2 {
+      margin: 0;
+
+      color: #152033;
+
+      font-size:
+        clamp(35px,4vw,54px);
+
+      line-height: 1.05;
+
+      letter-spacing: -.05em;
+
+      font-weight: 900;
+    }
+
+
+    .cw-problem-copy p {
+      margin-top: 20px;
+
+      color: #69778b;
+
+      line-height: 1.8;
+    }
+
+
+    .cw-problem-list {
+      display: grid;
+      gap: 12px;
+
+      margin:
+        27px
+        0
+        0;
+
+      padding: 0;
+
+      list-style: none;
+    }
+
+
+    .cw-problem-list li {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: #29364a;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+
+    .cw-problem-list li span {
+      width: 27px;
+      height: 27px;
+
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 27px;
+
+      border-radius: 8px;
+
+      background: #fff1f2;
+
+      color: #dc2626;
+
+      font-size: 12px;
+    }
+
+
+    .cw-problem-board {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 14px;
+    }
+
+
+    .cw-problem-card {
+      position: relative;
+
+      min-height: 174px;
+
+      padding: 25px;
+
+      background: #fff;
+
+      border:
+        1px solid #e5eaf2;
+
+      border-radius: 19px;
+
+      box-shadow:
+        0 12px 35px rgba(16,34,72,.055);
+
+      overflow: hidden;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+
+    .cw-problem-card::after {
+      content: "";
+
+      position: absolute;
+
+      right: -45px;
+      bottom: -45px;
+
+      width: 125px;
+      height: 125px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(37,99,235,.08);
+    }
+
+
+    .cw-problem-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(37,99,235,.18);
+
+      box-shadow:
+        0 24px 55px rgba(16,34,72,.10);
+    }
+
+
+    .cw-problem-card strong {
+      display: block;
+
+      margin-top: 27px;
+
+      color: #172033;
+
+      font-size: 15px;
+    }
+
+
+    .cw-problem-card p {
+      margin: 7px 0 0;
+
+      color: #758196;
+
+      font-size: 11px;
+
+      line-height: 1.65;
+    }
+
+
+    .cw-problem-icon {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #edf4ff,
+          #e5efff
+        );
+
+      color: var(--cw-blue);
+
+      font-size: 18px;
+    }
+
+
+    /* =========================================================
+       FEATURE GRID
+    ========================================================= */
+
+    .cw-feature-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 17px;
+    }
+
+
+    .cw-feature-card {
+      position: relative;
+
+      min-height: 225px;
+
+      padding: 28px;
+
+      background: #fff;
+
+      border:
+        1px solid #e4e9f1;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .cw-feature-card::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #2563eb,
+          #60a5fa,
+          transparent
+        );
+
+      transform:
+        scaleX(0);
+
+      transform-origin: left;
+
+      transition:
+        transform .35s ease;
+    }
+
+
+    .cw-feature-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(37,99,235,.20);
+
+      box-shadow:
+        0 24px 55px rgba(16,34,72,.09);
+    }
+
+
+    .cw-feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+
+    .cw-feature-icon {
+      width: 47px;
+      height: 47px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: #eef4ff;
+
+      color: var(--cw-blue);
+
+      font-size: 20px;
+    }
+
+
+    .cw-feature-card h3 {
+      margin:
+        22px
+        0
+        9px;
+
+      color: #172033;
+
+      font-size: 16px;
+    }
+
+
+    .cw-feature-card p {
+      margin: 0;
+
+      color: #6e7b8e;
+
+      font-size: 12px;
+
+      line-height: 1.72;
+    }
+
+
+    /* =========================================================
+       LIFECYCLE
+    ========================================================= */
+
+    .cw-lifecycle {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 0;
+
+      margin-top: 25px;
+    }
+
+
+    .cw-lifecycle::before {
+      content: "";
+
+      position: absolute;
+
+      left: 10%;
+      right: 10%;
+
+      top: 32px;
+
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #cbdaf5,
+          #2563eb,
+          #cbdaf5,
+          transparent
+        );
+    }
+
+
+    .cw-life-step {
+      position: relative;
+      z-index: 2;
+
+      text-align: center;
+
+      padding: 0 13px;
+    }
+
+
+    .cw-life-number {
+      width: 64px;
+      height: 64px;
+
+      display: grid;
+      place-items: center;
+
+      margin:
+        0
+        auto
+        22px;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      border:
+        6px solid #edf4ff;
+
+      box-shadow:
+        0 10px 25px rgba(16,34,72,.08);
+
+      color: var(--cw-blue);
+
+      font-size: 15px;
+      font-weight: 900;
+
+      transition:
+        transform .3s ease,
+        background .3s ease;
+    }
+
+
+    .cw-life-step:hover .cw-life-number {
+      transform: scale(1.08);
+
+      background: #f2f6ff;
+    }
+
+
+    .cw-life-step h3 {
+      margin: 0;
+
+      color: #172033;
+
+      font-size: 14px;
+    }
+
+
+    .cw-life-step p {
+      margin:
+        8px
+        auto
+        0;
+
+      max-width: 175px;
+
+      color: #778397;
+
+      font-size: 10.5px;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       INTELLIGENCE SECTION
+       DEEP BLUE ONLY HERE
+    ========================================================= */
+
+    .cw-dark-section {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(96,165,250,.16),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #12337f,
+          #1746b0
+        );
+
+      color: #fff;
+    }
+
+
+    .cw-dark-section::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 65px 65px;
+
+      pointer-events: none;
+    }
+
+
+    .cw-intelligence {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        .85fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    .cw-intelligence-copy h2 {
+      margin: 0;
+
+      color: #fff;
+
+      font-size:
+        clamp(35px,4vw,53px);
+
+      line-height: 1.05;
+
+      letter-spacing: -.05em;
+
+      font-weight: 900;
+    }
+
+
+    .cw-intelligence-copy p {
+      margin-top: 20px;
+
+      max-width: 570px;
+
+      color:
+        rgba(255,255,255,.72);
+
+      line-height: 1.8;
+    }
+
+
+    .cw-dark-section .cw-section-label {
+      background:
+        rgba(255,255,255,.12);
+
+      color: #bcd5ff;
+    }
+
+
+    .cw-intel-card {
+      padding: 22px;
+
+      background:
+        rgba(255,255,255,.09);
+
+      border:
+        1px solid
+        rgba(255,255,255,.14);
+
+      border-radius: 21px;
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 25px 65px rgba(0,0,0,.12);
+    }
+
+
+    .cw-intel-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 15px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.10);
+    }
+
+
+    .cw-intel-row:last-child {
+      border-bottom: 0;
+    }
+
+
+    .cw-intel-info strong {
+      display: block;
+
+      color: #fff;
+
+      font-size: 12px;
+    }
+
+
+    .cw-intel-info span {
+      display: block;
+
+      margin-top: 4px;
+
+      color:
+        rgba(255,255,255,.48);
+
+      font-size: 9px;
+    }
+
+
+    .cw-intel-value {
+      color: #b9d3ff;
+
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+
+    /* =========================================================
+       COMPLIANCE
+    ========================================================= */
+
+    .cw-compliance-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 15px;
+    }
+
+
+    .cw-compliance-card {
+      position: relative;
+
+      padding: 26px;
+
+      background: #fff;
+
+      border:
+        1px solid #e3e8f0;
+
+      border-radius: 19px;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .cw-compliance-card:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(37,99,235,.18);
+
+      box-shadow:
+        0 22px 50px rgba(16,34,72,.09);
+    }
+
+
+    .cw-compliance-card .icon {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: #edf4ff;
+
+      color: var(--cw-blue);
+
+      font-size: 17px;
+    }
+
+
+    .cw-compliance-card h3 {
+      margin:
+        20px
+        0
+        8px;
+
+      color: #172033;
+
+      font-size: 14px;
+    }
+
+
+    .cw-compliance-card p {
+      margin: 0;
+
+      color: #718096;
+
+      font-size: 10.5px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       BENEFITS
+    ========================================================= */
+
+    .cw-benefit-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 15px;
+    }
+
+
+    .cw-benefit {
+      position: relative;
+
+      padding: 30px 20px;
+
+      text-align: center;
+
+      background: #fff;
+
+      border:
+        1px solid #e3e8f0;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+
+    .cw-benefit::before {
+      content: "";
+
+      position: absolute;
+
+      left: 20%;
+      right: 20%;
+      top: 0;
+
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #2563eb,
+          transparent
+        );
+    }
+
+
+    .cw-benefit:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 22px 50px rgba(16,34,72,.08);
+    }
+
+
+    .cw-benefit strong {
+      display: block;
+
+      color: var(--cw-blue);
+
+      font-size: 41px;
+      font-weight: 900;
+
+      letter-spacing: -.05em;
+    }
+
+
+    .cw-benefit span {
+      display: block;
+
+      margin-top: 6px;
+
+      color: #172033;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+
+    .cw-benefit small {
+      display: block;
+
+      margin-top: 6px;
+
+      color: #7a8698;
+
+      font-size: 9px;
+    }
+
+
+    /* =========================================================
+       WORKFLOW
+    ========================================================= */
+
+    .cw-workflow {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 15px;
+    }
+
+
+    .cw-workflow-card {
+      display: flex;
+
+      gap: 18px;
+
+      padding: 23px;
+
+      background: #fff;
+
+      border:
+        1px solid #e4e9f1;
+
+      border-radius: 18px;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .cw-workflow-card:hover {
+      transform: translateX(5px);
+
+      border-color:
+        rgba(37,99,235,.20);
+
+      box-shadow:
+        0 20px 45px rgba(16,34,72,.08);
+    }
+
+
+    .cw-workflow-number {
+      flex: 0 0 44px;
+
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: #edf4ff;
+
+      color: var(--cw-blue);
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+
+    .cw-workflow-card h3 {
+      margin: 0;
+
+      color: #172033;
+
+      font-size: 14px;
+    }
+
+
+    .cw-workflow-card p {
+      margin:
+        7px
+        0
+        0;
+
+      color: #718096;
+
+      font-size: 10.5px;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       USE CASES
+    ========================================================= */
+
+    .cw-usecase-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+
+    .cw-usecase {
+      position: relative;
+
+      min-height: 215px;
+
+      padding: 27px;
+
+      overflow: hidden;
+
+      background: #fff;
+
+      border:
+        1px solid #e3e8f0;
+
+      border-radius: 21px;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .cw-usecase::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          180deg,
+          #1746b0,
+          #60a5fa
+        );
+
+      transform:
+        scaleY(.25);
+
+      transform-origin: top;
+
+      transition:
+        transform .35s ease;
+    }
+
+
+    .cw-usecase::after {
+      content: "";
+
+      position: absolute;
+
+      right: -75px;
+      bottom: -75px;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37,99,235,.08),
+          transparent 68%
+        );
+    }
+
+
+    .cw-usecase:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(37,99,235,.20);
+
+      box-shadow:
+        0 25px 55px rgba(16,34,72,.09);
+    }
+
+
+    .cw-usecase:hover::before {
+      transform: scaleY(1);
+    }
+
+
+    .cw-usecase-icon {
+      position: relative;
+      z-index: 2;
+
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: #f0f5ff;
+
+      font-size: 21px;
+    }
+
+
+    .cw-usecase h3 {
+      position: relative;
+      z-index: 2;
+
+      margin:
+        28px
+        0
+        8px;
+
+      color: #172033;
+
+      font-size: 16px;
+    }
+
+
+    .cw-usecase p {
+      position: relative;
+      z-index: 2;
+
+      margin: 0;
+
+      max-width: 280px;
+
+      color: #718096;
+
+      font-size: 10.5px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .cw-faq {
+      max-width: 900px;
+
+      margin: auto;
+
+      display: grid;
+
+      gap: 9px;
+    }
+
+
+    .cw-faq details {
+      background: #fff;
+
+      border:
+        1px solid #e2e8f0;
+
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+
+    .cw-faq details[open] {
+      border-color:
+        rgba(37,99,235,.20);
+
+      box-shadow:
+        0 12px 30px rgba(16,34,72,.05);
+    }
+
+
+    .cw-faq summary {
+      cursor: pointer;
+
+      list-style: none;
+
+      padding: 19px 21px;
+
+      color: #172033;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+
+    .cw-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+
+    .cw-faq summary::after {
+      content: "+";
+
+      float: right;
+
+      color: var(--cw-blue);
+
+      font-size: 18px;
+    }
+
+
+    .cw-faq details[open] summary::after {
+      content: "−";
+    }
+
+
+    .cw-faq details p {
+      margin: 0;
+
+      padding:
+        0
+        21px
+        20px;
+
+      color: #718096;
+
+      font-size: 11px;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .cw-final-cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        105px
+        6%;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(96,165,250,.25),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #12337f,
+          #1746b0
+        );
+
+      text-align: center;
+
+      color: #fff;
+    }
+
+
+    .cw-final-cta::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          rgba(255,255,255,.15) 1px,
+          transparent 1px
+        );
+
+      background-size: 28px 28px;
+
+      opacity: .25;
+
+      pointer-events: none;
+    }
+
+
+    .cw-final-cta h2 {
+      position: relative;
+      z-index: 2;
+
+      max-width: 800px;
+
+      margin:
+        0
+        auto;
+
+      color: #fff;
+
+      font-size:
+        clamp(37px,5vw,63px);
+
+      line-height: 1.03;
+
+      letter-spacing: -.055em;
+
+      font-weight: 900;
+    }
+
+
+    .cw-final-cta p {
+      position: relative;
+      z-index: 2;
+
+      max-width: 650px;
+
+      margin:
+        19px
+        auto
+        0;
+
+      color:
+        rgba(255,255,255,.72);
+
+      line-height: 1.75;
+    }
+
+
+    .cw-final-actions {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 11px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+
+    .cw-final-cta .secondary {
+      color: #fff;
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.20);
+
+      box-shadow: none;
+    }
+
+
+    .cw-final-cta .secondary:hover {
+      background:
+        rgba(255,255,255,.14);
+
+      border-color:
+        rgba(255,255,255,.32);
+    }
+
+
+    /* =========================================================
+       FOOTER POLISH
+    ========================================================= */
+
+    .footer {
+      position: relative;
+    }
+
+
+    .footer::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(37,99,235,.45),
+          transparent
+        );
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1150px) {
+
+      .cw-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .cw-hero-copy {
+        max-width: 820px;
+      }
+
+      .cw-dashboard-wrap {
+        justify-self: center;
+
+        max-width: 760px;
+      }
+
+      .cw-feature-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-compliance-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-benefit-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-lifecycle {
+        grid-template-columns:
+          repeat(3,1fr);
+
+        row-gap: 45px;
+      }
+
+      .cw-lifecycle::before {
+        display: none;
+      }
+    }
+
+
+    @media (max-width: 900px) {
+
+      .cw-problem-grid,
+      .cw-intelligence {
+        grid-template-columns: 1fr;
+      }
+
+      .cw-workflow {
+        grid-template-columns: 1fr;
+      }
+
+      .cw-usecase-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-intelligence {
+        gap: 45px;
+      }
+
+      .cw-intelligence-copy {
+        max-width: 750px;
+      }
+    }
+
+
+    @media (max-width: 800px) {
+
+      .cw-hero {
+        min-height: auto;
+
+        padding:
+          130px
+          20px
+          70px;
+      }
+
+      .cw-section {
+        padding:
+          75px
+          20px;
+      }
+
+      .cw-trust-strip {
+        padding:
+          20px;
+      }
+
+      .cw-trust-inner {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-dashboard {
+        transform: none;
+
+        animation: none;
+      }
+
+      .cw-floating-card.top {
+        right: -5px;
+      }
+
+      .cw-floating-card.bottom {
+        left: -5px;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .cw-hero-title {
+        font-size: 45px;
+      }
+
+      .cw-hero-subtitle {
+        font-size: 15px;
+      }
+
+      .cw-hero-actions {
+        flex-direction: column;
+      }
+
+      .cw-hero-btn {
+        width: 100%;
+      }
+
+      .cw-dash-stats {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .cw-dash-content {
+        grid-template-columns: 1fr;
+      }
+
+      .cw-dashboard-body {
+        padding: 13px;
+      }
+
+      .cw-floating-card {
+        display: none;
+      }
+
+      .cw-feature-grid,
+      .cw-compliance-grid,
+      .cw-benefit-grid,
+      .cw-problem-board,
+      .cw-usecase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cw-lifecycle {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+      }
+
+      .cw-life-step p {
+        max-width: 280px;
+      }
+
+      .cw-trust-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cw-trust-item {
+        justify-content: flex-start;
+      }
+
+      .cw-final-actions {
+        flex-direction: column;
+      }
+
+      .cw-final-actions .cw-hero-btn {
+        width: 100%;
+      }
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .cw-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div id="scroll-progress"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar" id="navbar">
+
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo">
+
+      <img
+        src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+        alt="Navik"
+        class="nav-logo-img"
+      >
+
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+
+    </a>
+
+
+    <div class="nav-right">
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Products
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="hr-system.html">
+              HR System
+            </a>
+
+            <a href="workforce-management.html">
+              Workforce Management
+            </a>
+
+            <a href="payroll-system.html">
+              Payroll System
+            </a>
+
+            <a href="attendance.html">
+              Attendance
+            </a>
+
+            <a href="contract-workforce.html">
+              Contract Workforce Management
+            </a>
+
+            <a href="field-workforce-tracking.html">
+              Field Workforce Tracking
+            </a>
+
+            <a href="employee-self-service.html">
+              Employee Self Service
+            </a>
+
+            <a href="complience-managemant.html">
+              Compliance Management
+            </a>
+
+            <a href="reports-analytics.html">
+              Reports &amp; Analytics
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li>
+          <a href="index.html#pricing">
+            Pricing
+          </a>
+        </li>
+
+
+        <li class="nav-dropdown" id="navDropIndustries">
+
+          <a
+            href="javascript:void(0)"
+            class="nav-link-main"
+          >
+
+            <span>
+              Industries
+            </span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              class="nav-dropdown-chevron"
+            >
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </a>
+
+
+          <div class="nav-dropdown-menu">
+
+            <a href="Retails.html">
+              Retails
+            </a>
+
+            <a href="Logistics.html">
+              Logistics
+            </a>
+
+            <a href="Construction.html">
+              Constructions
+            </a>
+
+            <a href="Sales.html">
+              Sales Team
+            </a>
+
+            <a href="Manufacturing.html">
+              Manufacturing
+            </a>
+
+            <a href="Health-Care.html">
+              Health Care
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li>
+          <a href="Customers.html">
+            Customers
+          </a>
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Resources
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="blog.html">
+              Blogs
+            </a>
+
+            <a href="templates.html">
+              Templates
+            </a>
+
+            <a href="tools-hub.html">
+              HR Tools
+            </a>
+
+            <a href="Case-Studies.html">
+              Case Studies
+            </a>
+
+            <a
+              href="https://www.youtube.com/@NavikHR"
+              target="_blank"
+              rel="noopener"
+            >
+              Podcasts
+            </a>
+
+          </div>
+
+        </li>
+
+
+        <li class="nav-dropdown">
+
+          <a href="#" class="nav-link-main">
+            Company
+          </a>
+
+          <div class="nav-dropdown-menu">
+
+            <a href="about-us.html">
+              About Us
+            </a>
+
+            <a href="mailto:riya.shukla@wfmexperts.com">
+              Careers
+            </a>
+
+            <a href="contact-us.html">
+              Contact Us
+            </a>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+
+      <div class="nav-actions">
+
+        <a
+          href="#demo"
+          class="btn-nav-cta"
+        >
+          Book Demo
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="cw-hero">
+
+  <div class="cw-hero-container">
+
+    <div class="cw-hero-copy">
+
+      <div class="cw-eyebrow">
+        <span class="cw-eyebrow-dot"></span>
+
+        Flexible Workforce Management
+      </div>
+
+
+      <h1 class="cw-hero-title">
+
+        Control Your
+
+        <span>
+          Contract Workforce.
+        </span>
+
+      </h1>
+
+
+      <p class="cw-hero-subtitle">
+
+        Manage contract and temporary workers from onboarding to
+        offboarding with centralized contracts, compliance tracking,
+        document management, approvals, workforce visibility and
+        cost intelligence.
+
+      </p>
+
+
+      <div class="cw-hero-actions">
+
+        <a
+          href="#demo"
+          class="cw-hero-btn primary"
+        >
+          Book a Demo
+          <span>→</span>
+        </a>
+
+
+        <a
+          href="#features"
+          class="cw-hero-btn secondary"
+        >
+          Explore Platform
+          <span>↓</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CSS DASHBOARD — NO PNG
+    ====================================================== -->
+
+    <div class="cw-dashboard-wrap">
+
+      <div class="cw-floating-card top">
+
+        <div class="cw-float-label">
+          Compliance Score
+        </div>
+
+        <div class="cw-float-value">
+          94%
+        </div>
+
+        <div class="cw-float-success">
+          ↑ 8.4% this month
+        </div>
+
+      </div>
+
+
+      <div class="cw-dashboard">
+
+        <div class="cw-dashboard-window">
+
+
+          <div class="cw-window-bar">
+
+            <div class="cw-window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+
+            <div class="cw-window-title">
+              NAVIK / CONTRACT WORKFORCE
+            </div>
+
+
+            <div class="cw-window-status">
+
+              <i></i>
+
+              Live
+
+            </div>
+
+          </div>
+
+
+          <div class="cw-dashboard-body">
+
+
+            <div class="cw-dash-heading">
+
+              <h3>
+                Workforce Overview
+              </h3>
+
+              <span>
+                August 2026
+              </span>
+
+            </div>
+
+
+            <div class="cw-dash-stats">
+
+
+              <div class="cw-dash-stat">
+
+                <small>
+                  Active Workers
+                </small>
+
+                <strong>
+                  1,284
+                </strong>
+
+                <em>
+                  +12.4%
+                </em>
+
+              </div>
+
+
+              <div class="cw-dash-stat">
+
+                <small>
+                  Active Contracts
+                </small>
+
+                <strong>
+                  846
+                </strong>
+
+                <em>
+                  +8.1%
+                </em>
+
+              </div>
+
+
+              <div class="cw-dash-stat">
+
+                <small>
+                  Compliance
+                </small>
+
+                <strong>
+                  94%
+                </strong>
+
+                <em>
+                  +4.2%
+                </em>
+
+              </div>
+
+
+              <div class="cw-dash-stat">
+
+                <small>
+                  Renewals
+                </small>
+
+                <strong>
+                  38
+                </strong>
+
+                <em>
+                  Due soon
+                </em>
+
+              </div>
+
+            </div>
+
+
+            <div class="cw-dash-content">
+
+
+              <div class="cw-panel">
+
+                <div class="cw-panel-title">
+
+                  <strong>
+                    Workforce Activity
+                  </strong>
+
+                  <span>
+                    View all
+                  </span>
+
+                </div>
+
+
+                <div class="cw-worker">
+
+                  <div class="cw-worker-info">
+
+                    <div class="cw-avatar">
+                      RS
+                    </div>
+
+                    <div>
+
+                      <div class="cw-worker-name">
+                        Rahul Sharma
+                      </div>
+
+                      <span class="cw-worker-role">
+                        Warehouse Associate
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <span class="cw-status active">
+                    Active
+                  </span>
+
+                </div>
+
+
+                <div class="cw-worker">
+
+                  <div class="cw-worker-info">
+
+                    <div class="cw-avatar">
+                      AK
+                    </div>
+
+                    <div>
+
+                      <div class="cw-worker-name">
+                        Amit Kumar
+                      </div>
+
+                      <span class="cw-worker-role">
+                        Site Supervisor
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <span class="cw-status active">
+                    Active
+                  </span>
+
+                </div>
+
+
+                <div class="cw-worker">
+
+                  <div class="cw-worker-info">
+
+                    <div class="cw-avatar">
+                      PS
+                    </div>
+
+                    <div>
+
+                      <div class="cw-worker-name">
+                        Priya Singh
+                      </div>
+
+                      <span class="cw-worker-role">
+                        Field Executive
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <span class="cw-status pending">
+                    Renewal
+                  </span>
+
+                </div>
+
+
+                <div class="cw-worker">
+
+                  <div class="cw-worker-info">
+
+                    <div class="cw-avatar">
+                      VM
+                    </div>
+
+                    <div>
+
+                      <div class="cw-worker-name">
+                        Vikash Mishra
+                      </div>
+
+                      <span class="cw-worker-role">
+                        Production Worker
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <span class="cw-status active">
+                    Active
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="cw-panel">
+
+                <div class="cw-panel-title">
+
+                  <strong>
+                    Compliance
+                  </strong>
+
+                  <span>
+                    Details
+                  </span>
+
+                </div>
+
+
+                <div class="cw-compliance-score">
+
+                  <div class="cw-ring"></div>
+
+                </div>
+
+
+                <div class="cw-compliance-label">
+                  Workforce compliance
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-floating-card bottom">
+
+        <div class="cw-float-label">
+          Monthly Workforce Cost
+        </div>
+
+        <div class="cw-float-value">
+          ₹42.8L
+        </div>
+
+        <div class="cw-float-success">
+          ↓ 11.2% optimized
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TRUST STRIP
+========================================================= -->
+
+<section class="cw-trust-strip">
+
+  <div class="cw-trust-inner">
+
+    <div class="cw-trust-item">
+
+      <span class="cw-trust-icon">
+        ✓
+      </span>
+
+      Contract Lifecycle
+
+    </div>
+
+
+    <div class="cw-trust-item">
+
+      <span class="cw-trust-icon">
+        ◉
+      </span>
+
+      Compliance Monitoring
+
+    </div>
+
+
+    <div class="cw-trust-item">
+
+      <span class="cw-trust-icon">
+        ↗
+      </span>
+
+      Cost Intelligence
+
+    </div>
+
+
+    <div class="cw-trust-item">
+
+      <span class="cw-trust-icon">
+        ⚡
+      </span>
+
+      Workflow Automation
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROBLEM
+========================================================= -->
+
+<section class="cw-section">
+
+  <div class="cw-container">
+
+    <div class="cw-problem-grid">
+
+
+      <div class="cw-problem-copy cw-reveal">
+
+        <span class="cw-section-label">
+          The Problem
+        </span>
+
+        <h2>
+          Manage contractors, not spreadsheets.
+        </h2>
+
+        <p>
+          Multiple vendors, contracts, documents, renewals, worker
+          records and compliance requirements quickly become difficult
+          to control when everything is spread across disconnected
+          systems.
+        </p>
+
+
+        <ul class="cw-problem-list">
+
+          <li>
+            <span>×</span>
+            Expiring contracts get missed
+          </li>
+
+          <li>
+            <span>×</span>
+            Worker documents remain scattered
+          </li>
+
+          <li>
+            <span>×</span>
+            Compliance visibility is limited
+          </li>
+
+          <li>
+            <span>×</span>
+            Workforce costs become difficult to track
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="cw-problem-board cw-reveal">
+
+
+        <div class="cw-problem-card">
+
+          <div class="cw-problem-icon">
+            📄
+          </div>
+
+          <strong>
+            Contract Chaos
+          </strong>
+
+          <p>
+            Manage contracts, renewals and amendments from one
+            centralized workspace.
+          </p>
+
+        </div>
+
+
+        <div class="cw-problem-card">
+
+          <div class="cw-problem-icon">
+            👥
+          </div>
+
+          <strong>
+            Worker Visibility
+          </strong>
+
+          <p>
+            Know who is working, where they are assigned and what
+            their current status is.
+          </p>
+
+        </div>
+
+
+        <div class="cw-problem-card">
+
+          <div class="cw-problem-icon">
+            🛡️
+          </div>
+
+          <strong>
+            Compliance Risk
+          </strong>
+
+          <p>
+            Identify missing documents and compliance gaps before
+            they become operational problems.
+          </p>
+
+        </div>
+
+
+        <div class="cw-problem-card">
+
+          <div class="cw-problem-icon">
+            💰
+          </div>
+
+          <strong>
+            Cost Leakage
+          </strong>
+
+          <p>
+            Monitor workforce spending, vendor costs and contract
+            utilization in real time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section
+  class="cw-section soft"
+  id="features"
+>
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Complete Platform
+      </span>
+
+      <h2>
+        Everything you need to control your contract workforce.
+      </h2>
+
+      <p>
+        Replace disconnected processes with a single operating layer
+        for contract workers, vendors, documents, compliance and
+        workforce costs.
+      </p>
+
+    </div>
+
+
+    <div class="cw-feature-grid">
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          📋
+        </div>
+
+        <h3>
+          Contract Management
+        </h3>
+
+        <p>
+          Create, store, review and manage contracts with version
+          control and centralized visibility.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          👥
+        </div>
+
+        <h3>
+          Worker Lifecycle
+        </h3>
+
+        <p>
+          Track every stage from recruitment and onboarding to
+          transfer, renewal and offboarding.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          🛡️
+        </div>
+
+        <h3>
+          Compliance Tracking
+        </h3>
+
+        <p>
+          Monitor required documents, compliance checkpoints,
+          expirations and exceptions.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          💰
+        </div>
+
+        <h3>
+          Cost Optimization
+        </h3>
+
+        <p>
+          Monitor workforce costs, vendor billing and budget
+          utilization through centralized reporting.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          📁
+        </div>
+
+        <h3>
+          Document Management
+        </h3>
+
+        <p>
+          Digitally collect, verify and securely manage worker and
+          contract documentation.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Approval Workflows
+        </h3>
+
+        <p>
+          Automate multi-level approvals for contracts, onboarding,
+          renewals and workforce requests.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          🔔
+        </div>
+
+        <h3>
+          Expiry Alerts
+        </h3>
+
+        <p>
+          Automatically identify contracts, documents and
+          certifications approaching expiry.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          📊
+        </div>
+
+        <h3>
+          Workforce Analytics
+        </h3>
+
+        <p>
+          Understand workforce size, cost, utilization, turnover
+          and contract trends through dashboards.
+        </p>
+
+      </div>
+
+
+      <div class="cw-feature-card cw-reveal">
+
+        <div class="cw-feature-icon">
+          🔗
+        </div>
+
+        <h3>
+          HR &amp; Payroll Integration
+        </h3>
+
+        <p>
+          Connect contract workforce information with attendance,
+          payroll and broader HR processes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORKER LIFECYCLE
+========================================================= -->
+
+<section class="cw-section">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Worker Lifecycle
+      </span>
+
+      <h2>
+        One system for the entire contract worker journey.
+      </h2>
+
+      <p>
+        Standardize every stage of the worker lifecycle while keeping
+        HR, operations, vendors and managers aligned.
+      </p>
+
+    </div>
+
+
+    <div class="cw-lifecycle">
+
+
+      <div class="cw-life-step cw-reveal">
+
+        <div class="cw-life-number">
+          01
+        </div>
+
+        <h3>
+          Recruitment
+        </h3>
+
+        <p>
+          Capture worker information and staffing requirements.
+        </p>
+
+      </div>
+
+
+      <div class="cw-life-step cw-reveal">
+
+        <div class="cw-life-number">
+          02
+        </div>
+
+        <h3>
+          Onboarding
+        </h3>
+
+        <p>
+          Collect documents and complete verification workflows.
+        </p>
+
+      </div>
+
+
+      <div class="cw-life-step cw-reveal">
+
+        <div class="cw-life-number">
+          03
+        </div>
+
+        <h3>
+          Deployment
+        </h3>
+
+        <p>
+          Assign workers to sites, teams, shifts and projects.
+        </p>
+
+      </div>
+
+
+      <div class="cw-life-step cw-reveal">
+
+        <div class="cw-life-number">
+          04
+        </div>
+
+        <h3>
+          Renewal
+        </h3>
+
+        <p>
+          Track expiry dates and initiate renewal workflows.
+        </p>
+
+      </div>
+
+
+      <div class="cw-life-step cw-reveal">
+
+        <div class="cw-life-number">
+          05
+        </div>
+
+        <h3>
+          Offboarding
+        </h3>
+
+        <p>
+          Complete exit processes and securely close worker records.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTELLIGENCE
+========================================================= -->
+
+<section class="cw-section cw-dark-section">
+
+  <div class="cw-container">
+
+
+    <div class="cw-intelligence">
+
+
+      <div class="cw-intelligence-copy cw-reveal">
+
+        <span class="cw-section-label">
+          Workforce Intelligence
+        </span>
+
+        <h2>
+          Turn contract workforce data into operational decisions.
+        </h2>
+
+        <p>
+          Stop relying on fragmented reports. Get a centralized view
+          of workforce strength, contracts, compliance, renewals and
+          cost performance.
+        </p>
+
+
+        <div style="margin-top:28px;">
+
+          <a
+            href="#demo"
+            class="cw-hero-btn primary"
+          >
+            See the Platform →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-intel-card cw-reveal">
+
+
+        <div class="cw-intel-row">
+
+          <div class="cw-intel-info">
+
+            <strong>
+              Active Contract Workers
+            </strong>
+
+            <span>
+              Current workforce
+            </span>
+
+          </div>
+
+          <div class="cw-intel-value">
+            1,284
+          </div>
+
+        </div>
+
+
+        <div class="cw-intel-row">
+
+          <div class="cw-intel-info">
+
+            <strong>
+              Contracts Expiring
+            </strong>
+
+            <span>
+              Next 30 days
+            </span>
+
+          </div>
+
+          <div class="cw-intel-value">
+            38
+          </div>
+
+        </div>
+
+
+        <div class="cw-intel-row">
+
+          <div class="cw-intel-info">
+
+            <strong>
+              Compliance Coverage
+            </strong>
+
+            <span>
+              Workforce compliance
+            </span>
+
+          </div>
+
+          <div class="cw-intel-value">
+            94%
+          </div>
+
+        </div>
+
+
+        <div class="cw-intel-row">
+
+          <div class="cw-intel-info">
+
+            <strong>
+              Monthly Workforce Spend
+            </strong>
+
+            <span>
+              Current period
+            </span>
+
+          </div>
+
+          <div class="cw-intel-value">
+            ₹42.8L
+          </div>
+
+        </div>
+
+
+        <div class="cw-intel-row">
+
+          <div class="cw-intel-info">
+
+            <strong>
+              Automation Rate
+            </strong>
+
+            <span>
+              Digital workflows
+            </span>
+
+          </div>
+
+          <div class="cw-intel-value">
+            90%
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     COMPLIANCE
+========================================================= -->
+
+<section class="cw-section soft">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Compliance Command Center
+      </span>
+
+      <h2>
+        Make compliance a continuous process, not a last-minute task.
+      </h2>
+
+      <p>
+        Maintain visibility over worker documentation, contract
+        obligations and compliance checkpoints from one place.
+      </p>
+
+    </div>
+
+
+    <div class="cw-compliance-grid">
+
+
+      <div class="cw-compliance-card cw-reveal">
+
+        <div class="icon">
+          ✓
+        </div>
+
+        <h3>
+          Document Verification
+        </h3>
+
+        <p>
+          Verify required worker documents before deployment and
+          maintain a clear compliance record.
+        </p>
+
+      </div>
+
+
+      <div class="cw-compliance-card cw-reveal">
+
+        <div class="icon">
+          ⏱
+        </div>
+
+        <h3>
+          Expiry Monitoring
+        </h3>
+
+        <p>
+          Track contract, certification and document expiry dates
+          before they create operational risk.
+        </p>
+
+      </div>
+
+
+      <div class="cw-compliance-card cw-reveal">
+
+        <div class="icon">
+          🔔
+        </div>
+
+        <h3>
+          Automated Alerts
+        </h3>
+
+        <p>
+          Notify responsible teams when actions, renewals or
+          compliance requirements need attention.
+        </p>
+
+      </div>
+
+
+      <div class="cw-compliance-card cw-reveal">
+
+        <div class="icon">
+          📊
+        </div>
+
+        <h3>
+          Audit Visibility
+        </h3>
+
+        <p>
+          Maintain centralized records and reporting for operational
+          and compliance reviews.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BUSINESS IMPACT
+========================================================= -->
+
+<section class="cw-section">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Business Impact
+      </span>
+
+      <h2>
+        Built to improve workforce operations.
+      </h2>
+
+      <p>
+        Use automation and centralized workforce intelligence to
+        reduce administrative effort and improve control.
+      </p>
+
+    </div>
+
+
+    <div class="cw-benefit-grid">
+
+
+      <div class="cw-benefit cw-reveal">
+
+        <strong>
+          2x
+        </strong>
+
+        <span>
+          Faster Onboarding
+        </span>
+
+        <small>
+          Reduce manual onboarding steps.
+        </small>
+
+      </div>
+
+
+      <div class="cw-benefit cw-reveal">
+
+        <strong>
+          40%
+        </strong>
+
+        <span>
+          Cost Reduction
+        </span>
+
+        <small>
+          Improve workforce cost visibility.
+        </small>
+
+      </div>
+
+
+      <div class="cw-benefit cw-reveal">
+
+        <strong>
+          90%
+        </strong>
+
+        <span>
+          Process Automation
+        </span>
+
+        <small>
+          Automate repetitive workflows.
+        </small>
+
+      </div>
+
+
+      <div class="cw-benefit cw-reveal">
+
+        <strong>
+          24/7
+        </strong>
+
+        <span>
+          Workforce Visibility
+        </span>
+
+        <small>
+          Access workforce information anytime.
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORKFLOW
+========================================================= -->
+
+<section class="cw-section soft">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Workflow Automation
+      </span>
+
+      <h2>
+        Replace repetitive approvals with automated workflows.
+      </h2>
+
+      <p>
+        Define rules, assign responsibilities and keep every workforce
+        process moving without unnecessary manual follow-ups.
+      </p>
+
+    </div>
+
+
+    <div class="cw-workflow">
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          01
+        </div>
+
+        <div>
+
+          <h3>
+            Contract Approval
+          </h3>
+
+          <p>
+            Route new contracts through predefined approval levels
+            before they become active.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          02
+        </div>
+
+        <div>
+
+          <h3>
+            Worker Onboarding
+          </h3>
+
+          <p>
+            Automatically trigger document collection, verification
+            and deployment steps.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          03
+        </div>
+
+        <div>
+
+          <h3>
+            Renewal Process
+          </h3>
+
+          <p>
+            Start renewal workflows before contracts expire and
+            notify responsible managers.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          04
+        </div>
+
+        <div>
+
+          <h3>
+            Offboarding
+          </h3>
+
+          <p>
+            Trigger exit activities, access removal and record
+            closure through standardized workflows.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          05
+        </div>
+
+        <div>
+
+          <h3>
+            Compliance Escalation
+          </h3>
+
+          <p>
+            Escalate missing documents and compliance exceptions to
+            the appropriate team automatically.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cw-workflow-card cw-reveal">
+
+        <div class="cw-workflow-number">
+          06
+        </div>
+
+        <div>
+
+          <h3>
+            Workforce Requests
+          </h3>
+
+          <p>
+            Standardize requests for worker additions, transfers,
+            replacements and extensions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     USE CASES
+========================================================= -->
+
+<section class="cw-section">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        Built For Operations
+      </span>
+
+      <h2>
+        Designed for businesses with a flexible workforce.
+      </h2>
+
+      <p>
+        Whether you manage thousands of workers or multiple staffing
+        vendors, Navik gives your teams one operational view.
+      </p>
+
+    </div>
+
+
+    <div class="cw-usecase-grid">
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          🏭
+        </div>
+
+        <h3>
+          Manufacturing
+        </h3>
+
+        <p>
+          Manage temporary production workers, contractors, shifts,
+          documentation and deployment across facilities.
+        </p>
+
+      </div>
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          🚚
+        </div>
+
+        <h3>
+          Logistics &amp; Warehousing
+        </h3>
+
+        <p>
+          Maintain visibility over high-volume contract workers,
+          staffing requirements and workforce costs.
+        </p>
+
+      </div>
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          🏗️
+        </div>
+
+        <h3>
+          Construction
+        </h3>
+
+        <p>
+          Coordinate contractors, project assignments, worker
+          documentation and compliance requirements.
+        </p>
+
+      </div>
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          🏢
+        </div>
+
+        <h3>
+          Facilities
+        </h3>
+
+        <p>
+          Manage outsourced and temporary personnel across multiple
+          locations and service operations.
+        </p>
+
+      </div>
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          🛒
+        </div>
+
+        <h3>
+          Retail
+        </h3>
+
+        <p>
+          Handle seasonal workers, staffing partners and temporary
+          workforce requirements efficiently.
+        </p>
+
+      </div>
+
+
+      <div class="cw-usecase cw-reveal">
+
+        <div class="cw-usecase-icon">
+          👷
+        </div>
+
+        <h3>
+          Staffing Agencies
+        </h3>
+
+        <p>
+          Maintain worker records, contracts, documentation and
+          deployment information from one platform.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="cw-section soft">
+
+  <div class="cw-container">
+
+
+    <div class="cw-section-head cw-reveal">
+
+      <span class="cw-section-label">
+        FAQ
+      </span>
+
+      <h2>
+        Contract workforce management, simplified.
+      </h2>
+
+    </div>
+
+
+    <div class="cw-faq">
+
+
+      <details class="cw-reveal">
+
+        <summary>
+          What is Contract Workforce Management?
+        </summary>
+
+        <p>
+          Contract Workforce Management is the process of managing
+          temporary, outsourced and contract workers throughout their
+          lifecycle, including onboarding, documentation, contracts,
+          deployment, compliance, renewals and offboarding.
+        </p>
+
+      </details>
+
+
+      <details class="cw-reveal">
+
+        <summary>
+          Can Navik manage multiple staffing vendors?
+        </summary>
+
+        <p>
+          The platform can be structured around centralized worker,
+          contract and documentation records, allowing organizations
+          to maintain better visibility across workforce sources.
+        </p>
+
+      </details>
+
+
+      <details class="cw-reveal">
+
+        <summary>
+          Can contracts and documents be tracked?
+        </summary>
+
+        <p>
+          Yes. Contract records, worker documents, expiry dates and
+          approval workflows can be centralized so teams can monitor
+          important actions from one operational view.
+        </p>
+
+      </details>
+
+
+      <details class="cw-reveal">
+
+        <summary>
+          Can it connect with HR and payroll processes?
+        </summary>
+
+        <p>
+          Contract workforce information can be integrated into
+          broader HR, attendance, workforce management and payroll
+          processes depending on the organization's implementation.
+        </p>
+
+      </details>
+
+
+      <details class="cw-reveal">
+
+        <summary>
+          Is the platform suitable for large workforces?
+        </summary>
+
+        <p>
+          The product is designed around centralized workforce data,
+          automated workflows, reporting and operational visibility,
+          making the model suitable for organizations managing
+          distributed or high-volume contract workforces.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section
+  class="cw-final-cta"
+  id="demo"
+>
+
+  <h2>
+    Bring your entire contract workforce under control.
+  </h2>
+
+
+  <p>
+    Replace fragmented spreadsheets and manual follow-ups with a
+    centralized workforce management platform built for modern
+    operations.
+  </p>
+
+
+  <div class="cw-final-actions">
+
+    <a
+      href="#demo"
+      class="cw-hero-btn primary"
+    >
+      Book Your Demo →
+    </a>
+
+
+    <a
+      href="index.html"
+      class="cw-hero-btn secondary"
+    >
+      Back to Home
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="nav-logo footer-logo"
+        >
+
+          <img
+            src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+            alt="Navik"
+            class="footer-logo-img"
+          >
+
+          <span class="nav-logo-text">
+
+            <span class="nav-logo-animated">
+              HR
+            </span>
+
+            <span class="nav-logo-animated">
+              WFM
+            </span>
+
+            <span class="nav-logo-animated">
+              Payroll
+            </span>
+
+          </span>
+
+        </a>
+
+
+        <p>
+          The complete HR, Workforce Management &amp; Payroll platform
+          for modern businesses.
+        </p>
+
+
+        <div class="app-download-buttons">
+
+          <a
+            href="#"
+            class="app-store-btn"
+            aria-label="Download on App Store"
+          >
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+
+            <div class="app-btn-text">
+
+              <span class="app-btn-label">
+                Download on the
+              </span>
+
+              <span class="app-btn-store">
+                App Store
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="google-play-btn"
+            aria-label="Get it on Google Play"
+          >
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+
+            <div class="app-btn-text">
+
+              <span class="app-btn-label">
+                GET IT ON
+              </span>
+
+              <span class="app-btn-store">
+                Google Play
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+
+        <div class="footer-socials">
+
+
+          <a
+            href="https://www.instagram.com/navik.ops?igsh=MXdicHJlNDV4eHF1MQ=="
+            aria-label="Instagram"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="Facebook"
+            class="social-icon"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+
+          </a>
+
+
+          <a
+            href="https://www.youtube.com/@NavikHR"
+            aria-label="YouTube"
+            class="social-icon"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            class="social-icon"
+          >
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>
+          Product
+        </h5>
+
+        <a href="hr-system.html">
+          HR System
+        </a>
+
+        <a href="workforce-management.html">
+          Workforce Management
+        </a>
+
+        <a href="payroll-system.html">
+          Payroll System
+        </a>
+
+        <a href="attendance.html">
+          Attendance
+        </a>
+
+        <a href="contract-workforce.html">
+          Contract Workforce Management
+        </a>
+
+        <a href="field-workforce-tracking.html">
+          Field Workforce Tracking
+        </a>
+
+        <a href="employee-self-service.html">
+          Employee Self Service
+        </a>
+
+        <a href="complience-managemant.html">
+          Compliance Management
+        </a>
+
+        <a href="reports-analytics.html">
+          Reports &amp; Analytics
+        </a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>
+          Company
+        </h5>
+
+        <a href="about-us.html">
+          About Us
+        </a>
+
+        <a href="mailto:riya.shukla@wfmexperts.com">
+          Careers
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="#">
+          Press
+        </a>
+
+        <a href="Customers.html">
+          Customers
+        </a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>
+          Resources
+        </h5>
+
+        <a href="#">
+          Help Center
+        </a>
+
+        <a href="#">
+          Documentation
+        </a>
+
+        <a href="Case-Studies.html">
+          Case Studies
+        </a>
+
+        <a href="blog.html">
+          Blogs
+        </a>
+
+        <a href="templates.html">
+          Templates
+        </a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h5>
+          Contact
+        </h5>
+
+        <a href="mailto:contact@navik.com">
+          contact@navik.com
+        </a>
+
+        <a href="tel:+919196000515">
+          +91-9196000515
+        </a>
+
+        <span>
+          Kanpur, India
+        </span>
+
+        <a
+          href="#demo"
+          style="
+            margin-top:12px;
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            background:linear-gradient(
+              135deg,
+              #1746b0,
+              #2563eb
+            );
+            color:#fff;
+            padding:10px 16px;
+            border-radius:9px;
+            font-size:13px;
+            font-weight:700;
+            text-decoration:none;
+          "
+        >
+          Book a Demo →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 navik. All rights reserved.
+        Made with ❤ in India
+      </span>
+
+
+      <div class="footer-legal">
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Terms of Service
+        </a>
+
+        <a href="#">
+          Security
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     PAGE ANIMATION
+========================================================= -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    /* ==========================================
+       REVEAL
+    ========================================== */
+
+    const revealElements =
+      document.querySelectorAll(".cw-reveal");
+
+
+    if (!("IntersectionObserver" in window)) {
+
+      revealElements.forEach(el => {
+        el.classList.add("cw-visible");
+      });
+
+    } else {
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+
+            entries.forEach(entry => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "cw-visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            });
+
+          },
+          {
+            threshold: .12,
+            rootMargin:
+              "0px 0px -45px 0px"
+          }
+        );
+
+
+      revealElements.forEach(el => {
+        observer.observe(el);
+      });
+
+    }
+
+
+    /* ==========================================
+       SCROLL PROGRESS
+    ========================================== */
+
+    const progress =
+      document.getElementById(
+        "scroll-progress"
+      );
+
+
+    const updateProgress = () => {
+
+      const scrollTop =
+        window.scrollY;
+
+      const documentHeight =
+        document.documentElement.scrollHeight
+        - window.innerHeight;
+
+      const percentage =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      progress.style.width =
+        percentage + "%";
+
+    };
+
+
+    window.addEventListener(
+      "scroll",
+      updateProgress,
+      { passive: true }
+    );
+
+
+    updateProgress();
+
+  });
+
+</script>
+
+
+<script
+  src="./demo-form-modal.js"
+  defer
+></script>
+
+<script
+  src="./main.js"
+  defer
+></script>
+
+</body>
+</html>

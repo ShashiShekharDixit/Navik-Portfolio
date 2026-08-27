@@ -1,0 +1,3113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customers | HR, Workforce Management & Payroll | Navik</title>
+  <meta name="description" content="See how modern organizations use Navik to simplify HR, workforce management, attendance, payroll and employee operations."/>
+  <meta name="keywords" content="HR software, workforce management, payroll software, employee management, attendance, workforce analytics, Navik"/>
+  <meta name="theme-color" content="#0b5cff" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+:root {
+  --blue: #0b5cff;
+  --blue-2: #2563eb;
+  --blue-3: #4f8df7;
+  --blue-dark: #063fae;
+  --blue-deep: #06245f;
+  --white: #ffffff;
+  --white-soft: #f7faff;
+  --white-blue: #eef5ff;
+  --text-blue: #082d73;
+  --text-mid: #24529a;
+  --text-soft: #5274aa;
+  --border: rgba(37, 99, 235, 0.13);
+  --border-strong: rgba(37, 99, 235, 0.22);
+  --shadow-sm: 0 10px 30px rgba(37, 99, 235, 0.08);
+  --shadow: 0 24px 70px rgba(14, 78, 180, 0.13);
+  --shadow-lg: 0 35px 100px rgba(7, 69, 170, 0.18);
+  --radius-sm: 12px;
+  --radius: 20px;
+  --radius-lg: 30px;
+  --ease: cubic-bezier(.2,.75,.25,1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--white);
+  color: var(--text-blue);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #0b5cff, #4f8df7, #7eb3ff);
+  z-index: 99999;
+  transition: width .1s linear;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 18px 28px;
+  transition: padding .45s var(--ease), transform .45s var(--ease);
+}
+
+.nav-inner {
+  width: min(1440px, 100%);
+  min-height: 78px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 24px;
+  border: 1px solid rgba(37, 99, 235, .12);
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 22px;
+  box-shadow: 0 15px 50px rgba(8, 58, 145, .10);
+  transition: min-height .45s var(--ease), box-shadow .45s var(--ease), border-radius .45s var(--ease);
+}
+
+.navbar.scrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar.scrolled .nav-inner {
+  min-height: 66px;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(8, 58, 145, .15);
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+.nav-logo-img {
+  width: 47px;
+  height: 47px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 16px rgba(11,92,255,.20));
+}
+
+.nav-logo-text {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  color: var(--blue-dark);
+}
+
+.nav-logo-animated {
+  display: block;
+  animation: logoWords 7s infinite;
+}
+
+.nav-logo-animated + .nav-logo-animated {
+  display: none;
+}
+
+@keyframes logoWords {
+  0%, 27% {
+    transform: translateY(0);
+  }
+  33%, 60% {
+    transform: translateY(-32px);
+  }
+  66%, 93% {
+    transform: translateY(-64px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  list-style: none;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+.nav-links > li > a,
+.nav-link-main {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border-radius: 11px;
+  color: var(--text-mid);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: background .25s ease, color .25s ease;
+}
+
+.nav-links > li > a:hover,
+.nav-link-main:hover {
+  color: var(--blue);
+  background: var(--white-blue);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 250px;
+  padding: 10px;
+  background: rgba(255,255,255,.98);
+  border: 1px solid rgba(37,99,235,.13);
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(8,58,145,.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: flex;
+  padding: 11px 13px;
+  border-radius: 10px;
+  color: var(--text-mid);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--blue);
+  background: var(--white-blue);
+  transform: translateX(3px);
+}
+
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 12px;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0b5cff, #174bd1);
+  box-shadow: 0 10px 24px rgba(11,92,255,.24);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.btn-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 32px rgba(11,92,255,.32);
+}
+
+.hamburger {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--white-blue);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 21px;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 10px;
+  transition: .3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.customer-hero {
+  position: relative;
+  min-height: 880px;
+  padding: 190px 28px 100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 25%, rgba(37,99,235,.13), transparent 35%), radial-gradient(circle at 15% 70%, rgba(79,141,247,.10), transparent 32%), linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: .5;
+  background-image: linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.hero-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,141,247,.16), transparent 68%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.hero-orb.one {
+  top: 80px;
+  right: -180px;
+}
+
+.hero-orb.two {
+  bottom: -280px;
+  left: -180px;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: min(1380px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(540px, 1.08fr);
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: 100px;
+  background: rgba(11,92,255,.08);
+  border: 1px solid rgba(11,92,255,.13);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 5px rgba(11,92,255,.10);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%,100% {
+    box-shadow: 0 0 0 4px rgba(11,92,255,.10);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(11,92,255,.04);
+  }
+}
+
+.hero-title {
+  font-size: clamp(48px, 5.2vw, 78px);
+  line-height: 1.01;
+  letter-spacing: -.065em;
+  font-weight: 900;
+  color: var(--blue-deep);
+  margin-bottom: 25px;
+}
+
+.hero-title span {
+  display: block;
+  background: linear-gradient(110deg, #0b5cff, #4387f5, #0b5cff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.hero-description {
+  max-width: 610px;
+  color: var(--text-soft);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  min-height: 54px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform .3s var(--ease), box-shadow .3s ease, background .3s ease;
+}
+
+.hero-btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #0b5cff, #174bd1);
+  box-shadow: 0 15px 35px rgba(11,92,255,.23);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(11,92,255,.31);
+}
+
+.hero-btn-secondary {
+  color: var(--blue);
+  background: white;
+  border: 1px solid var(--border-strong);
+}
+
+.hero-btn-secondary:hover {
+  background: var(--white-blue);
+  transform: translateY(-3px);
+}
+
+.hero-proof {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.proof-avatars {
+  display: flex;
+}
+
+.proof-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: -7px;
+  border: 3px solid white;
+  background: linear-gradient(135deg, #0b5cff, #8db8ff);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.proof-avatar:first-child {
+  margin-left: 0;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-shell {
+  position: relative;
+  width: 100%;
+  max-width: 690px;
+  padding: 15px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(235,244,255,.95));
+  border: 1px solid rgba(37,99,235,.16);
+  box-shadow: 0 45px 110px rgba(8,67,155,.19);
+  transform: perspective(1400px) rotateY(-5deg) rotateX(2deg);
+  transition: transform .6s var(--ease);
+}
+
+.dashboard-shell:hover {
+  transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-5px);
+}
+
+.dashboard-window {
+  overflow: hidden;
+  border-radius: 21px;
+  background: white;
+  border: 1px solid rgba(37,99,235,.10);
+}
+
+.dashboard-topbar {
+  height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(37,99,235,.09);
+  background: white;
+}
+
+.dash-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dash-brand-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, #0b5cff, #5791ff);
+}
+
+.dash-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-action {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--white-blue);
+}
+
+.dash-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b5cff, #8ab4ff);
+  border: 2px solid white;
+  box-shadow: 0 3px 10px rgba(11,92,255,.18);
+}
+
+.dashboard-body {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  min-height: 485px;
+}
+
+.dashboard-sidebar {
+  padding: 20px 13px;
+  border-right: 1px solid rgba(37,99,235,.08);
+  background: #fbfdff;
+}
+
+.side-label {
+  margin: 0 8px 15px;
+  color: #6d8bbd;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 9px;
+  margin-bottom: 4px;
+  border-radius: 9px;
+  color: #5476aa;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.side-item.active {
+  color: var(--blue);
+  background: rgba(11,92,255,.08);
+}
+
+.side-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: #e5efff;
+}
+
+.dashboard-main {
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+.dash-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.dash-heading h3 {
+  color: var(--blue-deep);
+  font-size: 18px;
+  font-weight: 850;
+  letter-spacing: -.035em;
+}
+
+.dash-heading p {
+  margin-top: 2px;
+  color: #7893bf;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.dash-date {
+  padding: 7px 10px;
+  border-radius: 7px;
+  color: var(--blue);
+  background: #edf4ff;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.dash-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.dash-kpi {
+  padding: 13px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid rgba(37,99,235,.09);
+  box-shadow: 0 8px 25px rgba(25,78,150,.05);
+}
+
+.kpi-label {
+  color: #7893bf;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.kpi-value {
+  margin-top: 4px;
+  color: var(--blue-deep);
+  font-size: 21px;
+  font-weight: 850;
+  letter-spacing: -.04em;
+}
+
+.kpi-change {
+  margin-top: 2px;
+  color: #3d81e8;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.dash-chart {
+  padding: 15px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid rgba(37,99,235,.09);
+  margin-bottom: 12px;
+}
+
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.chart-head strong {
+  color: var(--blue-deep);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.chart-head span {
+  color: #7893bf;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.chart {
+  height: 125px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 5px 5px 0;
+  border-bottom: 1px solid #dce9fa;
+}
+
+.bar {
+  flex: 1;
+  min-width: 8px;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, #5d98ff, #0b5cff);
+  animation: barFloat 3s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(2) {
+  height: 52%;
+  animation-delay: .1s;
+}
+
+.bar:nth-child(3) {
+  height: 70%;
+  animation-delay: .2s;
+}
+
+.bar:nth-child(4) {
+  height: 58%;
+  animation-delay: .3s;
+}
+
+.bar:nth-child(5) {
+  height: 82%;
+  animation-delay: .4s;
+}
+
+.bar:nth-child(6) {
+  height: 67%;
+  animation-delay: .5s;
+}
+
+.bar:nth-child(7) {
+  height: 91%;
+  animation-delay: .6s;
+}
+
+.bar:nth-child(8) {
+  height: 76%;
+  animation-delay: .7s;
+}
+
+.bar:nth-child(9) {
+  height: 96%;
+  animation-delay: .8s;
+}
+
+.bar:nth-child(10) {
+  height: 85%;
+  animation-delay: .9s;
+}
+
+@keyframes barFloat {
+  from {
+    transform: scaleY(.94);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.dash-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mini-card {
+  padding: 13px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid rgba(37,99,235,.09);
+}
+
+.mini-title {
+  color: #7893bf;
+  font-size: 8px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.employee-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eef4fc;
+}
+
+.employee-row:last-child {
+  border-bottom: 0;
+}
+
+.employee-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.employee-avatar {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b5cff, #9dc1ff);
+}
+
+.employee-name {
+  color: #37619a;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.employee-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4f8df7;
+  box-shadow: 0 0 0 3px rgba(79,141,247,.10);
+}
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(37,99,235,.13);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(8,67,155,.15);
+  backdrop-filter: blur(12px);
+  z-index: 4;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+.floating-card.one {
+  left: -35px;
+  top: 100px;
+}
+
+.floating-card.two {
+  right: -30px;
+  bottom: 100px;
+  animation-delay: -2.2s;
+}
+
+@keyframes floatCard {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.floating-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, #0b5cff, #5791ff);
+}
+
+.floating-label {
+  color: #7a96c0;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.floating-value {
+  color: var(--blue-deep);
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.trust-strip {
+  padding: 45px 28px;
+  background: white;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-container {
+  width: min(1200px, 100%);
+  margin: auto;
+  text-align: center;
+}
+
+.trust-label {
+  color: #7893bf;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.trust-logo {
+  min-width: 145px;
+  padding: 13px 20px;
+  border-radius: 11px;
+  color: #5e82b8;
+  background: #f8fbff;
+  border: 1px solid #e5effc;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.section {
+  position: relative;
+  padding: 120px 28px;
+}
+
+.section-soft {
+  background: linear-gradient(180deg, #f8fbff, #eef5ff);
+}
+
+.section-container {
+  width: min(1280px, 100%);
+  margin: auto;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.section-title {
+  color: var(--blue-deep);
+  font-size: clamp(35px, 4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  font-weight: 900;
+  margin-bottom: 17px;
+}
+
+.section-subtitle {
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.capability-card {
+  position: relative;
+  padding: 31px;
+  min-height: 270px;
+  border-radius: 23px;
+  background: white;
+  border: 1px solid rgba(37,99,235,.10);
+  box-shadow: 0 15px 45px rgba(8,67,155,.07);
+  overflow: hidden;
+  transition: transform .35s var(--ease), box-shadow .35s ease, border-color .35s ease;
+}
+
+.capability-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  right: -100px;
+  bottom: -100px;
+  background: rgba(11,92,255,.055);
+  transition: transform .5s var(--ease);
+}
+
+.capability-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(11,92,255,.20);
+  box-shadow: 0 28px 65px rgba(8,67,155,.12);
+}
+
+.capability-card:hover::after {
+  transform: scale(1.35);
+}
+
+.capability-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  margin-bottom: 22px;
+  color: var(--blue);
+  background: linear-gradient(145deg, #edf4ff, #dfeeff);
+}
+
+.capability-title {
+  color: var(--blue-deep);
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: -.035em;
+  margin-bottom: 9px;
+}
+
+.capability-text {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.capability-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.intelligence-section {
+  overflow: hidden;
+  background: var(--blue-deep);
+}
+
+.intelligence-section .section-eyebrow {
+  color: #7eb3ff;
+}
+
+.intelligence-section .section-title {
+  color: white;
+}
+
+.intelligence-section .section-subtitle {
+  color: rgba(255,255,255,.72);
+}
+
+.intelligence-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.intelligence-content {
+  max-width: 550px;
+}
+
+.intelligence-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.intelligence-item {
+  display: flex;
+  gap: 13px;
+  padding: 15px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.intelligence-check {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: rgba(79,141,247,.22);
+}
+
+.intelligence-item strong {
+  display: block;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+.intelligence-item span {
+  color: rgba(255,255,255,.62);
+  font-size: 11px;
+}
+
+.intelligence-dashboard {
+  padding: 18px;
+  border-radius: 27px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 35px 80px rgba(0,0,0,.18);
+}
+
+.intel-inner {
+  padding: 23px;
+  border-radius: 19px;
+  background: rgba(255,255,255,.98);
+}
+
+.intel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.intel-top h3 {
+  color: var(--blue-deep);
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.intel-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.intel-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.intel-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  margin-bottom: 18px;
+}
+
+.intel-metric {
+  padding: 16px;
+  border-radius: 13px;
+  background: #f6faff;
+  border: 1px solid #e4effd;
+}
+
+.intel-metric span {
+  color: #7591bb;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.intel-metric strong {
+  display: block;
+  color: var(--blue-deep);
+  font-size: 23px;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+.intel-bars {
+  padding: 18px;
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.intel-bar-row {
+  display: grid;
+  grid-template-columns: 85px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.intel-bar-row:last-child {
+  margin-bottom: 0;
+}
+
+.intel-bar-name,
+.intel-bar-value {
+  color: #5d7daa;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.intel-bar-value {
+  text-align: right;
+  color: var(--blue);
+}
+
+.intel-bar-track {
+  height: 7px;
+  border-radius: 20px;
+  background: #e2edfc;
+  overflow: hidden;
+}
+
+.intel-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0b5cff, #74a8ff);
+  animation: growBar 1.8s var(--ease) both;
+}
+
+@keyframes growBar {
+  from {
+    width: 0 !important;
+  }
+}
+
+.numbers-section {
+  background: white;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.number-card {
+  padding: 45px 25px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background .3s ease;
+}
+
+.number-card:last-child {
+  border-right: 0;
+}
+
+.number-card:hover {
+  background: #f7faff;
+}
+
+.number-value {
+  color: var(--blue);
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -.06em;
+}
+
+.number-label {
+  color: var(--text-mid);
+  font-size: 11px;
+  font-weight: 750;
+  margin-top: 5px;
+}
+
+.number-description {
+  color: #7995be;
+  font-size: 9px;
+  margin-top: 7px;
+}
+
+.journey-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.journey-card {
+  position: relative;
+  padding: 30px 25px;
+  border-radius: 21px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 45px rgba(8,67,155,.06);
+}
+
+.journey-number {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #0b5cff, #4d8fff);
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+
+.journey-title {
+  color: var(--blue-deep);
+  font-size: 16px;
+  font-weight: 850;
+  margin-bottom: 8px;
+}
+
+.journey-text {
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.testimonial-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #f5f9ff;
+}
+
+.testimonial {
+  width: min(950px, 100%);
+  margin: auto;
+  padding: 55px;
+  text-align: center;
+  border-radius: 30px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 75px rgba(8,67,155,.08);
+}
+
+.quote-mark {
+  color: #7eb3ff;
+  font-size: 60px;
+  line-height: .6;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.testimonial-text {
+  color: var(--text-blue);
+  font-size: clamp(20px, 2.3vw, 28px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.03em;
+}
+
+.testimonial-person {
+  margin-top: 30px;
+}
+
+.testimonial-name {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.testimonial-role {
+  color: #7c97bd;
+  font-size: 10px;
+}
+
+.final-cta {
+  position: relative;
+  padding: 120px 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #063fae, #0b5cff);
+}
+
+.cta-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  filter: blur(5px);
+}
+
+.cta-glow.one {
+  top: -300px;
+  right: -100px;
+}
+
+.cta-glow.two {
+  bottom: -350px;
+  left: -100px;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 2;
+  width: min(900px, 100%);
+  margin: auto;
+  text-align: center;
+}
+
+.cta-title {
+  color: white;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -.06em;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.cta-text {
+  max-width: 650px;
+  margin: 0 auto 32px;
+  color: rgba(255,255,255,.76);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  min-height: 55px;
+  padding: 0 27px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 13px;
+  color: var(--blue);
+  background: white;
+  font-size: 13px;
+  font-weight: 850;
+  box-shadow: 0 15px 35px rgba(0,0,0,.14);
+  transition: transform .25s ease;
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.cta-btn-secondary {
+  min-height: 55px;
+  padding: 0 27px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 13px;
+  color: white;
+  border: 1px solid rgba(255,255,255,.30);
+  background: rgba(255,255,255,.08);
+  font-size: 13px;
+  font-weight: 800;
+  transition: background .25s ease;
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(255,255,255,.15);
+}
+
+.footer {
+  position: relative;
+  padding: 80px 28px 25px;
+  background: #041f52;
+  color: white;
+}
+
+.footer-container {
+  width: min(1380px, 100%);
+  margin: auto;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 55px;
+  padding-bottom: 65px;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.footer-description {
+  color: rgba(255,255,255,.62);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 9px;
+  color: #a9c8ff;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.footer-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #76aaff;
+  box-shadow: 0 0 0 4px rgba(118,170,255,.12);
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 12px;
+  font-weight: 850;
+  margin-bottom: 19px;
+}
+
+.footer-col a,
+.footer-col span {
+  display: block;
+  color: rgba(255,255,255,.57);
+  font-size: 11px;
+  font-weight: 550;
+  margin-bottom: 12px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.footer-col a:hover {
+  color: #9dc2ff;
+  transform: translateX(3px);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 23px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #a9c8ff;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.social-icon:hover {
+  background: rgba(255,255,255,.12);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,.09);
+  color: rgba(255,255,255,.45);
+  font-size: 9px;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-legal a {
+  color: rgba(255,255,255,.45);
+  transition: color .2s ease;
+}
+
+.footer-legal a:hover {
+  color: white;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: .1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: .2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: .3s;
+}
+
+@media (max-width: 1200px) {
+  .nav-links > li > a,
+  .nav-link-main {
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .nav-right {
+    gap: 12px;
+  }
+
+  .hero-container {
+    gap: 35px;
+  }
+
+  .dashboard-shell {
+    transform: perspective(1200px) rotateY(-2deg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .nav-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar.menu-open .nav-right {
+    display: block;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.98);
+    box-shadow: 0 25px 60px rgba(8,58,145,.16);
+  }
+
+  .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar.menu-open .nav-links > li > a,
+  .navbar.menu-open .nav-link-main {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 14px;
+  }
+
+  .navbar.menu-open .nav-dropdown-menu {
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: 0;
+    padding: 0 8px 8px;
+  }
+
+  .navbar.menu-open .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+  }
+
+  .navbar.menu-open .nav-actions {
+    margin-top: 10px;
+  }
+
+  .navbar.menu-open .btn-nav-cta {
+    width: 100%;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .hero-proof {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .intelligence-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .intelligence-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .intelligence-dashboard {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-main {
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .nav-inner {
+    min-height: 67px;
+    padding: 0 12px 0 15px;
+    border-radius: 17px;
+  }
+
+  .navbar.scrolled {
+    padding: 7px 10px;
+  }
+
+  .nav-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-logo-text {
+    font-size: 16px;
+  }
+
+  .customer-hero {
+    min-height: auto;
+    padding: 145px 18px 70px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .dashboard-shell {
+    padding: 8px;
+    border-radius: 21px;
+    transform: none !important;
+  }
+
+  .dashboard-body {
+    grid-template-columns: 105px 1fr;
+  }
+
+  .dashboard-sidebar {
+    padding: 12px 8px;
+  }
+
+  .dashboard-main {
+    padding: 13px;
+  }
+
+  .dash-kpis {
+    gap: 6px;
+  }
+
+  .dash-kpi {
+    padding: 9px;
+  }
+
+  .kpi-value {
+    font-size: 16px;
+  }
+
+  .floating-card {
+    transform: scale(.82);
+  }
+
+  .floating-card.one {
+    left: -20px;
+    top: 60px;
+  }
+
+  .floating-card.two {
+    right: -20px;
+    bottom: 45px;
+  }
+
+  .section {
+    padding: 80px 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 45px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .number-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .number-card:nth-child(-n+2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial {
+    padding: 35px 22px;
+  }
+
+  .final-cta {
+    padding: 85px 18px;
+  }
+
+  .footer {
+    padding: 65px 20px 22px;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 25px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-logo-text {
+    display: none;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero-proof {
+    flex-direction: column;
+  }
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .dashboard-sidebar {
+    display: none;
+  }
+
+  .dashboard-body {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-main {
+    padding: 11px;
+  }
+
+  .dash-heading h3 {
+    font-size: 15px;
+  }
+
+  .dash-date {
+    display: none;
+  }
+
+  .dash-kpis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .kpi-label {
+    font-size: 6px;
+  }
+
+  .kpi-value {
+    font-size: 13px;
+  }
+
+  .kpi-change {
+    font-size: 6px;
+  }
+
+  .dash-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .trust-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-logo {
+    min-width: 0;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .number-card,
+  .number-card:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .number-card:last-child {
+    border-bottom: 0;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intel-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .intel-bar-row {
+    grid-template-columns: 65px 1fr 32px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img
+          src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+          alt="Navik"
+          class="nav-logo-img"
+        >
+        <span class="nav-logo-text">
+          <span class="nav-logo-animated">HR</span>
+          <span class="nav-logo-animated">WFM</span>
+          <span class="nav-logo-animated">Payroll</span>
+        </span>
+      </a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link-main">Products</a>
+            <div class="nav-dropdown-menu">
+              <a href="hr-system.html">HR System</a>
+              <a href="workforce-management.html">Workforce Management</a>
+              <a href="payroll-system.html">Payroll System</a>
+              <a href="attendance.html">Attendance</a>
+              <a href="contract-workforce.html">Contract Workforce Management</a>
+              <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+              <a href="employee-self-service.html">Employee Self Service</a>
+              <a href="complience-managemant.html">Compliance Management</a>
+              <a href="reports-analytics.html">Reports & Analytics</a>
+            </div>
+          </li>
+
+          <li><a href="index.html#pricing">Pricing</a></li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link-main">Industries</a>
+            <div class="nav-dropdown-menu">
+              <a href="Retails.html">Retail</a>
+              <a href="Logistics.html">Logistics</a>
+              <a href="Construction.html">Construction</a>
+              <a href="Sales.html">Sales Team</a>
+              <a href="Manufacturing.html">Manufacturing</a>
+              <a href="Health-Care.html">Healthcare</a>
+            </div>
+          </li>
+
+          <li><a href="Customers.html">Customers</a></li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link-main">Resources</a>
+            <div class="nav-dropdown-menu">
+              <a href="blog.html">Blogs</a>
+              <a href="templates.html">Templates</a>
+              <a href="tools-hub.html">HR Tools</a>
+              <a href="Case-Studies.html">Case Studies</a>
+              <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
+            </div>
+          </li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link-main">Company</a>
+            <div class="nav-dropdown-menu">
+              <a href="about-us.html">About Us</a>
+              <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+              <a href="contact-us.html">Contact Us</a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#demo" class="btn-nav-cta">Book Demo</a>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="customer-hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-orb one"></div>
+    <div class="hero-orb two"></div>
+
+    <div class="hero-container">
+      <div class="hero-content reveal">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Trusted Workforce Operations Platform
+        </div>
+
+        <h1 class="hero-title">
+          One platform for
+          <span>your entire workforce.</span>
+        </h1>
+
+        <p class="hero-description">
+          From hiring and attendance to workforce operations, payroll and employee experience — Navik gives modern organizations one connected system to manage people, work and business performance.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#demo" class="hero-btn hero-btn-primary">
+            Book a Demo
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="m13 6 6 6-6 6"></path>
+            </svg>
+          </a>
+
+          <a href="#capabilities" class="hero-btn hero-btn-secondary">
+            Explore Platform
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-avatars">
+            <div class="proof-avatar">HR</div>
+            <div class="proof-avatar">WF</div>
+            <div class="proof-avatar">PR</div>
+            <div class="proof-avatar">+</div>
+          </div>
+
+          <span>Built for HR, operations, finance and workforce teams</span>
+        </div>
+      </div>
+
+      <!-- HERO DASHBOARD -->
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="dashboard-shell">
+          <div class="dashboard-window">
+            <div class="dashboard-topbar">
+              <div class="dash-brand">
+                <div class="dash-brand-icon">N</div>
+                Workforce Command Center
+              </div>
+
+              <div class="dash-actions">
+                <div class="dash-action"></div>
+                <div class="dash-action"></div>
+                <div class="dash-profile"></div>
+              </div>
+            </div>
+
+            <div class="dashboard-body">
+              <aside class="dashboard-sidebar">
+                <div class="side-label">Workspace</div>
+
+                <div class="side-item active">
+                  <div class="side-icon"></div>
+                  Overview
+                </div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Employees
+                </div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Attendance
+                </div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Workforce
+                </div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Payroll
+                </div>
+
+                <div class="side-label">Intelligence</div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Analytics
+                </div>
+
+                <div class="side-item">
+                  <div class="side-icon"></div>
+                  Reports
+                </div>
+              </aside>
+
+              <main class="dashboard-main">
+                <div class="dash-heading">
+                  <div>
+                    <h3>Workforce Overview</h3>
+                    <p>Real-time organization performance</p>
+                  </div>
+                  <div class="dash-date">Aug 2026</div>
+                </div>
+
+                <div class="dash-kpis">
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Total Employees</div>
+                    <div class="kpi-value">2,486</div>
+                    <div class="kpi-change">↑ 8.4% this month</div>
+                  </div>
+
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Attendance</div>
+                    <div class="kpi-value">94.8%</div>
+                    <div class="kpi-change">↑ 3.2% this month</div>
+                  </div>
+
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Payroll Status</div>
+                    <div class="kpi-value">98%</div>
+                    <div class="kpi-change">Processing healthy</div>
+                  </div>
+                </div>
+
+                <div class="dash-chart">
+                  <div class="chart-head">
+                    <strong>Workforce Activity</strong>
+                    <span>Last 10 periods</span>
+                  </div>
+
+                  <div class="chart">
+                    <div class="bar" data-height="48"></div>
+                    <div class="bar" data-height="61"></div>
+                    <div class="bar" data-height="54"></div>
+                    <div class="bar" data-height="75"></div>
+                    <div class="bar" data-height="68"></div>
+                    <div class="bar" data-height="84"></div>
+                    <div class="bar" data-height="71"></div>
+                    <div class="bar" data-height="91"></div>
+                    <div class="bar" data-height="79"></div>
+                    <div class="bar" data-height="96"></div>
+                  </div>
+                </div>
+
+                <div class="dash-bottom">
+                  <div class="mini-card">
+                    <div class="mini-title">Workforce Status</div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">Active workforce</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">On leave</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">Remote workforce</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+                  </div>
+
+                  <div class="mini-card">
+                    <div class="mini-title">Payroll Readiness</div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">Attendance verified</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">Overtime calculated</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+
+                    <div class="employee-row">
+                      <div class="employee-info">
+                        <div class="employee-avatar"></div>
+                        <div class="employee-name">Payroll ready</div>
+                      </div>
+                      <div class="employee-status"></div>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-card one">
+          <div class="floating-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </div>
+
+          <div>
+            <div class="floating-label">Attendance</div>
+            <div class="floating-value">94.8%</div>
+          </div>
+        </div>
+
+        <div class="floating-card two">
+          <div class="floating-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <path d="M16 2v4"></path>
+              <path d="M8 2v4"></path>
+              <path d="M3 10h18"></path>
+            </svg>
+          </div>
+
+          <div>
+            <div class="floating-label">Payroll</div>
+            <div class="floating-value">Ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-strip">
+    <div class="trust-container reveal">
+      <div class="trust-label">
+        Designed for organizations managing people at scale
+      </div>
+
+      <div class="trust-logos">
+        <div class="trust-logo">ENTERPRISE</div>
+        <div class="trust-logo">RETAIL</div>
+        <div class="trust-logo">LOGISTICS</div>
+        <div class="trust-logo">MANUFACTURING</div>
+        <div class="trust-logo">HEALTHCARE</div>
+        <div class="trust-logo">CONSTRUCTION</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="section" id="capabilities">
+    <div class="section-container">
+      <div class="section-heading reveal">
+        <span class="section-eyebrow">One Connected Platform</span>
+
+        <h2 class="section-title">
+          Everything your workforce needs.
+        </h2>
+
+        <p class="section-subtitle">
+          Connect HR, workforce operations and payroll in one system instead of managing disconnected tools and spreadsheets.
+        </p>
+      </div>
+
+      <div class="capabilities-grid">
+        <article class="capability-card reveal">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="12" cy="8" r="3"></circle>
+              <path d="M5 21c0-3.3 3.1-6 7-6s7 2.7 7 6"></path>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Human Resources</h3>
+
+          <p class="capability-text">
+            Manage employee records, onboarding, documents, organizational structures and the complete employee lifecycle from one place.
+          </p>
+
+          <a href="hr-system.html" class="capability-link">Explore HR System →</a>
+        </article>
+
+        <article class="capability-card reveal reveal-delay-1">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M3 12h18"></path>
+              <path d="M12 3v18"></path>
+              <circle cx="12" cy="12" r="9"></circle>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Workforce Management</h3>
+
+          <p class="capability-text">
+            Plan schedules, monitor attendance, manage shifts, coordinate field teams and understand workforce utilization in real time.
+          </p>
+
+          <a href="workforce-management.html" class="capability-link">Explore WFM →</a>
+        </article>
+
+        <article class="capability-card reveal reveal-delay-2">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="M7 9h10"></path>
+              <path d="M7 13h5"></path>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Payroll</h3>
+
+          <p class="capability-text">
+            Turn attendance, overtime, leave and workforce data into accurate payroll calculations with fewer manual processes.
+          </p>
+
+          <a href="payroll-system.html" class="capability-link">Explore Payroll →</a>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 4h16v16H4z"></path>
+              <path d="M8 8h8"></path>
+              <path d="M8 12h8"></path>
+              <path d="M8 16h5"></path>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Attendance & Time</h3>
+
+          <p class="capability-text">
+            Capture attendance across offices, shifts and field locations while giving managers accurate time and overtime visibility.
+          </p>
+
+          <a href="attendance.html" class="capability-link">Explore Attendance →</a>
+        </article>
+
+        <article class="capability-card reveal reveal-delay-1">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M3 20V10l6 4V4l6 4v-4l6 4v12z"></path>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Contract Workforce</h3>
+
+          <p class="capability-text">
+            Bring contract workers, vendors, workforce records and operational processes into the same management environment.
+          </p>
+
+          <a href="contract-workforce.html" class="capability-link">Explore Workforce →</a>
+        </article>
+
+        <article class="capability-card reveal reveal-delay-2">
+          <div class="capability-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 19V5"></path>
+              <path d="M4 19h16"></path>
+              <path d="m7 15 3-4 3 2 5-7"></path>
+            </svg>
+          </div>
+
+          <h3 class="capability-title">Reports & Analytics</h3>
+
+          <p class="capability-text">
+            Turn workforce data into actionable insights with dashboards, reports and performance intelligence for HR and operations leaders.
+          </p>
+
+          <a href="reports-analytics.html" class="capability-link">Explore Analytics →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTELLIGENCE -->
+  <section class="section intelligence-section">
+    <div class="section-container">
+      <div class="intelligence-layout">
+        <div class="intelligence-content reveal">
+          <span class="section-eyebrow">Workforce Intelligence</span>
+
+          <h2 class="section-title">
+            Stop managing workforce data in isolation.
+          </h2>
+
+          <p class="section-subtitle">
+            Navik connects the information HR, operations and finance teams need so decisions are based on the same workforce data.
+          </p>
+
+          <div class="intelligence-list">
+            <div class="intelligence-item">
+              <div class="intelligence-check">✓</div>
+
+              <div>
+                <strong>One employee record</strong>
+                <span>
+                  Keep employee information consistent across HR, attendance and payroll.
+                </span>
+              </div>
+            </div>
+
+            <div class="intelligence-item">
+              <div class="intelligence-check">✓</div>
+
+              <div>
+                <strong>Real-time workforce visibility</strong>
+                <span>
+                  Give managers operational visibility without waiting for manual reports.
+                </span>
+              </div>
+            </div>
+
+            <div class="intelligence-item">
+              <div class="intelligence-check">✓</div>
+
+              <div>
+                <strong>Data-driven decisions</strong>
+                <span>
+                  Identify attendance, productivity and workforce trends before they become operational problems.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intelligence-dashboard reveal reveal-delay-2">
+          <div class="intel-inner">
+            <div class="intel-top">
+              <h3>Workforce Intelligence</h3>
+
+              <div class="intel-status">
+                <span class="intel-status-dot"></span>
+                Live
+              </div>
+            </div>
+
+            <div class="intel-metrics">
+              <div class="intel-metric">
+                <span>Attendance</span>
+                <strong>94.8%</strong>
+              </div>
+
+              <div class="intel-metric">
+                <span>Utilization</span>
+                <strong>87%</strong>
+              </div>
+
+              <div class="intel-metric">
+                <span>Payroll</span>
+                <strong>98%</strong>
+              </div>
+            </div>
+
+            <div class="intel-bars">
+              <div class="intel-bar-row">
+                <span class="intel-bar-name">Operations</span>
+                <div class="intel-bar-track">
+                  <div class="intel-bar-fill" data-width="92"></div>
+                </div>
+                <span class="intel-bar-value">92%</span>
+              </div>
+
+              <div class="intel-bar-row">
+                <span class="intel-bar-name">Attendance</span>
+                <div class="intel-bar-track">
+                  <div class="intel-bar-fill" data-width="95"></div>
+                </div>
+                <span class="intel-bar-value">95%</span>
+              </div>
+
+              <div class="intel-bar-row">
+                <span class="intel-bar-name">Productivity</span>
+                <div class="intel-bar-track">
+                  <div class="intel-bar-fill" data-width="86"></div>
+                </div>
+                <span class="intel-bar-value">86%</span>
+              </div>
+
+              <div class="intel-bar-row">
+                <span class="intel-bar-name">Payroll</span>
+                <div class="intel-bar-track">
+                  <div class="intel-bar-fill" data-width="98"></div>
+                </div>
+                <span class="intel-bar-value">98%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="section numbers-section">
+    <div class="section-container">
+      <div class="section-heading reveal">
+        <span class="section-eyebrow">Platform Impact</span>
+
+        <h2 class="section-title">
+          Built around measurable workforce outcomes.
+        </h2>
+
+        <p class="section-subtitle">
+          Replace repetitive administration with connected workforce processes that scale with your organization.
+        </p>
+      </div>
+
+      <div class="numbers-grid">
+        <div class="number-card reveal">
+          <div class="number-value counter" data-target="50">0+</div>
+          <div class="number-label">Organizations</div>
+          <div class="number-description">Across multiple workforce environments</div>
+        </div>
+
+        <div class="number-card reveal reveal-delay-1">
+          <div class="number-value counter" data-target="25000">0+</div>
+          <div class="number-label">Employees Managed</div>
+          <div class="number-description">Workforce data managed through the platform</div>
+        </div>
+
+        <div class="number-card reveal reveal-delay-2">
+          <div class="number-value counter" data-target="99">0%</div>
+          <div class="number-label">Payroll Accuracy</div>
+          <div class="number-description">Designed to reduce manual payroll errors</div>
+        </div>
+
+        <div class="number-card reveal reveal-delay-3">
+          <div class="number-value counter" data-target="24">0/7</div>
+          <div class="number-label">Workforce Visibility</div>
+          <div class="number-description">Access workforce information when you need it</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section section-soft">
+    <div class="section-container">
+      <div class="section-heading reveal">
+        <span class="section-eyebrow">Employee Lifecycle</span>
+
+        <h2 class="section-title">
+          From first day to every working day.
+        </h2>
+
+        <p class="section-subtitle">
+          Create a connected employee journey while giving HR, managers and finance the operational controls they need.
+        </p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-card reveal">
+          <div class="journey-number">01</div>
+          <h3 class="journey-title">Hire & Onboard</h3>
+          <p class="journey-text">
+            Create employee records, collect information, manage documents and start the employee journey with structured onboarding.
+          </p>
+        </div>
+
+        <div class="journey-card reveal reveal-delay-1">
+          <div class="journey-number">02</div>
+          <h3 class="journey-title">Schedule & Track</h3>
+          <p class="journey-text">
+            Manage schedules, attendance, shifts, locations and workforce activity across your organization.
+          </p>
+        </div>
+
+        <div class="journey-card reveal reveal-delay-2">
+          <div class="journey-number">03</div>
+          <h3 class="journey-title">Calculate & Pay</h3>
+          <p class="journey-text">
+            Connect attendance, leave, overtime and workforce data to simplify payroll preparation and processing.
+          </p>
+        </div>
+
+        <div class="journey-card reveal reveal-delay-3">
+          <div class="journey-number">04</div>
+          <h3 class="journey-title">Analyze & Improve</h3>
+          <p class="journey-text">
+            Use reports and workforce analytics to identify patterns, improve operations and make better decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="section-container">
+      <div class="testimonial reveal">
+        <div class="quote-mark">“</div>
+
+        <p class="testimonial-text">
+          The biggest advantage of a connected workforce platform is not another dashboard. It is having HR, operations and payroll working from the same source of workforce truth.
+        </p>
+
+        <div class="testimonial-person">
+          <div class="testimonial-name">Workforce Operations Leader</div>
+          <div class="testimonial-role">HR & Operations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="demo">
+    <div class="cta-glow one"></div>
+    <div class="cta-glow two"></div>
+
+    <div class="cta-container reveal">
+      <h2 class="cta-title">
+        Build a workforce operation that scales.
+      </h2>
+
+      <p class="cta-text">
+        Bring HR, attendance, workforce management, payroll and analytics together in one connected platform built for modern organizations.
+      </p>
+
+      <div class="cta-actions">
+        <a href="mailto:contact@navik.com?subject=Navik%20Demo%20Request" class="cta-btn-primary">
+          Book Your Demo →
+        </a>
+
+        <a href="index.html#pricing" class="cta-btn-secondary">
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img
+              src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+              alt="Navik"
+              class="footer-logo-img"
+            >
+            <span class="footer-logo-text">NAVIK</span>
+          </a>
+
+          <p class="footer-description">
+            The connected HR, Workforce Management and Payroll platform for organizations that want greater control over their people, operations and workforce data.
+          </p>
+
+          <div class="footer-badge">
+            <span class="footer-badge-dot"></span>
+            Workforce operations, connected.
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/navik.ops" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </a>
+
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="hr-system.html">HR System</a>
+          <a href="workforce-management.html">Workforce Management</a>
+          <a href="payroll-system.html">Payroll System</a>
+          <a href="attendance.html">Attendance</a>
+          <a href="contract-workforce.html">Contract Workforce</a>
+          <a href="reports-analytics.html">Reports & Analytics</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about-us.html">About Us</a>
+          <a href="Customers.html">Customers</a>
+          <a href="Case-Studies.html">Case Studies</a>
+          <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+          <a href="contact-us.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="blog.html">Blogs</a>
+          <a href="templates.html">Templates</a>
+          <a href="tools-hub.html">HR Tools</a>
+          <a href="Case-Studies.html">Case Studies</a>
+          <a href="#">Help Center</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@navik.com">contact@navik.com</a>
+          <a href="tel:+919196000515">+91 9196000515</a>
+          <span>Kanpur, India</span>
+          <a href="#demo" class="footer-demo-btn">Book a Demo →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Navik. All rights reserved. Made with ♥ in India.</span>
+
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.getElementById("hamburger");
+      const progress = document.getElementById("scroll-progress");
+      const revealElements = document.querySelectorAll(".reveal");
+      const counters = document.querySelectorAll(".counter");
+      const bars = document.querySelectorAll(".bar");
+      const intelBars = document.querySelectorAll(".intel-bar-fill");
+
+      /* Dashboard bars */
+      bars.forEach((bar) => {
+        const height = Number(bar.dataset.height);
+
+        if (Number.isFinite(height)) {
+          bar.style.height = `${height}%`;
+        }
+      });
+
+      /* Intelligence bars */
+      intelBars.forEach((bar) => {
+        const width = Number(bar.dataset.width);
+
+        if (Number.isFinite(width)) {
+          bar.style.width = `${width}%`;
+        }
+      });
+
+      /* Navbar + scroll progress */
+      const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        navbar.classList.toggle("scrolled", scrollTop > 35);
+
+        const percentage =
+          documentHeight > 0
+            ? (scrollTop / documentHeight) * 100
+            : 0;
+
+        progress.style.width = `${percentage}%`;
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      /* Mobile menu */
+      hamburger.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const isOpen = navbar.classList.toggle("menu-open");
+
+        hamburger.classList.toggle("active", isOpen);
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      /* Mobile dropdown handling */
+      document.querySelectorAll(".nav-link-main").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          if (window.innerWidth <= 991) {
+            event.preventDefault();
+
+            const parent = link.closest(".nav-dropdown");
+
+            document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+              if (dropdown !== parent) {
+                dropdown.classList.remove("open");
+              }
+            });
+
+            parent.classList.toggle("open");
+          }
+        });
+      });
+
+      /* Close mobile menu after navigation */
+      document
+        .querySelectorAll(".nav-links a:not(.nav-link-main)")
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            navbar.classList.remove("menu-open");
+            hamburger.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
+          });
+        });
+
+      /* Close menu outside navbar */
+      document.addEventListener("click", (event) => {
+        if (!navbar.contains(event.target)) {
+          navbar.classList.remove("menu-open");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+
+          document
+            .querySelectorAll(".nav-dropdown.open")
+            .forEach((dropdown) => {
+              dropdown.classList.remove("open");
+            });
+        }
+      });
+
+      /* Reveal animation */
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -50px 0px"
+          }
+        );
+
+        revealElements.forEach((element) => {
+          revealObserver.observe(element);
+        });
+      } else {
+        revealElements.forEach((element) => {
+          element.classList.add("visible");
+        });
+      }
+
+      /* Counters */
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              const counter = entry.target;
+              const target = Number(counter.dataset.target);
+
+              if (!Number.isFinite(target)) return;
+
+              const duration = 1600;
+              const startTime = performance.now();
+
+              const updateCounter = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progressValue = Math.min(elapsed / duration, 1);
+
+                const eased =
+                  1 - Math.pow(1 - progressValue, 3);
+
+                const value = Math.floor(eased * target);
+
+                if (target === 25000) {
+                  counter.textContent = `${value.toLocaleString()}+`;
+                } else if (target === 99) {
+                  counter.textContent = `${value}%`;
+                } else if (target === 24) {
+                  counter.textContent = `${value}/7`;
+                } else {
+                  counter.textContent = `${value}+`;
+                }
+
+                if (progressValue < 1) {
+                  requestAnimationFrame(updateCounter);
+                }
+              };
+
+              requestAnimationFrame(updateCounter);
+              observer.unobserve(counter);
+            });
+          },
+          {
+            threshold: 0.6
+          }
+        );
+
+        counters.forEach((counter) => {
+          counterObserver.observe(counter);
+        });
+      }
+
+      /* Dashboard parallax */
+      const dashboard = document.querySelector(".dashboard-shell");
+      const desktopQuery = window.matchMedia("(min-width: 1051px)");
+
+      if (dashboard && desktopQuery.matches) {
+        document.addEventListener("mousemove", (event) => {
+          const rect = dashboard.getBoundingClientRect();
+
+          if (!rect.width || !rect.height) return;
+
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+          dashboard.style.transform = `
+            perspective(1400px)
+            rotateY(${x * 5 - 2}deg)
+            rotateX(${y * -3 + 2}deg)
+          `;
+        });
+      }
+
+      /* Smooth internal links */
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const id = link.getAttribute("href");
+
+          if (!id || id === "#") return;
+
+          const target = document.querySelector(id);
+
+          if (!target) return;
+
+          event.preventDefault();
+
+          const navbarHeight = navbar.offsetHeight;
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight;
+
+          window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: "smooth"
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
