@@ -1,0 +1,5830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Software Pricing | Flexible Plans for Modern Teams | navik</title>
+
+    <meta name="description"
+        content="Explore flexible navik HR software plans for employee management, leave, onboarding, workforce operations, reporting, forms and HR automation.">
+
+    <meta name="keywords"
+        content="HR software pricing, HRMS pricing India, HR management software, employee management, payroll software, workforce management, HR automation">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="navik">
+
+    <meta name="theme-color" content="#0b4fd8">
+
+    <link rel="canonical" href="https://navikops.com/pricing">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/dne97stwg/image/upload/w_192,h_192,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+       ROOT
+    ========================================================= */
+
+        :root {
+
+            --blue: #1769e0;
+            --blue-dark: #0b4fc4;
+            --blue-deep: #073b91;
+            --blue-soft: #eaf3ff;
+            --blue-pale: #f5f9ff;
+
+            --navy: #102a56;
+            --navy-dark: #071a38;
+
+            --text: #14233d;
+            --text-soft: #5e6c82;
+
+            --white: #ffffff;
+            --border: #dce6f4;
+
+            --green: #16a36a;
+            --orange: #f59e0b;
+
+            --shadow-sm:
+                0 8px 24px rgba(15, 45, 90, .07);
+
+            --shadow:
+                0 20px 55px rgba(18, 63, 125, .12);
+
+            --shadow-lg:
+                0 35px 90px rgba(18, 63, 125, .18);
+
+            --radius-sm: 12px;
+            --radius: 20px;
+            --radius-lg: 30px;
+
+            --ease: cubic-bezier(.22, .61, .36, 1);
+
+            --container: 1240px;
+
+        }
+
+
+        /* =========================================================
+       RESET
+    ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #fff;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            border: 0;
+            cursor: pointer;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                    #0b4fc4,
+                    #3290ff);
+            z-index: 99999;
+        }
+
+
+        /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 5000;
+
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(211, 225, 244, .8);
+
+            transition:
+                .4s var(--ease);
+        }
+
+        .navbar.scrolled {
+            box-shadow:
+                0 10px 35px rgba(11, 45, 90, .08);
+        }
+
+        .nav-inner {
+            width: min(1320px, calc(100% - 48px));
+            margin: auto;
+
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            transition: .35s var(--ease);
+        }
+
+        .navbar.scrolled .nav-inner {
+            min-height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            flex-shrink: 0;
+        }
+
+        .nav-logo-img {
+            width: 43px;
+            height: 43px;
+            object-fit: contain;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: .6px;
+            color: var(--navy);
+        }
+
+        .nav-logo-animated {
+            display: block;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links>li {
+            position: relative;
+        }
+
+        .nav-links>li>a,
+        .nav-link-main {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            color: #34435a;
+
+            font-size: 13px;
+            font-weight: 650;
+
+            padding: 10px 0;
+
+            transition: .25s ease;
+        }
+
+        .nav-links>li>a:hover,
+        .nav-link-main:hover {
+            color: var(--blue);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+
+            top: calc(100% + 8px);
+            left: 50%;
+
+            width: 250px;
+
+            transform:
+                translateX(-50%) translateY(8px);
+
+            opacity: 0;
+            visibility: hidden;
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 15px;
+
+            padding: 10px;
+
+            box-shadow: var(--shadow);
+
+            transition: .25s var(--ease);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+
+            transform:
+                translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+
+            padding: 10px 12px;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            color: #43536a;
+
+            transition: .2s ease;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: var(--blue-pale);
+            color: var(--blue);
+            transform: translateX(3px);
+        }
+
+        .btn-nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+            padding: 0 19px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--blue-deep));
+
+            color: white !important;
+
+            font-size: 12px !important;
+            font-weight: 750 !important;
+
+            box-shadow:
+                0 8px 22px rgba(23, 105, 224, .22);
+
+            transition: .3s var(--ease);
+        }
+
+        .btn-nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 13px 28px rgba(23, 105, 224, .28);
+        }
+
+        .hamburger {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 10px;
+
+            background: var(--blue-pale);
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 5px;
+
+            transition: .25s ease;
+        }
+
+
+        /* =========================================================
+       HERO
+    ========================================================= */
+
+        .pricing-hero {
+            position: relative;
+
+            padding:
+                170px 0 100px;
+
+            background:
+                radial-gradient(circle at 10% 15%,
+                    rgba(48, 132, 255, .13),
+                    transparent 30%),
+                radial-gradient(circle at 90% 25%,
+                    rgba(31, 111, 235, .10),
+                    transparent 32%),
+                linear-gradient(180deg,
+                    #f8fbff 0%,
+                    #ffffff 100%);
+
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(18, 76, 155, .045) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(18, 76, 155, .045) 1px,
+                    transparent 1px);
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(to bottom,
+                    black,
+                    transparent 90%);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 13px;
+
+            border: 1px solid #cfe0f8;
+            border-radius: 100px;
+
+            background: rgba(255, 255, 255, .8);
+
+            color: var(--blue);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: .5px;
+
+            margin-bottom: 22px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+
+            background: var(--blue);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 5px rgba(23, 105, 224, .09);
+        }
+
+        .hero-title {
+            font-size: clamp(42px, 6vw, 76px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3.5px;
+
+            font-weight: 900;
+
+            color: var(--navy-dark);
+
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            background:
+                linear-gradient(100deg,
+                    #0b4fc4,
+                    #2483f3,
+                    #0c58c9);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            max-width: 710px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            color: var(--text-soft);
+
+            line-height: 1.8;
+        }
+
+        .hero-note {
+            margin-top: 25px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            color: #718097;
+        }
+
+
+        /* =========================================================
+       PRICING
+    ========================================================= */
+
+        .pricing-section {
+            position: relative;
+
+            padding: 0 0 120px;
+
+            background: white;
+        }
+
+        .pricing-grid {
+            position: relative;
+
+            margin-top: -30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            align-items: stretch;
+
+            z-index: 5;
+        }
+
+        .price-card {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 25px;
+
+            padding: 34px 30px 30px;
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform .4s var(--ease),
+                box-shadow .4s var(--ease),
+                border-color .4s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-9px);
+
+            box-shadow: var(--shadow-lg);
+
+            border-color: #b9d2f4;
+        }
+
+        .price-card.featured {
+            border:
+                1.5px solid var(--blue);
+
+            transform:
+                translateY(-18px);
+
+            box-shadow:
+                0 28px 70px rgba(23, 105, 224, .19);
+        }
+
+        .price-card.featured:hover {
+            transform:
+                translateY(-25px);
+        }
+
+        .popular-badge {
+            position: absolute;
+
+            top: -13px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding: 7px 15px;
+
+            border-radius: 100px;
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--blue-deep));
+
+            color: white;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: .6px;
+
+            box-shadow:
+                0 8px 20px rgba(23, 105, 224, .25);
+        }
+
+        .plan-icon {
+            width: 49px;
+            height: 49px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: var(--blue-soft);
+
+            color: var(--blue);
+
+            margin-bottom: 22px;
+        }
+
+        .plan-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .plan-name {
+            font-size: 22px;
+            font-weight: 850;
+
+            color: var(--navy);
+
+            margin-bottom: 8px;
+        }
+
+        .plan-description {
+            min-height: 52px;
+
+            font-size: 12px;
+
+            color: var(--text-soft);
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 7px;
+
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 42px;
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: var(--navy-dark);
+        }
+
+        .price-unit {
+            font-size: 12px;
+
+            color: #728098;
+            font-weight: 600;
+        }
+
+        .price-note {
+            font-size: 11px;
+
+            color: #7b889a;
+
+            margin-bottom: 23px;
+        }
+
+        .plan-button {
+            text-align: center;
+            width: 100%;
+            padding-top: 10px;
+            min-height: 48px;
+
+            border-radius: 11px;
+
+            border: 1px solid #c9d9ed;
+
+            background: white;
+
+            color: var(--blue);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            transition: .3s var(--ease);
+
+            margin-bottom: 27px;
+        }
+
+        .plan-button:hover {
+            background: var(--blue-pale);
+
+            transform: translateY(-2px);
+        }
+
+        .price-card.featured .plan-button {
+            color: white;
+
+            border-color: var(--blue);
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--blue-deep));
+
+            box-shadow:
+                0 10px 25px rgba(23, 105, 224, .22);
+        }
+
+        .feature-title {
+            padding-top: 24px;
+
+            border-top: 1px solid #edf2f8;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            color: var(--navy);
+
+            margin-bottom: 15px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .6px;
+        }
+
+        .price-features {
+            list-style: none;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 10px;
+
+            font-size: 12px;
+
+            color: #536278;
+
+            line-height: 1.5;
+        }
+
+        .check {
+            flex-shrink: 0;
+
+            width: 18px;
+            height: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e7f8f0;
+
+            color: var(--green);
+
+            margin-top: 1px;
+        }
+
+        .check svg {
+            width: 11px;
+            height: 11px;
+        }
+
+
+        /* =========================================================
+       BILLING NOTE
+    ========================================================= */
+
+        .billing-note {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .billing-note-inner {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 10px 17px;
+
+            border-radius: 100px;
+
+            background: #f7faff;
+
+            border: 1px solid #e1ebf7;
+
+            color: #627188;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .billing-note-inner strong {
+            color: var(--blue);
+        }
+
+
+        /* =========================================================
+       SECTION COMMON
+    ========================================================= */
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section.alt {
+            background: #f7faff;
+        }
+
+        .section-heading {
+            max-width: 760px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+
+            margin-bottom: 13px;
+
+            color: var(--blue);
+
+            font-size: 11px;
+
+            font-weight: 850;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.8px;
+
+            color: var(--navy-dark);
+
+            font-weight: 900;
+
+            margin-bottom: 17px;
+        }
+
+        .section-description {
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: var(--text-soft);
+        }
+
+
+        /* =========================================================
+   FEATURE HORIZONTAL SHOWCASE — FIXED
+========================================================= */
+
+        .spotlight-section {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(180deg,
+                    #f6faff 0%,
+                    #ffffff 100%);
+
+            padding-bottom: 125px;
+        }
+
+        .feature-track-wrapper {
+            position: relative;
+
+            width: 100%;
+            overflow: hidden;
+
+            padding: 35px 0 60px;
+
+            /* Prevent accidental browser horizontal scrolling */
+            touch-action: pan-y;
+        }
+
+        /* Soft fade on both sides */
+        .feature-track-wrapper::before,
+        .feature-track-wrapper::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            width: 100px;
+
+            z-index: 5;
+
+            pointer-events: none;
+        }
+
+        .feature-track-wrapper::before {
+            left: 0;
+
+            background:
+                linear-gradient(90deg,
+                    #f6faff 0%,
+                    rgba(246, 250, 255, 0) 100%);
+        }
+
+        .feature-track-wrapper::after {
+            right: 0;
+
+            background:
+                linear-gradient(270deg,
+                    #ffffff 0%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        /*
+   IMPORTANT:
+   JS will duplicate the cards and move this track.
+*/
+        .feature-track {
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            width: max-content;
+
+            padding-left:
+                max(24px,
+                    calc((100vw - 1240px) / 2));
+
+            padding-right: 80px;
+
+            will-change: transform;
+
+            transform: translate3d(0, 0, 0);
+
+            user-select: none;
+
+            cursor: grab;
+        }
+
+        .feature-track:active {
+            cursor: grabbing;
+        }
+
+        /* Individual cards */
+        .spotlight-card {
+            flex: 0 0 330px;
+            width: 330px;
+            min-height: 280px;
+
+            padding: 28px;
+
+            border-radius: 25px;
+
+            border: 1px solid #dce8f6;
+
+            background:
+                linear-gradient(150deg,
+                    #ffffff,
+                    #f5f9ff);
+
+            box-shadow:
+                0 15px 45px rgba(27, 74, 133, .07);
+
+            transition:
+                transform 0ms var(--ease),
+                opacity 0ms ease,
+                box-shadow .5s ease,
+                border-color .5s ease;
+
+            flex-shrink: 0;
+        }
+
+        .spotlight-card:hover {
+            box-shadow:
+                0 25px 60px rgba(23, 105, 224, .13);
+
+            border-color: #bdd3ef;
+        }
+
+        .spotlight-card.center-active {
+            transform:
+                scale(1.08) translateY(-8px);
+
+            box-shadow:
+                0 30px 70px rgba(23, 105, 224, .18);
+
+            border-color: #a9c8ef;
+        }
+
+        .spotlight-number {
+            font-size: 12px;
+
+            font-weight: 900;
+
+            color: #9aabc1;
+
+            margin-bottom: 25px;
+        }
+
+        .spotlight-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #eaf3ff;
+
+            color: var(--blue);
+
+            margin-bottom: 22px;
+        }
+
+        .spotlight-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .spotlight-card h3 {
+            font-size: 19px;
+
+            font-weight: 850;
+
+            color: var(--navy);
+
+            margin-bottom: 9px;
+        }
+
+        .spotlight-card p {
+            font-size: 12px;
+
+            line-height: 1.75;
+
+            color: var(--text-soft);
+        }
+
+        .track-hint {
+            text-align: center;
+
+            color: #8190a5;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            margin-top: -20px;
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media (max-width: 700px) {
+
+            .feature-track-wrapper {
+                padding:
+                    25px 0 55px;
+            }
+
+            .feature-track-wrapper::before,
+            .feature-track-wrapper::after {
+                width: 45px;
+            }
+
+            .feature-track {
+                gap: 15px;
+
+                padding-left: 15px;
+                padding-right: 50px;
+            }
+
+            .spotlight-card {
+                flex: 0 0 285px;
+
+                width: 285px;
+
+                min-height: 260px;
+
+                padding: 25px;
+            }
+
+        }
+
+
+        /* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .feature-track {
+                transform: none !important;
+            }
+
+        }
+
+        /* =========================================================
+       COMPARISON
+    ========================================================= */
+
+        .comparison-section {
+            padding: 120px 0;
+
+            background: white;
+        }
+
+        .comparison-shell {
+            border:
+                1px solid #dce6f3;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(25, 65, 115, .08);
+
+            background: white;
+        }
+
+        .comparison-header {
+            display: grid;
+
+            grid-template-columns:
+                1.7fr .75fr .75fr .75fr;
+
+            background:
+                linear-gradient(135deg,
+                    #f7faff,
+                    #edf5ff);
+
+            border-bottom:
+                1px solid #dce6f3;
+        }
+
+        .comparison-header>div {
+            padding: 22px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            font-size: 12px;
+            font-weight: 850;
+
+            color: var(--navy);
+        }
+
+        .comparison-header>div:first-child {
+            justify-content: flex-start;
+
+            text-align: left;
+        }
+
+        .comparison-header .pro-head {
+            color: white;
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--blue-deep));
+        }
+
+        .comparison-row {
+            display: grid;
+
+            grid-template-columns:
+                1.7fr .75fr .75fr .75fr;
+
+            border-bottom:
+                1px solid #edf2f8;
+
+            transition: .25s ease;
+        }
+
+        .comparison-row:hover {
+            background: #fafdff;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: 0;
+        }
+
+        .comparison-row>div {
+            min-height: 62px;
+
+            padding: 17px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            color: #56657b;
+
+            text-align: center;
+        }
+
+        .comparison-row>div:first-child {
+            justify-content: flex-start;
+
+            text-align: left;
+
+            font-weight: 650;
+
+            color: #35455e;
+        }
+
+        .comparison-row .yes {
+            color: var(--green);
+
+            font-weight: 850;
+        }
+
+        .comparison-row .limited {
+            color: var(--orange);
+
+            font-weight: 750;
+        }
+
+        .comparison-row .dash {
+            color: #a7b1bf;
+        }
+
+
+        /* =========================================================
+       DETAILED HR FEATURES
+    ========================================================= */
+
+        .modules-section {
+            background: #f7faff;
+
+            padding: 120px 0;
+        }
+
+        .module-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+        .module-card {
+            position: relative;
+
+            padding: 31px;
+
+            border:
+                1px solid #dce7f5;
+
+            border-radius: 23px;
+
+            background: white;
+
+            box-shadow:
+                0 10px 35px rgba(20, 63, 112, .055);
+
+            transition:
+                .4s var(--ease);
+        }
+
+        .module-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #bdd3ef;
+
+            box-shadow:
+                0 25px 60px rgba(20, 63, 112, .11);
+        }
+
+        .module-card.full {
+            grid-column: 1 / -1;
+        }
+
+        .module-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 22px;
+        }
+
+        .module-icon {
+            width: 49px;
+            height: 49px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #eaf3ff;
+
+            color: var(--blue);
+        }
+
+        .module-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .module-number {
+            color: #9aabc0;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .8px;
+        }
+
+        .module-card h3 {
+            color: var(--navy);
+
+            font-size: 19px;
+
+            font-weight: 850;
+
+            margin-bottom: 7px;
+        }
+
+        .module-card>p {
+            color: var(--text-soft);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+        .module-features {
+            list-style: none;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 11px 20px;
+        }
+
+        .module-feature {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            font-size: 11px;
+
+            color: #536278;
+
+            line-height: 1.5;
+        }
+
+        .module-feature::before {
+            content: "✓";
+
+            flex-shrink: 0;
+
+            width: 18px;
+            height: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf8f2;
+
+            color: #139866;
+
+            border-radius: 50%;
+
+            font-size: 10px;
+
+            font-weight: 900;
+        }
+
+        .module-feature.hidden-feature {
+            display: none;
+        }
+
+        .module-card.expanded .module-feature.hidden-feature {
+            display: flex;
+            animation:
+                featureReveal .45s var(--ease) both;
+        }
+
+        @keyframes featureReveal {
+
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .see-features-wrap {
+            display: flex;
+
+            justify-content: center;
+
+            margin-top: 45px;
+        }
+
+        .see-features-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            min-height: 47px;
+
+            padding: 0 22px;
+
+            border-radius: 11px;
+
+            background: white;
+
+            color: var(--blue);
+
+            border:
+                1px solid #c9dbf2;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 8px 25px rgba(25, 70, 130, .07);
+
+            transition: .3s var(--ease);
+        }
+
+        .see-features-btn:hover {
+            background: var(--blue-pale);
+
+            transform: translateY(-2px);
+        }
+
+        .see-features-btn svg {
+            transition: .3s ease;
+        }
+
+        .see-features-btn.active svg {
+            transform: rotate(180deg);
+        }
+
+
+        /* =========================================================
+       ADVANCED FEATURE BAND
+    ========================================================= */
+
+        .advanced-section {
+            padding: 120px 0;
+
+            background:
+                linear-gradient(135deg,
+                    #062e70,
+                    #0a4da8);
+
+            color: white;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .advanced-section::before {
+            content: "";
+
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            right: -250px;
+            top: -250px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255, 255, 255, .12);
+
+            box-shadow:
+                0 0 0 90px rgba(255, 255, 255, .025),
+                0 0 0 180px rgba(255, 255, 255, .018);
+        }
+
+        .advanced-section .section-heading {
+            position: relative;
+            z-index: 2;
+        }
+
+        .advanced-section .section-label {
+            color: #9dc9ff;
+        }
+
+        .advanced-section .section-title {
+            color: white;
+        }
+
+        .advanced-section .section-description {
+            color: rgba(255, 255, 255, .72);
+        }
+
+        .advanced-grid {
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .advanced-item {
+            min-height: 175px;
+
+            padding: 25px;
+
+            border:
+                1px solid rgba(255, 255, 255, .14);
+
+            border-radius: 19px;
+
+            background:
+                rgba(255, 255, 255, .07);
+
+            backdrop-filter: blur(10px);
+
+            transition: .35s var(--ease);
+        }
+
+        .advanced-item:hover {
+            background:
+                rgba(255, 255, 255, .12);
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(255, 255, 255, .28);
+        }
+
+        .advanced-item svg {
+            width: 22px;
+            height: 22px;
+
+            margin-bottom: 19px;
+
+            color: #b9dbff;
+        }
+
+        .advanced-item h4 {
+            font-size: 13px;
+
+            margin-bottom: 7px;
+
+            font-weight: 800;
+        }
+
+        .advanced-item p {
+            color: rgba(255, 255, 255, .66);
+
+            font-size: 10px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+       TRUST
+    ========================================================= */
+
+        .trust-section {
+            padding: 100px 0;
+
+            background: white;
+        }
+
+        .trust-box {
+            border:
+                1px solid #dce7f4;
+
+            border-radius: 28px;
+
+            padding: 55px 50px;
+
+            background:
+                linear-gradient(145deg,
+                    #f8fbff,
+                    #ffffff);
+
+            text-align: center;
+        }
+
+        .trust-title {
+            color: var(--navy);
+
+            font-size: 26px;
+
+            font-weight: 850;
+
+            margin-bottom: 13px;
+        }
+
+        .trust-text {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: var(--text-soft);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .trust-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            max-width: 850px;
+
+            margin: 45px auto 0;
+
+            border-top:
+                1px solid #e0e8f3;
+
+            border-bottom:
+                1px solid #e0e8f3;
+        }
+
+        .trust-stat {
+            padding: 27px 15px;
+
+            border-right:
+                1px solid #e0e8f3;
+        }
+
+        .trust-stat:last-child {
+            border-right: 0;
+        }
+
+        .trust-stat strong {
+            display: block;
+
+            font-size: 28px;
+
+            font-weight: 900;
+
+            color: var(--blue);
+
+            letter-spacing: -1px;
+        }
+
+        .trust-stat span {
+            font-size: 10px;
+
+            color: #738198;
+
+            font-weight: 650;
+        }
+
+        .company-marquee {
+            overflow: hidden;
+
+            margin-top: 48px;
+        }
+
+        .company-track {
+            display: flex;
+
+            width: max-content;
+
+            gap: 65px;
+
+            animation:
+                marquee 25s linear infinite;
+        }
+
+        .company-name {
+            color: #9aa8ba;
+
+            font-size: 14px;
+
+            font-weight: 850;
+
+            white-space: nowrap;
+
+            letter-spacing: .8px;
+        }
+
+        @keyframes marquee {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        /* =========================================================
+       FAQ
+    ========================================================= */
+
+        .faq-section {
+            background: #f7faff;
+
+            padding: 120px 0;
+        }
+
+        .faq-list {
+            max-width: 850px;
+
+            margin: auto;
+
+            display: grid;
+
+            gap: 11px;
+        }
+
+        .faq-item {
+            background: white;
+
+            border:
+                1px solid #dce7f4;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: .3s ease;
+        }
+
+        .faq-item.active {
+            border-color: #b9d2f0;
+
+            box-shadow:
+                0 15px 35px rgba(25, 68, 120, .07);
+        }
+
+        .faq-question {
+            width: 100%;
+
+            padding: 20px 22px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            background: white;
+
+            color: var(--navy);
+
+            text-align: left;
+
+            font-size: 13px;
+
+            font-weight: 750;
+        }
+
+        .faq-plus {
+            width: 28px;
+            height: 28px;
+
+            flex-shrink: 0;
+
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eef5ff;
+
+            color: var(--blue);
+
+            transition: .3s ease;
+        }
+
+        .faq-plus svg {
+            transition: .3s ease;
+        }
+
+        .faq-item.active .faq-plus svg {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: grid;
+
+            grid-template-rows: 0fr;
+
+            transition:
+                grid-template-rows .35s var(--ease);
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+
+            padding:
+                0 22px;
+
+            color: var(--text-soft);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-item.active .faq-answer-inner {
+            padding-bottom: 22px;
+        }
+
+
+        /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+        .demo-section {
+            padding: 100px 0 120px;
+
+            background: white;
+        }
+
+        .demo-banner {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 30px;
+
+            padding: 75px 70px;
+
+            background:
+                linear-gradient(120deg,
+                    #073b91,
+                    #1265d3,
+                    #0a50b9);
+
+            color: white;
+
+            box-shadow:
+                0 30px 80px rgba(15, 69, 145, .22);
+        }
+
+        .demo-banner::before,
+        .demo-banner::after {
+            content: "";
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255, 255, 255, .12);
+        }
+
+        .demo-banner::before {
+            width: 500px;
+            height: 500px;
+
+            right: -180px;
+            top: -260px;
+        }
+
+        .demo-banner::after {
+            width: 330px;
+            height: 330px;
+
+            right: 50px;
+            bottom: -240px;
+        }
+
+        .demo-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 760px;
+        }
+
+        .demo-content h2 {
+            font-size: clamp(32px, 4vw, 52px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            font-weight: 900;
+
+            margin-bottom: 17px;
+        }
+
+        .demo-content p {
+            max-width: 610px;
+
+            color: rgba(255, 255, 255, .78);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+        }
+
+        .demo-actions {
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .demo-btn {
+            min-height: 48px;
+
+            padding: 0 22px;
+
+            border-radius: 10px;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition: .3s var(--ease);
+        }
+
+        .demo-btn.primary {
+            background: white;
+
+            color: var(--blue-deep);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, .13);
+        }
+
+        .demo-btn.secondary {
+            border:
+                1px solid rgba(255, 255, 255, .25);
+
+            color: white;
+
+            background:
+                rgba(255, 255, 255, .07);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+       FOOTER
+    ========================================================= */
+
+        .footer {
+            background: #071a38;
+
+            color: white;
+
+            padding: 75px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.8fr repeat(4, 1fr);
+
+            gap: 45px;
+        }
+
+        .footer-brand .nav-logo {
+            margin-bottom: 18px;
+        }
+
+        .footer-brand .nav-logo-text {
+            color: white;
+        }
+
+        .footer-brand>p {
+            max-width: 320px;
+
+            color: rgba(255, 255, 255, .55);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            margin-bottom: 24px;
+        }
+
+        .footer-socials {
+            display: flex;
+
+            gap: 8px;
+        }
+
+        .social-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid rgba(255, 255, 255, .1);
+
+            border-radius: 9px;
+
+            color: rgba(255, 255, 255, .65);
+
+            transition: .25s ease;
+        }
+
+        .social-icon:hover {
+            color: white;
+
+            background:
+                rgba(255, 255, 255, .08);
+
+            transform: translateY(-2px);
+        }
+
+        .footer-col {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+        }
+
+        .footer-col h5 {
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-col a,
+        .footer-col span {
+            color: rgba(255, 255, 255, .52);
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+            transition: .2s ease;
+        }
+
+        .footer-col a:hover {
+            color: white;
+
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            margin-top: 55px;
+
+            padding-top: 22px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, .09);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: rgba(255, 255, 255, .4);
+
+            font-size: 9px;
+        }
+
+        .footer-legal {
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+        }
+
+
+        /* =========================================================
+       MOBILE CTA
+    ========================================================= */
+
+        .mobile-cta {
+            display: none;
+
+            position: fixed;
+
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+
+            z-index: 4500;
+
+            padding: 8px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, .94);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, .15);
+
+            border:
+                1px solid #dbe6f3;
+        }
+
+        .mobile-cta a {
+            min-height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--blue-deep));
+
+            color: white;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+        .wa-btn {
+            position: fixed;
+
+            right: 23px;
+            bottom: 23px;
+
+            width: 54px;
+            height: 54px;
+
+            border-radius: 50%;
+
+            background: #25d366;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 12px 30px rgba(37, 211, 102, .25);
+
+            z-index: 4200;
+
+            transition: .3s var(--ease);
+        }
+
+        .wa-btn:hover {
+            transform:
+                translateY(-4px) scale(1.04);
+        }
+
+        .wa-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .wa-tooltip {
+            position: absolute;
+
+            right: 67px;
+
+            white-space: nowrap;
+
+            padding: 8px 11px;
+
+            border-radius: 8px;
+
+            background: #10233f;
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateX(7px);
+
+            transition: .25s ease;
+        }
+
+        .wa-btn:hover .wa-tooltip {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateX(0);
+        }
+
+
+        /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity .75s var(--ease),
+                transform .75s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-right {
+                gap: 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    1.5fr repeat(2, 1fr);
+            }
+
+            .advanced-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 991px) {
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-right.mobile-open {
+                position: fixed;
+
+                top: 70px;
+                left: 15px;
+                right: 15px;
+
+                display: block;
+
+                padding: 15px;
+
+                border-radius: 16px;
+
+                background: white;
+
+                border:
+                    1px solid var(--border);
+
+                box-shadow:
+                    0 25px 60px rgba(15, 50, 100, .15);
+            }
+
+            .nav-right.mobile-open .nav-links {
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 4px;
+            }
+
+            .nav-right.mobile-open .nav-links>li>a,
+            .nav-right.mobile-open .nav-link-main {
+                padding: 12px;
+
+                border-radius: 9px;
+            }
+
+            .nav-right.mobile-open .nav-links>li>a:hover,
+            .nav-right.mobile-open .nav-link-main:hover {
+                background: var(--blue-pale);
+            }
+
+            .nav-right.mobile-open .nav-actions {
+                display: block;
+
+                margin-top: 8px;
+            }
+
+            .nav-right.mobile-open .btn-nav-cta {
+                width: 100%;
+            }
+
+            .nav-dropdown-menu {
+                position: static;
+
+                width: 100%;
+
+                transform: none;
+
+                opacity: 1;
+                visibility: visible;
+
+                display: none;
+
+                box-shadow: none;
+
+                border: 0;
+
+                padding: 4px 0 4px 12px;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-menu {
+                display: none;
+            }
+
+            .nav-dropdown.mobile-active .nav-dropdown-menu {
+                display: block;
+            }
+
+            .pricing-grid {
+                grid-template-columns:
+                    1fr;
+
+                max-width: 600px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .price-card.featured {
+                transform: none;
+            }
+
+            .price-card.featured:hover {
+                transform: translateY(-9px);
+            }
+
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .module-card.full {
+                grid-column: auto;
+            }
+
+            .comparison-shell {
+                overflow-x: auto;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                min-width: 720px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: min(100% - 30px,
+                        var(--container));
+            }
+
+            .nav-inner {
+                width: calc(100% - 30px);
+            }
+
+            .pricing-hero {
+                padding:
+                    140px 0 80px;
+            }
+
+            .hero-title {
+                letter-spacing: -2.2px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .pricing-section {
+                padding-bottom: 80px;
+            }
+
+            .price-card {
+                padding: 27px 23px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 38px;
+            }
+
+            .spotlight-card {
+                width: 285px;
+                min-height: 260px;
+            }
+
+            .feature-track {
+                padding-left: 15px;
+            }
+
+            .module-features {
+                grid-template-columns: 1fr;
+            }
+
+            .advanced-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-box {
+                padding: 38px 20px;
+            }
+
+            .trust-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .trust-stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .trust-stat:nth-child(-n+2) {
+                border-bottom:
+                    1px solid #e0e8f3;
+            }
+
+            .demo-banner {
+                padding: 45px 25px;
+            }
+
+            .demo-content h2 {
+                letter-spacing: -1.3px;
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 35px 20px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .wa-btn {
+                width: 48px;
+                height: 48px;
+
+                right: 15px;
+                bottom: 80px;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .price-value {
+                font-size: 37px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+        }
+
+
+        /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+     SCROLL PROGRESS
+========================================================= -->
+
+    <div id="scroll-progress"></div>
+
+
+    <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+    <nav class="navbar" id="navbar">
+
+        <div class="nav-inner">
+
+            <a href="index.html" class="nav-logo">
+
+                <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
+                    alt="navik" class="nav-logo-img">
+
+                <span class="nav-logo-text">
+                    <span class="nav-logo-animated">HR</span>
+                    <span class="nav-logo-animated">WFM</span>
+                    <span class="nav-logo-animated">Payroll</span>
+                </span>
+
+            </a>
+
+
+            <div class="nav-right" id="navRight">
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-dropdown">
+
+                        <a href="javascript:void(0)" class="nav-link-main">
+                            Products
+                        </a>
+
+                        <div class="nav-dropdown-menu">
+
+                            <a href="hr-system.html">
+                                HR System
+                            </a>
+
+                            <a href="workforce-management.html">
+                                Workforce Management
+                            </a>
+
+                            <a href="payroll-system.html">
+                                Payroll System
+                            </a>
+
+                            <a href="attendance.html">
+                                Attendance
+                            </a>
+
+                            <a href="contract-workforce.html">
+                                Contract Workforce
+                            </a>
+
+                            <a href="field-workforce-tracking.html">
+                                Field Workforce Tracking
+                            </a>
+
+                            <a href="employee-self-service.html">
+                                Employee Self Service
+                            </a>
+
+                            <a href="complience-managemant.html">
+                                Compliance Management
+                            </a>
+
+                            <a href="reports-analytics.html">
+                                Reports & Analytics
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a href="pricing.html">
+                            Pricing
+                        </a>
+                    </li>
+
+
+                    <li class="nav-dropdown">
+
+                        <a href="javascript:void(0)" class="nav-link-main">
+                            Industries
+                        </a>
+
+                        <div class="nav-dropdown-menu">
+
+                            <a href="Retails.html">Retail</a>
+
+                            <a href="Logistics.html">Logistics</a>
+
+                            <a href="Construction.html">Construction</a>
+
+                            <a href="Sales.html">Sales Teams</a>
+
+                            <a href="Manufacturing.html">Manufacturing</a>
+
+                            <a href="Health-Care.html">Healthcare</a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a href="Customers.html">
+                            Customers
+                        </a>
+                    </li>
+
+
+                    <li class="nav-dropdown">
+
+                        <a href="javascript:void(0)" class="nav-link-main">
+                            Resources
+                        </a>
+
+                        <div class="nav-dropdown-menu">
+
+                            <a href="blog.html">Blogs</a>
+
+                            <a href="templates.html">Templates</a>
+
+                            <a href="Case-Studies.html">
+                                Case Studies
+                            </a>
+
+                            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener noreferrer">
+                                Podcasts
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="nav-dropdown">
+
+                        <a href="javascript:void(0)" class="nav-link-main">
+                            Company
+                        </a>
+
+                        <div class="nav-dropdown-menu">
+
+                            <a href="about-us.html">
+                                About Us
+                            </a>
+
+                            <a href="mailto:riya.shukla@wfmexperts.com">
+                                Careers
+                            </a>
+
+                            <a href="contact-us.html">
+                                Contact Us
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+
+                <div class="nav-actions">
+
+                    <a href="#demo" class="btn-nav-cta">
+                        Book Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <button class="hamburger" id="hamburger" aria-label="Open navigation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="pricing-hero">
+
+        <div class="hero-grid"></div>
+
+        <div class="container">
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow">
+
+                    <span class="eyebrow-dot"></span>
+
+                    SIMPLE • FLEXIBLE • SCALABLE
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    HR software that
+                    <span>grows with you.</span>
+
+                </h1>
+
+
+                <p class="hero-subtitle">
+
+                    Choose a plan built around the way your organization works.
+                    Manage people, automate HR operations, improve workforce
+                    visibility and scale without unnecessary complexity.
+
+                </p>
+
+
+                <p class="hero-note">
+
+                    All plans include secure cloud infrastructure and dedicated product support.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     PRICING CARDS
+========================================================= -->
+
+    <section class="pricing-section" id="pricing">
+
+        <div class="container">
+
+            <div class="pricing-grid">
+
+
+                <!-- STANDARD -->
+
+                <article class="price-card reveal">
+
+                    <div class="plan-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M8 12h8"></path>
+                        </svg>
+
+                    </div>
+
+
+                    <h2 class="plan-name">
+                        Standard
+                    </h2>
+
+
+                    <p class="plan-description">
+
+                        A strong foundation for organizations
+                        looking to centralize everyday HR operations.
+
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="price-value">
+                            ₹49
+                        </span>
+
+                        <span class="price-unit">
+                            / employee / month
+                        </span>
+
+                    </div>
+
+
+                    <p class="price-note">
+                        Starting plan · billed annually
+                    </p>
+
+
+                    <a href="#demo" class="plan-button">
+                        Start with Standard
+                    </a>
+
+
+                    <div class="feature-title">
+                        Includes
+                    </div>
+
+
+                    <ul class="price-features">
+
+                        <li>
+                            <span class="check">✓</span>
+                            Employee master data
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Leave & attendance management
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Employee self-service
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Basic onboarding
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Standard reports
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Document management
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Email notifications
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <!-- PROFESSIONAL -->
+
+                <article class="price-card featured reveal">
+
+                    <div class="popular-badge">
+                        MOST POPULAR
+                    </div>
+
+
+                    <div class="plan-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path
+                                d="M12 3l2.7 5.46L21 9.38l-4.5 4.38 1.06 6.2L12 17.03 6.44 20l1.06-6.24L3 9.38l6.3-.92L12 3z">
+                            </path>
+                        </svg>
+
+                    </div>
+
+
+                    <h2 class="plan-name">
+                        Professional
+                    </h2>
+
+
+                    <p class="plan-description">
+
+                        Advanced workforce intelligence and
+                        automation for growing and distributed teams.
+
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="price-value">
+                            ₹79
+                        </span>
+
+                        <span class="price-unit">
+                            / employee / month
+                        </span>
+
+                    </div>
+
+
+                    <p class="price-note">
+                        Starting plan · billed annually
+                    </p>
+
+
+                    <a href="#demo" class="plan-button">
+                        Choose Professional
+                    </a>
+
+
+                    <div class="feature-title">
+                        Everything in Standard, plus
+                    </div>
+
+
+                    <ul class="price-features">
+
+                        <li>
+                            <span class="check">✓</span>
+                            Advanced employee workflows
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Automated onboarding
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Workforce operations
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Advanced reports & dashboards
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            HR automation rules
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Custom forms & approvals
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Advanced integrations
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <!-- CUSTOM -->
+
+                <article class="price-card reveal">
+
+                    <div class="plan-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 2v20"></path>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H7"></path>
+                        </svg>
+
+                    </div>
+
+
+                    <h2 class="plan-name">
+                        Custom
+                    </h2>
+
+
+                    <p class="plan-description">
+
+                        Built around complex structures,
+                        large workforces, integrations and
+                        organization-specific requirements.
+
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="price-value">
+                            Custom
+                        </span>
+
+                    </div>
+
+
+                    <p class="price-note">
+                        Designed around your requirements
+                    </p>
+
+
+                    <a href="#demo" class="plan-button">
+                        Talk to an Expert
+                    </a>
+
+
+                    <div class="feature-title">
+                        Designed for your organization
+                    </div>
+
+
+                    <ul class="price-features">
+
+                        <li>
+                            <span class="check">✓</span>
+                            Unlimited configuration options
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Enterprise workflows
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Custom integrations
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Dedicated implementation
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Advanced security controls
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Organization-specific automation
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Priority support
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+
+            <div class="billing-note">
+
+                <div class="billing-note-inner">
+
+                    <strong>Need help choosing?</strong>
+
+                    Talk to our team and we'll recommend the right configuration for your workforce.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     FEATURE SPOTLIGHT
+========================================================= -->
+
+    <section class="spotlight-section section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    ONE PLATFORM
+                </span>
+
+                <h2 class="section-title">
+                    Every part of HR, connected.
+                </h2>
+
+                <p class="section-description">
+
+                    From employee records to automation and workforce
+                    intelligence, bring your HR ecosystem into one
+                    connected operating layer.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature-track-wrapper">
+
+            <div class="feature-track" id="featureTrack">
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="8" r="3"></circle>
+                            <path d="M5 21c0-3.4 3.1-6 7-6s7 2.6 7 6"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        One Employee Record
+                    </h3>
+
+                    <p>
+                        Keep employee information, documents,
+                        organizational details and employment
+                        history in one reliable source.
+                    </p>
+
+                </article>
+
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                            <path d="M16 3v4M8 3v4M3 10h18"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Smarter Leave Management
+                    </h3>
+
+                    <p>
+                        Simplify leave requests, balances,
+                        approval flows, policies and visibility
+                        across teams.
+                    </p>
+
+                </article>
+
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 3v18"></path>
+                            <path d="M5 8h14M5 16h14"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Automated Workflows
+                    </h3>
+
+                    <p>
+                        Replace repetitive HR administration
+                        with rules, triggers, approvals and
+                        automated employee journeys.
+                    </p>
+
+                </article>
+
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 19V5"></path>
+                            <path d="M4 19h17"></path>
+                            <path d="M7 15l4-5 3 3 5-7"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Workforce Intelligence
+                    </h3>
+
+                    <p>
+                        Turn workforce data into actionable
+                        insights through dashboards, trends,
+                        reports and operational visibility.
+                    </p>
+
+                </article>
+
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 7h16M4 12h10M4 17h16"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Flexible Forms
+                    </h3>
+
+                    <p>
+                        Build structured HR forms and approval
+                        processes without creating unnecessary
+                        manual work.
+                    </p>
+
+                </article>
+
+
+
+                <article class="spotlight-card">
+
+                    <div class="spotlight-icon">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v5l3 2"></path>
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Always-On Operations
+                    </h3>
+
+                    <p>
+                        Create consistent processes that keep
+                        HR teams, managers and employees moving
+                        without unnecessary delays.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="track-hint">
+            ← Explore the platform capabilities →
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     COMPARISON
+========================================================= -->
+
+    <section class="comparison-section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    PLAN COMPARISON
+                </span>
+
+                <h2 class="section-title">
+                    Compare plans at a glance.
+                </h2>
+
+                <p class="section-description">
+
+                    Understand which capabilities are available
+                    across Standard, Professional and Custom plans.
+
+                </p>
+
+            </div>
+
+
+            <div class="comparison-shell reveal">
+
+
+                <div class="comparison-header">
+
+                    <div>
+                        Capability
+                    </div>
+
+                    <div>
+                        Standard
+                    </div>
+
+                    <div class="pro-head">
+                        Professional
+                    </div>
+
+                    <div>
+                        Custom
+                    </div>
+
+                </div>
+
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Employee master data
+                    </div>
+
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Leave management
+                    </div>
+
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Employee self-service
+                    </div>
+
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Automated onboarding
+                    </div>
+
+                    <div class="limited">Basic</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Workforce operations
+                    </div>
+
+                    <div class="limited">Core</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Advanced reporting
+                    </div>
+
+                    <div class="limited">Basic</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        HR automation
+                    </div>
+
+                    <div class="dash">—</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Custom forms
+                    </div>
+
+                    <div class="limited">Limited</div>
+                    <div class="yes">✓</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Custom integrations
+                    </div>
+
+                    <div class="dash">—</div>
+                    <div class="limited">Selected</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+                <div class="comparison-row">
+
+                    <div>
+                        Dedicated implementation
+                    </div>
+
+                    <div class="dash">—</div>
+                    <div class="limited">Optional</div>
+                    <div class="yes">✓</div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     HR MODULES
+========================================================= -->
+
+    <section class="modules-section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    PLATFORM CAPABILITIES
+                </span>
+
+                <h2 class="section-title">
+                    Built around the way HR actually works.
+                </h2>
+
+                <p class="section-description">
+
+                    Start with the essentials and expand into
+                    deeper automation, intelligence and operational
+                    control as your organization grows.
+
+                </p>
+
+            </div>
+
+
+            <div class="module-grid">
+
+
+                <!-- COMPANY DATA -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 21V5l8-3 8 3v16"></path>
+                                <path d="M8 9h2M14 9h2M8 13h2M14 13h2M8 17h2M14 17h2"></path>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 01
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Company & Employee Data
+                    </h3>
+
+                    <p>
+                        Establish a clean employee information layer
+                        that keeps people, departments and employment
+                        records connected.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Employee master records
+                        </div>
+
+                        <div class="module-feature">
+                            Department & designation structure
+                        </div>
+
+                        <div class="module-feature">
+                            Employee lifecycle history
+                        </div>
+
+                        <div class="module-feature">
+                            Digital document storage
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Custom employee fields
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Organization hierarchy
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Location & branch management
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Employment status tracking
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LEAVE -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+                                <path d="M16 2v4M8 2v4M3 9h18"></path>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 02
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Leave & Time Management
+                    </h3>
+
+                    <p>
+                        Make time-off administration simple for
+                        employees, managers and HR teams.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Leave requests
+                        </div>
+
+                        <div class="module-feature">
+                            Multi-level approvals
+                        </div>
+
+                        <div class="module-feature">
+                            Leave balances
+                        </div>
+
+                        <div class="module-feature">
+                            Leave policies
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Holiday calendars
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Team availability
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Manager visibility
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Automated notifications
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ONBOARDING -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="9" cy="8" r="3"></circle>
+                                <path d="M3 21c0-3.3 2.7-6 6-6"></path>
+                                <path d="M16 11v8M12 15h8"></path>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 03
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Employee Onboarding
+                    </h3>
+
+                    <p>
+                        Turn new-joiner administration into a
+                        structured and repeatable employee experience.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Digital joining process
+                        </div>
+
+                        <div class="module-feature">
+                            Document collection
+                        </div>
+
+                        <div class="module-feature">
+                            Joining checklists
+                        </div>
+
+                        <div class="module-feature">
+                            Task assignment
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Automated onboarding journeys
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Manager task workflows
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Welcome communications
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Onboarding status dashboard
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- OPERATIONS -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3v18M3 12h18"></path>
+                                <circle cx="12" cy="12" r="8"></circle>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 04
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Workforce & Operations
+                    </h3>
+
+                    <p>
+                        Coordinate people, activities and operational
+                        workflows from a central platform.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Workforce allocation
+                        </div>
+
+                        <div class="module-feature">
+                            Team structures
+                        </div>
+
+                        <div class="module-feature">
+                            Operational workflows
+                        </div>
+
+                        <div class="module-feature">
+                            Manager visibility
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Resource planning
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Workforce movement
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Operational alerts
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Location-based visibility
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CUSTOMIZATION -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path
+                                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                                </path>
+                                <circle cx="12" cy="12" r="4"></circle>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 05
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Tailored Configuration
+                    </h3>
+
+                    <p>
+                        Adapt the platform to your organizational
+                        structure instead of forcing your processes
+                        into rigid software.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Custom fields
+                        </div>
+
+                        <div class="module-feature">
+                            Approval structures
+                        </div>
+
+                        <div class="module-feature">
+                            Configurable workflows
+                        </div>
+
+                        <div class="module-feature">
+                            Role-based access
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Custom business rules
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Organization-specific dashboards
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Custom integrations
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Enterprise configuration
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- REPORTING -->
+
+                <article class="module-card reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 19V5"></path>
+                                <path d="M4 19h17"></path>
+                                <path d="M8 15v-3M12 15V8M16 15v-6M20 15V5"></path>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 06
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Reporting & Intelligence
+                    </h3>
+
+                    <p>
+                        Give HR and business leaders visibility into
+                        workforce patterns and operational performance.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Standard HR reports
+                        </div>
+
+                        <div class="module-feature">
+                            Attendance insights
+                        </div>
+
+                        <div class="module-feature">
+                            Workforce dashboards
+                        </div>
+
+                        <div class="module-feature">
+                            Exportable reports
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Custom report builder
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Advanced analytics
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Trend analysis
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Management dashboards
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FORMS -->
+
+                <article class="module-card full reveal">
+
+                    <div class="module-top">
+
+                        <div class="module-icon">
+
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M5 4h14v16H5z"></path>
+                                <path d="M8 8h8M8 12h8M8 16h5"></path>
+                            </svg>
+
+                        </div>
+
+                        <span class="module-number">
+                            MODULE 07
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Smart Forms & HR Automation
+                    </h3>
+
+                    <p>
+                        Build repeatable HR processes with structured
+                        forms, rules, triggers and automated actions.
+                    </p>
+
+
+                    <div class="module-features">
+
+                        <div class="module-feature">
+                            Digital HR forms
+                        </div>
+
+                        <div class="module-feature">
+                            Form-based approvals
+                        </div>
+
+                        <div class="module-feature">
+                            Workflow triggers
+                        </div>
+
+                        <div class="module-feature">
+                            Automated notifications
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Conditional workflows
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Multi-step approvals
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Automated employee actions
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Event-based automation
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Scheduled workflows
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Escalation rules
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Automated reminders
+                        </div>
+
+                        <div class="module-feature hidden-feature">
+                            Custom business logic
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="see-features-wrap">
+
+                <button class="see-features-btn" id="seeFeaturesBtn">
+
+                    <span>
+                        See All Features
+                    </span>
+
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     ADVANCED
+========================================================= -->
+
+    <section class="advanced-section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    BEYOND BASIC HR
+                </span>
+
+                <h2 class="section-title">
+                    Advanced capabilities when your operation demands more.
+                </h2>
+
+                <p class="section-description">
+
+                    Extend your HR environment with deeper controls,
+                    automation and integrations designed for complex
+                    organizational requirements.
+
+                </p>
+
+            </div>
+
+
+            <div class="advanced-grid">
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 3v18M3 12h18"></path>
+                        <circle cx="12" cy="12" r="8"></circle>
+                    </svg>
+
+                    <h4>
+                        Custom Workflows
+                    </h4>
+
+                    <p>
+                        Configure processes around your
+                        organization's real approval structure.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 19V5M4 19h17"></path>
+                        <path d="M7 15l4-5 3 3 5-7"></path>
+                    </svg>
+
+                    <h4>
+                        Executive Dashboards
+                    </h4>
+
+                    <p>
+                        Give leadership a clear operational
+                        picture through configurable dashboards.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path>
+                        <path d="M8 12l2.5 2.5L16 9"></path>
+                    </svg>
+
+                    <h4>
+                        Access & Security
+                    </h4>
+
+                    <p>
+                        Control who can access information,
+                        workflows and operational capabilities.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M8 12h8M12 8v8"></path>
+                    </svg>
+
+                    <h4>
+                        Integrations
+                    </h4>
+
+                    <p>
+                        Connect HR operations with the systems
+                        your organization already relies on.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 3v18"></path>
+                        <path d="M5 8h14M5 16h14"></path>
+                    </svg>
+
+                    <h4>
+                        Automation Rules
+                    </h4>
+
+                    <p>
+                        Trigger actions automatically based
+                        on events, conditions and schedules.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                        <path d="M7 8h10M7 12h6M7 16h8"></path>
+                    </svg>
+
+                    <h4>
+                        Custom Forms
+                    </h4>
+
+                    <p>
+                        Build organization-specific forms
+                        without depending on development teams.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M5 19V5M5 19h15"></path>
+                        <path d="M8 15l3-4 3 2 4-6"></path>
+                    </svg>
+
+                    <h4>
+                        Workforce Analytics
+                    </h4>
+
+                    <p>
+                        Move from raw HR data to meaningful
+                        operational intelligence.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-item reveal">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 7h16M4 12h16M4 17h10"></path>
+                    </svg>
+
+                    <h4>
+                        Enterprise Controls
+                    </h4>
+
+                    <p>
+                        Support larger organizations with
+                        deeper configuration and governance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     TRUST
+========================================================= -->
+
+    <section class="trust-section">
+
+        <div class="container">
+
+            <div class="trust-box reveal">
+
+                <h2 class="trust-title">
+                    Built for teams that are serious about operations.
+                </h2>
+
+                <p class="trust-text">
+
+                    navik brings HR, workforce management and
+                    operational processes into a single connected
+                    environment—helping teams spend less time
+                    managing administrative work and more time
+                    improving the workforce.
+
+                </p>
+
+
+                <div class="trust-stats">
+
+                    <div class="trust-stat">
+
+                        <strong>
+                            10K+
+                        </strong>
+
+                        <span>
+                            Employees managed
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-stat">
+
+                        <strong>
+                            99.9%
+                        </strong>
+
+                        <span>
+                            Platform availability target
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-stat">
+
+                        <strong>
+                            24/7
+                        </strong>
+
+                        <span>
+                            Workforce visibility
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-stat">
+
+                        <strong>
+                            1
+                        </strong>
+
+                        <span>
+                            Connected HR platform
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="company-marquee">
+
+                    <div class="company-track">
+
+                        <span class="company-name">NORTHSTAR</span>
+                        <span class="company-name">URBANCORE</span>
+                        <span class="company-name">VANTAGE</span>
+                        <span class="company-name">PRIMEWORKS</span>
+                        <span class="company-name">AXIOM</span>
+                        <span class="company-name">EVEREST</span>
+                        <span class="company-name">NORTHSTAR</span>
+                        <span class="company-name">URBANCORE</span>
+                        <span class="company-name">VANTAGE</span>
+                        <span class="company-name">PRIMEWORKS</span>
+                        <span class="company-name">AXIOM</span>
+                        <span class="company-name">EVEREST</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     FAQ
+========================================================= -->
+
+    <section class="faq-section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    QUESTIONS, ANSWERED
+                </span>
+
+                <h2 class="section-title">
+                    Everything you need to know.
+                </h2>
+
+                <p class="section-description">
+
+                    Still deciding which plan is right for your
+                    organization? Here are answers to the questions
+                    teams ask most often.
+
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can I start with Standard and upgrade later?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            Yes. Your plan can evolve as your organization
+                            grows. You can discuss an upgrade with the navik
+                            team when you need additional capabilities,
+                            automation or configuration.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Are the prices shown final?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            The displayed amounts are starting-plan examples
+                            for the page design. Actual commercial pricing can
+                            depend on employee count, modules, implementation
+                            requirements, integrations and contract terms.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            What is included in the Custom plan?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            Custom is designed around your organization's
+                            requirements. It can include advanced workflows,
+                            custom integrations, organization-specific
+                            configuration, implementation assistance,
+                            governance controls and other enterprise needs.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Does navik support custom HR workflows?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            Yes. Professional and Custom configurations
+                            can support more advanced approval structures,
+                            forms, automation rules and organization-specific
+                            processes.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can you help us choose the right plan?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            Yes. Book a free demo and explain your workforce
+                            size, operating model, HR processes and integration
+                            requirements. The team can then recommend an
+                            appropriate configuration.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="faq-item reveal">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is there a free demo?
+                        </span>
+
+                        <span class="faq-plus">
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <div class="faq-answer-inner">
+
+                            Yes. You can book a free product demonstration
+                            to see how the platform fits your HR and workforce
+                            operations.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     DEMO CTA
+========================================================= -->
+
+    <section class="demo-section" id="demo">
+
+        <div class="container">
+
+            <div class="demo-banner reveal">
+
+                <div class="demo-content">
+
+                    <h2>
+                        See what better HR operations look like.
+                    </h2>
+
+                    <p>
+
+                        Tell us how your organization manages people,
+                        workforce operations and HR processes today.
+                        We'll show you where navik can simplify the work.
+
+                    </p>
+
+
+                    <div class="demo-actions">
+
+                        <a href="mailto:contact@navik.com?subject=Free%20Navik%20Demo" class="demo-btn primary">
+                            Book a Free Demo →
+                        </a>
+
+                        <a href="tel:+919196000515" class="demo-btn secondary">
+                            Talk to Sales
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="nav-logo">
+
+                        <img src="https://res.cloudinary.com/dne97stwg/image/upload/v1777609970/NAVIK-removebg-preview_dim8mk.png"
+                            alt="navik" class="nav-logo-img">
+
+                        <span class="nav-logo-text">
+
+                            <span>
+                                HR
+                            </span>
+
+                            <span>
+                                WFM
+                            </span>
+
+                            <span>
+                                Payroll
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        The complete HR, Workforce Management
+                        & Payroll platform for modern businesses.
+
+                    </p>
+
+
+                    <div class="footer-socials">
+
+                        <a href="https://www.instagram.com/navik.ops" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" aria-label="Instagram">
+                            IG
+                        </a>
+
+                        <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" aria-label="YouTube">
+                            YT
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                            aria-label="LinkedIn">
+                            IN
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="footer-col">
+
+                    <h5>
+                        Product
+                    </h5>
+
+                    <a href="/hrms-software-india">
+                        HR System
+                    </a>
+
+                    <a href="/workforce-management-software-india">
+                        Workforce Management
+                    </a>
+
+                    <a href="/payroll-management-software-india">
+                        Payroll System
+                    </a>
+
+                    <a href="/attendance-management-software-india">
+                        Attendance
+                    </a>
+
+                    <a href="/contract-workforce-management-software-india">
+                        Contract Workforce
+                    </a>
+
+                    <a href="/field-force-tracking-software-india">
+                        Field Workforce Tracking
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-col">
+
+                    <h5>
+                        Company
+                    </h5>
+
+                    <a href="about-us.html">
+                        About Us
+                    </a>
+
+                    <a href="mailto:riya.shukla@wfmexperts.com">
+                        Careers
+                    </a>
+
+                    <a href="Customers.html">
+                        Customers
+                    </a>
+
+                    <a href="contact-us.html">
+                        Contact
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-col">
+
+                    <h5>
+                        Resources
+                    </h5>
+
+                    <a href="blog.html">
+                        Blogs
+                    </a>
+
+                    <a href="templates.html">
+                        Templates
+                    </a>
+
+                    <a href="Case-Studies.html">
+                        Case Studies
+                    </a>
+
+                    <a href="reports-analytics.html">
+                        Reports & Analytics
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-col">
+
+                    <h5>
+                        Contact
+                    </h5>
+
+                    <a href="mailto:contact@navik.com">
+                        contact@navik.com
+                    </a>
+
+                    <a href="tel:+919196000515">
+                        +91-9196000515
+                    </a>
+
+                    <span>
+                        Kanpur, India
+                    </span>
+
+                    <a href="#demo" style="
+            margin-top:8px;
+            display:inline-flex;
+            width:max-content;
+            padding:9px 13px;
+            border-radius:8px;
+            background:#1769e0;
+            color:#fff;
+            font-weight:700;
+          ">
+                        Book a Demo →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 navik. All rights reserved.
+                    Made with ❤ in India
+                </span>
+
+
+                <div class="footer-legal">
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                    <a href="#">
+                        Security
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+     MOBILE CTA
+========================================================= -->
+
+    <div class="mobile-cta">
+
+        <a href="#demo">
+            Book Free Demo
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+    <a id="waBtn" href="https://wa.me/919196000515?text=Hi%20Navik%20team%2C%20I%20want%20a%20demo." target="_blank"
+        rel="noopener noreferrer" class="wa-btn" aria-label="Chat on WhatsApp">
+
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.413A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+                fill="#25D366" />
+
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                fill="#fff" />
+
+        </svg>
+
+        <span class="wa-tooltip">
+            Chat on WhatsApp
+        </span>
+
+    </a>
+
+
+
+    <script>
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        const navbar =
+            document.getElementById("navbar");
+
+        const navRight =
+            document.getElementById("navRight");
+
+        const hamburger =
+            document.getElementById("hamburger");
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (window.scrollY > 30) {
+
+                    navbar.classList.add("scrolled");
+
+                } else {
+
+                    navbar.classList.remove("scrolled");
+
+                }
+
+            },
+            { passive: true }
+        );
+
+
+        hamburger.addEventListener(
+            "click",
+            () => {
+
+                navRight.classList.toggle(
+                    "mobile-open"
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           MOBILE DROPDOWNS
+        ========================================================= */
+
+        document
+            .querySelectorAll(".nav-dropdown > .nav-link-main")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        if (window.innerWidth <= 991) {
+
+                            const parent =
+                                link.parentElement;
+
+                            parent.classList.toggle(
+                                "mobile-active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           SCROLL PROGRESS
+        ========================================================= */
+
+        const progress =
+            document.getElementById(
+                "scroll-progress"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                const scrollTop =
+                    window.scrollY;
+
+                const height =
+                    document.documentElement.scrollHeight
+                    - window.innerHeight;
+
+                const percentage =
+                    height > 0
+                        ? (scrollTop / height) * 100
+                        : 0;
+
+                progress.style.width =
+                    percentage + "%";
+
+            },
+            { passive: true }
+        );
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: .12,
+                    rootMargin: "0px 0px -40px 0px"
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+                revealObserver.observe(element);
+            }
+        );
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const wrapper = document.querySelector(".feature-track-wrapper");
+            const track = document.querySelector(".feature-track");
+
+            if (!wrapper || !track) return;
+
+            const originalCards = Array.from(
+                track.querySelectorAll(".spotlight-card")
+            );
+
+            if (!originalCards.length) return;
+
+
+            /* =========================================================
+               CREATE DUPLICATE SET
+            ========================================================= */
+
+            originalCards.forEach(card => {
+
+                const clone = card.cloneNode(true);
+
+                clone.setAttribute("aria-hidden", "true");
+
+                track.appendChild(clone);
+
+            });
+
+
+            /* =========================================================
+               SETTINGS
+            ========================================================= */
+
+            let position = 0;
+
+            let speed = 1.35;
+
+            let paused = false;
+
+            let dragging = false;
+
+            let startX = 0;
+
+            let startPosition = 0;
+
+
+            /* =========================================================
+               CALCULATE ONE COMPLETE SET WIDTH
+            ========================================================= */
+
+            function getLoopWidth() {
+
+                /*
+                  Because the cards are duplicated exactly once,
+                  half of the track represents the original content.
+                */
+
+                return track.scrollWidth / 2;
+
+            }
+
+
+            /* =========================================================
+               APPLY MOVEMENT
+            ========================================================= */
+
+            function updatePosition() {
+
+                const loopWidth = getLoopWidth();
+
+                if (!loopWidth) return;
+
+                /*
+                  When the first set has completely moved away,
+                  jump back to the beginning.
+            
+                  Because the second set is identical,
+                  the user sees a seamless loop.
+                */
+
+                if (position <= -loopWidth) {
+                    position += loopWidth;
+                }
+
+                if (position > 0) {
+                    position -= loopWidth;
+                }
+
+                track.style.transform =
+                    `translate3d(${position}px, 0, 0)`;
+
+            }
+
+
+            /* =========================================================
+               ANIMATION LOOP
+            ========================================================= */
+
+            function animate() {
+
+                if (!paused && !dragging) {
+
+                    position -= speed;
+
+                    updatePosition();
+
+                }
+
+                requestAnimationFrame(animate);
+
+            }
+
+
+            /* =========================================================
+               PAUSE WHEN HOVERING
+            ========================================================= */
+
+            wrapper.addEventListener("mouseenter", function () {
+                paused = true;
+            });
+
+            wrapper.addEventListener("mouseleave", function () {
+                paused = false;
+            });
+
+
+            /* =========================================================
+               MOUSE DRAG
+            ========================================================= */
+
+            wrapper.addEventListener("mousedown", function (e) {
+
+                dragging = true;
+
+                startX = e.clientX;
+
+                startPosition = position;
+
+                track.style.cursor = "grabbing";
+
+            });
+
+
+            window.addEventListener("mousemove", function (e) {
+
+                if (!dragging) return;
+
+                const difference = e.clientX - startX;
+
+                position = startPosition + difference;
+
+                updatePosition();
+
+            });
+
+
+            window.addEventListener("mouseup", function () {
+
+                if (!dragging) return;
+
+                dragging = false;
+
+                track.style.cursor = "grab";
+
+            });
+
+
+            /* =========================================================
+               TOUCH / MOBILE SWIPE
+            ========================================================= */
+
+            wrapper.addEventListener(
+                "touchstart",
+                function (e) {
+
+                    dragging = true;
+
+                    startX = e.touches[0].clientX;
+
+                    startPosition = position;
+
+                },
+                { passive: true }
+            );
+
+
+            wrapper.addEventListener(
+                "touchmove",
+                function (e) {
+
+                    if (!dragging) return;
+
+                    const currentX = e.touches[0].clientX;
+
+                    const difference = currentX - startX;
+
+                    position = startPosition + difference;
+
+                    updatePosition();
+
+                },
+                { passive: true }
+            );
+
+
+            wrapper.addEventListener(
+                "touchend",
+                function () {
+
+                    dragging = false;
+
+                }
+            );
+
+
+            /* =========================================================
+               CENTER CARD EFFECT
+            ========================================================= */
+
+            function updateCenterCard() {
+
+                const cards =
+                    track.querySelectorAll(".spotlight-card");
+
+                const wrapperRect =
+                    wrapper.getBoundingClientRect();
+
+                const wrapperCenter =
+                    wrapperRect.left +
+                    wrapperRect.width / 2;
+
+                let closestCard = null;
+
+                let closestDistance = Infinity;
+
+
+                cards.forEach(card => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const cardCenter =
+                        rect.left +
+                        rect.width / 2;
+
+                    const distance =
+                        Math.abs(cardCenter - wrapperCenter);
+
+                    if (distance < closestDistance) {
+
+                        closestDistance = distance;
+
+                        closestCard = card;
+
+                    }
+
+                });
+
+
+                cards.forEach(card => {
+
+                    card.classList.remove(
+                        "center-active"
+                    );
+
+                });
+
+
+                if (closestCard) {
+
+                    closestCard.classList.add(
+                        "center-active"
+                    );
+
+                }
+
+            }
+
+
+            /* =========================================================
+               CENTER EFFECT LOOP
+            ========================================================= */
+
+            function centerAnimation() {
+
+                updateCenterCard();
+
+                requestAnimationFrame(centerAnimation);
+
+            }
+
+
+            /* =========================================================
+               REDUCED MOTION
+            ========================================================= */
+
+            const reducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+
+            if (!reducedMotion) {
+
+                animate();
+
+                centerAnimation();
+
+            } else {
+
+                updateCenterCard();
+
+            }
+
+
+            /* =========================================================
+               RESIZE
+            ========================================================= */
+
+            window.addEventListener(
+                "resize",
+                function () {
+
+                    updatePosition();
+
+                    updateCenterCard();
+
+                }
+            );
+
+        });
+        /* =========================================================
+           DRAG / TOUCH FEATURE TRACK
+        ========================================================= */
+
+        let isDown = false;
+
+        let startX = 0;
+
+        let scrollLeft = 0;
+
+
+        featureTrack.addEventListener(
+            "pointerdown",
+            event => {
+
+                isDown = true;
+
+                featureTrack.setPointerCapture(
+                    event.pointerId
+                );
+
+                startX = event.clientX;
+
+                scrollLeft =
+                    window.scrollX;
+
+            }
+        );
+
+
+        featureTrack.addEventListener(
+            "pointerup",
+            () => {
+
+                isDown = false;
+
+            }
+        );
+
+
+        featureTrack.addEventListener(
+            "pointercancel",
+            () => {
+
+                isDown = false;
+
+            }
+        );
+
+
+        /* =========================================================
+           SHOW ALL FEATURES
+        ========================================================= */
+
+        const seeFeaturesBtn =
+            document.getElementById(
+                "seeFeaturesBtn"
+            );
+
+
+        const moduleCards =
+            document.querySelectorAll(
+                ".module-card"
+            );
+
+
+        let featuresExpanded = false;
+
+
+        seeFeaturesBtn.addEventListener(
+            "click",
+            () => {
+
+                featuresExpanded =
+                    !featuresExpanded;
+
+
+                moduleCards.forEach(card => {
+
+                    card.classList.toggle(
+                        "expanded",
+                        featuresExpanded
+                    );
+
+                });
+
+
+                seeFeaturesBtn.classList.toggle(
+                    "active",
+                    featuresExpanded
+                );
+
+
+                seeFeaturesBtn.querySelector(
+                    "span"
+                ).textContent =
+                    featuresExpanded
+                        ? "Hide Extra Features"
+                        : "See All Features";
+
+
+                if (featuresExpanded) {
+
+                    setTimeout(
+                        () => {
+
+                            document
+                                .querySelector(".modules-section")
+                                .scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start"
+                                });
+
+                        },
+                        100
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           FAQ
+        ========================================================= */
+
+        const faqItems =
+            document.querySelectorAll(
+                ".faq-item"
+            );
+
+
+        faqItems.forEach(item => {
+
+            const question =
+                item.querySelector(
+                    ".faq-question"
+                );
+
+
+            question.addEventListener(
+                "click",
+                () => {
+
+                    const wasActive =
+                        item.classList.contains(
+                            "active"
+                        );
+
+
+                    faqItems.forEach(
+                        faq => {
+                            faq.classList.remove(
+                                "active"
+                            );
+                        }
+                    );
+
+
+                    if (!wasActive) {
+
+                        item.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* =========================================================
+           CLOSE MOBILE MENU WHEN LINK CLICKED
+        ========================================================= */
+
+        document
+            .querySelectorAll(
+                ".nav-links a"
+            )
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navRight.classList.remove(
+                            "mobile-open"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           SMOOTH INTERNAL LINKS
+        ========================================================= */
+
+        document
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    event => {
+
+                        const targetId =
+                            link.getAttribute("href");
+
+
+                        if (
+                            !targetId ||
+                            targetId === "#"
+                        ) {
+                            return;
+                        }
+
+
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
+
+
+                        if (!target) return;
+
+
+                        event.preventDefault();
+
+
+                        const navbarHeight =
+                            navbar.offsetHeight;
+
+
+                        const targetPosition =
+                            target.getBoundingClientRect().top
+                            + window.scrollY
+                            - navbarHeight
+                            - 12;
+
+
+                        window.scrollTo({
+
+                            top: targetPosition,
+
+                            behavior: "smooth"
+
+                        });
+
+                    }
+                );
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>

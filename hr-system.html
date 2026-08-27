@@ -142,233 +142,513 @@
     /* =========================================================
    1. WHITE NAVBAR
 ========================================================= */
-
-    .navbar {
-      background: rgba(255, 255, 255, 0.96) !important;
-
-      border-bottom: 1px solid rgba(8, 26, 61, 0.08) !important;
-
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-
-      box-shadow:
-        0 8px 30px rgba(8, 26, 61, 0.08) !important;
-    }
-
-
-    /* Slightly stronger white when scrolling */
-    .navbar.scrolled {
-      background: rgba(255, 255, 255, 0.985) !important;
-
-      box-shadow:
-        0 12px 35px rgba(8, 26, 61, 0.11) !important;
-    }
-
-
     /* =========================================================
-   2. NAVBAR INNER
+   NAVBAR — CONTRACT WORKFORCE STYLE
+   WHITE / CLEAN / PREMIUM
 ========================================================= */
 
-    .nav-inner {
-      min-height: 76px;
-    }
+  .navbar {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom: 1px solid rgba(11, 36, 80, 0.08) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 6px 28px rgba(3, 17, 45, 0.07) !important;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease !important;
+}
 
 
-    /* =========================================================
-   3. LOGO
+/* =========================================================
+   SCROLLED NAVBAR
 ========================================================= */
 
-    .nav-logo-img {
-      filter:
-        drop-shadow(0 4px 10px rgba(37, 99, 235, 0.18)) !important;
-    }
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.99) !important;
 
-    .nav-logo-animated {
-      color: #174ea6 !important;
-    }
+  box-shadow:
+    0 10px 35px rgba(3, 17, 45, 0.10) !important;
+}
 
 
-    /* =========================================================
-   4. NAVIGATION LINKS
+/* =========================================================
+   NAV INNER
 ========================================================= */
 
-    .nav-links>li>a {
-      color: #162737 !important;
-
-      background: transparent !important;
-
-      border-radius: 9px;
-
-      transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease !important;
-    }
+.nav-inner {
+  min-height: 76px;
+}
 
 
-    /* ---------------------------------------------------------
-   LINK HOVER = BLUE BUTTON
---------------------------------------------------------- */
-
-    .nav-links>li>a:hover,
-    .nav-links>li:hover>a {
-      color: #ffffff !important;
-
-      background:
-        linear-gradient(135deg,
-          #fff) !important;
-
-      box-shadow:
-        0 7px 18px rgba(37, 99, 235, 0.20);
-
-      transform: translateY(-1px);
-    }
-
-
-    /* Active/current navigation item */
-    .nav-links>li>a.active,
-    .nav-links>li.active>a {
-      color: #ffffff !important;
-
-      background:
-        linear-gradient(135deg,
-          #fff) !important;
-
-      box-shadow:
-        0 7px 18px #fff;
-    }
-
-
-    /* =========================================================
-   5. NAVBAR DROPDOWN
+/* =========================================================
+   LOGO
 ========================================================= */
 
-    .nav-dropdown-menu {
-      background: rgba(255, 255, 255, 0.98) !important;
+.nav-logo-img {
+  filter:
+    drop-shadow(0 4px 10px rgba(37, 99, 235, 0.14)) !important;
+}
 
-      border:
-        1px solid rgba(8, 26, 61, 0.08) !important;
-
-      box-shadow:
-        0 25px 65px rgba(8, 26, 61, 0.14),
-        0 8px 20px rgba(37, 99, 235, 0.05) !important;
-
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
+.nav-logo-animated {
+  color: #174ea6 !important;
+}
 
 
-    /* Small dropdown top glow */
-    .nav-dropdown-menu::before {
-      content: "";
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
-      position: absolute;
+.nav-links > li > a {
+  position: relative;
 
-      top: -1px;
-      left: 14px;
-      right: 14px;
+  color: #162737 !important;
 
-      height: 2px;
+  background: transparent !important;
 
-      border-radius: 99px;
+  border-radius: 9px;
 
-      background:
-        linear-gradient(90deg,
-          transparent,
-          #2563eb,
-          transparent);
-
-      opacity: 0.75;
-    }
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    transform 0.22s ease !important;
+}
 
 
-    /* Dropdown links */
-    .nav-dropdown-menu a {
-      color: #26344f !important;
+/* =========================================================
+   FIXED MAIN NAV HOVER
+   ---------------------------------------------------------
+   Home
+   Products
+   Pricing
+   Industries
+   Customers
+   Resources
+   Company
 
-      background: transparent !important;
+   Only text changes to blue.
+   NO blue background.
+   NO white text.
+========================================================= */
 
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease !important;
-    }
+.navbar .nav-links > li > a:hover,
+.navbar .nav-links > li:hover > a {
+  color: #174ea6 !important;
 
+  background: transparent !important;
 
-    /* Dropdown hover */
-    .nav-dropdown-menu a:hover {
-      color: #ffffff !important;
+  background-color: transparent !important;
 
-      background:
-        linear-gradient(135deg,
-          #174ea6,
-          #2563eb) !important;
+  box-shadow: none !important;
 
-      transform: translateX(3px);
-
-      box-shadow:
-        0 5px 14px rgba(37, 99, 235, 0.16);
-    }
+  transform: translateY(-1px);
+}
 
 
-    /* =========================================================
+/* =========================================================
+   IMPORTANT OVERRIDE AGAINST GLOBAL HOVER RULES
+========================================================= */
+
+.navbar .nav-links > li > .nav-link-main,
+.navbar .nav-links > li > .nav-link-main:hover,
+.navbar .nav-links > li:hover > .nav-link-main {
+  color: #162737 !important;
+
+  background: transparent !important;
+
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+}
+
+
+/* Keep dropdown parent text blue while hovering */
+
+.navbar .nav-links > li.nav-dropdown:hover > .nav-link-main {
+  color: #174ea6 !important;
+
+  background: transparent !important;
+
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   SMALL BLUE INDICATOR
+========================================================= */
+
+.nav-links > li > a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #2563eb;
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.nav-links > li > a:hover::after,
+.nav-links > li:hover > a::after {
+  width: 18px;
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+.nav-links > li > a.active,
+.nav-links > li.active > a {
+  color: #174ea6 !important;
+
+  background:
+    rgba(37, 99, 235, 0.06) !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.nav-dropdown-menu {
+  background:
+    rgba(255, 255, 255, 0.99) !important;
+
+  border:
+    1px solid rgba(11, 36, 80, 0.08) !important;
+
+  border-radius: 14px !important;
+
+  box-shadow:
+    0 20px 55px rgba(3, 17, 45, 0.13),
+    0 5px 18px rgba(37, 99, 235, 0.05) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   DROPDOWN TOP ACCENT
+========================================================= */
+
+.nav-dropdown-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 18px;
+  right: 18px;
+
+  height: 2px;
+
+  border-radius: 99px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #2563eb,
+      transparent
+    );
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   DROPDOWN LINKS
+========================================================= */
+
+.nav-dropdown-menu a {
+  color: #26344f !important;
+
+  background: transparent !important;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+
+/* =========================================================
+   DROPDOWN HOVER
+========================================================= */
+
+.nav-dropdown-menu a:hover {
+  color: #174ea6 !important;
+
+  background:
+    rgba(237, 239, 245) !important;
+
+  transform: translateX(3px);
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+========================================================= */
+
+.nav-links > li > a svg {
+  color: #26344f !important;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.nav-links > li > a:hover svg,
+.nav-links > li:hover > a svg {
+  color: #174ea6 !important;
+
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   NAV CTA
+========================================================= */
+
+.btn-nav-cta {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #174ea6,
+      #2563eb
+    ) !important;
+
+  border:
+    1px solid rgba(37, 99, 235, 0.15);
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.20) !important;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease !important;
+}
+
+
+.btn-nav-cta:hover {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #174ea6,
+      #2563eb
+    ) !important;
+
+  transform: translateY(-2px) !important;
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 12px 28px rgba(37, 99, 235, 0.28) !important;
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+  border:
+    1px solid rgba(23, 78, 166, 0.12) !important;
+
+  background:
+    rgba(37, 99, 235, 0.05) !important;
+}
+
+
+.hamburger span {
+  background: #174ea6 !important;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .nav-right {
+    background:
+      rgba(255, 255, 255, 0.99) !important;
+
+    border:
+      1px solid rgba(11, 36, 80, 0.08) !important;
+
+    box-shadow:
+      0 25px 60px rgba(3, 17, 45, 0.14) !important;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+
+  /* Main mobile links */
+
+  .navbar .nav-links > li > a {
+    color: #162737 !important;
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+  }
+
+
+  /* Mobile hover */
+
+  .navbar .nav-links > li > a:hover,
+  .navbar .nav-links > li:hover > a {
+    color: #174ea6 !important;
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: none;
+  }
+
+
+  .navbar .nav-links > li.nav-dropdown:hover > .nav-link-main {
+    color: #174ea6 !important;
+
+    background: transparent !important;
+
+    background-color: transparent !important;
+  }
+
+
+  .nav-links > li > a::after {
+    display: none;
+  }
+
+
+  /* =========================================================
+     MOBILE DROPDOWN
+  ========================================================= */
+
+  .nav-dropdown-menu {
+    background:
+      #ffffff !important;
+
+    border:
+      1px solid rgba(37, 99, 235, 0.08) !important;
+
+    box-shadow:
+      none !important;
+  }
+
+
+  .nav-dropdown-menu a {
+    color: #26344f !important;
+
+    background: transparent !important;
+  }
+
+
+  .nav-dropdown-menu a:hover {
+    color: #174ea6 !important;
+
+    background:
+      rgba(37, 99, 235, 0.07) !important;
+  }
+}
+
+
+/* =========================================================
    6. NAV CTA
 ========================================================= */
 
-    .btn-nav-cta {
-      color: #ffffff !important;
+.btn-nav-cta {
+  color: #ffffff !important;
 
-      background:
-        linear-gradient(135deg,
-          #174ea6,
-          #2563eb) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #174ea6,
+      #2563eb
+    ) !important;
 
-      border:
-        1px solid rgba(37, 99, 235, 0.15);
+  border:
+    1px solid rgba(37, 99, 235, 0.15);
 
-      box-shadow:
-        0 8px 22px rgba(37, 99, 235, 0.22) !important;
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.22) !important;
 
-      transition:
-        transform 0.25s var(--ease),
-        box-shadow 0.25s ease,
-        filter 0.25s ease !important;
-    }
-
-
-    .btn-nav-cta:hover {
-      color: #ffffff !important;
-
-      transform: translateY(-2px) !important;
-
-      filter: brightness(1.05);
-
-      box-shadow:
-        0 13px 30px rgba(37, 99, 235, 0.32) !important;
-    }
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s ease,
+    filter 0.25s ease !important;
+}
 
 
-    /* =========================================================
+.btn-nav-cta:hover {
+  color: #ffffff !important;
+
+  transform: translateY(-2px) !important;
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 13px 30px rgba(37, 99, 235, 0.32) !important;
+}
+
+
+/* =========================================================
    7. HAMBURGER
 ========================================================= */
 
-    .hamburger {
-      border:
-        1px solid rgba(23, 78, 166, 0.12) !important;
+.hamburger {
+  border:
+    1px solid rgba(23, 78, 166, 0.12) !important;
 
-      background:
-        rgba(37, 99, 235, 0.06) !important;
+  background:
+    rgba(37, 99, 235, 0.06) !important;
 
-      box-shadow:
-        0 5px 15px rgba(37, 99, 235, 0.06);
-    }
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.06);
+}
 
 
-    .hamburger span {
-      background: #174ea6 !important;
-    }
-
+.hamburger span {
+  background: #174ea6 !important;
+}
 
     /* =========================================================
    8. WHITE HERO
@@ -2769,6 +3049,135 @@
       .feature-card {
         opacity: 1 !important;
         transform: none !important;
+      }
+    }
+
+
+    /* =========================================================
+       FINAL COLOR BALANCE — WHITE HERO + CLEAN BLUE SECTIONS
+       Overrides the darker palette without changing content.
+    ========================================================= */
+
+    .product-hero-section {
+      background: #ffffff !important;
+    }
+
+    .product-hero-section .product-hero-content {
+      color: #102a56;
+    }
+
+    .product-hero-section .product-hero-title,
+    .product-hero-section .product-hero-title span {
+      color: #0b2f68 !important;
+    }
+
+    .product-hero-section .product-hero-subtitle {
+      color: #536b8f !important;
+    }
+
+    .product-hero-section .product-hero-bg {
+      opacity: .42 !important;
+    }
+
+    .trust-strip {
+      background: linear-gradient(135deg, #1554a5, #2169c7) !important;
+      border-color: rgba(255, 255, 255, .14) !important;
+    }
+
+    .marquee::before {
+      background: linear-gradient(90deg, #1554a5, transparent) !important;
+    }
+
+    .marquee::after {
+      background: linear-gradient(-90deg, #2169c7, transparent) !important;
+    }
+
+    .marquee-item {
+      color: rgba(255, 255, 255, .84) !important;
+      background: rgba(255, 255, 255, .09) !important;
+      border-color: rgba(255, 255, 255, .16) !important;
+    }
+
+    .marquee-item:hover {
+      background: rgba(255, 255, 255, .16) !important;
+      border-color: rgba(255, 255, 255, .28) !important;
+    }
+
+    .product-benefits-section {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .12), transparent 28%),
+        radial-gradient(circle at 15% 82%, rgba(96, 165, 250, .16), transparent 28%),
+        linear-gradient(135deg, #1554a5 0%, #1b61bd 52%, #2874d2 100%) !important;
+    }
+
+    .product-benefits-section::before {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px) !important;
+    }
+
+    .product-benefits-section .product-section-title {
+      color: #ffffff !important;
+    }
+
+    .product-benefits-section .product-section-subtitle {
+      color: rgba(255, 255, 255, .84) !important;
+    }
+
+    .product-benefits-section .product-section-eyebrow {
+      background: rgba(255, 255, 255, .12) !important;
+      color: #dcecff !important;
+      border-color: rgba(255, 255, 255, .18) !important;
+    }
+
+    .benefit-card {
+      background: rgba(255, 255, 255, .095) !important;
+      border-color: rgba(255, 255, 255, .18) !important;
+    }
+
+    .benefit-card:hover {
+      background: rgba(255, 255, 255, .15) !important;
+      border-color: rgba(255, 255, 255, .28) !important;
+    }
+
+    .transformation-section {
+      background: linear-gradient(180deg, #f7faff, #edf5ff) !important;
+    }
+
+    .transform-card.after {
+      background: linear-gradient(145deg, #1b5bb2, #2874d2) !important;
+      border-color: rgba(37, 99, 235, .28) !important;
+    }
+
+    .transform-arrow {
+      background: linear-gradient(135deg, #1554a5, #2874d2) !important;
+    }
+
+    .product-cta-section {
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, .13), transparent 32%),
+        linear-gradient(135deg, #1554a5, #2874d2) !important;
+    }
+
+    .product-cta-section::before {
+      border-color: rgba(255, 255, 255, .16) !important;
+      box-shadow:
+        0 0 0 60px rgba(255, 255, 255, .025),
+        0 0 0 120px rgba(255, 255, 255, .018) !important;
+    }
+
+    .cta-subtitle {
+      color: rgba(255, 255, 255, .84) !important;
+    }
+
+    .footer {
+      background: #0b3d82 !important;
+      border-top-color: rgba(255, 255, 255, .12) !important;
+    }
+
+    @media (max-width: 850px) {
+      .nav-right {
+        background: #1554a5 !important;
       }
     }
   </style>
