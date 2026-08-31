@@ -665,6 +665,63 @@
       background: rgba(245, 158, 11, .10);
     }
 
+    /* Features  */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+
+    .feature-card {
+      background: #0b1525;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--g200);
+      transition: all 0.3s var(--spring);
+      animation: fadeInUp 0.6s ease-out 0.3s both;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(8, 15, 30, 0.1);
+      border-color: var(--blue-light);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      background: var(--blue-dim);
+      color: var(--blue-glow);
+      transition: all 0.3s var(--ease);
+    }
+
+    .feature-card:hover .feature-icon {
+      background: linear-gradient(135deg, var(--blue-glow), var(--accent));
+      color: white;
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgb(0, 0, 0);
+      margin: 0 0 12px;
+    }
+
+    .feature-description {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1.6;
+      margin: 0;
+    }
+
 
     /* =========================================================
        FACE VERIFICATION CARD
@@ -1177,6 +1234,268 @@
       overflow: hidden;
       box-shadow:
         0 10px 25px rgba(37, 99, 235, .16);
+    }
+
+    /* Product-Benefits */
+    .product-benefits-section {
+      padding: 100px 30px;
+      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-dark) 100%);
+      color: white;
+    }
+
+    .benefits-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s var(--spring);
+      animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    .benefit-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-8px);
+    }
+
+    .benefit-number {
+      font-size: 48px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--blue-light), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .benefit-label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .product-how-section {
+      padding: 50px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .step-card {
+      position: relative;
+      animation: fadeInUp 0.6s ease-out 0.5s both;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue-glow), var(--accent));
+      color: white;
+      font-size: 24px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+
+    .step-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .step-description {
+      font-size: 15px;
+      color: var(--g600);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── CTA SECTION ── */
+    .product-cta-section {
+      padding: 100px 30px;
+      background: linear-gradient(135deg, #0a1b45 0%, #041233 100%);
+    }
+
+    .cta-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+
+    .cta-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      margin: 0 0 24px;
+    }
+
+    .cta-subtitle {
+      font-size: 18px;
+      color: #f4fdfc;
+      margin: 0 0 40px;
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── BACK LINK ── */
+    .product-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 30px 0 0;
+      padding: 12px 20px;
+      background: transparent;
+      color: var(--g600);
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--g300);
+      border-radius: 10px;
+      transition: all 0.3s var(--ease);
+      font-size: 14px;
+    }
+
+    .product-back-link:hover {
+      color: var(--blue-glow);
+      border-color: var(--blue-glow);
+      background: var(--blue-dim);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .product-hero-section {
+        min-height: 500px;
+        padding: 80px 20px 60px;
+      }
+
+      .product-hero-title {
+        font-size: 42px;
+      }
+
+      .product-hero-subtitle {
+        font-size: 16px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 24px;
+      }
+
+      .product-features-section,
+      .product-benefits-section,
+      .product-how-section,
+      .product-cta-section {
+        padding: 60px 20px;
+      }
+
+      .steps-container {
+        gap: 24px;
+      }
+
+      .product-section-title {
+        font-size: 32px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .product-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-hero-section {
+        min-height: 400px;
+        padding: 60px 16px 50px;
+      }
+
+      .product-hero-title {
+        font-size: 32px;
+      }
+
+      .product-cta-group {
+        gap: 12px;
+      }
+
+      .product-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+
+      .features-grid {
+        gap: 16px;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+      }
+
+      .product-features-section,
+      .product-benefits-section,
+      .product-how-section,
+      .product-cta-section {
+        padding: 50px 16px;
+      }
+
+      .product-section-title {
+        font-size: 28px;
+      }
+
+      .benefit-number {
+        font-size: 36px;
+      }
     }
 
 
@@ -1757,7 +2076,7 @@
 
     <div class="product-hero-content">
 
-      <div class="product-badge">
+      <!-- <div class="product-badge">
 
         <span class="product-badge-dot"></span>
 
@@ -1765,7 +2084,7 @@
           Smart Attendance Tracking
         </span>
 
-      </div>
+      </div> -->
 
 
       <h1 class="product-hero-title">
@@ -2279,9 +2598,9 @@
 
     <div class="product-section-header">
 
-      <span class="product-section-eyebrow">
+      <!-- <span class="product-section-eyebrow">
         Key Features
-      </span>
+      </span> -->
 
       <h2 class="product-section-title">
         Smart Attendance Technology
@@ -2427,7 +2746,7 @@
       <div class="product-section-header" style="color:white;">
 
         <span class="product-section-eyebrow" style="
-          background:rgba(79,142,247,0.2);
+          background:rgba(2, 12, 29, 0.2);
           color:#7eb3ff;
         ">
           Proven Impact

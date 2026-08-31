@@ -362,7 +362,7 @@ body {
 
 .product-btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 12px 32px #fff;
 }
 
 .product-btn-secondary {
@@ -653,7 +653,7 @@ body {
 
 .feature-description {
   font-size: 15px;
-  color: var(--g600);
+  color: rgba(255, 255, 255, .8);
   line-height: 1.6;
   margin: 0;
 }
@@ -718,7 +718,7 @@ body {
 
 /* ── HOW IT WORKS ── */
 .product-how-section {
-  padding: 100px 30px;
+  padding: 50px 30px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -768,7 +768,7 @@ body {
 /* ── CTA SECTION ── */
 .product-cta-section {
   padding: 100px 30px;
-  background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #0a1b45 0%, #041233 100%);
 }
 
 .cta-container {
@@ -781,13 +781,13 @@ body {
 .cta-title {
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 900;
-  color: var(--navy);
+  color: #fff;
   margin: 0 0 24px;
 }
 
 .cta-subtitle {
   font-size: 18px;
-  color: var(--g600);
+  color: #f4fdfc;
   margin: 0 0 40px;
   line-height: 1.6;
 }
