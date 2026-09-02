@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./navbar.css" />
   <link rel="stylesheet" href="./premium-upgrade.css" />
   <link rel="stylesheet" href="./product-pages.css" />
   <style>
@@ -235,7 +236,7 @@
     }
 
     .ind-section-dark {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f1e3c 100%);
+      background: #0b1525;
     }
 
     .ind-container {
@@ -387,73 +388,90 @@
     <strong>🚀 New:</strong> Multi-punch smart attendance with face recognition is now live &mdash;
     <a href="index.html#multipunch">See it in action →</a>
   </div> -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img
-          src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
-          alt="Navik" class="nav-logo-img">
-        <span class="nav-logo-text"><span class="nav-logo-animated">HR</span><span
-            class="nav-logo-animated">WFM</span><span class="nav-logo-animated">Payroll</span></span>
-      </a>
-      <div class="nav-right">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Home</a></li>
-          <li class="nav-dropdown">
-            <a href="javascript:void(0)" class="nav-link-main"><span>Products</span><svg width="12" height="12"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M6 9l6 6 6-6" />
-              </svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="hr-system.html">HR System</a><a href="workforce-management.html">Workforce Management</a>
-              <a href="payroll-system.html">Payroll System</a><a href="attendance.html">Attendance</a>
-              <a href="contract-workforce.html">Contract Workforce Management</a>
-              <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
-              <a href="employee-self-service.html">Employee Self Service</a>
-              <a href="complience-managemant.html">Compliance Management</a>
-              <a href="reports-analytics.html">Reports &amp; Analytics</a>
-            </div>
-          </li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li class="nav-dropdown">
-            <a href="javascript:void(0)" class="nav-link-main"><span>Industries</span><svg width="12" height="12"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M6 9l6 6 6-6" />
-              </svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="Logistics.html">Logistics</a><a href="Retails.html">Retail</a>
-              <a href="Construction.html">Construction</a><a href="Sales.html">Sales Team</a>
-              <a href="Manufacturing.html">Manufacturing</a><a href="Health-Care.html">Health Care</a>
-            </div>
-          </li>
-          <li><a href="Customers.html">Customers</a></li>
-          <li class="nav-dropdown">
-            <a href="javascript:void(0)" class="nav-link-main"><span>Resources</span><svg width="12" height="12"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M6 9l6 6 6-6" />
-              </svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="blog.html">Blogs</a><a href="templates.html">Templates</a>
-              <a href="tools-hub.html">HR Tools</a><a href="Case-Studies.html">Case Studies</a>
-              <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
-            </div>
-          </li>
-          <li class="nav-dropdown">
-            <a href="javascript:void(0)" class="nav-link-main"><span>Company</span><svg width="12" height="12"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M6 9l6 6 6-6" />
-              </svg></a>
-            <div class="nav-dropdown-menu">
-              <a href="about-us.html">About Us</a><a href="mailto:riya.shukla@wfmexperts.com">Careers</a><a
-                href="contact-us.html">Contact Us</a>
-            </div>
-          </li>
-        </ul>
-        <div class="nav-actions"><a href="index.html#demo" class="btn-nav-cta">Book Demo</a></div>
+  <!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+            <a href="employee-self-service.html">Employee Self Service</a>
+            <a href="complience-managemant.html">Compliance Management</a>
+            <a href="reports-analytics.html">Reports &amp; Analytics</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Industries</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="Logistics.html">Logistics</a>
+            <a href="Retails.html">Retail</a>
+            <a href="Construction.html">Construction</a>
+            <a href="Sales.html">Sales Team</a>
+            <a href="Manufacturing.html">Manufacturing</a>
+            <a href="Health-Care.html">Health Care</a>
+          </div>
+        </li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Resources</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="tools-hub.html">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Company</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="about-us.html">About Us</a>
+            <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="ind-hero">
@@ -461,7 +479,7 @@
     <div class="ind-hero-grid-overlay"></div>
     <div class="ind-hero-inner">
       <div class="ind-hero-copy">
-        <span class="ind-eyebrow">Sales Team Management</span>
+        <!-- <span class="ind-eyebrow">Sales Team Management</span> -->
         <h1 class="ind-hero-h1">Empower Your Sales Force.<br><span>Track, Pay & Motivate Smarter.</span></h1>
         <p class="ind-hero-sub">From field reps on customer visits to inside sales closing deals — navik gives sales
           leaders real-time visibility of their team's attendance, performance, and incentive payouts all in one
@@ -534,7 +552,7 @@
   <section class="ind-section ind-section-light">
     <div class="ind-container">
       <div class="ind-section-header">
-        <span class="ind-section-eyebrow purple">Sales Team Challenges</span>
+        <!-- <span class="ind-section-eyebrow purple">Sales Team Challenges</span> -->
         <h2 class="ind-h2">Why Managing Sales Teams<br>Is Harder Than It Looks</h2>
         <p class="ind-lead">Sales teams are dispersed, target-driven, and variable in their pay structures — making HR
           management uniquely complex without the right tools.</p>
@@ -586,7 +604,7 @@
   <section class="ind-section">
     <div class="ind-container">
       <div class="ind-section-header">
-        <span class="ind-section-eyebrow">Platform Features</span>
+        <!-- <span class="ind-section-eyebrow">Platform Features</span> -->
         <h2 class="ind-h2">Tools That Keep Your Sales<br>Engine Running at Full Power</h2>
         <p class="ind-lead">navik connects attendance, field tracking, performance, and payroll into one view for every
           sales leader.</p>
@@ -670,7 +688,7 @@
   <section class="ind-section ind-section-dark">
     <div class="ind-container">
       <div class="ind-section-header">
-        <span class="ind-section-eyebrow white">Proven Results</span>
+        <!-- <span class="ind-section-eyebrow white">Proven Results</span> -->
         <h2 class="ind-h2 white">Sales Teams Perform Better<br>with navik</h2>
         <p class="ind-lead white">Real impact from sales-driven companies that switched to navik for workforce
           management.</p>
@@ -709,7 +727,7 @@
         <div
           style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;text-align:center;">
           <div
-            style="font-size:52px;font-weight:900;background:linear-gradient(135deg,#60a5fa,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+            style="font-size:40px;font-weight:900;background:linear-gradient(135deg,#60a5fa,#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
             Real-time</div>
           <div
             style="font-size:13px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;">
@@ -724,7 +742,7 @@
   <section class="ind-section ind-section-light">
     <div class="ind-container">
       <div class="ind-section-header">
-        <span class="ind-section-eyebrow purple">Quick Setup</span>
+        <!-- <span class="ind-section-eyebrow purple">Quick Setup</span> -->
         <h2 class="ind-h2">Deploy navik for Your Sales<br>Team in 4 Steps</h2>
         <p class="ind-lead">Get your field team up and running on navik in less than a week — with dedicated sales
           industry configuration support.</p>
@@ -771,7 +789,7 @@
   <section class="ind-section">
     <div class="ind-container">
       <div class="ind-section-header">
-        <span class="ind-section-eyebrow purple">Customer Stories</span>
+        <!-- <span class="ind-section-eyebrow purple">Customer Stories</span> -->
         <h2 class="ind-h2">Sales Leaders Who Chose navik</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
@@ -824,12 +842,12 @@
   </section>
 
   <!-- CTA -->
-  <section style="padding:80px 0;background:linear-gradient(135deg,#1e3a8a 0%,#1e3a8a 50%,#1e3a8a 100%);">
+  <section style="padding:80px 0;background:#0b1525;">
     <div class="ind-container" style="text-align:center;">
-      <span
+      <!-- <span
         style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;background:rgba(29,78,216,.15);padding:6px 14px;border-radius:6px;margin-bottom:20px;border:1px solid rgba(29,78,216,.25);"><span
           style="width:6px;height:6px;background:#93c5fd;border-radius:50%;display:inline-block;"></span>Get Started
-        Today</span>
+        Today</span> -->
       <h2
         style="font-size:clamp(28px,4vw,46px);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.03em;margin-bottom:16px;">
         Ready to Build a High-Performance<br>Sales Workforce?</h2>

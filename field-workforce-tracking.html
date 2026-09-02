@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -48,6 +48,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
 
   <style>
     /* =========================================================
@@ -196,72 +199,9 @@
       flex-shrink: 0;
     }
 
+    /* nav-logo-img, nav-logo-text, nav-logo-animated — all controlled by navbar.css + main.js */
     .nav-logo-img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      transition: .35s var(--ease);
-    }
-
-    .navbar.scrolled .nav-logo-img {
-      width: 36px;
-      height: 36px;
-    }
-
-    .nav-logo-text {
-      position: relative;
-      min-width: 76px;
-      height: 25px;
-
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -.4px;
-      color: var(--navy);
-    }
-
-    .nav-logo-animated {
-      position: absolute;
-      opacity: 0;
-      transform: translateY(12px);
-
-      animation:
-        navWord 7s infinite;
-    }
-
-    .nav-logo-animated:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .nav-logo-animated:nth-child(2) {
-      animation-delay: 2.3s;
-    }
-
-    .nav-logo-animated:nth-child(3) {
-      animation-delay: 4.6s;
-    }
-
-    @keyframes navWord {
-      0%,
-      10% {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      15%,
-      30% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      35%,
-      100% {
-        opacity: 0;
-        transform: translateY(-12px);
-      }
+      transition: .35s var(--ease) !important;
     }
 
     .nav-right {
@@ -1653,7 +1593,7 @@
 
       border-radius: 19px;
 
-      background: white;
+      background: rgb(13, 22, 38);
 
       box-shadow:
         0 10px 30px rgba(15,31,75,.045);
@@ -1724,7 +1664,7 @@
     }
 
     .feature-title {
-      color: var(--navy);
+      color: #fff;
 
       font-size: 18px;
       font-weight: 850;
@@ -1779,8 +1719,7 @@
         ),
         linear-gradient(
           135deg,
-          #061632,
-          #0b2854
+          rgb(13, 22, 38)
         );
 
       color: white;
@@ -2331,22 +2270,7 @@
 
       overflow: hidden;
 
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(37,99,235,.25),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 80% 80%,
-          rgba(56,189,248,.13),
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          #061530,
-          #0d2855
-        );
+      background:rgb(3, 29, 73);
 
       color: white;
 
@@ -2984,15 +2908,7 @@
         height: 68px;
       }
 
-      .nav-logo-img {
-        width: 38px;
-        height: 38px;
-      }
-
-      .nav-logo-text {
-        min-width: 68px;
-        font-size: 13px;
-      }
+      /* nav-logo-img and nav-logo-text handled by navbar.css */
 
       .nav-right {
         top: 68px;
@@ -3294,240 +3210,90 @@
      SAME NAVBAR DESIGN ACROSS PRODUCT PAGES
 ========================================================= -->
 
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-
   <div class="nav-inner">
-
     <a href="index.html" class="nav-logo">
-
-      <img
-        src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
-        alt="Navik"
-        class="nav-logo-img"
-      />
-
+      <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
       <span class="nav-logo-text">
-
         <span class="nav-logo-animated">HR</span>
         <span class="nav-logo-animated">WFM</span>
         <span class="nav-logo-animated">Payroll</span>
-
       </span>
-
     </a>
-
-
-    <div class="nav-right" id="navRight">
-
+    <div class="nav-right">
       <ul class="nav-links" id="navLinks">
-
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-
-
+        <li><a href="index.html">Home</a></li>
         <li class="nav-dropdown">
-
-          <a href="#" class="nav-link-main">
-            Products
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-
           <div class="nav-dropdown-menu">
-
-            <a href="hr-system.html">
-              HR System
-            </a>
-
-            <a href="workforce-management.html">
-              Workforce Management
-            </a>
-
-            <a href="payroll-system.html">
-              Payroll System
-            </a>
-
-            <a href="attendance.html">
-              Attendance
-            </a>
-
-            <a href="contract-workforce.html">
-              Contract Workforce Management
-            </a>
-
-            <a href="field-workforce-tracking.html">
-              Field Workforce Tracking
-            </a>
-
-            <a href="employee-self-service.html">
-              Employee Self Service
-            </a>
-
-            <a href="complience-managemant.html">
-              Compliance Management
-            </a>
-
-            <a href="reports-analytics.html">
-              Reports & Analytics
-            </a>
-
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+            <a href="employee-self-service.html">Employee Self Service</a>
+            <a href="complience-managemant.html">Compliance Management</a>
+            <a href="reports-analytics.html">Reports &amp; Analytics</a>
           </div>
-
         </li>
-
-
-        <li>
-          <a href="pricing.html">
-            Pricing
-          </a>
-        </li>
-
-
+        <li><a href="pricing.html">Pricing</a></li>
         <li class="nav-dropdown">
-
-          <a
-            href="#"
-            class="nav-link-main"
-          >
-            Industries
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Industries</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-
           <div class="nav-dropdown-menu">
-
-            <a href="Retails.html">
-              Retails
-            </a>
-
-            <a href="Logistics.html">
-              Logistics
-            </a>
-
-            <a href="Construction.html">
-              Constructions
-            </a>
-
-            <a href="Sales.html">
-              Sales Team
-            </a>
-
-            <a href="Manufacturing.html">
-              Manufacturing
-            </a>
-
-            <a href="Health-Care.html">
-              Health Care
-            </a>
-
+            <a href="Logistics.html">Logistics</a>
+            <a href="Retails.html">Retail</a>
+            <a href="Construction.html">Construction</a>
+            <a href="Sales.html">Sales Team</a>
+            <a href="Manufacturing.html">Manufacturing</a>
+            <a href="Health-Care.html">Health Care</a>
           </div>
-
         </li>
-
-
-        <li>
-          <a href="Customers.html">
-            Customers
-          </a>
-        </li>
-
-
+        <li><a href="Customers.html">Customers</a></li>
         <li class="nav-dropdown">
-
-          <a
-            href="#"
-            class="nav-link-main"
-          >
-            Resources
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Resources</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-
           <div class="nav-dropdown-menu">
-
-            <a href="blog.html">
-              Blogs
-            </a>
-
-            <a href="templates.html">
-              Templates
-            </a>
-
-            <a href="tools-hub.html">
-              HR Tools
-            </a>
-
-            <a href="Case-Studies.html">
-              Case Studies
-            </a>
-
-            <a
-              href="https://www.youtube.com/@NavikHR"
-              target="_blank"
-              rel="noopener"
-            >
-              Podcasts
-            </a>
-
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="tools-hub.html">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
           </div>
-
         </li>
-
-
         <li class="nav-dropdown">
-
-          <a
-            href="#"
-            class="nav-link-main"
-          >
-            Company
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Company</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-
           <div class="nav-dropdown-menu">
-
-            <a href="about-us.html">
-              About Us
-            </a>
-
-            <a href="mailto:riya.shukla@wfmexperts.com">
-              Careers
-            </a>
-
-            <a href="contact-us.html">
-              Contact Us
-            </a>
-
+            <a href="about-us.html">About Us</a>
+            <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
           </div>
-
         </li>
-
       </ul>
-
-
       <div class="nav-actions">
-
-        <a
-          href="#demo"
-          class="btn-nav-cta"
-        >
-          Book Demo
-        </a>
-
+        <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
-
     </div>
-
-
-    <button
-      class="hamburger"
-      id="hamburger"
-      aria-label="Open menu"
-      aria-expanded="false"
-    >
-
-      <span></span>
-      <span></span>
-      <span></span>
-
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+      <span></span><span></span><span></span>
     </button>
-
   </div>
-
 </nav>
 
 
@@ -5499,7 +5265,6 @@
     }
   );
 
-</script>
-
+<script src="./main.js" defer></script>
 </body>
 </html>

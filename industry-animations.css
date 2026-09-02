@@ -200,7 +200,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans
 .ind-section { padding: 96px 0; }
 .ind-section-light { background: #f8fafc; }
 .ind-section-dark {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  background: #0b1525;
   position: relative; overflow: hidden;
 }
 .ind-section-dark::before {

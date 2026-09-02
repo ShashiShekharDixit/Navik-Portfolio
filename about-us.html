@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -30,6 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./navbar.css" />
   <link rel="stylesheet" href="./premium-upgrade.css" />
   <link rel="stylesheet" href="./product-pages.css" />
   <link rel="stylesheet" href="./about-us.css" />
@@ -1533,6 +1534,10 @@
 </div> -->
 
 <!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
@@ -1547,7 +1552,10 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-link-main">Products</a>
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
           <div class="nav-dropdown-menu">
             <a href="hr-system.html">HR System</a>
             <a href="workforce-management.html">Workforce Management</a>
@@ -1557,19 +1565,19 @@
             <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
             <a href="employee-self-service.html">Employee Self Service</a>
             <a href="complience-managemant.html">Compliance Management</a>
-            <a href="reports-analytics.html">Reports & Analytics</a>
+            <a href="reports-analytics.html">Reports &amp; Analytics</a>
           </div>
         </li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li class="nav-dropdown" id="navDropIndustries">
+        <li class="nav-dropdown">
           <a href="javascript:void(0)" class="nav-link-main">
             <span>Industries</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="nav-dropdown-menu">
-            <a href="Retails.html">Retails</a>
             <a href="Logistics.html">Logistics</a>
-            <a href="Construction.html">Constructions</a>
+            <a href="Retails.html">Retail</a>
+            <a href="Construction.html">Construction</a>
             <a href="Sales.html">Sales Team</a>
             <a href="Manufacturing.html">Manufacturing</a>
             <a href="Health-Care.html">Health Care</a>
@@ -1577,7 +1585,10 @@
         </li>
         <li><a href="Customers.html">Customers</a></li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-link-main">Resources</a>
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Resources</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
           <div class="nav-dropdown-menu">
             <a href="blog.html">Blogs</a>
             <a href="templates.html">Templates</a>
@@ -1587,7 +1598,10 @@
           </div>
         </li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-link-main">Company</a>
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Company</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
           <div class="nav-dropdown-menu">
             <a href="about-us.html">About Us</a>
             <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
@@ -1596,10 +1610,10 @@
         </li>
       </ul>
       <div class="nav-actions">
-        <a href="#demo" class="btn-nav-cta">Book Demo</a>
+        <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -1644,7 +1658,7 @@
 <section class="about-section alt-bg">
   <div class="container">
     <div style="text-align: center; margin-bottom: 48px;">
-      <div class="section-eyebrow">Our Values</div>
+      <!-- <div class="section-eyebrow">Our Values</div> -->
       <h2 class="section-h2">Principles That Guide Everything</h2>
     </div>
     <div class="values-grid">
@@ -1844,7 +1858,7 @@
 <section class="impact-section">
   <div class="container">
     <div style="text-align: center; margin-bottom: 48px;">
-      <div class="section-eyebrow">Our Impact</div>
+      <!-- <div class="section-eyebrow">Our Impact</div> -->
       <h2 class="section-h2" style="margin-left: auto; margin-right: auto;">Transforming HR for Indian Businesses</h2>
       <p class="section-lead" style="margin-left: auto; margin-right: auto;">We're not just building software. We're solving real problems that matter to thousands of professionals across India.</p>
     </div>
@@ -1982,7 +1996,7 @@
 <section class="why-navik-section">
   <div class="container">
     <div style="text-align: center; margin-bottom: 64px;">
-      <div class="section-eyebrow">Why Choose navik</div>
+      <!-- <div class="section-eyebrow">Why Choose navik</div> -->
       <h2 class="section-h2">What Makes Us Different</h2>
       <p class="section-lead">Six reasons companies trust navik for workforce management</p>
     </div>
@@ -1996,7 +2010,7 @@
       <!-- Circle 1 -->
       <div class="why-circle-wrapper">
         <div class="why-circle why-circle-1" data-reason="1">
-          <div class="circle-number">01</div>
+          <div class="circle-number">01</div>      
           <div class="circle-icon">🇮🇳</div>
           <div class="circle-title">Built for India</div>
         </div>

@@ -17,12 +17,11 @@ window.addEventListener('load', () => {
   let currentIndex = 0;
   
   function rotateText() {
-    const spans = document.querySelectorAll('.nav-logo-animated');
-    console.log('Rotating logo:', {foundSpans: spans.length, currentIndex, texts});
-    if (spans.length === 0) {
-      console.warn('No .nav-logo-animated elements found!');
-      return;
-    }
+    // Scope to navbar only — avoid footer logo spans
+    const navLogo = document.querySelector('.navbar .nav-logo-text');
+    if (!navLogo) return;
+    const spans = navLogo.querySelectorAll('.nav-logo-animated');
+    if (spans.length === 0) return;
     
     // Remove active class from all
     spans.forEach((span) => {
@@ -30,12 +29,9 @@ window.addEventListener('load', () => {
     });
     
     // Add active class to current
-    if (spans[currentIndex]) {
-      spans[currentIndex].classList.add('active');
-      console.log('Activated:', spans[currentIndex].textContent);
-    }
+    spans[currentIndex % spans.length].classList.add('active');
     
-    currentIndex = (currentIndex + 1) % texts.length;
+    currentIndex = (currentIndex + 1) % spans.length;
   }
   
   // Initial rotation

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
   <style>
 :root {
   --blue: #0b5cff;
@@ -132,47 +135,9 @@ button {
   flex-shrink: 0;
 }
 
-.nav-logo-img {
-  width: 47px;
-  height: 47px;
-  object-fit: contain;
-  filter: drop-shadow(0 7px 16px rgba(11,92,255,.20));
-}
+/* nav-logo-img and nav-logo-text controlled by navbar.css */
 
-.nav-logo-text {
-  display: flex;
-  align-items: center;
-  height: 30px;
-  overflow: hidden;
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: -.04em;
-  color: var(--blue-dark);
-}
-
-.nav-logo-animated {
-  display: block;
-  animation: logoWords 7s infinite;
-}
-
-.nav-logo-animated + .nav-logo-animated {
-  display: none;
-}
-
-@keyframes logoWords {
-  0%, 27% {
-    transform: translateY(0);
-  }
-  33%, 60% {
-    transform: translateY(-32px);
-  }
-  66%, 93% {
-    transform: translateY(-64px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+/* Logo animation handled by navbar.css + main.js */
 
 .nav-right {
   display: flex;
@@ -1006,7 +971,7 @@ button {
   padding: 31px;
   min-height: 270px;
   border-radius: 23px;
-  background: white;
+  background: #0b1525;
   border: 1px solid rgba(37,99,235,.10);
   box-shadow: 0 15px 45px rgba(8,67,155,.07);
   overflow: hidden;
@@ -1047,7 +1012,7 @@ button {
 }
 
 .capability-title {
-  color: var(--blue-deep);
+  color: #fff;
   font-size: 20px;
   font-weight: 850;
   letter-spacing: -.035em;
@@ -1070,7 +1035,7 @@ button {
 
 .intelligence-section {
   overflow: hidden;
-  background: var(--blue-deep);
+  background: #0b1525;
 }
 
 .intelligence-section .section-eyebrow {
@@ -1397,7 +1362,7 @@ button {
   position: relative;
   padding: 120px 28px;
   overflow: hidden;
-  background: linear-gradient(135deg, #063fae, #0b5cff);
+  background: #0b1525
 }
 
 .cta-glow {
@@ -1727,6 +1692,8 @@ button {
     width: 100%;
   }
 
+  /* navbar mobile handled by navbar.css */
+
   .hero-container {
     grid-template-columns: 1fr;
   }
@@ -1792,14 +1759,9 @@ button {
     padding: 7px 10px;
   }
 
-  .nav-logo-img {
-    width: 40px;
-    height: 40px;
-  }
+  /* nav-logo-img size handled by navbar.css */
 
-  .nav-logo-text {
-    font-size: 16px;
-  }
+  /* nav-logo-text font-size handled by navbar.css */
 
   .customer-hero {
     min-height: auto;
@@ -1919,9 +1881,7 @@ button {
 }
 
 @media (max-width: 520px) {
-  .nav-logo-text {
-    display: none;
-  }
+  /* nav-logo-text stays visible — controlled by navbar.css */
 
   .hero-actions {
     flex-direction: column;
@@ -2049,89 +2009,92 @@ button {
   <div id="scroll-progress"></div>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img
-          src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
-          alt="Navik"
-          class="nav-logo-img"
-        >
-        <span class="nav-logo-text">
-          <span class="nav-logo-animated">HR</span>
-          <span class="nav-logo-animated">WFM</span>
-          <span class="nav-logo-animated">Payroll</span>
-        </span>
-      </a>
-
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-
-          <li class="nav-dropdown">
-            <a href="#" class="nav-link-main">Products</a>
-            <div class="nav-dropdown-menu">
-              <a href="hr-system.html">HR System</a>
-              <a href="workforce-management.html">Workforce Management</a>
-              <a href="payroll-system.html">Payroll System</a>
-              <a href="attendance.html">Attendance</a>
-              <a href="contract-workforce.html">Contract Workforce Management</a>
-              <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
-              <a href="employee-self-service.html">Employee Self Service</a>
-              <a href="complience-managemant.html">Compliance Management</a>
-              <a href="reports-analytics.html">Reports & Analytics</a>
-            </div>
-          </li>
-
-          <li><a href="pricing.html">Pricing</a></li>
-
-          <li class="nav-dropdown">
-            <a href="#" class="nav-link-main">Industries</a>
-            <div class="nav-dropdown-menu">
-              <a href="Retails.html">Retail</a>
-              <a href="Logistics.html">Logistics</a>
-              <a href="Construction.html">Construction</a>
-              <a href="Sales.html">Sales Team</a>
-              <a href="Manufacturing.html">Manufacturing</a>
-              <a href="Health-Care.html">Healthcare</a>
-            </div>
-          </li>
-
-          <li><a href="Customers.html">Customers</a></li>
-
-          <li class="nav-dropdown">
-            <a href="#" class="nav-link-main">Resources</a>
-            <div class="nav-dropdown-menu">
-              <a href="blog.html">Blogs</a>
-              <a href="templates.html">Templates</a>
-              <a href="tools-hub.html">HR Tools</a>
-              <a href="Case-Studies.html">Case Studies</a>
-              <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
-            </div>
-          </li>
-
-          <li class="nav-dropdown">
-            <a href="#" class="nav-link-main">Company</a>
-            <div class="nav-dropdown-menu">
-              <a href="about-us.html">About Us</a>
-              <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
-              <a href="contact-us.html">Contact Us</a>
-            </div>
-          </li>
-        </ul>
-
-        <div class="nav-actions">
-          <a href="#demo" class="btn-nav-cta">Book Demo</a>
-        </div>
+  <!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+            <a href="employee-self-service.html">Employee Self Service</a>
+            <a href="complience-managemant.html">Compliance Management</a>
+            <a href="reports-analytics.html">Reports &amp; Analytics</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Industries</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="Logistics.html">Logistics</a>
+            <a href="Retails.html">Retail</a>
+            <a href="Construction.html">Construction</a>
+            <a href="Sales.html">Sales Team</a>
+            <a href="Manufacturing.html">Manufacturing</a>
+            <a href="Health-Care.html">Health Care</a>
+          </div>
+        </li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Resources</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="tools-hub.html">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Company</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="about-us.html">About Us</a>
+            <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
-
-      <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
-  </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="customer-hero">
@@ -2141,10 +2104,10 @@ button {
 
     <div class="hero-container">
       <div class="hero-content reveal">
-        <div class="hero-eyebrow">
+        <!-- <div class="hero-eyebrow">
           <span class="hero-eyebrow-dot"></span>
           Trusted Workforce Operations Platform
-        </div>
+        </div> -->
 
         <h1 class="hero-title">
           One platform for
@@ -2405,7 +2368,7 @@ button {
   <section class="section" id="capabilities">
     <div class="section-container">
       <div class="section-heading reveal">
-        <span class="section-eyebrow">One Connected Platform</span>
+        <!-- <span class="section-eyebrow">One Connected Platform</span> -->
 
         <h2 class="section-title">
           Everything your workforce needs.
@@ -2531,7 +2494,7 @@ button {
     <div class="section-container">
       <div class="intelligence-layout">
         <div class="intelligence-content reveal">
-          <span class="section-eyebrow">Workforce Intelligence</span>
+          <!-- <span class="section-eyebrow">Workforce Intelligence</span> -->
 
           <h2 class="section-title">
             Stop managing workforce data in isolation.
@@ -2648,7 +2611,7 @@ button {
   <section class="section numbers-section">
     <div class="section-container">
       <div class="section-heading reveal">
-        <span class="section-eyebrow">Platform Impact</span>
+        <!-- <span class="section-eyebrow">Platform Impact</span> -->
 
         <h2 class="section-title">
           Built around measurable workforce outcomes.
@@ -2688,7 +2651,7 @@ button {
   </section>
 
   <!-- JOURNEY -->
-  <section class="section section-soft">
+  <!-- <section class="section section-soft">
     <div class="section-container">
       <div class="section-heading reveal">
         <span class="section-eyebrow">Employee Lifecycle</span>
@@ -2736,7 +2699,7 @@ button {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- TESTIMONIAL -->
   <section class="testimonial-section">
@@ -3109,5 +3072,6 @@ button {
       });
     });
   </script>
+  <script src="./main.js" defer></script>
 </body>
 </html>

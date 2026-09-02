@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,6 +32,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="./Styles.css?v=3.0" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./premium-upgrade.css" />
 
   <style>
     /* =========================================================
@@ -194,84 +197,16 @@
 
       flex-shrink: 0;
 
-      height: 100%;
+      height: 60%;
     }
 
+    /* nav-logo-img, nav-logo-text, nav-logo-animated — all controlled by navbar.css + main.js */
     .nav-logo-img {
-      width: 43px;
-      height: 43px;
-
-      object-fit: contain;
-
-      transition:
-        width 0.4s var(--ease),
-        height 0.4s var(--ease),
-        transform 0.4s var(--ease);
-    }
-
-    .navbar.scrolled .nav-logo-img {
-      width: 37px;
-      height: 37px;
+      transition: transform 0.4s var(--ease) !important;
     }
 
     .nav-logo:hover .nav-logo-img {
       transform: rotate(-4deg) scale(1.05);
-    }
-
-    .nav-logo-text {
-      display: flex;
-      flex-direction: column;
-
-      height: 24px;
-
-      overflow: hidden;
-
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-
-      color: var(--navy);
-
-      line-height: 24px;
-    }
-
-    .nav-logo-animated {
-      display: block;
-
-      animation:
-        logoWords 9s infinite;
-
-      transform: translateY(0);
-    }
-
-    .nav-logo-animated:nth-child(2) {
-      animation-delay: 3s;
-    }
-
-    .nav-logo-animated:nth-child(3) {
-      animation-delay: 6s;
-    }
-
-    @keyframes logoWords {
-
-      0%,
-      27% {
-        transform: translateY(0);
-      }
-
-      33%,
-      60% {
-        transform: translateY(-24px);
-      }
-
-      66%,
-      93% {
-        transform: translateY(-48px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
     }
 
     /* =========================================================
@@ -717,9 +652,11 @@
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
 
-      gap: 12px;
+      gap: 14px;
 
       margin-bottom: 35px;
     }
@@ -731,8 +668,9 @@
       gap: 9px;
 
       min-height: 50px;
+      min-width: 184px;
 
-      padding: 0 20px;
+      padding: 0 22px;
 
       border-radius: 10px;
 
@@ -743,6 +681,10 @@
         transform 0.25s var(--ease),
         box-shadow 0.25s ease,
         background 0.25s ease;
+    }
+
+    .hero-btn svg {
+      flex-shrink: 0;
     }
 
     .hero-btn-primary {
@@ -2397,16 +2339,16 @@
 
     .footer {
       padding:
-        75px 28px 25px;
+        72px 28px 24px;
 
       background:
-        #06112c;
+        linear-gradient(180deg, #020d1d 0%, #07152d 100%);
 
       color: white;
     }
 
     .footer-container {
-      width: min(1380px, 100%);
+      width: min(1200px, 100%);
 
       margin: auto;
     }
@@ -2415,18 +2357,18 @@
       display: grid;
 
       grid-template-columns:
-        1.5fr 1fr 0.8fr 0.9fr 1fr;
+        1.15fr 1fr 1fr 1fr 1.1fr;
 
-      gap: 45px;
+      gap: 42px;
 
-      padding-bottom: 55px;
+      padding-bottom: 18px;
 
       border-bottom:
         1px solid rgba(255, 255, 255, 0.09);
     }
 
     .footer-brand {
-      max-width: 330px;
+      max-width: 2800px;
     }
 
     .footer-logo {
@@ -2454,7 +2396,7 @@
 
       line-height: 1.75;
 
-      margin-bottom: 22px;
+      margin-bottom: 0;
     }
 
     .footer-col {
@@ -2497,29 +2439,23 @@
     }
 
     .app-download-buttons {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-bottom: 21px;
+      display: none;
     }
 
     .app-store-btn,
     .google-play-btn {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
 
-      padding: 8px 10px;
+      padding: 10px 12px;
 
-      min-width: 125px;
+      min-width: 0;
 
       border:
         1px solid rgba(255, 255, 255, 0.12);
 
-      border-radius: 8px;
+      border-radius: 9px;
 
       color: white;
 
@@ -2562,8 +2498,7 @@
     }
 
     .footer-socials {
-      display: flex;
-      gap: 8px;
+      display: none;
     }
 
     .social-icon {
@@ -2631,13 +2566,14 @@
 
     .footer-bottom {
       display: flex;
+      flex-wrap: nowrap;
 
       align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
+      gap: 18px;
 
-      padding-top: 23px;
+      padding-top: 18px;
 
       color:
         rgba(255, 255, 255, 0.38);
@@ -2645,10 +2581,20 @@
       font-size: 10px;
     }
 
+    .footer-bottom > span {
+      display: block;
+      flex: 1 1 auto;
+      min-width: 0;
+      line-height: 1.6;
+    }
+
     .footer-legal {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
 
-      gap: 20px;
+      gap: 12px 20px;
+      flex-shrink: 0;
     }
 
     .footer-legal a {
@@ -2905,9 +2851,7 @@
             1380px);
       }
 
-      .nav-logo-text {
-        display: none;
-      }
+      /* nav-logo-text stays visible — handled by navbar.css */
 
       .compliance-hero {
         min-height: auto;
@@ -2930,13 +2874,14 @@
       .hero-actions {
         width: 100%;
 
-        flex-direction: column;
+        flex-direction: row;
 
-        max-width: 330px;
+        max-width: 420px;
       }
 
       .hero-btn {
-        width: 100%;
+        flex: 1 1 0;
+        width: auto;
       }
 
       .hero-visual {
@@ -3184,8 +3129,19 @@
 
       .footer-legal {
         flex-wrap: wrap;
+        justify-content: flex-start;
 
         gap: 12px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .app-download-buttons {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        gap: 8px;
       }
     }
 
@@ -3255,248 +3211,91 @@
      NAVBAR
 ========================================================= -->
 
-  <nav class="navbar" id="navbar">
-
-    <div class="nav-inner">
-
-      <a href="index.html" class="nav-logo">
-
-        <img
-          src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png"
-          alt="Navik" class="nav-logo-img" />
-
-        <span class="nav-logo-text">
-
-          <span class="nav-logo-animated">HR</span>
-          <span class="nav-logo-animated">WFM</span>
-          <span class="nav-logo-animated">Payroll</span>
-
-        </span>
-
-      </a>
-
-
-      <div class="nav-right" id="navRight">
-
-        <ul class="nav-links" id="navLinks">
-
-          <li>
-            <a href="/">Home</a>
-          </li>
-
-
-          <li class="nav-dropdown">
-
-            <a href="#" class="nav-link-main">
-              Products
-
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                class="nav-dropdown-chevron">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-
-            </a>
-
-            <div class="nav-dropdown-menu">
-
-              <a href="hr-system.html">
-                HR System
-              </a>
-
-              <a href="workforce-management.html">
-                Workforce Management
-              </a>
-
-              <a href="payroll-system.html">
-                Payroll System
-              </a>
-
-              <a href="attendance.html">
-                Attendance
-              </a>
-
-              <a href="contract-workforce.html">
-                Contract Workforce Management
-              </a>
-
-              <a href="field-workforce-tracking.html">
-                Field Workforce Tracking
-              </a>
-
-              <a href="employee-self-service.html">
-                Employee Self Service
-              </a>
-
-              <a href="complience-managemant.html">
-                Compliance Management
-              </a>
-
-              <a href="reports-analytics.html">
-                Reports & Analytics
-              </a>
-
-            </div>
-
-          </li>
-
-
-          <li>
-            <a href="pricing.html">
-              Pricing
-            </a>
-          </li>
-
-
-          <li class="nav-dropdown" id="navDropIndustries">
-
-            <a href="javascript:void(0)" class="nav-link-main">
-
-              <span>
-                Industries
-              </span>
-
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                class="nav-dropdown-chevron">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-
-            </a>
-
-
-            <div class="nav-dropdown-menu">
-
-              <a href="Retails.html">
-                Retails
-              </a>
-
-              <a href="Logistics.html">
-                Logistics
-              </a>
-
-              <a href="Construction.html">
-                Constructions
-              </a>
-
-              <a href="Sales.html">
-                Sales Team
-              </a>
-
-              <a href="Manufacturing.html">
-                Manufacturing
-              </a>
-
-              <a href="Health-Care.html">
-                Health Care
-              </a>
-
-            </div>
-
-          </li>
-
-
-          <li>
-            <a href="Customers.html">
-              Customers
-            </a>
-          </li>
-
-
-          <li class="nav-dropdown">
-
-            <a href="#" class="nav-link-main">
-              Resources
-
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                class="nav-dropdown-chevron">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-
-            </a>
-
-
-            <div class="nav-dropdown-menu">
-
-              <a href="blog.html">
-                Blogs
-              </a>
-
-              <a href="templates.html">
-                Templates
-              </a>
-
-              <a href="tools-hub.html">
-                HR Tools
-              </a>
-
-              <a href="Case-Studies.html">
-                Case Studies
-              </a>
-
-              <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">
-                Podcasts
-              </a>
-
-            </div>
-
-          </li>
-
-
-          <li class="nav-dropdown">
-
-            <a href="#" class="nav-link-main">
-              Company
-
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                class="nav-dropdown-chevron">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-
-            </a>
-
-
-            <div class="nav-dropdown-menu">
-
-              <a href="about-us.html">
-                About Us
-              </a>
-
-              <a href="mailto:riya.shukla@wfmexperts.com">
-                Careers
-              </a>
-
-              <a href="contact-us.html">
-                Contact Us
-              </a>
-
-            </div>
-
-          </li>
-
-        </ul>
-
-
-        <div class="nav-actions">
-
-          <a href="#demo" class="btn-nav-cta">
-            Book Demo
+  <!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
+      <span class="nav-logo-text">
+        <span class="nav-logo-animated">HR</span>
+        <span class="nav-logo-animated">WFM</span>
+        <span class="nav-logo-animated">Payroll</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
           </a>
-
-        </div>
-
+          <div class="nav-dropdown-menu">
+            <a href="hr-system.html">HR System</a>
+            <a href="workforce-management.html">Workforce Management</a>
+            <a href="payroll-system.html">Payroll System</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contract-workforce.html">Contract Workforce Management</a>
+            <a href="field-workforce-tracking.html">Field Workforce Tracking</a>
+            <a href="employee-self-service.html">Employee Self Service</a>
+            <a href="complience-managemant.html">Compliance Management</a>
+            <a href="reports-analytics.html">Reports &amp; Analytics</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Industries</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="Logistics.html">Logistics</a>
+            <a href="Retails.html">Retail</a>
+            <a href="Construction.html">Construction</a>
+            <a href="Sales.html">Sales Team</a>
+            <a href="Manufacturing.html">Manufacturing</a>
+            <a href="Health-Care.html">Health Care</a>
+          </div>
+        </li>
+        <li><a href="Customers.html">Customers</a></li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Resources</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="blog.html">Blogs</a>
+            <a href="templates.html">Templates</a>
+            <a href="tools-hub.html">HR Tools</a>
+            <a href="Case-Studies.html">Case Studies</a>
+            <a href="https://www.youtube.com/@NavikHR" target="_blank" rel="noopener">Podcasts</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="javascript:void(0)" class="nav-link-main">
+            <span>Company</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="about-us.html">About Us</a>
+            <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
+            <a href="contact-us.html">Contact Us</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
-
-
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
     </div>
-
-  </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
 
   <!-- =========================================================
@@ -5533,6 +5332,7 @@
     );
 
   </script>
+  <script src="./main.js" defer></script>
 
 </body>
 
