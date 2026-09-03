@@ -516,43 +516,8 @@
   }
 }
 
-/* ── ANIMATED NAVBAR LOGO ── */
-.nav-logo-text {
-  display: inline-block !important;
-  min-width: 120px !important;
-  height: auto !important;
-  overflow: visible !important;
-  vertical-align: middle !important;
-}
+/* Animated logo text — display/size/color now controlled by navbar.css (+ premium-upgrade.css base), matching index.html exactly */
 
-.nav-logo-animated {
-  display: none !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  letter-spacing: -.05em !important;
-  color: #0a1628 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  animation: none !important;
-}
-
-.nav-logo-animated.active {
-  display: inline-block !important;
-  animation: fadeInUp 0.5s ease !important;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 /* ═══════════════════════════════════════════
