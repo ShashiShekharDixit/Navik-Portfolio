@@ -90,129 +90,9 @@ button {
   transition: width .1s linear;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-  padding: 18px 28px;
-  transition: padding .45s var(--ease), transform .45s var(--ease);
-}
-
-.nav-inner {
-  width: min(1440px, 100%);
-  min-height: 78px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px 0 24px;
-  border: 1px solid rgba(37, 99, 235, .12);
-  background: rgba(255,255,255,.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 22px;
-  box-shadow: 0 15px 50px rgba(8, 58, 145, .10);
-  transition: min-height .45s var(--ease), box-shadow .45s var(--ease), border-radius .45s var(--ease);
-}
-
-.navbar.scrolled {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.navbar.scrolled .nav-inner {
-  min-height: 66px;
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(8, 58, 145, .15);
-}
-
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  flex-shrink: 0;
-}
-
-/* nav-logo-img and nav-logo-text controlled by navbar.css */
-
-/* Logo animation handled by navbar.css + main.js */
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  list-style: none;
-}
-
-.nav-links > li {
-  position: relative;
-}
-
-.nav-links > li > a,
-.nav-link-main {
-  min-height: 46px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 14px;
-  border-radius: 11px;
-  color: var(--text-mid);
-  font-size: 13.5px;
-  font-weight: 700;
-  transition: background .25s ease, color .25s ease;
-}
-
-.nav-links > li > a:hover,
-.nav-link-main:hover {
-  color: var(--blue);
-  background: var(--white-blue);
-}
-
-.nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  min-width: 250px;
-  padding: 10px;
-  background: rgba(255,255,255,.98);
-  border: 1px solid rgba(37,99,235,.13);
-  border-radius: 16px;
-  box-shadow: 0 25px 70px rgba(8,58,145,.15);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
-}
-
-.nav-dropdown:hover .nav-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.nav-dropdown-menu a {
-  display: flex;
-  padding: 11px 13px;
-  border-radius: 10px;
-  color: var(--text-mid);
-  font-size: 13px;
-  font-weight: 600;
-  transition: background .2s ease, color .2s ease, transform .2s ease;
-}
-
-.nav-dropdown-menu a:hover {
-  color: var(--blue);
-  background: var(--white-blue);
-  transform: translateX(3px);
-}
+/* .navbar, .nav-inner, .nav-logo, .nav-right, .nav-links, .nav-dropdown-menu
+   and .hamburger structure/layout are now controlled by the shared navbar.css
+   (linked above) so this page matches every other page exactly. */
 
 .btn-nav-cta {
   display: inline-flex;
@@ -234,37 +114,7 @@ button {
   box-shadow: 0 15px 32px rgba(11,92,255,.32);
 }
 
-.hamburger {
-  display: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 13px;
-  background: var(--white-blue);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 21px;
-  height: 2px;
-  background: var(--blue);
-  border-radius: 10px;
-  transition: .3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+/* .hamburger structure/animation now controlled by the shared navbar.css */
 
 .customer-hero {
   position: relative;
@@ -1616,15 +1466,7 @@ button {
 }
 
 @media (max-width: 1200px) {
-  .nav-links > li > a,
-  .nav-link-main {
-    padding: 0 9px;
-    font-size: 12px;
-  }
-
-  .nav-right {
-    gap: 12px;
-  }
+  /* .nav-links / .nav-right sizing now controlled by the shared navbar.css */
 
   .hero-container {
     gap: 35px;
@@ -1636,63 +1478,7 @@ button {
 }
 
 @media (max-width: 1050px) {
-  .nav-right {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar.menu-open .nav-right {
-    display: block;
-    position: absolute;
-    top: calc(100% + 5px);
-    left: 20px;
-    right: 20px;
-    padding: 15px;
-    border-radius: 20px;
-    background: rgba(255,255,255,.98);
-    box-shadow: 0 25px 60px rgba(8,58,145,.16);
-  }
-
-  .navbar.menu-open .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .navbar.menu-open .nav-links > li > a,
-  .navbar.menu-open .nav-link-main {
-    width: 100%;
-    justify-content: space-between;
-    padding: 12px 14px;
-  }
-
-  .navbar.menu-open .nav-dropdown-menu {
-    position: static;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    border: 0;
-    padding: 0 8px 8px;
-  }
-
-  .navbar.menu-open .nav-dropdown:hover .nav-dropdown-menu {
-    display: block;
-  }
-
-  .navbar.menu-open .nav-actions {
-    margin-top: 10px;
-  }
-
-  .navbar.menu-open .btn-nav-cta {
-    width: 100%;
-  }
-
-  /* navbar mobile handled by navbar.css */
+  /* Mobile hamburger drawer now controlled by the shared navbar.css */
 
   .hero-container {
     grid-template-columns: 1fr;
@@ -1745,23 +1531,8 @@ button {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px 12px;
-  }
-
-  .nav-inner {
-    min-height: 67px;
-    padding: 0 12px 0 15px;
-    border-radius: 17px;
-  }
-
-  .navbar.scrolled {
-    padding: 7px 10px;
-  }
-
-  /* nav-logo-img size handled by navbar.css */
-
-  /* nav-logo-text font-size handled by navbar.css */
+  /* .navbar / .nav-inner sizing, logo image and logo text now
+     controlled by the shared navbar.css */
 
   .customer-hero {
     min-height: auto;
@@ -2890,60 +2661,9 @@ button {
       window.addEventListener("scroll", handleScroll, { passive: true });
       handleScroll();
 
-      /* Mobile menu */
-      hamburger.addEventListener("click", (event) => {
-        event.stopPropagation();
-
-        const isOpen = navbar.classList.toggle("menu-open");
-
-        hamburger.classList.toggle("active", isOpen);
-        hamburger.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      /* Mobile dropdown handling */
-      document.querySelectorAll(".nav-link-main").forEach((link) => {
-        link.addEventListener("click", (event) => {
-          if (window.innerWidth <= 991) {
-            event.preventDefault();
-
-            const parent = link.closest(".nav-dropdown");
-
-            document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
-              if (dropdown !== parent) {
-                dropdown.classList.remove("open");
-              }
-            });
-
-            parent.classList.toggle("open");
-          }
-        });
-      });
-
-      /* Close mobile menu after navigation */
-      document
-        .querySelectorAll(".nav-links a:not(.nav-link-main)")
-        .forEach((link) => {
-          link.addEventListener("click", () => {
-            navbar.classList.remove("menu-open");
-            hamburger.classList.remove("active");
-            hamburger.setAttribute("aria-expanded", "false");
-          });
-        });
-
-      /* Close menu outside navbar */
-      document.addEventListener("click", (event) => {
-        if (!navbar.contains(event.target)) {
-          navbar.classList.remove("menu-open");
-          hamburger.classList.remove("active");
-          hamburger.setAttribute("aria-expanded", "false");
-
-          document
-            .querySelectorAll(".nav-dropdown.open")
-            .forEach((dropdown) => {
-              dropdown.classList.remove("open");
-            });
-        }
-      });
+      /* Mobile hamburger menu + nav-dropdown accordion are now handled by
+         the shared main.js + navbar-accordion.js (linked above), same as
+         every other page. */
 
       /* Reveal animation */
       if ("IntersectionObserver" in window) {
@@ -3073,5 +2793,6 @@ button {
     });
   </script>
   <script src="./main.js" defer></script>
+<script src="./navbar-accordion.js" defer></script>
 </body>
 </html>
