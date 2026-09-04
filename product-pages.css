@@ -217,6 +217,7 @@ body {
 @media(max-width:991px){
 
 .product-hero-container{
+    padding: 50px;
     flex-direction:column;
     text-align:center;
 }
