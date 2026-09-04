@@ -2401,9 +2401,9 @@
     <a href="index.html" class="nav-logo">
       <img src="https://res.cloudinary.com/dne97stwg/image/upload/w_128,h_128,c_fill,f_auto,q_auto/v1777609760/App_Icon_-_Gradient_Accent-removebg-preview_k2s3it.png" alt="Navik" class="nav-logo-img">
       <span class="nav-logo-text">
-        <span class="nav-logo-animated">HR</span>
-        <span class="nav-logo-animated">WFM</span>
-        <span class="nav-logo-animated">Payroll</span>
+        <span class="nav-logo-animated active" style="color: #1d4ed8 !important; -webkit-text-fill-color: #1d4ed8 !important; background: none !important;">HR</span>
+        <span class="nav-logo-animated" style="color: #1d4ed8 !important; -webkit-text-fill-color: #1d4ed8 !important; background: none !important;">WFM</span>
+        <span class="nav-logo-animated" style="color: #1d4ed8 !important; -webkit-text-fill-color: #1d4ed8 !important; background: none !important;">Payroll</span>
       </span>
     </a>
     <div class="nav-right">
@@ -3960,25 +3960,25 @@
          NAVBAR
       ========================================================= */
 
-    const navbar = document.getElementById("navbar");
+    const pricingNavbar = document.getElementById("navbar");
 
     const navRight = document.getElementById("navRight");
 
-    const hamburger = document.getElementById("hamburger");
+    const pricingHamburger = document.getElementById("hamburger");
 
     window.addEventListener(
       "scroll",
       () => {
         if (window.scrollY > 30) {
-          navbar.classList.add("scrolled");
+          pricingNavbar.classList.add("scrolled");
         } else {
-          navbar.classList.remove("scrolled");
+          pricingNavbar.classList.remove("scrolled");
         }
       },
       { passive: true },
     );
 
-    hamburger.addEventListener("click", () => {
+    pricingHamburger.addEventListener("click", () => {
       navRight.classList.toggle("mobile-open");
     });
 
@@ -4405,7 +4405,7 @@
 
         event.preventDefault();
 
-        const navbarHeight = navbar.offsetHeight;
+        const navbarHeight = pricingNavbar.offsetHeight;
 
         const targetPosition =
           target.getBoundingClientRect().top +

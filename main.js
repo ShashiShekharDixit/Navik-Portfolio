@@ -1098,7 +1098,7 @@ renderMediaCards();
    BOOK DEMO FORM — validation + Google Apps Script submit
    ══════════════════════════════════════════════════════════ */
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vFzPbSN3dR80ZWMyf03L-ZwxKaNvXwb9Bv5MwzVjwQo5mM3I5zpe7O2UaHR/exec';
+const MAIN_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vFzPbSN3dR80ZWMyf03L-ZwxKaNvXwb9Bv5MwzVjwQo5mM3I5zpe7O2UaHR/exec';
 
 (function () {
   const btn = document.getElementById('demoBtn');
@@ -1234,7 +1234,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vFzPbSN
       params.append('message', message);
       params.append('hp_field', hpField ? hpField.value : '');
 
-      const url = APPS_SCRIPT_URL + '?' + params.toString();
+      const url = MAIN_APPS_SCRIPT_URL + '?' + params.toString();
 
       console.log('Sending form data via GET:', {
         name, company, email, phone, companySize, message, url
