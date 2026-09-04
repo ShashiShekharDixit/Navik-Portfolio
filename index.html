@@ -292,6 +292,10 @@
       }
       .nav-dropdown.expanded .nav-dropdown-menu {
         display: flex !important;
+        animation: none !important;
+      }
+      .nav-dropdown.expanded > .nav-link-main .nav-dropdown-chevron {
+        transform: rotate(180deg);
       }
       .nav-dropdown-menu a {
         padding: 10px 14px !important;
@@ -3665,7 +3669,7 @@
         trigger.addEventListener('click', (e) => {
           if (window.innerWidth <= 1024) {
             e.preventDefault();
-            e.stopPropagation();
+            e.stopImmediatePropagation();
             const isCurrentlyExpanded = item.classList.contains('expanded');
             dropdownItems.forEach(d => { if (d !== item) d.classList.remove('expanded'); });
             item.classList.toggle('expanded', !isCurrentlyExpanded);

@@ -474,11 +474,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans
   .nav-inner { height: 64px !important; padding: 0 16px !important; }
 
   /* ── Logo ── */
-  .nav-logo-img { height: 34px !important; }
-  .navbar.scrolled .nav-logo-img { height: 28px !important; }
+  .nav-logo-img { height: 42px !important; }
+  .navbar.scrolled .nav-logo-img { height: 36px !important; }
 
   /* ── Hide desktop nav, show hamburger ── */
-  .nav-right { display: none !important; }
+  .nav-right { display: contents !important; }
   .hamburger { display: flex !important; z-index: 10002; }
 
   /* ── Mobile drawer ── */
@@ -501,6 +501,10 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans
   .nav-links.open {
     display: flex !important;
     animation: drawerSlideDown .22s cubic-bezier(.4,0,.2,1) both;
+  }
+
+  .nav-right:has(.nav-links.open) {
+    display: contents !important;
   }
 
   /* ── Drawer items ── */

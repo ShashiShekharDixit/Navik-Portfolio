@@ -802,7 +802,11 @@ body {
 @media (max-width: 768px) {
   .product-hero-section {
     min-height: 500px;
-    padding: 80px 20px 60px;
+    padding: 72px 16px 48px;
+  }
+
+  .ind-hero {
+    padding: 88px 16px 56px !important;
   }
 
   .product-hero-title {

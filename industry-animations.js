@@ -27,23 +27,7 @@
     }, { passive: true });
   }
 
-  /* ── 3. HAMBURGER MENU ── */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-    });
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.nav-inner')) {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-      }
-    });
-  }
-
-  /* ── 4. LOGO ROTATION ── */
+  /* ── 3. LOGO ROTATION ── */
   (function () {
     let idx = 0;
     const spans = document.querySelectorAll('.nav-logo-animated');

@@ -2818,9 +2818,13 @@
       }
 
       .nav-links {
-        display: flex !important;
+        display: none !important;
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .nav-right.mobile-open .nav-links {
+        display: flex !important;
       }
 
       .nav-links>li>a {
@@ -3210,7 +3214,7 @@
         <span class="nav-logo-animated" style="color: #1d4ed8 !important; -webkit-text-fill-color: #1d4ed8 !important; background: none !important;">Payroll</span>
       </span>
     </a>
-    <div class="nav-right">
+    <div class="nav-right" id="navRight">
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li class="nav-dropdown">
@@ -3275,7 +3279,7 @@
         <a href="index.html#demo" class="btn-nav-cta">Book Demo</a>
       </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+    <button class="hamburger" id="hamburger" data-nav-handler="legacy" aria-label="Toggle Navigation Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -4797,18 +4801,21 @@
        NAV MOBILE MENU
     ========================================================= */
 
-    const hamburger = document.getElementById("hamburger");
-    const navRight = document.getElementById("navRight");
+    const hrHamburger = document.getElementById("hamburger");
+    const hrNavRight = document.getElementById("navRight");
 
-    if (hamburger && navRight) {
+    if (hrHamburger && hrNavRight) {
 
-      hamburger.addEventListener("click", () => {
+      hrHamburger.addEventListener("click", () => {
 
-        const isOpen = navRight.classList.toggle("mobile-open");
+        const isOpen = !hrNavRight.classList.contains("mobile-open");
 
-        hamburger.classList.toggle("active", isOpen);
+        hrNavRight.classList.toggle("mobile-open", isOpen);
+        document.getElementById("navLinks")?.classList.toggle("open", isOpen);
 
-        hamburger.setAttribute(
+        hrHamburger.classList.toggle("active", isOpen);
+
+        hrHamburger.setAttribute(
           "aria-expanded",
           String(isOpen)
         );
@@ -5152,15 +5159,15 @@ setInterval(() => {
               window.innerWidth <= 850
             ) {
 
-              navRight?.classList.remove(
+              hrNavRight?.classList.remove(
                 "mobile-open"
               );
 
-              hamburger?.classList.remove(
+              hrHamburger?.classList.remove(
                 "active"
               );
 
-              hamburger?.setAttribute(
+              hrHamburger?.setAttribute(
                 "aria-expanded",
                 "false"
               );
@@ -5203,20 +5210,20 @@ setInterval(() => {
 
         if (
           event.key === "Escape" &&
-          navRight?.classList.contains(
+          hrNavRight?.classList.contains(
             "mobile-open"
           )
         ) {
 
-          navRight.classList.remove(
+          hrNavRight.classList.remove(
             "mobile-open"
           );
 
-          hamburger?.classList.remove(
+          hrHamburger?.classList.remove(
             "active"
           );
 
-          hamburger?.setAttribute(
+          hrHamburger?.setAttribute(
             "aria-expanded",
             "false"
           );
