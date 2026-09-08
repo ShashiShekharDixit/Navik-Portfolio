@@ -438,6 +438,9 @@
     }
 
     .plan-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       width: 100%;
       padding-top: 10px;
@@ -463,6 +466,369 @@
       background: var(--blue-pale);
 
       transform: translateY(-2px);
+    }
+
+    .subscription-modal[hidden] {
+      display: none;
+    }
+
+    .subscription-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      overflow-y: auto;
+    }
+
+    .subscription-modal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 26, 56, 0.58);
+    }
+
+    .subscription-dialog {
+      position: relative;
+      width: min(100%, 680px);
+      max-height: min(760px, calc(100vh - 40px));
+      overflow-y: auto;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: 0 30px 90px rgba(7, 26, 56, 0.28);
+    }
+
+    .subscription-dialog::-webkit-scrollbar,
+    .invoice-box::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .subscription-dialog::-webkit-scrollbar-thumb,
+    .invoice-box::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #c7d6e9;
+    }
+
+    .subscription-kicker {
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .subscription-dialog h2 {
+      margin-bottom: 8px;
+      color: var(--navy-dark);
+      font-size: clamp(23px, 3vw, 30px);
+      letter-spacing: -0.8px;
+    }
+
+    .subscription-dialog p {
+      margin-bottom: 20px;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .subscription-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin: 22px 0 28px;
+    }
+
+    .subscription-steps span {
+      position: relative;
+      padding-top: 14px;
+      border-top: 2px solid #dce6f4;
+      color: #8a98aa;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .subscription-steps span:first-child {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .subscription-steps span.active {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .subscription-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .subscription-form label {
+      display: grid;
+      gap: 6px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .subscription-form label > input,
+    .subscription-form label > select {
+      margin-top: 1px;
+    }
+
+    .subscription-form input {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #c9d9ed;
+      border-radius: 9px;
+      color: var(--text);
+      outline: none;
+    }
+
+    .subscription-form select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #c9d9ed;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    .subscription-form input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.12);
+    }
+
+    .subscription-form select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.12);
+    }
+
+    .subscription-form button {
+      min-height: 48px;
+      margin-top: 6px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .subscription-form button:disabled {
+      cursor: wait;
+      opacity: 0.65;
+    }
+
+    .subscription-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .subscription-status {
+      min-height: 18px;
+      margin: 4px 0 0;
+      color: #b42318;
+      font-size: 12px;
+    }
+
+    .subscription-step[hidden] {
+      display: none;
+    }
+
+    .subscription-step h3 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--navy-dark);
+      font-size: 17px;
+    }
+
+    .subscription-step h3::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px rgba(23, 105, 224, 0.1);
+    }
+
+    .subscription-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .subscription-grid .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .subscription-options {
+      display: grid;
+      gap: 8px;
+      margin: 4px 0 7px;
+    }
+
+    .subscription-options > span {
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .subscription-option {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 12px;
+      border: 1px solid #dce6f4;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .subscription-option:has(input:checked) {
+      border-color: #8db6ef;
+      background: #f2f7ff;
+      color: var(--blue-dark);
+    }
+
+    .subscription-option input {
+      width: auto;
+    }
+
+    .invoice-box {
+      max-height: 410px;
+      overflow: auto;
+      padding: 20px;
+      border: 1px solid #dce6f4;
+      border-radius: 14px;
+      background: #fff;
+      color: var(--text);
+      font-size: 12px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .invoice-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #dce6f4;
+    }
+
+    .invoice-heading strong {
+      color: var(--navy-dark);
+      font-size: 16px;
+    }
+
+    .invoice-heading span {
+      align-self: center;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: #f1f6fd;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .review-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: -2px 0 14px;
+      padding: 11px 12px;
+      border: 1px solid #d8e7f8;
+      border-radius: 10px;
+      background: #f5f9ff;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .review-note strong {
+      color: var(--navy);
+    }
+
+    .invoice-meta,
+    .invoice-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 10px;
+    }
+
+    .invoice-meta span,
+    .invoice-line span {
+      color: var(--text-soft);
+    }
+
+    .invoice-meta strong,
+    .invoice-line strong {
+      color: var(--navy);
+      text-align: right;
+    }
+
+    .invoice-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 8px;
+      color: var(--text-soft);
+    }
+
+    .invoice-total {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #dce6f4;
+      color: var(--navy-dark);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .subscription-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .subscription-actions button {
+      flex: 1;
+    }
+
+    .subscription-actions .secondary-action {
+      border: 1px solid #c9d9ed;
+      background: #fff;
+      color: var(--blue);
+    }
+
+    .final-invoice-note {
+      margin: 12px 0 0 !important;
+      color: #087443 !important;
+      font-weight: 700;
+    }
+
+    @media (max-width: 500px) {
+      .subscription-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subscription-grid .full-width {
+        grid-column: auto;
+      }
     }
 
     .price-card.featured .plan-button {
@@ -686,6 +1052,62 @@
 
     .billing-note-inner strong {
       color: var(--blue);
+    }
+
+    .subscription-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 18px auto 0;
+      padding: 16px 18px;
+      border: 1px solid #cfe0f8;
+      border-radius: 14px;
+      background: #f5f9ff;
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+
+    .subscription-info strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .subscription-info-badge {
+      flex-shrink: 0;
+      padding: 8px 11px;
+      border-radius: 8px;
+      background: #e7f8f0;
+      color: #087443;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 600px) {
+      .subscription-modal {
+        padding: 12px;
+      }
+
+      .subscription-dialog {
+        max-height: calc(100vh - 24px);
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+
+      .subscription-info {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .subscription-steps span {
+        font-size: 9px;
+      }
+
+      .subscription-actions {
+        flex-direction: column-reverse;
+      }
     }
 
     /* =========================================================
@@ -2485,7 +2907,7 @@
     <div class="hero-grid"></div>
 
     <div class="container">
-      <div class="hero-content reveal">
+      <div class="hero-content">
         <!-- <div class="eyebrow">
             <span class="eyebrow-dot"></span>
 
@@ -2520,7 +2942,7 @@
       <div class="pricing-grid">
         <!-- STANDARD -->
 
-        <article class="price-card reveal">
+        <article class="price-card">
           <div class="plan-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="12" cy="12" r="9"></circle>
@@ -2545,7 +2967,7 @@
 
           <p class="price-note">Starting plan · billed annually</p>
 
-          <a href="#demo" class="plan-button"> Start Free Trial </a>
+          <a href="#subscription" class="plan-button subscription-trigger" data-plan="launch"> Buy Now </a>
 
           <div class="feature-title">Includes</div>
 
@@ -2613,7 +3035,7 @@
 
         <!-- PROFESSIONAL -->
 
-        <article class="price-card featured reveal">
+        <article class="price-card featured">
           <div class="popular-badge">MOST POPULAR</div>
 
           <div class="plan-icon">
@@ -2640,7 +3062,7 @@
 
           <p class="price-note">Starting plan · billed annually</p>
 
-          <a href="#demo" class="plan-button"> Start Free Trial </a>
+          <a href="#subscription" class="plan-button subscription-trigger" data-plan="growth"> Buy Now </a>
 
           <div class="feature-title">Launch Plan +</div>
 
@@ -2691,7 +3113,7 @@
         </article>
 
         <!-- Premium -->
-        <article class="price-card reveal">
+        <article class="price-card">
           <div class="plan-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M12 2v20"></path>
@@ -2719,7 +3141,7 @@
 
           <p class="price-note">Premium Designs · billed annually</p>
 
-          <a href="#demo" class="plan-button"> Talk to an Expert </a>
+          <a href="#subscription" class="plan-button subscription-trigger" data-plan="premium"> Buy Now </a>
 
           <div class="feature-title">Growth Plan +</div>
 
@@ -2766,7 +3188,7 @@
 
         <!-- CUSTOM -->
 
-        <article class="price-card custom-banner reveal">
+        <article class="price-card custom-banner">
           <div class="banner-left">
             <div class="plan-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -2794,7 +3216,7 @@
             <li><span class="check">✓</span> Priority support</li>
           </ul>
 
-          <a href="#demo" class="plan-button banner-button">Talk to an Expert</a>
+          <a href="#subscription" class="plan-button banner-button subscription-trigger" data-plan="custom">Buy Now</a>
         </article>
       </div>
 
@@ -2806,8 +3228,99 @@
           your workforce.
         </div>
       </div>
+
+      <!-- Visible entry point for the Razorpay subscription flow. -->
+      <div class="subscription-info" aria-label="Subscription payment information">
+        <div>
+          <strong>Subscriptions available through Razorpay</strong>
+          Choose Launch, Growth, Premium, or Custom above to calculate and open the secure UPI AutoPay form.
+        </div>
+        <span class="subscription-info-badge">UPI AutoPay</span>
+      </div>
     </div>
   </section>
+
+  <!-- The modal stays hidden until a paid-plan button is selected. -->
+  <div class="subscription-modal" id="subscription-modal" hidden aria-hidden="true">
+    <div class="subscription-dialog" role="dialog" aria-modal="true" aria-labelledby="subscription-title">
+      <button class="subscription-close" type="button" aria-label="Close subscription form">&times;</button>
+      <div class="subscription-kicker">Secure subscription setup</div>
+      <h2 id="subscription-title">Start your Navik subscription</h2>
+      <p id="subscription-plan-copy">Calculate your subscription and review the confirmation invoice.</p>
+      <div class="subscription-steps" aria-label="Subscription steps">
+        <span>Calculate</span>
+        <span>Review</span>
+        <span>Pay securely</span>
+        <span>Invoice</span>
+      </div>
+
+      <!-- Stage 1: collect customer, employee, duration, and license choices. -->
+      <form class="subscription-form subscription-step" id="subscription-calculator">
+        <h3>1. Calculate your price</h3>
+        <div class="subscription-grid">
+          <label>
+            Full name
+            <input type="text" name="name" autocomplete="name" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" autocomplete="email" maxlength="150" required>
+          </label>
+          <label>
+            Phone number
+            <input type="tel" name="contact" autocomplete="tel" inputmode="numeric" maxlength="15" required>
+          </label>
+          <label>
+            Employees
+            <input type="number" name="quantity" min="1" max="10000" step="1" value="1" required>
+          </label>
+          <label>
+            Duration
+            <select name="duration" required>
+              <option value="1">1 month</option>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="12" selected>12 months</option>
+            </select>
+          </label>
+          <div class="subscription-options full-width">
+            <span>Optional licenses</span>
+            <label class="subscription-option"><input type="checkbox" name="licenses" value="field"> Field Sales Tracker</label>
+            <label class="subscription-option"><input type="checkbox" name="licenses" value="sso"> SSO + Multi-Factor Authentication</label>
+            <label class="subscription-option"><input type="checkbox" name="licenses" value="contractual"> Contractual Workforce Management</label>
+          </div>
+        </div>
+        <button type="submit" id="subscription-calculate">Calculate and review invoice</button>
+        <p class="subscription-status" id="subscription-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Stage 2: this confirmation is displayed before Razorpay opens. -->
+      <section class="subscription-step" id="subscription-confirmation" hidden>
+        <h3>2. Confirmation invoice</h3>
+        <div class="review-note">
+          <span aria-hidden="true">&#9432;</span>
+          <span><strong>Review before payment.</strong> Check your plan, licenses, dates, and total. Nothing is charged until you continue to Razorpay.</span>
+        </div>
+        <div class="invoice-box" id="confirmation-invoice"></div>
+        <div class="subscription-actions">
+          <button class="secondary-action" type="button" id="subscription-edit">Edit calculation</button>
+          <button type="button" id="subscription-pay">Continue to Razorpay</button>
+        </div>
+        <p class="subscription-status" id="confirmation-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <!-- Stage 5: this is filled only after the server verifies Razorpay. -->
+      <section class="subscription-step" id="subscription-final" hidden>
+        <h3>Payment confirmed</h3>
+        <div class="invoice-box" id="final-invoice"></div>
+        <p class="final-invoice-note">Your final invoice is ready to download.</p>
+        <div class="subscription-actions">
+          <button type="button" id="subscription-download">Download final invoice</button>
+          <button class="secondary-action" type="button" id="subscription-finish">Close</button>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <!-- =========================================================
      FEATURE SPOTLIGHT
@@ -3955,7 +4468,287 @@
     <span class="wa-tooltip"> Chat on WhatsApp </span>
   </a>
 
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
+    // Subscription flow: Buy Now -> calculator -> confirmation invoice -> Razorpay -> final invoice.
+    const subscriptionModal = document.getElementById("subscription-modal");
+    const calculatorForm = document.getElementById("subscription-calculator");
+    const confirmationStep = document.getElementById("subscription-confirmation");
+    const finalStep = document.getElementById("subscription-final");
+    const confirmationInvoice = document.getElementById("confirmation-invoice");
+    const finalInvoice = document.getElementById("final-invoice");
+    const subscriptionPlanCopy = document.getElementById("subscription-plan-copy");
+    const subscriptionStatus = document.getElementById("subscription-status");
+    const confirmationStatus = document.getElementById("confirmation-status");
+    const calculateButton = document.getElementById("subscription-calculate");
+    const payButton = document.getElementById("subscription-pay");
+    const subscriptionStepLabels = document.querySelectorAll(".subscription-steps span");
+    let selectedSubscriptionPlan = "";
+    let currentQuote = null;
+
+    const planNames = { launch: "Launch", growth: "Growth", premium: "Premium", custom: "Custom" };
+
+    function setStatus(element, message) {
+      element.textContent = message;
+    }
+
+    function setActiveSubscriptionStep(stepNumber) {
+      subscriptionStepLabels.forEach((label, index) => {
+        label.classList.toggle("active", index === stepNumber - 1);
+      });
+    }
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 }).format(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        "\"": "&quot;",
+      }[character]));
+    }
+
+    function dateAfterMonths(months) {
+      const date = new Date();
+      date.setMonth(date.getMonth() + Number(months));
+      return date.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function getCustomerData() {
+      const formData = new FormData(calculatorForm);
+      return {
+        name: String(formData.get("name")).trim(),
+        email: String(formData.get("email")).trim().toLowerCase(),
+        contact: String(formData.get("contact")).replace(/\D/g, ""),
+        quantity: Number(formData.get("quantity")),
+        duration: Number(formData.get("duration")),
+        licenses: formData.getAll("licenses"),
+        plan: selectedSubscriptionPlan,
+      };
+    }
+
+    // Live Server does not provide Next.js API routes, so this preview quote keeps the calculator usable locally.
+    // The real deployment still recalculates the amount on the server before creating Razorpay checkout.
+    function buildLocalQuote(customer) {
+      const planRates = { launch: 85, growth: 99, premium: 149, custom: 199 };
+      const licenseRates = {
+        field: { label: "Field Sales Tracker", rate: 69 },
+        sso: { label: "SSO + Multi-Factor Authentication", rate: 19 },
+        contractual: { label: "Contractual Workforce Management", rate: 49 },
+      };
+      const start = new Date();
+      const end = new Date(start);
+      end.setMonth(end.getMonth() + customer.duration);
+      const baseAmount = planRates[customer.plan] * customer.quantity * customer.duration;
+      const licenses = customer.licenses.map((key) => licenseRates[key]).filter(Boolean).map((license) => ({
+        label: license.label,
+        amount: license.rate * customer.quantity * customer.duration,
+      }));
+      const total = baseAmount + licenses.reduce((sum, license) => sum + license.amount, 0);
+      const dateOptions = { day: "2-digit", month: "short", year: "numeric" };
+      return {
+        invoiceNumber: `PREVIEW-${Date.now()}`,
+        customer,
+        planName: planNames[customer.plan],
+        licenses,
+        baseAmount,
+        gst: 0,
+        total,
+        startDate: start.toLocaleDateString("en-IN", dateOptions),
+        endDate: end.toLocaleDateString("en-IN", dateOptions),
+      };
+    }
+
+    async function readApiResponse(response) {
+      const responseText = await response.text();
+      let result;
+      try {
+        result = responseText ? JSON.parse(responseText) : null;
+      } catch {
+        throw new Error("PAYMENT_API_UNAVAILABLE");
+      }
+      if (!response.ok || !result) throw new Error(result?.error || "PAYMENT_API_UNAVAILABLE");
+      return result;
+    }
+
+    function renderInvoice(target, quote, title) {
+      const licenseLines = quote.licenses.length
+        ? quote.licenses.map((license) => `<div class="invoice-line"><span>${license.label}</span><strong>${formatCurrency(license.amount)}</strong></div>`).join("")
+        : '<div class="invoice-line"><span>Optional licenses</span><strong>None</strong></div>';
+      target.innerHTML = `
+        <div class="invoice-heading"><strong>${title}</strong><span>${quote.invoiceNumber}</span></div>
+        <div class="invoice-meta"><span>Customer</span><strong>${escapeHtml(quote.customer.name)}</strong></div>
+        <div class="invoice-meta"><span>Email</span><strong>${escapeHtml(quote.customer.email)}</strong></div>
+        <div class="invoice-meta"><span>Phone</span><strong>${escapeHtml(quote.customer.contact)}</strong></div>
+        <div class="invoice-meta"><span>Plan</span><strong>${escapeHtml(quote.planName)}</strong></div>
+        <div class="invoice-meta"><span>Employees</span><strong>${quote.customer.quantity}</strong></div>
+        <div class="invoice-meta"><span>Duration</span><strong>${quote.customer.duration} month(s)</strong></div>
+        <div class="invoice-meta"><span>Start date</span><strong>${quote.startDate}</strong></div>
+        <div class="invoice-meta"><span>End date</span><strong>${quote.endDate}</strong></div>
+        <div class="invoice-line"><span>${quote.planName} license</span><strong>${formatCurrency(quote.baseAmount)}</strong></div>
+        ${licenseLines}
+        <div class="invoice-line"><span>GST</span><strong>${formatCurrency(quote.gst)}</strong></div>
+        <div class="invoice-total"><span>Total</span><strong>${formatCurrency(quote.total)}</strong></div>
+        ${quote.paymentId ? `<div class="invoice-meta"><span>Payment ID</span><strong>${quote.paymentId}</strong></div>` : ""}
+      `;
+    }
+
+    function openSubscriptionModal(plan) {
+      selectedSubscriptionPlan = plan;
+      currentQuote = null;
+      setActiveSubscriptionStep(1);
+      calculatorForm.hidden = false;
+      confirmationStep.hidden = true;
+      finalStep.hidden = true;
+      subscriptionPlanCopy.textContent = `${planNames[plan]} plan. Calculate your licenses before payment.`;
+      subscriptionModal.hidden = false;
+      subscriptionModal.setAttribute("aria-hidden", "false");
+      calculatorForm.elements.name.focus();
+    }
+
+    function closeSubscriptionModal() {
+      subscriptionModal.hidden = true;
+      subscriptionModal.setAttribute("aria-hidden", "true");
+      setStatus(subscriptionStatus, "");
+      setStatus(confirmationStatus, "");
+    }
+
+    // Stage 1 -> Stage 2: ask the server for the authoritative price quote.
+    calculatorForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const customer = getCustomerData();
+      if (!calculatorForm.reportValidity()) return;
+      calculateButton.disabled = true;
+      calculateButton.textContent = "Calculating...";
+      setStatus(subscriptionStatus, "");
+      try {
+        const response = await fetch("/api/razorpay/subscription", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({ action: "quote", ...customer }),
+        });
+        const result = await readApiResponse(response);
+        if (!result.quote) throw new Error("Unable to calculate price.");
+        currentQuote = result.quote;
+        renderInvoice(confirmationInvoice, currentQuote, "Confirmation invoice");
+        setActiveSubscriptionStep(2);
+        calculatorForm.hidden = true;
+        confirmationStep.hidden = false;
+      } catch (error) {
+        if (error instanceof Error && error.message === "PAYMENT_API_UNAVAILABLE") {
+          currentQuote = buildLocalQuote(customer);
+          renderInvoice(confirmationInvoice, currentQuote, "Confirmation invoice (preview)");
+          setActiveSubscriptionStep(2);
+          calculatorForm.hidden = true;
+          confirmationStep.hidden = false;
+          setStatus(confirmationStatus, "Preview calculated locally. Start the Next.js server before payment.");
+        } else {
+          setStatus(subscriptionStatus, error instanceof Error ? error.message : "Unable to calculate price.");
+        }
+      } finally {
+        calculateButton.disabled = false;
+        calculateButton.textContent = "Calculate and review invoice";
+      }
+    });
+
+    document.getElementById("subscription-edit").addEventListener("click", () => {
+      setActiveSubscriptionStep(1);
+      confirmationStep.hidden = true;
+      calculatorForm.hidden = false;
+    });
+
+    // Stage 2 -> Stage 4: create the confirmed subscription only after review.
+    payButton.addEventListener("click", async () => {
+      if (!currentQuote || !window.Razorpay) {
+        setStatus(confirmationStatus, "Razorpay Checkout is unavailable. Please try again shortly.");
+        return;
+      }
+      payButton.disabled = true;
+      payButton.textContent = "Preparing Razorpay...";
+      try {
+        const customer = getCustomerData();
+        const response = await fetch("/api/razorpay/subscription", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({ action: "create", ...customer }),
+        });
+        const result = await readApiResponse(response);
+        if (!result.subscriptionId || !result.keyId) throw new Error("Unable to start payment.");
+        const checkout = new Razorpay({
+          key: result.keyId,
+          subscription_id: result.subscriptionId,
+          name: "navik",
+          description: `${planNames[selectedSubscriptionPlan]} subscription`,
+          prefill: { name: customer.name, email: customer.email, contact: customer.contact },
+          method: { upi: true },
+          theme: { color: "#1769e0" },
+          // Stage 5 starts only after server-side signature verification.
+          handler: async (payment) => {
+            const verifyResponse = await fetch("/api/razorpay/verify", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              credentials: "same-origin",
+              body: JSON.stringify(payment),
+            });
+            const verification = await verifyResponse.json();
+            if (!verifyResponse.ok || !verification.verified) {
+              setStatus(confirmationStatus, "Payment received but verification failed. Please contact support.");
+              return;
+            }
+            currentQuote.paymentId = payment.razorpay_payment_id;
+            currentQuote.subscriptionId = payment.razorpay_subscription_id || result.subscriptionId;
+            renderInvoice(finalInvoice, currentQuote, "Final invoice");
+            setActiveSubscriptionStep(4);
+            confirmationStep.hidden = true;
+            finalStep.hidden = false;
+          },
+          modal: { ondismiss: () => setStatus(confirmationStatus, "Checkout closed. No payment was taken.") },
+        });
+        checkout.on("payment.failed", () => setStatus(confirmationStatus, "Payment failed. No subscription was created."));
+        checkout.open();
+      } catch (error) {
+        if (error instanceof Error && error.message === "PAYMENT_API_UNAVAILABLE") {
+          setStatus(confirmationStatus, "Payment is unavailable in Live Server preview. Run the Next.js server to continue to Razorpay.");
+        } else {
+          setStatus(confirmationStatus, error instanceof Error ? error.message : "Unable to start secure checkout.");
+        }
+      } finally {
+        payButton.disabled = false;
+        payButton.textContent = "Continue to Razorpay";
+      }
+    });
+
+    // Generate a downloadable HTML invoice locally after payment verification.
+    document.getElementById("subscription-download").addEventListener("click", () => {
+      const blob = new Blob([`<!doctype html><html><head><meta charset="utf-8"><title>Navik final invoice</title><style>body{font-family:Arial,sans-serif;max-width:720px;margin:40px auto;color:#14233d}h1{color:#073b91}.invoice{border:1px solid #dce6f4;border-radius:12px;padding:24px}</style></head><body><h1>navik final invoice</h1><div class="invoice">${finalInvoice.innerHTML}</div>${String.fromCharCode(60)}/body>${String.fromCharCode(60)}/html>`], { type: "text/html" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `${currentQuote.invoiceNumber}-navik-invoice.html`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+
+    document.getElementById("subscription-finish").addEventListener("click", closeSubscriptionModal);
+    document.querySelectorAll(".subscription-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        openSubscriptionModal(trigger.dataset.plan);
+      });
+    });
+    document.querySelector(".subscription-close").addEventListener("click", closeSubscriptionModal);
+    subscriptionModal.addEventListener("click", (event) => {
+      if (event.target === subscriptionModal) closeSubscriptionModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !subscriptionModal.hidden) closeSubscriptionModal();
+    });
+
     /* =========================================================
          NAVBAR
       ========================================================= */
@@ -3978,8 +4771,8 @@
       { passive: true },
     );
 
-    pricingHamburger.addEventListener("click", () => {
-      navRight.classList.toggle("mobile-open");
+    pricingHamburger?.addEventListener("click", () => {
+      navRight?.classList.toggle("mobile-open");
     });
 
     /* =========================================================
@@ -4304,7 +5097,9 @@
 
     let scrollLeft = 0;
 
-    featureTrack.addEventListener("pointerdown", (event) => {
+    const featureTrack = document.getElementById("featureTrack");
+
+    featureTrack?.addEventListener("pointerdown", (event) => {
       isDown = true;
 
       featureTrack.setPointerCapture(event.pointerId);
@@ -4314,11 +5109,11 @@
       scrollLeft = window.scrollX;
     });
 
-    featureTrack.addEventListener("pointerup", () => {
+    featureTrack?.addEventListener("pointerup", () => {
       isDown = false;
     });
 
-    featureTrack.addEventListener("pointercancel", () => {
+    featureTrack?.addEventListener("pointercancel", () => {
       isDown = false;
     });
 
@@ -4332,7 +5127,7 @@
 
     let featuresExpanded = false;
 
-    seeFeaturesBtn.addEventListener("click", () => {
+    seeFeaturesBtn?.addEventListener("click", () => {
       featuresExpanded = !featuresExpanded;
 
       moduleCards.forEach((card) => {
@@ -4341,9 +5136,12 @@
 
       seeFeaturesBtn.classList.toggle("active", featuresExpanded);
 
-      seeFeaturesBtn.querySelector("span").textContent = featuresExpanded
-        ? "Hide Extra Features"
-        : "See All Features";
+      const seeFeaturesLabel = seeFeaturesBtn.querySelector("span");
+      if (seeFeaturesLabel) {
+        seeFeaturesLabel.textContent = featuresExpanded
+          ? "Hide Extra Features"
+          : "See All Features";
+      }
 
       if (featuresExpanded) {
         setTimeout(() => {
@@ -4383,7 +5181,7 @@
 
     document.querySelectorAll(".nav-links a").forEach((link) => {
       link.addEventListener("click", () => {
-        navRight.classList.remove("mobile-open");
+        navRight?.classList.remove("mobile-open");
       });
     });
 
