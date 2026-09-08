@@ -6,6 +6,7 @@ const planConfiguration: Record<string, { name: string; monthlyRate: number; pla
   launch: { name: 'Launch', monthlyRate: 85, planId: process.env.RAZORPAY_PLAN_LAUNCH },
   growth: { name: 'Growth', monthlyRate: 99, planId: process.env.RAZORPAY_PLAN_GROWTH },
   premium: { name: 'Premium', monthlyRate: 149, planId: process.env.RAZORPAY_PLAN_PREMIUM },
+  contractual: { name: 'Contractual Workforce Management', monthlyRate: 40, planId: process.env.RAZORPAY_PLAN_CONTRACTUAL },
   custom: { name: 'Custom', monthlyRate: 199, planId: process.env.RAZORPAY_PLAN_CUSTOM },
 }
 
@@ -25,6 +26,12 @@ function formatDate(date: Date) {
 
 function makeQuote(body: Record<string, unknown>) {
   const name = typeof body.name === 'string' ? body.name.trim() : ''
+  const companyName = typeof body.companyName === 'string' ? body.companyName.trim() : ''
+  const gstin = typeof body.gstin === 'string' ? body.gstin.trim() : ''
+  const pan = typeof body.pan === 'string' ? body.pan.trim() : ''
+  const address = typeof body.address === 'string' ? body.address.trim() : ''
+  const state = typeof body.state === 'string' ? body.state.trim() : ''
+  const city = typeof body.city === 'string' ? body.city.trim() : ''
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : ''
   const contact = typeof body.contact === 'string' ? body.contact.replace(/\D/g, '') : ''
   const quantity = Number(body.quantity)
@@ -33,7 +40,7 @@ function makeQuote(body: Record<string, unknown>) {
   const selectedLicenses = Array.isArray(body.licenses) ? body.licenses.filter((value): value is string => typeof value === 'string') : []
   const configuration = planConfiguration[plan]
 
-  if (name.length < 2 || name.length > 100 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Enter valid customer details.')
+  if ([name, companyName, gstin, pan, address, state, city].some((value) => value.length < 2 || value.length > 150) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Enter valid customer details.')
   if (!/^\d{10,15}$/.test(contact) || !Number.isInteger(quantity) || quantity < 1 || quantity > 10000) throw new Error('Enter valid contact and employee details.')
   if (![1, 3, 6, 12].includes(duration)) throw new Error('Choose a valid subscription duration.')
   if (!configuration) throw new Error('The selected plan is unavailable.')
@@ -41,21 +48,23 @@ function makeQuote(body: Record<string, unknown>) {
   const licenses = [...new Set(selectedLicenses)].map((license) => licenseConfiguration[license]).filter(Boolean)
   const baseAmount = configuration.monthlyRate * quantity * duration
   const licenseAmounts = licenses.map((license) => ({ label: license.label, amount: license.monthlyRate * quantity * duration }))
-  const total = baseAmount + licenseAmounts.reduce((sum, license) => sum + license.amount, 0)
+  const subtotal = baseAmount + licenseAmounts.reduce((sum, license) => sum + license.amount, 0)
+  const gst = subtotal * 0.18
+  const total = subtotal + gst
   const start = new Date()
   const end = new Date(start)
   end.setMonth(end.getMonth() + duration)
 
   return {
     invoiceNumber: `NAVIK-${Date.now()}`,
-    customer: { name, email, contact, quantity, duration },
+    customer: { name, companyName, gstin, pan, address, state, city, email, contact, quantity, duration },
     plan,
     planName: configuration.name,
     planId: configuration.planId,
     licenses: licenseAmounts,
     licenseKeys: [...new Set(selectedLicenses)].filter((license) => license in licenseConfiguration),
     baseAmount,
-    gst: 0,
+    gst,
     total,
     startDate: formatDate(start),
     endDate: formatDate(end),
@@ -97,10 +106,16 @@ export async function POST(request: Request) {
       total_count: quote.customer.duration,
       quantity: quote.customer.quantity,
       customer_notify: 1,
-      addons: quote.licenses.map((license) => ({
-        item: { name: license.label, amount: license.amount * 100, currency: 'INR' },
-        quantity: 1,
-      })),
+      addons: [
+        ...quote.licenses.map((license) => ({
+          item: { name: license.label, amount: license.amount * 100, currency: 'INR' },
+          quantity: 1,
+        })),
+        {
+          item: { name: 'GST (18%)', amount: quote.gst * 100, currency: 'INR' },
+          quantity: 1,
+        },
+      ],
       notes: { invoice_number: quote.invoiceNumber, customer_name: quote.customer.name, customer_email: quote.customer.email },
     }),
     cache: 'no-store',

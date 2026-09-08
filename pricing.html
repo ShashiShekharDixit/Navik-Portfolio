@@ -93,6 +93,7 @@
       font-family: "Inter", sans-serif;
       background: #fff;
       color: var(--text);
+      font-size: 15px;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -295,6 +296,24 @@
       z-index: 5;
     }
 
+    @media (min-width: 861px) {
+      .pricing-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .pricing-grid > .price-card {
+        grid-column: span 2;
+      }
+
+      .pricing-grid > .contractual-card {
+        grid-column: 1 / span 3;
+      }
+
+      .pricing-grid > .custom-banner {
+        grid-column: 4 / span 3;
+      }
+    }
+
     .price-card {
       position: relative;
 
@@ -414,26 +433,20 @@
 
     .price-value {
       font-size: 42px;
-
       font-weight: 900;
-
       letter-spacing: -2px;
-
       color: var(--navy-dark);
     }
 
     .price-unit {
-      font-size: 12px;
-
-      color: #728098;
+      font-size: 14px;
+      color: #000000;
       font-weight: 600;
     }
 
     .price-note {
-      font-size: 11px;
-
-      color: #7b889a;
-
+      font-size: 14px;
+      color: #000000;
       margin-bottom: 23px;
     }
 
@@ -687,26 +700,45 @@
     .subscription-option {
       display: flex;
       align-items: center;
-      gap: 9px;
-      padding: 10px 12px;
+      gap: 14px;
+      min-height: 70px;
+      padding: 12px 14px;
       border: 1px solid #dce6f4;
-      border-radius: 9px;
-      background: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ffffff, #f8fbff);
       color: var(--text-soft);
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .subscription-option-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .subscription-option-copy small {
+      color: var(--text-soft);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .subscription-option input {
+      order: 2;
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-left: auto;
+      accent-color: var(--blue);
     }
 
     .subscription-option:has(input:checked) {
       border-color: #8db6ef;
       background: #f2f7ff;
       color: var(--blue-dark);
-    }
-
-    .subscription-option input {
-      width: auto;
+      box-shadow: 0 6px 16px rgba(23, 105, 224, 0.1);
     }
 
     .invoice-box {
@@ -846,7 +878,7 @@
 
       border-top: 1px solid #edf2f8;
 
-      font-size: 11px;
+      font-size: 18px;
 
       font-weight: 800;
 
@@ -873,9 +905,9 @@
 
       gap: 10px;
 
-      font-size: 12px;
+      font-size: 15px;
 
-      color: #536278;
+      color: #000000;
 
       line-height: 1.5;
     }
@@ -905,45 +937,26 @@
     }
 
     /* =========================================================
-   CUSTOM PLAN — HORIZONTAL BANNER
-   ========================================================= */
-    /* ===== Custom plan — horizontal, fixed-size banner ===== */
+       CONTRACTUAL AND CUSTOM PLANS
+    ========================================================= */
 
     .price-card.custom-banner {
-      grid-column: 1 / -1;
-      /* span the full pricing-grid width, drops to its own row */
-
-      display: grid;
-      grid-template-columns: 250px 1fr 210px;
-      /* left | middle | right */
-      align-items: center;
-      gap: 30px;
-
-      height: 220px;
-      /* fixed banner height, never grows */
-      padding: 28px 36px;
-      overflow: hidden;
-      /* content is clipped/scrolled inside, not the card itself */
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 34px 30px 30px;
     }
 
     .price-card.custom-banner:hover {
-      transform: translateY(-6px);
-      /* a touch lighter than the vertical cards' hover */
+      transform: translateY(-9px);
     }
 
-    /* ---- left zone: icon + name, top-aligned ---- */
     .custom-banner .banner-left {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      height: 100%;
-      align-self: start;
-      padding-top: 4px;
+      display: block;
     }
 
     .custom-banner .plan-icon {
-      margin-bottom: 0;
-      flex-shrink: 0;
+      margin-bottom: 22px;
     }
 
     .custom-banner .banner-left-text {
@@ -959,64 +972,44 @@
       margin-bottom: 0;
     }
 
-    /* ---- middle zone: feature points, adjustable count, fixed-height scroll area ---- */
     .custom-banner .banner-features {
-      height: 100%;
-      max-height: 100%;
-      align-content: center;
-
       display: grid;
-      grid-template-columns: repeat(2,
-          1fr);
-      /* wraps into 2 columns once points exceed a few rows */
-      grid-auto-rows: min-content;
-      column-gap: 26px;
+      grid-template-columns: 1fr;
       row-gap: 12px;
-
-      overflow-y: auto;
-      /* extra points scroll here — container height stays fixed */
-      padding-right: 12px;
     }
 
-    .custom-banner .banner-features::-webkit-scrollbar {
-      width: 6px;
+    .custom-banner .feature-title {
+      margin-top: 24px;
     }
 
-    .custom-banner .banner-features::-webkit-scrollbar-thumb {
-      background: #d7e2f0;
-      border-radius: 10px;
+    .custom-banner .banner-description {
+      margin: 2px 0 20px;
+      padding: 13px 15px;
+      border-left: 3px solid var(--blue);
+      border-radius: 0 10px 10px 0;
+      background: linear-gradient(135deg, #f4f8ff, #ffffff);
+      color: #000000;
+      font-size: 16px;
+      line-height: 1.65;
+      box-shadow: inset 0 0 0 1px #e5eefb;
     }
 
-    /* ---- right zone: button, vertically centered ---- */
+    .custom-banner .banner-description strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 850;
+    }
+
     .custom-banner .banner-button {
-      justify-self: end;
-      align-self: center;
-      width: auto;
-      min-width: 190px;
-      white-space: nowrap;
-      margin-bottom: 0;
-      padding: 15px 28px;
+      width: 100%;
+      margin-bottom: 27px;
     }
 
-    /* ---- small screens: stack the three zones, let height grow naturally ---- */
     @media (max-width: 860px) {
       .price-card.custom-banner {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        height: auto;
-        gap: 22px;
         padding: 28px 26px;
-      }
-
-      .custom-banner .banner-features {
-        max-height: 220px;
-        /* still capped, still scrolls if it overflows */
-      }
-
-      .custom-banner .banner-button {
-        justify-self: stretch;
-        width: 100%;
-        text-align: center;
       }
     }
 
@@ -1060,29 +1053,33 @@
       justify-content: space-between;
       gap: 18px;
       margin: 18px auto 0;
-      padding: 16px 18px;
-      border: 1px solid #cfe0f8;
-      border-radius: 14px;
-      background: #f5f9ff;
+      padding: 22px 24px;
+      border: 1px solid #bcd5f7;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #eef6ff, #ffffff);
       color: var(--text-soft);
-      font-size: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      box-shadow: 0 10px 28px rgba(23, 105, 224, 0.08);
     }
 
     .subscription-info strong {
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
       color: var(--navy);
-      font-size: 13px;
+      font-size: 17px;
+      font-weight: 850;
     }
 
     .subscription-info-badge {
       flex-shrink: 0;
-      padding: 8px 11px;
-      border-radius: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
       background: #e7f8f0;
       color: #087443;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     @media (max-width: 600px) {
@@ -2960,7 +2957,7 @@
                     </p> -->
 
           <div class="price">
-            <span class="price-value"> ₹85 </span>
+            <span class="price-value"> ₹65 </span>
 
             <span class="price-unit"> / employee / month </span>
           </div>
@@ -3186,6 +3183,38 @@
           </ul>
         </article>
 
+        <!-- CONTRACTUAL WORKFORCE MANAGEMENT -->
+        <article class="price-card contractual-card">
+          <div class="plan-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+
+          <h2 class="plan-name">Contractual Workforce Management</h2>
+
+          <div class="price">
+            <span class="price-value">₹40</span>
+            <span class="price-unit">/ employee / month</span>
+          </div>
+
+          <p class="price-note">Flexible contract workforce control</p>
+
+          <a href="#subscription" class="plan-button subscription-trigger" data-plan="contractual">Buy Now</a>
+
+          <div class="feature-title">Included features</div>
+          <ul class="price-features">
+            <li><span class="check">✓</span>Contractor onboarding and worker records</li>
+            <li><span class="check">✓</span>Contract lifecycle and renewal tracking</li>
+            <li><span class="check">✓</span>Attendance, shift and deployment visibility</li>
+            <li><span class="check">✓</span>Vendor and compliance document management</li>
+            <li><span class="check">✓</span>Contract workforce reports and cost insights</li>
+          </ul>
+        </article>
+
         <!-- CUSTOM -->
 
         <article class="price-card custom-banner">
@@ -3198,9 +3227,14 @@
             </div>
             <div class="banner-left-text">
               <h2 class="plan-name">Custom</h2>
-              <p class="price-note">Designed around your requirements</p>
+              <!-- <p class="price-note">Designed around your requirements</p> -->
             </div>
           </div>
+
+          <p class="banner-description"><strong>Built Around Your Business.</strong> Configure workflows, integrations, security, and support around the way your organization works.</p>
+          <a href="#subscription" class="plan-button banner-button subscription-trigger" data-plan="custom">Buy Now</a>
+
+          <div class="feature-title">Included capabilities</div>
 
           <ul class="price-features banner-features">
             <li>
@@ -3213,10 +3247,7 @@
             <li>
               <span class="check">✓</span> Organization-specific automation
             </li>
-            <li><span class="check">✓</span> Priority support</li>
           </ul>
-
-          <a href="#subscription" class="plan-button banner-button subscription-trigger" data-plan="custom">Buy Now</a>
         </article>
       </div>
 
@@ -3233,7 +3264,7 @@
       <div class="subscription-info" aria-label="Subscription payment information">
         <div>
           <strong>Subscriptions available through Razorpay</strong>
-          Choose Launch, Growth, Premium, or Custom above to calculate and open the secure UPI AutoPay form.
+          Choose a plan above to calculate your amount, review the invoice, and securely authorize recurring payments through UPI AutoPay. Your selected employees, duration, optional licenses, and 18% GST are included in the final amount before payment.
         </div>
         <span class="subscription-info-badge">UPI AutoPay</span>
       </div>
@@ -3259,8 +3290,32 @@
         <h3>1. Calculate your price</h3>
         <div class="subscription-grid">
           <label>
+            Company name
+            <input type="text" name="company_name" autocomplete="name" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            GSTIN
+            <input type="text" name="gstin" autocomplete="gstin" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            Pan Number
+            <input type="text" name="pan" autocomplete="pan" minlength="2" maxlength="100" required>
+          </label>
+          <label>
             Full name
-            <input type="text" name="name" autocomplete="name" minlength="2" maxlength="100" required>
+            <input type="text" name="full_name" autocomplete="name" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            Address
+            <input type="text" name="address" autocomplete="address" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            State
+            <input type="text" name="state" autocomplete="address-level1" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            City
+            <input type="text" name="city" autocomplete="address-level2" minlength="2" maxlength="100" required>
           </label>
           <label>
             Work email
@@ -3285,9 +3340,21 @@
           </label>
           <div class="subscription-options full-width">
             <span>Optional licenses</span>
-            <label class="subscription-option"><input type="checkbox" name="licenses" value="field"> Field Sales Tracker</label>
-            <label class="subscription-option"><input type="checkbox" name="licenses" value="sso"> SSO + Multi-Factor Authentication</label>
-            <label class="subscription-option"><input type="checkbox" name="licenses" value="contractual"> Contractual Workforce Management</label>
+            <label class="subscription-option">
+              <input type="checkbox" name="licenses" value="field">
+              <span class="subscription-option-copy">
+                <span>Field Sales Tracker · ₹69 / employee / month</span>
+                <small>Track field visits, employee movement, tasks, and attendance from one operational view.</small>
+              </span>
+            </label>
+            <label class="subscription-option">
+              <span class="subscription-option-copy">
+                <span>SSO + Multi-Factor Authentication · ₹19 / employee / month</span>
+                <small>Give employees secure single sign-on with an additional verification layer.</small>
+              </span>
+              <input type="checkbox" name="licenses" value="sso">
+            </label>
+            <!-- <label class="subscription-option"><input type="checkbox" name="licenses" value="contractual"> Contractual Workforce Management</label> -->
           </div>
         </div>
         <button type="submit" id="subscription-calculate">Calculate and review invoice</button>
@@ -3313,7 +3380,7 @@
       <section class="subscription-step" id="subscription-final" hidden>
         <h3>Payment confirmed</h3>
         <div class="invoice-box" id="final-invoice"></div>
-        <p class="final-invoice-note">Your final invoice is ready to download.</p>
+        <p class="final-invoice-note" id="final-invoice-note">Your final invoice is ready to download.</p>
         <div class="subscription-actions">
           <button type="button" id="subscription-download">Download final invoice</button>
           <button class="secondary-action" type="button" id="subscription-finish">Close</button>
@@ -4469,6 +4536,7 @@
   </a>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     // Subscription flow: Buy Now -> calculator -> confirmation invoice -> Razorpay -> final invoice.
     const subscriptionModal = document.getElementById("subscription-modal");
@@ -4480,13 +4548,14 @@
     const subscriptionPlanCopy = document.getElementById("subscription-plan-copy");
     const subscriptionStatus = document.getElementById("subscription-status");
     const confirmationStatus = document.getElementById("confirmation-status");
+    const finalInvoiceNote = document.getElementById("final-invoice-note");
     const calculateButton = document.getElementById("subscription-calculate");
     const payButton = document.getElementById("subscription-pay");
     const subscriptionStepLabels = document.querySelectorAll(".subscription-steps span");
     let selectedSubscriptionPlan = "";
     let currentQuote = null;
 
-    const planNames = { launch: "Launch", growth: "Growth", premium: "Premium", custom: "Custom" };
+    const planNames = { launch: "Launch", growth: "Growth", premium: "Premium", contractual: "Contractual Workforce Management", custom: "Custom" };
 
     function setStatus(element, message) {
       element.textContent = message;
@@ -4521,7 +4590,13 @@
     function getCustomerData() {
       const formData = new FormData(calculatorForm);
       return {
-        name: String(formData.get("name")).trim(),
+        name: String(formData.get("full_name") || "").trim(),
+        companyName: String(formData.get("company_name") || "").trim(),
+        gstin: String(formData.get("gstin") || "").trim(),
+        pan: String(formData.get("pan") || "").trim(),
+        address: String(formData.get("address") || "").trim(),
+        state: String(formData.get("state") || "").trim(),
+        city: String(formData.get("city") || "").trim(),
         email: String(formData.get("email")).trim().toLowerCase(),
         contact: String(formData.get("contact")).replace(/\D/g, ""),
         quantity: Number(formData.get("quantity")),
@@ -4534,7 +4609,7 @@
     // Live Server does not provide Next.js API routes, so this preview quote keeps the calculator usable locally.
     // The real deployment still recalculates the amount on the server before creating Razorpay checkout.
     function buildLocalQuote(customer) {
-      const planRates = { launch: 85, growth: 99, premium: 149, custom: 199 };
+      const planRates = { launch: 85, growth: 99, premium: 149, contractual: 40, custom: 199 };
       const licenseRates = {
         field: { label: "Field Sales Tracker", rate: 69 },
         sso: { label: "SSO + Multi-Factor Authentication", rate: 19 },
@@ -4548,7 +4623,9 @@
         label: license.label,
         amount: license.rate * customer.quantity * customer.duration,
       }));
-      const total = baseAmount + licenses.reduce((sum, license) => sum + license.amount, 0);
+      const subtotal = baseAmount + licenses.reduce((sum, license) => sum + license.amount, 0);
+      const gst = subtotal * 0.18;
+      const total = subtotal + gst;
       const dateOptions = { day: "2-digit", month: "short", year: "numeric" };
       return {
         invoiceNumber: `PREVIEW-${Date.now()}`,
@@ -4556,7 +4633,7 @@
         planName: planNames[customer.plan],
         licenses,
         baseAmount,
-        gst: 0,
+        gst,
         total,
         startDate: start.toLocaleDateString("en-IN", dateOptions),
         endDate: end.toLocaleDateString("en-IN", dateOptions),
@@ -4581,7 +4658,11 @@
         : '<div class="invoice-line"><span>Optional licenses</span><strong>None</strong></div>';
       target.innerHTML = `
         <div class="invoice-heading"><strong>${title}</strong><span>${quote.invoiceNumber}</span></div>
+        <div class="invoice-meta"><span>Company</span><strong>${escapeHtml(quote.customer.companyName)}</strong></div>
         <div class="invoice-meta"><span>Customer</span><strong>${escapeHtml(quote.customer.name)}</strong></div>
+        <div class="invoice-meta"><span>GSTIN</span><strong>${escapeHtml(quote.customer.gstin)}</strong></div>
+        <div class="invoice-meta"><span>PAN</span><strong>${escapeHtml(quote.customer.pan)}</strong></div>
+        <div class="invoice-meta"><span>Address</span><strong>${escapeHtml(quote.customer.address)}, ${escapeHtml(quote.customer.city)}, ${escapeHtml(quote.customer.state)}</strong></div>
         <div class="invoice-meta"><span>Email</span><strong>${escapeHtml(quote.customer.email)}</strong></div>
         <div class="invoice-meta"><span>Phone</span><strong>${escapeHtml(quote.customer.contact)}</strong></div>
         <div class="invoice-meta"><span>Plan</span><strong>${escapeHtml(quote.planName)}</strong></div>
@@ -4591,10 +4672,62 @@
         <div class="invoice-meta"><span>End date</span><strong>${quote.endDate}</strong></div>
         <div class="invoice-line"><span>${quote.planName} license</span><strong>${formatCurrency(quote.baseAmount)}</strong></div>
         ${licenseLines}
-        <div class="invoice-line"><span>GST</span><strong>${formatCurrency(quote.gst)}</strong></div>
-        <div class="invoice-total"><span>Total</span><strong>${formatCurrency(quote.total)}</strong></div>
+        <div class="invoice-line"><span>GST (18%)</span><strong>${formatCurrency(quote.gst)}</strong></div>
+        <div class="invoice-total"><span>Total Amount</span><strong>${formatCurrency(quote.total)}</strong></div>
         ${quote.paymentId ? `<div class="invoice-meta"><span>Payment ID</span><strong>${quote.paymentId}</strong></div>` : ""}
       `;
+    }
+
+    function createInvoicePdf(quote) {
+      const jsPDF = window.jspdf?.jsPDF;
+      if (!jsPDF) throw new Error("PDF generator is unavailable.");
+      const documentPdf = new jsPDF();
+      const lines = [
+        "navik final invoice",
+        `Invoice: ${quote.invoiceNumber}`,
+        "",
+        `Company: ${quote.customer.companyName}`,
+        `Customer: ${quote.customer.name}`,
+        `GSTIN: ${quote.customer.gstin}`,
+        `PAN: ${quote.customer.pan}`,
+        `Address: ${quote.customer.address}, ${quote.customer.city}, ${quote.customer.state}`,
+        `Work email: ${quote.customer.email}`,
+        `Phone: ${quote.customer.contact}`,
+        `Plan: ${quote.planName}`,
+        `Employees: ${quote.customer.quantity}`,
+        `Duration: ${quote.customer.duration} month(s)`,
+        `Start date: ${quote.startDate}`,
+        `End date: ${quote.endDate}`,
+        "",
+        `Plan license: ${formatCurrency(quote.baseAmount)}`,
+        ...quote.licenses.map((license) => `${license.label}: ${formatCurrency(license.amount)}`),
+        `GST (18%): ${formatCurrency(quote.gst)}`,
+        `Total Amount: ${formatCurrency(quote.total)}`,
+        quote.paymentId ? `Payment ID: ${quote.paymentId}` : "",
+      ];
+      documentPdf.setFontSize(16);
+      documentPdf.text(lines[0], 20, 20);
+      documentPdf.setFontSize(10);
+      lines.slice(1).forEach((line, index) => documentPdf.text(line, 20, 32 + index * 7));
+      return documentPdf;
+    }
+
+    async function emailFinalInvoice(quote) {
+      const documentPdf = createInvoicePdf(quote);
+      const pdfBase64 = documentPdf.output("datauristring").split(",")[1];
+      const response = await fetch("/api/invoice/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify({
+          email: quote.customer.email,
+          invoiceNumber: quote.invoiceNumber,
+          pdfBase64,
+          finalMessage: "Thank you for choosing navik. Your payment has been confirmed and your final invoice is attached.",
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Unable to send the final invoice email.");
     }
 
     function openSubscriptionModal(plan) {
@@ -4607,7 +4740,7 @@
       subscriptionPlanCopy.textContent = `${planNames[plan]} plan. Calculate your licenses before payment.`;
       subscriptionModal.hidden = false;
       subscriptionModal.setAttribute("aria-hidden", "false");
-      calculatorForm.elements.name.focus();
+      calculatorForm.elements.full_name.focus();
     }
 
     function closeSubscriptionModal() {
@@ -4704,9 +4837,18 @@
             currentQuote.paymentId = payment.razorpay_payment_id;
             currentQuote.subscriptionId = payment.razorpay_subscription_id || result.subscriptionId;
             renderInvoice(finalInvoice, currentQuote, "Final invoice");
+            finalInvoiceNote.textContent = "Your final invoice is ready. Sending it to your work email...";
             setActiveSubscriptionStep(4);
             confirmationStep.hidden = true;
             finalStep.hidden = false;
+            try {
+              await emailFinalInvoice(currentQuote);
+              finalInvoiceNote.textContent = "Final invoice sent to your work email and ready to download.";
+            } catch (error) {
+              finalInvoiceNote.textContent = error instanceof Error
+                ? `${error.message} You can still download the invoice below.`
+                : "Email delivery failed. You can still download the invoice below.";
+            }
           },
           modal: { ondismiss: () => setStatus(confirmationStatus, "Checkout closed. No payment was taken.") },
         });
@@ -4724,14 +4866,11 @@
       }
     });
 
-    // Generate a downloadable HTML invoice locally after payment verification.
+    // Generate a downloadable PDF invoice locally after payment verification.
     document.getElementById("subscription-download").addEventListener("click", () => {
-      const blob = new Blob([`<!doctype html><html><head><meta charset="utf-8"><title>Navik final invoice</title><style>body{font-family:Arial,sans-serif;max-width:720px;margin:40px auto;color:#14233d}h1{color:#073b91}.invoice{border:1px solid #dce6f4;border-radius:12px;padding:24px}</style></head><body><h1>navik final invoice</h1><div class="invoice">${finalInvoice.innerHTML}</div>${String.fromCharCode(60)}/body>${String.fromCharCode(60)}/html>`], { type: "text/html" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = `${currentQuote.invoiceNumber}-navik-invoice.html`;
-      link.click();
-      URL.revokeObjectURL(link.href);
+      if (!currentQuote) return;
+      const documentPdf = createInvoicePdf(currentQuote);
+      documentPdf.save(`${currentQuote.invoiceNumber}-navik-invoice.pdf`);
     });
 
     document.getElementById("subscription-finish").addEventListener("click", closeSubscriptionModal);
