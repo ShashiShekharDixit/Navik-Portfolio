@@ -1522,6 +1522,36 @@
         padding: 88px 16px 56px;
       }
     }
+
+    /* ── Dark-mode heading fix ───────────────────────────────────────
+       premium-upgrade.css sets .section-h2 { color: #f1f5f9 } under
+       prefers-color-scheme:dark — which makes headings invisible on
+       the light backgrounds used by the Values, Impact, and Why-Navik
+       sections on this page. Pin these headings to legible dark colours
+       in both light and dark modes.
+    ─────────────────────────────────────────────────────────────────── */
+    .about-section .section-h2,
+    .impact-section .section-h2,
+    .why-navik-section .section-h2 {
+      color: #0f172a !important;
+    }
+    .about-section .section-lead,
+    .impact-section .section-lead,
+    .why-navik-section .section-lead {
+      color: #475569 !important;
+    }
+    @media (prefers-color-scheme: dark) {
+      .about-section .section-h2,
+      .impact-section .section-h2,
+      .why-navik-section .section-h2 {
+        color: #0f172a !important;
+      }
+      .about-section .section-lead,
+      .impact-section .section-lead,
+      .why-navik-section .section-lead {
+        color: #334155 !important;
+      }
+    }
   </style>
 </head>
 <body>

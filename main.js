@@ -131,6 +131,8 @@ if (hamburger && navLinks && hamburger.dataset.navHandler !== 'legacy') {
   hamburger.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     hamburger.classList.toggle('open', open);
+    // Mirror scroll lock so body.style.overflow is consistent on every toggle
+    document.body.style.overflow = open ? 'hidden' : '';
     if (open) {
       navLinks.style.top = (navbar ? navbar.offsetHeight : 76) + 'px';
     }
@@ -139,6 +141,8 @@ if (hamburger && navLinks && hamburger.dataset.navHandler !== 'legacy') {
     if (!e.target.closest('.nav-inner')) {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
+      // Restore scroll so the outside-click path doesn't leave it locked
+      document.body.style.overflow = '';
     }
   });
 }
@@ -1195,6 +1199,9 @@ const MAIN_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vF
   }
 
   btn.addEventListener('click', async () => {
+    // Prevent duplicate submissions
+    if (btn.disabled) return;
+
     if (successBox) successBox.style.display = 'none';
     if (errorBox) errorBox.style.display = 'none';
 
@@ -1209,21 +1216,21 @@ const MAIN_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vF
       return;
     }
 
-    // Show loading state
+    // Show loading state — keep fields intact during submission
     if (btnLabel) btnLabel.style.display = 'none';
     if (btnLoading) btnLoading.style.display = '';
     btn.disabled = true;
 
     try {
       // Build data
-      const name = nameField.value.trim();
-      const company = companyField.value.trim();
-      const email = emailField.value.trim();
-      const phone = phoneField.value.replace(/[\s\-\+\(\)]/g, '');
+      const name        = nameField.value.trim();
+      const company     = companyField.value.trim();
+      const email       = emailField.value.trim();
+      const phone       = phoneField.value.replace(/[\s\-\+\(\)]/g, '');
       const companySize = sizeField.value;
-      const message = messageField ? messageField.value.trim() : '';
+      const message     = messageField ? messageField.value.trim() : '';
 
-      // Build URL with query parameters (GET request)
+      // Build URL with query parameters (GET request to Google Apps Script)
       const params = new URLSearchParams();
       params.append('formType', 'demo');
       params.append('name', name);
@@ -1232,38 +1239,36 @@ const MAIN_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vF
       params.append('phone', phone);
       params.append('companySize', companySize);
       params.append('message', message);
-      params.append('hp_field', hpField ? hpField.value : '');
 
       const url = MAIN_APPS_SCRIPT_URL + '?' + params.toString();
 
-      console.log('Sending form data via GET:', {
-        name, company, email, phone, companySize, message, url
-      });
+      // NOTE: Google Apps Script GET responses with no-cors cannot confirm delivery.
+      // Success is shown only after the fetch resolves without a network error.
+      // If confirmed backend acknowledgement is required before release, replace
+      // this endpoint with one that returns a verifiable JSON response.
+      const response = await fetch(url, { method: 'GET', mode: 'cors' });
 
-      // Send as GET request (no CORS issues)
-      const response = await fetch(url, {
-        method: 'GET',
-        mode: 'cors'
-      });
-
-      console.log('Form submitted successfully');
-
+      // Show success ONLY after request completed without throwing
       if (successBox) successBox.style.display = 'flex';
 
-      // Reset form
-      nameField.value = '';
-      companyField.value = '';
-      emailField.value = '';
-      phoneField.value = '';
+      // Reset form fields only on confirmed success
+      nameField.value      = '';
+      companyField.value   = '';
+      emailField.value     = '';
+      phoneField.value     = '';
       sizeField.selectedIndex = 0;
       if (messageField) messageField.value = '';
 
-      // Clear errors
+      // Clear inline errors
       ['err_name', 'err_company', 'err_email', 'err_phone', 'err_size'].forEach(id => clearErr(id));
 
     } catch (error) {
       console.error('Form submission error:', error);
-      if (errorBox) errorBox.style.display = 'block';
+      // Network/fetch failure — show error, preserve all entered values so user can retry
+      if (errorBox) {
+        errorBox.textContent = 'Something went wrong. Please check your connection and try again.';
+        errorBox.style.display = 'block';
+      }
     } finally {
       if (btnLabel) btnLabel.style.display = '';
       if (btnLoading) btnLoading.style.display = 'none';

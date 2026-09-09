@@ -232,7 +232,7 @@ class DemoFormModal {
     const successBox = document.getElementById('demoFormSuccess');
     const errorBox = document.getElementById('demoFormError');
 
-    // Show loading state
+    // Show loading state — keep form visible and fields intact during submission
     if (btnLabel) btnLabel.style.display = 'none';
     if (btnLoading) btnLoading.style.display = 'flex';
     submitBtn.disabled = true;
@@ -244,42 +244,37 @@ class DemoFormModal {
       const form = document.getElementById('demo-form-modal-form');
       const formData = new FormData(form);
 
-      // Build URL parameters (GET request)
+      // Honeypot check — abort silently if filled
+      if (formData.get('hp_field') && formData.get('hp_field').trim() !== '') {
+        // Silently succeed to confuse bots; do not actually submit
+        if (successBox) { successBox.style.display = 'flex'; form.style.display = 'none'; }
+        return;
+      }
+
+      // Build URL parameters (GET request to Google Apps Script)
       const params = new URLSearchParams();
       params.append('formType', 'demo');
       params.append('name', formData.get('name'));
       params.append('company', formData.get('company'));
       params.append('email', formData.get('email'));
-      params.append('phone', formData.get('phone').replace(/\D/g, ''));
+      params.append('phone', (formData.get('phone') || '').replace(/\D/g, ''));
       params.append('companySize', formData.get('companySize'));
-      params.append('hp_field', formData.get('hp_field') || '');
 
       const url = APPS_SCRIPT_URL + '?' + params.toString();
 
-      console.log('Modal form sending via GET:', {
-        name: formData.get('name'),
-        company: formData.get('company'),
-        email: formData.get('email'),
-        phone: formData.get('phone').replace(/\D/g, ''),
-        companySize: formData.get('companySize'),
-        url: url
-      });
+      // NOTE: Google Apps Script with no-cors cannot confirm delivery.
+      // We show success only after the fetch resolves without a network error.
+      // If a confirmed backend acknowledgement is required before release,
+      // replace this endpoint with one that returns a verifiable JSON response.
+      const response = await fetch(url, { method: 'GET', mode: 'cors' });
 
-      // Send to Google Apps Script via GET
-      const response = await fetch(url, {
-        method: 'GET',
-        mode: 'cors'
-      });
-
-      console.log('Modal form submitted successfully');
-
-      // Show success message
+      // Show success and hide form ONLY after the request completed
       if (successBox) {
         successBox.style.display = 'flex';
         form.style.display = 'none';
       }
 
-      // Reset form
+      // Reset form fields after confirmed success
       form.reset();
 
       // Close modal after 2 seconds
@@ -288,9 +283,15 @@ class DemoFormModal {
         if (successBox) successBox.style.display = 'none';
         form.style.display = 'flex';
       }, 2000);
+
     } catch (error) {
+      // Network or fetch error — preserve entered details so user can retry
       console.error('Modal form fetch error:', error);
-      if (errorBox) errorBox.style.display = 'block';
+      if (errorBox) {
+        errorBox.textContent = 'Something went wrong. Please check your connection and try again.';
+        errorBox.style.display = 'block';
+      }
+      // Do NOT clear the form — user should be able to retry without re-entering data
     } finally {
       this.isSubmitting = false;
       if (btnLabel) btnLabel.style.display = 'inline';

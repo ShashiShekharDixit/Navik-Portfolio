@@ -3,31 +3,44 @@
 function calculateFuelCost() {
   const fuelType = document.getElementById('fuelType').value;
   const distance = parseFloat(document.getElementById('distance').value);
-  const fuelRate = parseFloat(document.getElementById('fuelRate').value);
-  const mileage = parseFloat(document.getElementById('mileage').value);
+  const fuelRate  = parseFloat(document.getElementById('fuelRate').value);
+  const mileage   = parseFloat(document.getElementById('mileage').value);
 
-  if (!distance || !fuelRate || !mileage) {
+  // Require all fields
+  if (isNaN(distance) || isNaN(fuelRate) || isNaN(mileage)) {
     alert('Please fill all fields');
     return;
   }
 
-  // Calculate fuel required
-  const fuelRequired = distance / mileage;
-  
-  // Calculate actual fuel cost
+  // Reject non-positive values to prevent negative costs and division by zero
+  if (distance <= 0) {
+    alert('Distance must be greater than 0');
+    return;
+  }
+  if (fuelRate <= 0) {
+    alert('Fuel rate must be greater than 0');
+    return;
+  }
+  if (mileage <= 0) {
+    alert('Mileage must be greater than 0');
+    return;
+  }
+
+  // Calculate fuel required — mileage > 0 is guaranteed above
+  const fuelRequired   = distance / mileage;
   const actualFuelCost = fuelRequired * fuelRate;
 
   // Display results
-  document.getElementById('fuelResult').style.display = 'block';
+  document.getElementById('fuelResult').style.display      = 'block';
   document.getElementById('fuelPlaceholder').style.display = 'none';
-  
-  document.getElementById('resultDistance').textContent = distance.toFixed(2);
-  document.getElementById('resultFuelType').textContent = fuelType.charAt(0).toUpperCase() + fuelType.slice(1);
-  document.getElementById('resultRate').textContent = fuelRate.toFixed(2);
-  document.getElementById('resultFuelLiters').textContent = fuelRequired.toFixed(2);
-  document.getElementById('actualCost').textContent = actualFuelCost.toFixed(2);
 
-  // Scroll to results section smoothly with a small delay to ensure rendering
+  document.getElementById('resultDistance').textContent  = distance.toFixed(2);
+  document.getElementById('resultFuelType').textContent  = fuelType.charAt(0).toUpperCase() + fuelType.slice(1);
+  document.getElementById('resultRate').textContent      = fuelRate.toFixed(2);
+  document.getElementById('resultFuelLiters').textContent = fuelRequired.toFixed(2);
+  document.getElementById('actualCost').textContent      = actualFuelCost.toFixed(2);
+
+  // Scroll to results section smoothly
   setTimeout(() => {
     const resultsSection = document.getElementById('resultsSection');
     if (resultsSection) {

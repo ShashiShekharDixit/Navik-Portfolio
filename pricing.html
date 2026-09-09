@@ -2964,7 +2964,9 @@
 
           <p class="price-note">Starting plan · billed annually</p>
 
-          <a href="#subscription" class="plan-button subscription-trigger" data-plan="launch"> Buy Now </a>
+          <!-- BUY NOW DISABLED: payment not in this release -->
+          <!-- <a href="#subscription" class="plan-button subscription-trigger" data-plan="launch"> Buy Now </a> -->
+          <a href="index.html#demo" class="plan-button">Book Demo</a>
 
           <div class="feature-title">Includes</div>
 
@@ -3059,7 +3061,9 @@
 
           <p class="price-note">Starting plan · billed annually</p>
 
-          <a href="#subscription" class="plan-button subscription-trigger" data-plan="growth"> Buy Now </a>
+          <!-- BUY NOW DISABLED: payment not in this release -->
+          <!-- <a href="#subscription" class="plan-button subscription-trigger" data-plan="growth"> Buy Now </a> -->
+          <a href="index.html#demo" class="plan-button">Book Demo</a>
 
           <div class="feature-title">Launch Plan +</div>
 
@@ -3138,7 +3142,9 @@
 
           <p class="price-note">Premium Designs · billed annually</p>
 
-          <a href="#subscription" class="plan-button subscription-trigger" data-plan="premium"> Buy Now </a>
+          <!-- BUY NOW DISABLED: payment not in this release -->
+          <!-- <a href="#subscription" class="plan-button subscription-trigger" data-plan="premium"> Buy Now </a> -->
+          <a href="index.html#demo" class="plan-button">Book Demo</a>
 
           <div class="feature-title">Growth Plan +</div>
 
@@ -3203,11 +3209,13 @@
 
           <p class="price-note">Flexible contract workforce control</p>
 
-          <a href="#subscription" class="plan-button subscription-trigger" data-plan="contractual">Buy Now</a>
-
+          <!-- BUY NOW DISABLED: payment not in this release -->
+          <!-- <a href="#subscription" class="plan-button subscription-trigger" data-plan="contractual">Buy Now</a> -->
+          <a href="index.html#demo" class="plan-button">Book Demo</a>
+ 
           <div class="feature-title">Included features</div>
           <ul class="price-features">
-            <li><span class="check">✓</span>Contractor onboarding and worker records</li>
+            <li><span class="check">✓</span>Contractor onboarding and wor ker records</li>
             <li><span class="check">✓</span>Contract lifecycle and renewal tracking</li>
             <li><span class="check">✓</span>Attendance, shift and deployment visibility</li>
             <li><span class="check">✓</span>Vendor and compliance document management</li>
@@ -3216,7 +3224,7 @@
         </article>
 
         <!-- CUSTOM -->
-
+ 
         <article class="price-card custom-banner">
           <div class="banner-left">
             <div class="plan-icon">
@@ -3232,7 +3240,9 @@
           </div>
 
           <p class="banner-description"><strong>Built Around Your Business.</strong> Configure workflows, integrations, security, and support around the way your organization works.</p>
-          <a href="#subscription" class="plan-button banner-button subscription-trigger" data-plan="custom">Buy Now</a>
+          <!-- BUY NOW DISABLED: payment not in this release -->
+          <!-- <a href="#subscription" class="plan-button banner-button subscription-trigger" data-plan="custom">Buy Now</a> -->
+          <a href="index.html#demo" class="plan-button banner-button">Contact Sales</a>
 
           <div class="feature-title">Included capabilities</div>
 
@@ -3260,7 +3270,8 @@
         </div>
       </div>
 
-      <!-- Visible entry point for the Razorpay subscription flow. -->
+      <!-- SUBSCRIPTION INFO DISABLED: payment not in this release -->
+      <!--
       <div class="subscription-info" aria-label="Subscription payment information">
         <div>
           <strong>Subscriptions available through Razorpay</strong>
@@ -3268,10 +3279,14 @@
         </div>
         <span class="subscription-info-badge">UPI AutoPay</span>
       </div>
+      -->
     </div>
   </section>
 
-  <!-- The modal stays hidden until a paid-plan button is selected. -->
+  <!-- SUBSCRIPTION MODAL DISABLED: payment not in this release.
+       The modal, calculator form, invoice review, Razorpay checkout, and
+       final invoice / download / email controls are commented out here.
+       Re-enable after payment endpoints are deployed and verified.
   <div class="subscription-modal" id="subscription-modal" hidden aria-hidden="true">
     <div class="subscription-dialog" role="dialog" aria-modal="true" aria-labelledby="subscription-title">
       <button class="subscription-close" type="button" aria-label="Close subscription form">&times;</button>
@@ -3285,7 +3300,7 @@
         <span>Invoice</span>
       </div>
 
-      <!-- Stage 1: collect customer, employee, duration, and license choices. -->
+      <!-- Stage 1: collect customer, employee, duration, and license choices.
       <form class="subscription-form subscription-step" id="subscription-calculator">
         <h3>1. Calculate your price</h3>
         <div class="subscription-grid">
@@ -3354,14 +3369,13 @@
               </span>
               <input type="checkbox" name="licenses" value="sso">
             </label>
-            <!-- <label class="subscription-option"><input type="checkbox" name="licenses" value="contractual"> Contractual Workforce Management</label> -->
           </div>
         </div>
         <button type="submit" id="subscription-calculate">Calculate and review invoice</button>
         <p class="subscription-status" id="subscription-status" role="status" aria-live="polite"></p>
       </form>
 
-      <!-- Stage 2: this confirmation is displayed before Razorpay opens. -->
+      Stage 2: confirmation invoice before Razorpay opens.
       <section class="subscription-step" id="subscription-confirmation" hidden>
         <h3>2. Confirmation invoice</h3>
         <div class="review-note">
@@ -3376,7 +3390,7 @@
         <p class="subscription-status" id="confirmation-status" role="status" aria-live="polite"></p>
       </section>
 
-      <!-- Stage 5: this is filled only after the server verifies Razorpay. -->
+      Stage 5: filled only after server-side Razorpay verification.
       <section class="subscription-step" id="subscription-final" hidden>
         <h3>Payment confirmed</h3>
         <div class="invoice-box" id="final-invoice"></div>
@@ -3388,6 +3402,7 @@
       </section>
     </div>
   </div>
+  END SUBSCRIPTION MODAL -->
 
   <!-- =========================================================
      FEATURE SPOTLIGHT
@@ -3480,15 +3495,12 @@
               <path d="M4 7h16M4 12h10M4 17h16"></path>
             </svg>
           </div>
-
           <h3>Flexible Forms</h3>
-
           <p>
             Build structured HR forms and approval processes without creating
             unnecessary manual work.
           </p>
         </article>
-
         <article class="spotlight-card">
           <div class="spotlight-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -4535,9 +4547,18 @@
     <span class="wa-tooltip"> Chat on WhatsApp </span>
   </a>
 
+  <!-- PAYMENT SCRIPTS DISABLED: not in this release.
+       Razorpay checkout.js, jsPDF, and the subscription flow script are
+       excluded until the payment endpoints are deployed and verified.
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  END PAYMENT SCRIPTS -->
   <script>
+    /* SUBSCRIPTION FLOW DISABLED: payment not in this release.
+       The subscription modal, calculator, Razorpay checkout, invoice
+       rendering, PDF download, and email invoice are commented out.
+       Re-enable after payment endpoints are deployed and verified.
+
     // Subscription flow: Buy Now -> calculator -> confirmation invoice -> Razorpay -> final invoice.
     const subscriptionModal = document.getElementById("subscription-modal");
     const calculatorForm = document.getElementById("subscription-calculator");
@@ -4887,6 +4908,8 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && !subscriptionModal.hidden) closeSubscriptionModal();
     });
+
+    END SUBSCRIPTION FLOW */
 
     /* =========================================================
          NAVBAR

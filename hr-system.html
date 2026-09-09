@@ -4840,9 +4840,13 @@ setInterval(() => {
 
     /* =========================================================
        SCROLL PROGRESS
+       Note: main.js already handles scroll-progress on this page.
+       The inline declaration below is renamed to avoid a duplicate
+       const declaration that would crash the entire inline script
+       and prevent the hamburger handler above from initialising.
     ========================================================= */
 
-    const progressBar =
+    const hrProgressBar =
       document.getElementById("scroll-progress");
 
     function updateScrollProgress() {
@@ -4860,8 +4864,8 @@ setInterval(() => {
           ? (scrollTop / scrollHeight) * 100
           : 0;
 
-      if (progressBar) {
-        progressBar.style.width =
+      if (hrProgressBar) {
+        hrProgressBar.style.width =
           `${Math.min(100, Math.max(0, progress))}%`;
       }
 

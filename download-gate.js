@@ -254,13 +254,19 @@ class DownloadGateManager {
 
     const { url, filename, type } = this.pendingDownload;
 
+    /* ARTICLE-PDF DOWNLOAD DISABLED: the generateAndDownloadPDF path falls back
+       to window.print() when html2pdf is unavailable, which unreliably prints the
+       whole page rather than the selected article. Comment this branch out until
+       a proper per-article PDF generation endpoint is ready.
+
     if (type === 'pdf' && !url.includes('.pdf')) {
       // Generate PDF for blogs
       this.generateAndDownloadPDF(filename);
     } else {
-      // Direct download for templates/files
+    */
+      // Direct download for templates/files — always use this path
       this.directDownload(url, filename);
-    }
+    /* } */
   }
 
   directDownload(url, filename) {
@@ -273,6 +279,9 @@ class DownloadGateManager {
     document.body.removeChild(link);
   }
 
+  /* ARTICLE-PDF GENERATION DISABLED: falls back to window.print() which
+     prints the full page rather than the selected article. Re-enable when
+     a proper per-article server-side PDF endpoint is available.
   generateAndDownloadPDF(filename) {
     // Check if html2pdf is available, otherwise use simpler approach
     if (typeof html2pdf !== 'undefined') {
@@ -290,6 +299,7 @@ class DownloadGateManager {
       window.print();
     }
   }
+  */
 
   resetForm() {
     const form = document.getElementById('download-gate-form');

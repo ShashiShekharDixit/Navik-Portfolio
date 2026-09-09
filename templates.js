@@ -202,7 +202,7 @@ class TemplatesManager {
             <span class="template-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 14.899A7 7 0 1 1 15.71 8m-5.5 9.7A7.002 7.002 0 0 0 20 9.999"/><path d="M12 17v-7"/></svg>
-              ${template.downloads.toLocaleString()} Downloads
+              <!-- Download count hidden: hardcoded value not supported by real data -->
             </span>
             <span class="template-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
