@@ -99,16 +99,17 @@ class BlogHashRouter {
   }
 
   attachReadMoreListeners() {
-    // Use delegation - attach to container instead
+    // Use delegation — attach to container instead of individual cards.
+    // Handles clicks on: Read More (.blog-post-link), article title (.blog-post-title),
+    // and the thumbnail image link (.blog-post-image-link) — all open the same modal.
     const container = document.getElementById('blogPostsContainer');
     if (container) {
       container.addEventListener('click', (e) => {
-        if (e.target.classList.contains('blog-post-link') || e.target.closest('.blog-post-link')) {
+        const clickedLink = e.target.closest('.blog-post-link, .blog-post-title, .blog-post-image-link');
+        if (clickedLink) {
           e.preventDefault();
-          const link = e.target.closest('.blog-post-link');
-          const card = link.closest('.blog-post-card');
+          const card = clickedLink.closest('.blog-post-card');
           if (card) {
-            // Create a temporary modal instance to open
             const modal = new BlogModal();
             modal.openModal(card);
           }

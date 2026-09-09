@@ -3,6 +3,11 @@
 # SEO-Friendly Clean URLs (Remove .html extensions)
 # Domain: https://navikops.com
 # Generated: July 9, 2026
+#
+# DEPLOYMENT NOTE — Next.js payment API routes (app/api/razorpay/*, app/api/invoice/*)
+# are NOT served by Apache. They require a running Next.js server and must be
+# excluded from the static marketing deployment artifact entirely.
+# Do not copy the app/ directory to the Apache document root.
 # ============================================================================
 
 # Enable Rewrite Engine
@@ -11,33 +16,34 @@
   RewriteBase /
 
   # ═══════════════════════════════════════════════════════════
-  # PHASE 1: Don't rewrite real files and directories
+  # PHASE 1: Pass through real files and directories unchanged
   # ═══════════════════════════════════════════════════════════
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
   # ═══════════════════════════════════════════════════════════
-  # PHASE 2: 301 REDIRECT OLD .html URLs TO CLEAN URLS
-  # (Redirect from old URLs to new clean URLs for SEO & backward compatibility)
+  # PHASE 2: 301 REDIRECT .html URLS TO CLEAN URLS
+  # Only fires when the .html URL is requested directly.
+  # The root (/) is handled separately in Phase 3 below.
   # ═══════════════════════════════════════════════════════════
-  
-  # Redirect .html extensions to clean URLs (301 permanent redirect)
-  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
-  
-  # Redirect index.html to root
+
+  # Redirect index.html to root (must come before the generic .html rule)
   RewriteRule ^index\.html$ / [R=301,L]
+
+  # Redirect any other *.html to its clean URL equivalent
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
   # ═══════════════════════════════════════════════════════════
   # PHASE 3: SERVE CLEAN URLS BY REWRITING TO .html FILES
-  # (Internal rewrite - user still sees clean URL)
+  # These are internal rewrites — the user still sees the clean URL.
   # ═══════════════════════════════════════════════════════════
-  
-  # Home page - serve index.html for root requests
-  RewriteRule ^/?$ index.html [L]
-  
-  # All other clean URLs - append .html internally
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Root request → serve index.html (no redirect, no loop)
+  RewriteRule ^$ index.html [L]
+
+  # All other clean URLs → append .html if the .html file exists
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
 
 </IfModule>

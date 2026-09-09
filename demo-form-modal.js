@@ -262,22 +262,29 @@ class DemoFormModal {
 
       const url = APPS_SCRIPT_URL + '?' + params.toString();
 
-      // NOTE: Google Apps Script with no-cors cannot confirm delivery.
-      // We show success only after the fetch resolves without a network error.
-      // If a confirmed backend acknowledgement is required before release,
-      // replace this endpoint with one that returns a verifiable JSON response.
       const response = await fetch(url, { method: 'GET', mode: 'cors' });
 
-      // Show success and hide form ONLY after the request completed
+      // Require both a 2xx HTTP status AND a JSON body with status:"ok".
+      // Any HTTP error or body with status:"error" is a failure — preserve fields.
+      if (!response.ok) {
+        throw new Error(`Server returned HTTP ${response.status}`);
+      }
+
+      let json;
+      try { json = await response.json(); } catch (_) { json = {}; }
+
+      if (json.status && json.status !== 'ok') {
+        throw new Error(json.message || 'The server reported an error. Please try again.');
+      }
+
+      // Show success and hide form ONLY after confirmed server acceptance
       if (successBox) {
         successBox.style.display = 'flex';
         form.style.display = 'none';
       }
 
-      // Reset form fields after confirmed success
       form.reset();
 
-      // Close modal after 2 seconds
       setTimeout(() => {
         this.closeModal();
         if (successBox) successBox.style.display = 'none';
@@ -285,13 +292,14 @@ class DemoFormModal {
       }, 2000);
 
     } catch (error) {
-      // Network or fetch error — preserve entered details so user can retry
+      // Server error or network failure — preserve fields so the user can retry
       console.error('Modal form fetch error:', error);
       if (errorBox) {
-        errorBox.textContent = 'Something went wrong. Please check your connection and try again.';
+        errorBox.textContent = error.message && error.message.length < 200
+          ? error.message
+          : 'Something went wrong. Please check your connection and try again.';
         errorBox.style.display = 'block';
       }
-      // Do NOT clear the form — user should be able to retry without re-entering data
     } finally {
       this.isSubmitting = false;
       if (btnLabel) btnLabel.style.display = 'inline';

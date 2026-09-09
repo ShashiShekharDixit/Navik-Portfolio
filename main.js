@@ -1242,31 +1242,42 @@ const MAIN_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLKYM_vF
 
       const url = MAIN_APPS_SCRIPT_URL + '?' + params.toString();
 
-      // NOTE: Google Apps Script GET responses with no-cors cannot confirm delivery.
-      // Success is shown only after the fetch resolves without a network error.
-      // If confirmed backend acknowledgement is required before release, replace
-      // this endpoint with one that returns a verifiable JSON response.
       const response = await fetch(url, { method: 'GET', mode: 'cors' });
 
-      // Show success ONLY after request completed without throwing
+      // Require both a 2xx HTTP status AND a JSON body with status:"ok".
+      // Any HTTP error (4xx / 5xx) or a body with status:"error" is treated
+      // as a failure — fields are preserved so the user can retry.
+      if (!response.ok) {
+        throw new Error(`Server returned HTTP ${response.status}`);
+      }
+
+      let json;
+      try { json = await response.json(); } catch (_) { json = {}; }
+
+      if (json.status && json.status !== 'ok') {
+        throw new Error(json.message || 'The server reported an error. Please try again.');
+      }
+
+      // Show success ONLY after the server confirmed acceptance
       if (successBox) successBox.style.display = 'flex';
 
-      // Reset form fields only on confirmed success
-      nameField.value      = '';
-      companyField.value   = '';
-      emailField.value     = '';
-      phoneField.value     = '';
+      // Reset fields only on confirmed success
+      nameField.value         = '';
+      companyField.value      = '';
+      emailField.value        = '';
+      phoneField.value        = '';
       sizeField.selectedIndex = 0;
       if (messageField) messageField.value = '';
 
-      // Clear inline errors
       ['err_name', 'err_company', 'err_email', 'err_phone', 'err_size'].forEach(id => clearErr(id));
 
     } catch (error) {
       console.error('Form submission error:', error);
-      // Network/fetch failure — show error, preserve all entered values so user can retry
+      // Preserve all entered values so the user can retry without re-typing
       if (errorBox) {
-        errorBox.textContent = 'Something went wrong. Please check your connection and try again.';
+        errorBox.textContent = error.message && error.message.length < 200
+          ? error.message
+          : 'Something went wrong. Please check your connection and try again.';
         errorBox.style.display = 'block';
       }
     } finally {

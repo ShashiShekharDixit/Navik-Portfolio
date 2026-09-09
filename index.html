@@ -3535,15 +3535,14 @@
         <a href="about-us.html">About Us</a>
         <a href="mailto:riya.shukla@wfmexperts.com">Careers</a>
         <a href="blog.html">Blogs</a>
-        <a href="#">Press</a>
-        <a href="#trust">Customers</a>
+        <a href="Customers.html">Customers</a>
       </div>
 
       <div class="footer-col">
         <h5>Resources</h5>
-        <a href="#">Help Center</a>
-        <a href="#">Documentation</a>
-        <a href="#">Case Studies</a>
+        <!--<a href="#">Help Center</a>-->
+        <!--<a href="#">Documentation</a>-->
+        <a href="Case-Studies.html">Case Studies</a>
         <a href="blog.html">Blogs</a>
         <a href="templates.html">Templates</a>
       </div>
@@ -3561,9 +3560,10 @@
     <div class="footer-bottom">
       <span>© 2026 navik. All rights reserved. Made with ❤ in India</span>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Security</a>
+        <!--<a href="#">Privacy Policy</a>-->
+        <!--<a href="#">Terms of Service</a>-->
+        <!--<a href="#">Security</a>-->
+        <a href="contact-us.html">Contact</a>
       </div>
     </div>
   </div>
@@ -3667,51 +3667,116 @@
     /* ══════════════════════════════════════════════════════════════
        2. MOBILE NAVIGATION ACCORDION & DRAWER CONTROLS
     ══════════════════════════════════════════════════════════════ */
-    const navLinksEl = document.getElementById('navLinks');
+    const navLinksEl  = document.getElementById('navLinks');
     const hamburgerEl = document.getElementById('hamburger');
+
+    // Shared close helper — used by every close path so scroll is always restored
+    function closeNavDrawer() {
+      if (navLinksEl)  navLinksEl.classList.remove('open');
+      if (hamburgerEl) { hamburgerEl.classList.remove('open'); hamburgerEl.setAttribute('aria-expanded', 'false'); }
+      dropdownItems.forEach(d => d.classList.remove('expanded'));
+      document.body.style.overflow = '';
+    }
 
     // Accordion handling on mobile
     const dropdownItems = document.querySelectorAll('.nav-dropdown');
     dropdownItems.forEach(item => {
       const trigger = item.querySelector('.nav-link-main');
-      if (trigger) {
-        trigger.addEventListener('click', (e) => {
-          if (window.innerWidth <= 1024) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            const isCurrentlyExpanded = item.classList.contains('expanded');
-            dropdownItems.forEach(d => { if (d !== item) d.classList.remove('expanded'); });
-            item.classList.toggle('expanded', !isCurrentlyExpanded);
+      if (!trigger) return;
+
+      // ── Mobile: toggle accordion on click ──────────────────────
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          const isExpanded = item.classList.contains('expanded');
+          dropdownItems.forEach(d => { if (d !== item) d.classList.remove('expanded'); });
+          item.classList.toggle('expanded', !isExpanded);
+          trigger.setAttribute('aria-expanded', String(!isExpanded));
+        }
+      });
+
+      // ── Desktop: open dropdown with Enter or Space ──────────────
+      trigger.addEventListener('keydown', (e) => {
+        if (window.innerWidth > 1024 && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          const isExpanded = item.classList.contains('expanded');
+          dropdownItems.forEach(d => {
+            d.classList.remove('expanded');
+            const t = d.querySelector('.nav-link-main');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+          if (!isExpanded) {
+            item.classList.add('expanded');
+            trigger.setAttribute('aria-expanded', 'true');
+            // Focus first menu item so keyboard navigation continues inside
+            const firstLink = item.querySelector('.nav-dropdown-menu a');
+            if (firstLink) firstLink.focus();
           }
-        });
-      }
+        }
+        // Escape closes an open desktop dropdown
+        if (e.key === 'Escape') {
+          item.classList.remove('expanded');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+
+      // Set initial aria-expanded on trigger
+      trigger.setAttribute('aria-expanded', 'false');
+      if (!trigger.hasAttribute('role')) trigger.setAttribute('role', 'button');
+      if (!trigger.hasAttribute('tabindex')) trigger.setAttribute('tabindex', '0');
     });
 
-    // Close menu when clicking link inside drawer
+    // Close menu when clicking a link inside the drawer
     if (navLinksEl) {
       navLinksEl.querySelectorAll('a:not(.nav-link-main)').forEach(link => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            navLinksEl.classList.remove('open');
-            if (hamburgerEl) hamburgerEl.classList.remove('open');
-            dropdownItems.forEach(d => d.classList.remove('expanded'));
-            document.body.style.overflow = '';
-          }
+          if (window.innerWidth <= 1024) closeNavDrawer();
         });
       });
     }
 
-    // Toggle body scroll locking on mobile
+    // Toggle body scroll lock when hamburger is clicked
     if (hamburgerEl && navLinksEl) {
       hamburgerEl.addEventListener('click', () => {
-        const isOpen = navLinksEl.classList.contains('open');
-        if (isOpen) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = '';
-        }
+        const isNowOpen = navLinksEl.classList.contains('open');
+        // classList.toggle('open') is handled by main.js; mirror the scroll lock
+        document.body.style.overflow = isNowOpen ? 'hidden' : '';
       });
     }
+
+    // Outside-click closes drawer AND restores scroll
+    document.addEventListener('click', (e) => {
+      if (!navLinksEl || !navLinksEl.classList.contains('open')) return;
+      const navbar = document.getElementById('navbar');
+      if (navbar && navbar.contains(e.target)) return;
+      closeNavDrawer();
+    });
+
+    // Escape key closes the mobile drawer (with scroll restored) AND any open desktop dropdown
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      // Mobile drawer
+      if (navLinksEl && navLinksEl.classList.contains('open')) {
+        closeNavDrawer();
+        if (hamburgerEl) hamburgerEl.focus();
+        return;
+      }
+      // Desktop dropdown
+      dropdownItems.forEach(item => {
+        if (item.classList.contains('expanded')) {
+          item.classList.remove('expanded');
+          const trigger = item.querySelector('.nav-link-main');
+          if (trigger) { trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
+        }
+      });
+    });
+
+    // Viewport resize: clean up mobile state when widening past breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) closeNavDrawer();
+    });
 
     /* ══════════════════════════════════════════════════════════════
        3. SMART PAYROLL ENGINE HOTSPOTS INTERACTION
