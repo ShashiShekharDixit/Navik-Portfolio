@@ -13,31 +13,24 @@ window.addEventListener('load', () => {
 
 /* ── ROTATING LOGO TEXT ── */
 (function() {
+  if (window.__navikLogoRotationInitialized) return;
+  window.__navikLogoRotationInitialized = true;
+
   const texts = ['HR', 'WFM', 'Payroll'];
   let currentIndex = 0;
-  
+
   function rotateText() {
-    // Scope to navbar only — avoid footer logo spans
     const navLogo = document.querySelector('.navbar .nav-logo-text');
     if (!navLogo) return;
     const spans = navLogo.querySelectorAll('.nav-logo-animated');
     if (spans.length === 0) return;
-    
-    // Remove active class from all
-    spans.forEach((span) => {
-      span.classList.remove('active');
-    });
-    
-    // Add active class to current
+
+    spans.forEach((span) => span.classList.remove('active'));
     spans[currentIndex % spans.length].classList.add('active');
-    
     currentIndex = (currentIndex + 1) % spans.length;
   }
-  
-  // Initial rotation
+
   rotateText();
-  
-  // Rotate every 3 seconds
   setInterval(rotateText, 3000);
 })();
 
@@ -127,24 +120,67 @@ window.addEventListener('scroll', () => {
 /* ── HAMBURGER ── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
+
+function closeDesktopDropdowns() {
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    dropdown.classList.remove('open', 'is-open');
+  });
+}
+
 if (hamburger && navLinks && hamburger.dataset.navHandler !== 'legacy') {
   hamburger.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     hamburger.classList.toggle('open', open);
-    // Mirror scroll lock so body.style.overflow is consistent on every toggle
+    if (!open) {
+      closeDesktopDropdowns();
+    }
     document.body.style.overflow = open ? 'hidden' : '';
     if (open) {
       navLinks.style.top = (navbar ? navbar.offsetHeight : 76) + 'px';
     }
   });
   document.addEventListener('click', e => {
-    if (!e.target.closest('.nav-inner')) {
+    const clickedInsideNav = e.target.closest('.nav-inner');
+    const clickedDropdown = e.target.closest('.nav-dropdown');
+    if (!clickedInsideNav && !clickedDropdown) {
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
-      // Restore scroll so the outside-click path doesn't leave it locked
+      closeDesktopDropdowns();
       document.body.style.overflow = '';
+      return;
+    }
+    if (clickedDropdown && window.innerWidth > 1024) {
+      const current = clickedDropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        if (dropdown !== clickedDropdown) dropdown.classList.remove('open', 'is-open');
+      });
+      clickedDropdown.classList.toggle('open', !current);
     }
   });
+}
+
+if (window.innerWidth > 1024) {
+  document.querySelectorAll('.nav-dropdown .nav-link-main').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        if (dropdown.contains(link)) {
+          dropdown.classList.add('open');
+        } else {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+    link.addEventListener('focus', () => {
+      document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        if (dropdown.contains(link)) {
+          dropdown.classList.add('open');
+        } else {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+  });
+  document.addEventListener('mouseleave', () => closeDesktopDropdowns());
 }
 
 /* ── SMOOTH SCROLL ── */

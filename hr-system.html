@@ -4824,19 +4824,27 @@
 
     }
 
+    if (window.__navikLogoRotationInitialized) {
+      return;
+    }
+
     const logoWords = document.querySelectorAll('.nav-logo-animated');
 
-let currentWord = 0;
+    if (!logoWords.length) {
+      return;
+    }
 
-setInterval(() => {
+    let currentWord = 0;
 
-    logoWords[currentWord].classList.remove('active');
+    const rotateLogoWords = () => {
+      logoWords.forEach((word) => word.classList.remove('active'));
+      logoWords[currentWord].classList.add('active');
+      currentWord = (currentWord + 1) % logoWords.length;
+    };
 
-    currentWord = (currentWord + 1) % logoWords.length;
-
-    logoWords[currentWord].classList.add('active');
-
-}, 2200);
+    rotateLogoWords();
+    window.__navikLogoRotationInitialized = true;
+    setInterval(rotateLogoWords, 2200);
 
     /* =========================================================
        SCROLL PROGRESS

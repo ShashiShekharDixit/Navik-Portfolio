@@ -154,6 +154,20 @@ function calculateEPF() {
   document.getElementById('epfResult').style.display = 'block';
 }
 
+// ── FUEL COST CALCULATOR ──
+function calculateFuelCost() {
+  const distanceKm = parseFloat(document.getElementById('distanceKm').value) || 0;
+  const mileageKmL = parseFloat(document.getElementById('mileageKmL').value) || 0;
+  const fuelPrice = parseFloat(document.getElementById('fuelPrice').value) || 0;
+
+  const fuelRequired = mileageKmL > 0 ? distanceKm / mileageKmL : 0;
+  const totalFuelCost = fuelRequired * fuelPrice;
+
+  document.getElementById('fuelRequired').textContent = fuelRequired.toFixed(2);
+  document.getElementById('totalFuelCost').textContent = totalFuelCost.toFixed(2);
+  document.getElementById('fuelResult').style.display = 'block';
+}
+
 // ── ENTER KEY SUPPORT ──
 document.addEventListener('DOMContentLoaded', () => {
   // Salary form
@@ -179,5 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // EPF form
   document.getElementById('epfForm')?.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') calculateEPF();
+  });
+
+  // Fuel form
+  document.getElementById('fuelForm')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') calculateFuelCost();
   });
 });

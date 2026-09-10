@@ -399,6 +399,42 @@
         </div>
       </div>
 
+      <!-- TOOL 6: FUEL COST CALCULATOR -->
+      <div class="tool-card" id="fuelCard">
+        <div class="tool-header">
+          <div class="tool-icon">⛽</div>
+          <h2>Fuel Cost Calculator</h2>
+          <p>Estimate travel cost by distance, mileage, and fuel price</p>
+        </div>
+        <div class="tool-content">
+          <form id="fuelForm" class="tool-form">
+            <div class="form-group">
+              <label>Distance (km)</label>
+              <input type="number" id="distanceKm" placeholder="300" min="0" step="1">
+            </div>
+            <div class="form-group">
+              <label>Vehicle Mileage (km/litre)</label>
+              <input type="number" id="mileageKmL" placeholder="18" min="0" step="0.1">
+            </div>
+            <div class="form-group">
+              <label>Fuel Price (₹/litre)</label>
+              <input type="number" id="fuelPrice" placeholder="104.5" min="0" step="0.1">
+            </div>
+            <button type="button" class="calc-btn" onclick="calculateFuelCost()">Calculate Fuel Cost</button>
+          </form>
+          <div id="fuelResult" class="tool-result" style="display:none;">
+            <div class="result-item">
+              <span>Fuel Required</span>
+              <strong><span id="fuelRequired">0</span> litres</strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Total Fuel Cost</span>
+              <strong>₹<span id="totalFuelCost">0</span></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- NAVIK ADVERTISEMENT SECTION -->
